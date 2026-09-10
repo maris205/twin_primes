@@ -1,0 +1,590 @@
+{
+  "batch_stop": {
+    "next_paper": null,
+    "state": "USER_CONFIRMATION_REQUIRED",
+    "tpc204_authorized": false
+  },
+  "claim_boundary": {
+    "block_equals_cumulative_prefix": false,
+    "declared_corpus_stop_is_global_nonexistence": false,
+    "factorwise_fourier_implies_product_fourier": false,
+    "fixed_atom_decay_obtained": false,
+    "fixed_h0_data_is_decay": false,
+    "hash_integrity_is_theorem_evidence": false,
+    "lebesgue_ae_phase_is_named_atom_control": false,
+    "mobius_product_is_one_multiplicative_function": false,
+    "packet_key_is_production_packet_schedule": false,
+    "phase_L2_is_named_atom_control": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "scoped_method_stop_is_parent_stop": false,
+    "strict_one_over_400": false,
+    "symbolic_packet_atom_is_named_production_atom": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "MVP10_INTEGRATION",
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "finite_certificate": {
+    "direct_production_first_missing": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+    "exact_reopen_triggers": [
+      {
+        "requires": [
+          "formula-complete production target",
+          "theorem-backed natural q/N fixed-atom mechanism",
+          "positive X-power with uniform constant",
+          "all six axes",
+          "complete loss ledger"
+        ],
+        "route": "DIRECT"
+      },
+      {
+        "requires": [
+          "source-locked named atom",
+          "exact packet schedule",
+          "schedule-specific exceptional-limsup avoidance theorem"
+        ],
+        "route": "METRIC"
+      },
+      {
+        "requires": [
+          "literal fixed-atom local-increment cancellation theorem"
+        ],
+        "route": "BAD_ENDPOINT"
+      },
+      {
+        "requires": [
+          "theorem-backed local-occurrence edge"
+        ],
+        "route": "STRUCTURAL"
+      },
+      {
+        "requires": [
+          "genuinely new primary theorem corpus",
+          "TPC193 V1 remains STOP_SCOPED"
+        ],
+        "route": "DECLARED_CORPUS"
+      }
+    ],
+    "expected_verdicts": {
+      "194": "FORMULA_COMPLETE_PER_PACKET_L1",
+      "195": "PROVED_BIDIRECTIONAL_POWER_PROFILE_TRANSFER",
+      "196": "PROVED_RESIDUE_SPLIT_WITH_DETERMINANT_2R",
+      "197": "PROVED_NONZERO_FIXED_RATIONAL_ATOM_CANNOT_RECUR_ACROSS_UNBOUNDED_PRIME_CONDUCTORS",
+      "198": "STOP_SCOPED",
+      "199": "STOP_SCOPED",
+      "200": "PROVED_UNIQUE_DEGENERACY_Q1_H2",
+      "201": "PROVED_DEGENERATE_SHIFT_ABSORPTION",
+      "202": "SCREENED_NON_DIRECT_ZERO_ELIGIBLE"
+    },
+    "global_architecture_open": true,
+    "global_first_missing": "H1.source_backed_local_occurrence_edge_family",
+    "named_atom_endpoint_credit": 0,
+    "scoped_cells": [
+      "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1",
+      "FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT",
+      "ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ"
+    ],
+    "selected_pointwise_first_missing": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION",
+    "strict_one_over_400": "UNPAID",
+    "tpc194_import_contract": {
+      "completion_axes": {
+        "common_X_N_q_ranges": "MISSING",
+        "complete_physical_loss_ledger": "MISSING",
+        "decorated_physical_coefficient": "COMPLETE_PER_PACKET",
+        "named_production_atom": "MISSING",
+        "packet_schedule": "MISSING",
+        "positive_sigma": "MISSING",
+        "prefix_index": "COMPLETE_PER_PACKET",
+        "summation_domain": "COMPLETE_PER_PACKET",
+        "symbolic_packet_atom": "COMPLETE_PER_PACKET",
+        "target_normalization_selection": "MISSING",
+        "uniform_constant_C": "MISSING"
+      },
+      "first_missing_literal_theorem": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+      "formula_source_ledger": [
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "key",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-index}",
+                  "required_fragments": [
+                    "\\xi=(\\theta,c,\\kappa,r)"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "content_alias",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:progression-B}",
+                  "required_fragments": [
+                    "b=c\\kappa",
+                    "B_{\\theta,b}=\\frac{b}{g_{\\theta,b}}"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.content_progression"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-index}",
+                  "required_fragments": [
+                    "b_\\xi=c\\kappa\\mid P_\\theta"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "signed_lift",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:signed-frequency-lift}",
+                  "required_fragments": [
+                    "\\widetilde r\\equiv r\\pmod{q_X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "phase_slope",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:phase-Omega}",
+                  "required_fragments": [
+                    "\\ell_\\theta v_\\theta\\sigma_\\theta B_{\\theta,b}"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL_PLUS_H0_SPECIALIZATION",
+          "formula_field": "affine_forms",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:forms}",
+                  "required_fragments": [
+                    "D_\\xi(z)&=d_\\xi+s_\\xi z",
+                    "V_\\xi(z)&=u_\\xi+a_\\xi z"
+                  ]
+                },
+                {
+                  "anchor": "\\label{eq:det-phase}",
+                  "required_fragments": [
+                    "s_\\xi u_\\xi-a_\\xi d_\\xi&=h_0\\ne0"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:det-two}",
+                  "required_fragments": [
+                    "su-ad=2."
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "inner_coefficient",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:literal-coefficient}",
+                  "required_fragments": [
+                    "\\mu(D_\\xi(z))\\mu(V_\\xi(z))",
+                    "\\one_{(B_\\xi,V_\\xi(z))=1}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:literal-A}",
+                  "required_fragments": [
+                    "\\mu(D(z))\\mu(V(z))",
+                    "\\one_{(B,V(z))=1}"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "SIGNED_LIFT_LITERAL",
+          "formula_field": "packet_atom",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:phase-alpha}",
+                  "required_fragments": [
+                    "\\frac{\\varepsilon_\\theta\\widetilde r\\Omega_\\xi}{c q_X}"
+                  ]
+                },
+                {
+                  "anchor": "\\label{eq:phase-resolved}",
+                  "required_fragments": [
+                    "\\zeta_\\xi e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "outer_multiplier",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-outer-coefficient}",
+                  "required_fragments": [
+                    "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                    "\\mathfrak m_{K,X}(r)"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:generic-low-window}",
+                  "required_fragments": [
+                    "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                    "\\mathfrak m_{K,X}(r)\\zeta_{\\xi,X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "ORDER_PRESERVING_PREFIX_COMPOSITION",
+          "formula_field": "decorated_inner_prefix",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:block-transform}",
+                  "required_fragments": [
+                    "\\sum_{z\\in I_\\xi}",
+                    "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{prop:isometry}",
+                  "required_fragments": [
+                    "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "OUTER_TIMES_INNER_PER_KEY",
+          "formula_field": "complete_per_key_contribution",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-master-formula}",
+                  "required_fragments": [
+                    "\\sum_{\\xi\\in\\Xi_X(K,R)}",
+                    "\\mathfrak c_{\\xi,X}",
+                    "\\sum_{z\\in I_\\xi}"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:generic-low-window}",
+                  "required_fragments": [
+                    "\\sum_{\\xi\\in\\Xi_{\\mathrm{Gen}}}",
+                    "\\mathfrak c_{\\xi,X}S_{\\xi,X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            }
+          ]
+        }
+      ],
+      "formula_type_registry": [
+        {
+          "domain": "N<t(z)<=2N",
+          "id": "CORE_TERMINAL_BLOCK",
+          "normalization": "q/N"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "id": "CORE_CUMULATIVE_PREFIX",
+          "normalization": "q/T"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "id": "PHYSICAL_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM"
+        }
+      ],
+      "formula_type_source_ledger": [
+        {
+          "derivation_kind": "LITERAL",
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:transform}",
+                  "required_fragments": [
+                    "I_N=\\{z\\in\\mathbb Z:N<t(z)\\le2N\\}",
+                    "F_N(\\alpha)=\\frac qN\\sum_{z\\in I_N}c_z\\e(-\\alpha z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC167.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:main}",
+                  "required_fragments": [
+                    "\\sum_{\\substack{z\\in\\mathbb Z\\\\0<t(z)\\le T}}c_z\\rho(z)",
+                    "\\frac qT|A_\\rho(T)|"
+                  ]
+                }
+              ],
+              "source_id": "TPC159.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "ORDER_PRESERVING_UNNORMALIZED_PREFIX_COMPOSITION",
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:block-transform}",
+                  "required_fragments": [
+                    "S_{\\xi,X}",
+                    "\\sum_{z\\in I_\\xi}",
+                    "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{prop:isometry}",
+                  "required_fragments": [
+                    "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        }
+      ],
+      "resolved_packet_formula": {
+        "affine_forms": [
+          "D_xi(z)=d_xi+s_xi*z",
+          "V_xi(z)=u_xi+a_xi*z",
+          "s_xi*u_xi-a_xi*d_xi=2"
+        ],
+        "complete_per_key_contribution": "P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T",
+        "content_alias": "b=c*kappa and B_xi=B_theta_b",
+        "decorated_inner_prefix": "S_xi_X_le_T=sum_(z in I_xi_X,z<=T) A_xi_X(z)*e(-alpha_xi_X*z)",
+        "inner_coefficient": "A_xi_X(z)=mu(D_xi(z))*mu(V_xi(z))*1_gcd(B_xi,V_xi(z))=1*chi_theta(tau_xi+B_xi*z)*W_theta_X(tau_xi+B_xi*z)",
+        "key": "xi=(theta,c,kappa,r)",
+        "outer_multiplier": "cfrak_xi_X=c_theta_X*mu(kappa)*mu(B_xi)*mfrak_K_X(r)*zeta_xi_X",
+        "packet_atom": "alpha_xi_X=epsilon_theta*r_tilde*Omega_xi/(c*q_X) mod 1",
+        "phase_slope": "Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b",
+        "signed_lift": "r_tilde=source_defined_signed_lift(r)"
+      },
+      "schema": "tpc-194-maximal-source-backed-direct-prefix-v2",
+      "verdict": "FORMULA_COMPLETE_PER_PACKET_L1"
+    },
+    "two_O161_pointwise_parents_open": true,
+    "upstream_range": "TPC-194--202"
+  },
+  "first_missing_nodes": {
+    "direct_production": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+    "global": "H1.source_backed_local_occurrence_edge_family",
+    "selected_pointwise": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION"
+  },
+  "fixed_atom_decay_obtained": false,
+  "fixed_h0": {
+    "semantics": "SOURCE_BACKED_DATA_FACT_ONLY",
+    "value": 2
+  },
+  "next_route": "SEARCH_FOR_NAMED_PACKET_CROSSWALK_OR_GENUINE_FIXED_ATOM_THEOREM",
+  "paper": 203,
+  "progress": {
+    "L0": "FORMULA_OR_FINITE_CERTIFICATE",
+    "L1": "MVP10_INTEGRATION",
+    "L2": "NONE"
+  },
+  "required_quantifier_signature": {
+    "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+    "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+    "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+    "phase_axis": "SOURCE_LOCKED_NAMED_PHYSICAL_ATOM",
+    "scale_axis": "DETERMINISTIC_ALL_SCALE",
+    "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+  },
+  "result_summary": "MVP10 imports TPC-194--202 fail-closed.  The per-packet direct formula is complete, but the production crosswalk and named-atom power theorem are absent.  Both O161 pointwise parents and the global architecture remain open; fixed-atom endpoint credit is zero.",
+  "route_state": {
+    "bad_endpoint_O161_parent": "OPEN",
+    "direct_twist_O161_parent": "OPEN",
+    "global_architecture": "OPEN",
+    "tpc193_declared_candidate_mechanism_corpus_v1": "STOP_SCOPED"
+  },
+  "schema": "tpc-203-mvp10-direct-pointwise-route-decision-v2",
+  "snapshot": {
+    "date": "2026-07-29",
+    "hash_mode": "CANONICAL_UTF8_LF",
+    "source_of_truth": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "1755b0f39905aef368716abe3425086e683c3b191c558406e2db59605c0ddfcf",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-192-mvp9-pointwise-frontier-route-decision/experiments/tpc192_mvp9_pointwise_frontier_route_decision.json",
+      "source_id": "TPC192.snapshot"
+    },
+    {
+      "canonical_utf8_lf_sha256": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+      "source_id": "TPC193.gate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "a4b2f4d917b0a0f16d17f5e7252fae6dd4fd7c995f8809486b14e030e179cebc",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json",
+      "source_id": "TPC194.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d90642b85e34218fd0e208b0f5638b6b8f3a10797352bb8b78f276bd449f5615",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-195-block-prefix-power-profile-equivalence/experiments/tpc195_block_prefix_power_profile_equivalence.json",
+      "source_id": "TPC195.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "13490cb8a77ccba8b392b0e2b14b0af9816ea5ce38995359b8c483c3dd9abb45",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-196-rational-atom-residue-determinant-ledger/experiments/tpc196_rational_atom_residue_determinant_ledger.json",
+      "source_id": "TPC196.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "f6d62d6b407496c4f0e0ecdb73e7c26386f2336f356fcd2991b7c1b3c4aa67e3",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-197-prime-conductor-fixed-atom-consistency/experiments/tpc197_prime_conductor_fixed_atom_consistency.json",
+      "source_id": "TPC197.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d4fb5ca27201edd067342a1df82b24db57dd00f699d8669cfe1971501672480c",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-198-factorwise-fourier-product-barrier/experiments/tpc198_factorwise_fourier_product_barrier.json",
+      "source_id": "TPC198.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "771d9debb12a3dbbcc9a69fd8fbe66e4d12dab9ea52841d6285d5b9eb56e98ac",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-199-mobius-product-pretentiousness-firewall/experiments/tpc199_mobius_product_pretentiousness_firewall.json",
+      "source_id": "TPC199.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "cd84d3629350441803b078ed9ecf0c1202854276bc97118bcc5ee8247c0280e6",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-200-four-form-determinant-resonance-refinement/experiments/tpc200_four_form_determinant_resonance_refinement.json",
+      "source_id": "TPC200.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "39159aaed2bd5a67e784d9f2fdbaa61cf6994a4e7b7ecafbabd7e64ee294edf7",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-201-degenerate-shift-fejer-absorption/experiments/tpc201_degenerate_shift_fejer_absorption.json",
+      "source_id": "TPC201.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "36088cf34eeb80b281c68a38da6262d4e09cf8b2cf9451ba12b291d0ad82ed02",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-202-new-primary-double-selector-gate/experiments/tpc202_new_primary_double_selector_gate.json",
+      "source_id": "TPC202.payload"
+    }
+  ],
+  "stop_scoped": [],
+  "title": "MVP10 after Per-Packet Formula Completion and the Fixed-Atom Subgate Audit",
+  "verdict": "NOT_TESTABLE"
+}

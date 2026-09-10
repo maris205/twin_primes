@@ -1,0 +1,608 @@
+{
+  "branches": [
+    {
+      "branch": "twin-prime-correlations",
+      "commit": "3317f65f60fa430dc1bab22af3e857eadc312046",
+      "files": [
+        {
+          "path": "legacy/branches/twin-prime-correlations/papers/two-scale-prime-sieve-correlations/README.md",
+          "source_path": "papers/two-scale-prime-sieve-correlations/README.md",
+          "sha256": "5bd78c2976c9d525ee644f26d601ad949c0cdd74f570d56bad2c80fbd2359308"
+        },
+        {
+          "path": "legacy/branches/twin-prime-correlations/papers/two-scale-prime-sieve-correlations/main.tex",
+          "source_path": "papers/two-scale-prime-sieve-correlations/main.tex",
+          "sha256": "7583b9e07fd73f28a26cdcd07ae4b3587b1be7a60847535f7aef60cf956c34e2"
+        },
+        {
+          "path": "legacy/branches/twin-prime-correlations/papers/two-scale-prime-sieve-correlations/references.bib",
+          "source_path": "papers/two-scale-prime-sieve-correlations/references.bib",
+          "sha256": "200d0926f8770f4dba7c6f19a9e32c0a3b295137e01879e416275f9830634941"
+        },
+        {
+          "path": "legacy/branches/twin-prime-correlations/papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "source_path": "papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "sha256": "05121592cc309ed0f2d834802baf115032a884c8fb53236b64b1f87be8290d5f"
+        }
+      ]
+    },
+    {
+      "branch": "rough-pair-parity",
+      "commit": "a5b348d9084833a51e33defae44d04c7cf7dc6d8",
+      "files": [
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/README.md",
+          "source_path": "papers/rough-pair-parity-transitions/README.md",
+          "sha256": "8a902cc74b181ceff3f7119446a05c010c589ecb780a6224827492a341a32011"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/.gitignore",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/.gitignore",
+          "sha256": "5f820d67cc7ff84fb281a2b9a1a5889d7d04d3aff59abb2411ae9245e7c38a22"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "sha256": "1dceca8ccf117701f42a200f8e048b184e8420515c08737c9ca4f6ef8e91f27a"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/README.md",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/README.md",
+          "sha256": "e425b9a4607a9ef67110e1f69d499cf7f13a7a712a314cff34777a2dc1dec177"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "sha256": "d8dac24078a9a6f0989992259d7253bacab92b7f2099102ffb78c8b2e508ca7c"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "sha256": "33505b899ac3d10d90e247b13e3ea9208a2d11c22839b8522ff214a58d38d735"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "sha256": "d328bec80efe56adaa467a3debb5a5ddc4cbfb286054e6de49da9fae88ab6a55"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "sha256": "6dadb922dba3f31ec1d111918f7360b62a14862fd768e96bb432bd379f2482fc"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "sha256": "132998c5d496149ddec306fa803f84501daa8cfcbdeef5f56e2b74282dad418b"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "sha256": "d65302b3106bbac073ec56897535d632a9e06f84daec42ded18815eab0c7699e"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "sha256": "e529b8a672e4b32f328eb849394b1cbac5e7c362c480d734e003c851eb51cc22"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "sha256": "93ddde6ffd62fd86948de0985e99339a61d7d2cd30d7c204dfa35121f4a25a3a"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "sha256": "9cb016db51c838e08447302979d717dc59a258039a2ad615b62cca2f6e466c50"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "sha256": "eb06514bce92026474fd22743372fd56d3bad20371e3a5f77d2073ba712da8e5"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/experiments/smoke_test.py",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/smoke_test.py",
+          "sha256": "7aa6e8f95aeeda49591f9bd31ea3836114b29bd3fe1dce28bb0cd46978ac83b6"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "source_path": "papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "sha256": "4b08ff1892a5067948b6a8a410d295b6f20372ab106a593cf5a78f21d270bcf5"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "source_path": "papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "sha256": "9dca4045d51faf47a42737bcacd5043ead9fa67bc2b6e66e0e68fbbacc786f03"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/main.tex",
+          "source_path": "papers/rough-pair-parity-transitions/main.tex",
+          "sha256": "8ad1dfbdafd9ceb1f610a766e203e259aac869a865838d24ee8bfd22f5a087b7"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "source_path": "papers/rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "sha256": "015c24ccfb71544aafcb2375788f352c245d8765087630f9043e8a5ac8a0b554"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/rough-pair-parity-transitions/references.bib",
+          "source_path": "papers/rough-pair-parity-transitions/references.bib",
+          "sha256": "bdc2610b44476d6dfdba4033ee2588bc71db1e4bfd8038becc84ce0287a18753"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/two-scale-prime-sieve-correlations/README.md",
+          "source_path": "papers/two-scale-prime-sieve-correlations/README.md",
+          "sha256": "5bd78c2976c9d525ee644f26d601ad949c0cdd74f570d56bad2c80fbd2359308"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/two-scale-prime-sieve-correlations/main.tex",
+          "source_path": "papers/two-scale-prime-sieve-correlations/main.tex",
+          "sha256": "7583b9e07fd73f28a26cdcd07ae4b3587b1be7a60847535f7aef60cf956c34e2"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/two-scale-prime-sieve-correlations/references.bib",
+          "source_path": "papers/two-scale-prime-sieve-correlations/references.bib",
+          "sha256": "200d0926f8770f4dba7c6f19a9e32c0a3b295137e01879e416275f9830634941"
+        },
+        {
+          "path": "legacy/branches/rough-pair-parity/papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "source_path": "papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "sha256": "05121592cc309ed0f2d834802baf115032a884c8fb53236b64b1f87be8290d5f"
+        }
+      ]
+    },
+    {
+      "branch": "short-box-sieve-kernels",
+      "commit": "a4c8a4a018bf26802033990e13b6f06a8d0190ce",
+      "files": [
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/README.md",
+          "source_path": "papers/rough-pair-parity-transitions/README.md",
+          "sha256": "8a902cc74b181ceff3f7119446a05c010c589ecb780a6224827492a341a32011"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/.gitignore",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/.gitignore",
+          "sha256": "5f820d67cc7ff84fb281a2b9a1a5889d7d04d3aff59abb2411ae9245e7c38a22"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "sha256": "1dceca8ccf117701f42a200f8e048b184e8420515c08737c9ca4f6ef8e91f27a"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/README.md",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/README.md",
+          "sha256": "e425b9a4607a9ef67110e1f69d499cf7f13a7a712a314cff34777a2dc1dec177"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "sha256": "d8dac24078a9a6f0989992259d7253bacab92b7f2099102ffb78c8b2e508ca7c"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "sha256": "33505b899ac3d10d90e247b13e3ea9208a2d11c22839b8522ff214a58d38d735"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "sha256": "d328bec80efe56adaa467a3debb5a5ddc4cbfb286054e6de49da9fae88ab6a55"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "sha256": "6dadb922dba3f31ec1d111918f7360b62a14862fd768e96bb432bd379f2482fc"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "sha256": "132998c5d496149ddec306fa803f84501daa8cfcbdeef5f56e2b74282dad418b"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "sha256": "d65302b3106bbac073ec56897535d632a9e06f84daec42ded18815eab0c7699e"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "sha256": "e529b8a672e4b32f328eb849394b1cbac5e7c362c480d734e003c851eb51cc22"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "sha256": "93ddde6ffd62fd86948de0985e99339a61d7d2cd30d7c204dfa35121f4a25a3a"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "sha256": "9cb016db51c838e08447302979d717dc59a258039a2ad615b62cca2f6e466c50"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "sha256": "eb06514bce92026474fd22743372fd56d3bad20371e3a5f77d2073ba712da8e5"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/experiments/smoke_test.py",
+          "source_path": "papers/rough-pair-parity-transitions/experiments/smoke_test.py",
+          "sha256": "7aa6e8f95aeeda49591f9bd31ea3836114b29bd3fe1dce28bb0cd46978ac83b6"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "source_path": "papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "sha256": "4b08ff1892a5067948b6a8a410d295b6f20372ab106a593cf5a78f21d270bcf5"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "source_path": "papers/rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "sha256": "9dca4045d51faf47a42737bcacd5043ead9fa67bc2b6e66e0e68fbbacc786f03"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/main.tex",
+          "source_path": "papers/rough-pair-parity-transitions/main.tex",
+          "sha256": "8ad1dfbdafd9ceb1f610a766e203e259aac869a865838d24ee8bfd22f5a087b7"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "source_path": "papers/rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "sha256": "015c24ccfb71544aafcb2375788f352c245d8765087630f9043e8a5ac8a0b554"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/rough-pair-parity-transitions/references.bib",
+          "source_path": "papers/rough-pair-parity-transitions/references.bib",
+          "sha256": "bdc2610b44476d6dfdba4033ee2588bc71db1e4bfd8038becc84ce0287a18753"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/README.md",
+          "source_path": "papers/short-box-centered-sieve-kernels/README.md",
+          "sha256": "5e7e3ef14e1e94e0266dc9adaf32bf3b6682ba6712d5e658c04656c7d00d8959"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/centered-local-sieve-kernels-subperiod-shifts.pdf",
+          "source_path": "papers/short-box-centered-sieve-kernels/centered-local-sieve-kernels-subperiod-shifts.pdf",
+          "sha256": "930b036bd50ea1dacb9dd48fcf303285587bf8d54960e10eee5e68ffa29e9091"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/.gitignore",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/.gitignore",
+          "sha256": "b9c333ec5d92c30f0ac162413a1a88bff97222591b7fe7277f078cb9f40348c5"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/README.md",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/README.md",
+          "sha256": "d476d6f0e4892ac71dbc58e8bf33f62862a387b36cede8bdea4bfd438397df39"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/data/reference-grid.csv",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/data/reference-grid.csv",
+          "sha256": "2e0562db0ed85a70c03a8809f64662d6b56ab45db0f4a352135dafc319d54425"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/data/theorem-4.3-certificate.json",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/data/theorem-4.3-certificate.json",
+          "sha256": "d86fe7a9153d05ed6e1095091689da6a135e2dffd5359da98566c62ec55bda5c"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/reference_kernel.py",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/reference_kernel.py",
+          "sha256": "b25983ee38787d33e10893012b1a01995131112e257a57c35e8059b2f22684fa"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/run_reference_grid.py",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/run_reference_grid.py",
+          "sha256": "18f49174c9eed85b7a08eca650bb4a5b1a8e4cade459a193bc7b42b88a735273"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/shift_completion_reference.py",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/shift_completion_reference.py",
+          "sha256": "649b03cddc9394efc9896444152c4c86fd6749e2de20c4ee8f1b3c78b898a845"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/test_reference_grid.py",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/test_reference_grid.py",
+          "sha256": "211b16208cec7f499ef488462c9b1c644d120ada14868820e1258f0c4c2a026c"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/experiments/test_reference_kernel.py",
+          "source_path": "papers/short-box-centered-sieve-kernels/experiments/test_reference_kernel.py",
+          "sha256": "bc953e0161bf9631a4ddfcbc35550373920f702bdfff7938c01fcbc9c8896f74"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/main.tex",
+          "source_path": "papers/short-box-centered-sieve-kernels/main.tex",
+          "sha256": "200b00ad770158c61d376aba92c685f8aeb0552ea363cff971a246baa8f1d028"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/short-box-centered-sieve-kernels/references.bib",
+          "source_path": "papers/short-box-centered-sieve-kernels/references.bib",
+          "sha256": "482911921138d8d77046c43ace32f554c12efecd17d4751d2081c6c8d12b6e67"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/two-scale-prime-sieve-correlations/README.md",
+          "source_path": "papers/two-scale-prime-sieve-correlations/README.md",
+          "sha256": "5bd78c2976c9d525ee644f26d601ad949c0cdd74f570d56bad2c80fbd2359308"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/two-scale-prime-sieve-correlations/main.tex",
+          "source_path": "papers/two-scale-prime-sieve-correlations/main.tex",
+          "sha256": "7583b9e07fd73f28a26cdcd07ae4b3587b1be7a60847535f7aef60cf956c34e2"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/two-scale-prime-sieve-correlations/references.bib",
+          "source_path": "papers/two-scale-prime-sieve-correlations/references.bib",
+          "sha256": "200d0926f8770f4dba7c6f19a9e32c0a3b295137e01879e416275f9830634941"
+        },
+        {
+          "path": "legacy/branches/short-box-sieve-kernels/papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "source_path": "papers/two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "sha256": "05121592cc309ed0f2d834802baf115032a884c8fb53236b64b1f87be8290d5f"
+        }
+      ]
+    },
+    {
+      "branch": "structured-sieve-low-conductor",
+      "commit": "cc8b3fac16294cff4e26d77f903f77aa73a40400",
+      "files": [
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-1-two-scale-prime-sieve-correlations/README.md",
+          "source_path": "papers/tpc-1-two-scale-prime-sieve-correlations/README.md",
+          "sha256": "5bd78c2976c9d525ee644f26d601ad949c0cdd74f570d56bad2c80fbd2359308"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-1-two-scale-prime-sieve-correlations/main.tex",
+          "source_path": "papers/tpc-1-two-scale-prime-sieve-correlations/main.tex",
+          "sha256": "7583b9e07fd73f28a26cdcd07ae4b3587b1be7a60847535f7aef60cf956c34e2"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-1-two-scale-prime-sieve-correlations/references.bib",
+          "source_path": "papers/tpc-1-two-scale-prime-sieve-correlations/references.bib",
+          "sha256": "200d0926f8770f4dba7c6f19a9e32c0a3b295137e01879e416275f9830634941"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-1-two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "source_path": "papers/tpc-1-two-scale-prime-sieve-correlations/two-scale-prime-sieve-correlations.pdf",
+          "sha256": "05121592cc309ed0f2d834802baf115032a884c8fb53236b64b1f87be8290d5f"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/README.md",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/README.md",
+          "sha256": "8a902cc74b181ceff3f7119446a05c010c589ecb780a6224827492a341a32011"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/.gitignore",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/.gitignore",
+          "sha256": "5f820d67cc7ff84fb281a2b9a1a5889d7d04d3aff59abb2411ae9245e7c38a22"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/MANIFEST.md",
+          "sha256": "1dceca8ccf117701f42a200f8e048b184e8420515c08737c9ca4f6ef8e91f27a"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/README.md",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/README.md",
+          "sha256": "e425b9a4607a9ef67110e1f69d499cf7f13a7a712a314cff34777a2dc1dec177"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_factor_bins.csv",
+          "sha256": "d8dac24078a9a6f0989992259d7253bacab92b7f2099102ffb78c8b2e508ca7c"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h10_summary.csv",
+          "sha256": "33505b899ac3d10d90e247b13e3ea9208a2d11c22839b8522ff214a58d38d735"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_factor_bins.csv",
+          "sha256": "d328bec80efe56adaa467a3debb5a5ddc4cbfb286054e6de49da9fae88ab6a55"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h2_summary.csv",
+          "sha256": "6dadb922dba3f31ec1d111918f7360b62a14862fd768e96bb432bd379f2482fc"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_factor_bins.csv",
+          "sha256": "132998c5d496149ddec306fa803f84501daa8cfcbdeef5f56e2b74282dad418b"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h30_summary.csv",
+          "sha256": "d65302b3106bbac073ec56897535d632a9e06f84daec42ded18815eab0c7699e"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_factor_bins.csv",
+          "sha256": "e529b8a672e4b32f328eb849394b1cbac5e7c362c480d734e003c851eb51cc22"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/data/rough_pair_x1e8_h6_summary.csv",
+          "sha256": "93ddde6ffd62fd86948de0985e99339a61d7d2cd30d7c204dfa35121f4a25a3a"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/plot_diagnostics.py",
+          "sha256": "9cb016db51c838e08447302979d717dc59a258039a2ad615b62cca2f6e466c50"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/rough_pair_diagnostics.cpp",
+          "sha256": "eb06514bce92026474fd22743372fd56d3bad20371e3a5f77d2073ba712da8e5"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/experiments/smoke_test.py",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/experiments/smoke_test.py",
+          "sha256": "7aa6e8f95aeeda49591f9bd31ea3836114b29bd3fe1dce28bb0cd46978ac83b6"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.png",
+          "sha256": "4b08ff1892a5067948b6a8a410d295b6f20372ab106a593cf5a78f21d270bcf5"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/figures/rough-pair-x1e8-h2.svg",
+          "sha256": "9dca4045d51faf47a42737bcacd5043ead9fa67bc2b6e66e0e68fbbacc786f03"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/main.tex",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/main.tex",
+          "sha256": "8ad1dfbdafd9ceb1f610a766e203e259aac869a865838d24ee8bfd22f5a087b7"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/polynomial-rough-pair-parity-transitions.pdf",
+          "sha256": "015c24ccfb71544aafcb2375788f352c245d8765087630f9043e8a5ac8a0b554"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-2-rough-pair-parity-transitions/references.bib",
+          "source_path": "papers/tpc-2-rough-pair-parity-transitions/references.bib",
+          "sha256": "bdc2610b44476d6dfdba4033ee2588bc71db1e4bfd8038becc84ce0287a18753"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/README.md",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/README.md",
+          "sha256": "9600e5d0fda3e63834bb22860481a2e599fe806bc20605b5e66752ab1654c426"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/centered-local-sieve-kernels-subperiod-shifts.pdf",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/centered-local-sieve-kernels-subperiod-shifts.pdf",
+          "sha256": "930b036bd50ea1dacb9dd48fcf303285587bf8d54960e10eee5e68ffa29e9091"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/.gitignore",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/.gitignore",
+          "sha256": "b9c333ec5d92c30f0ac162413a1a88bff97222591b7fe7277f078cb9f40348c5"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/README.md",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/README.md",
+          "sha256": "d476d6f0e4892ac71dbc58e8bf33f62862a387b36cede8bdea4bfd438397df39"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/data/reference-grid.csv",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/data/reference-grid.csv",
+          "sha256": "2e0562db0ed85a70c03a8809f64662d6b56ab45db0f4a352135dafc319d54425"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/data/theorem-4.3-certificate.json",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/data/theorem-4.3-certificate.json",
+          "sha256": "d86fe7a9153d05ed6e1095091689da6a135e2dffd5359da98566c62ec55bda5c"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/reference_kernel.py",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/reference_kernel.py",
+          "sha256": "b25983ee38787d33e10893012b1a01995131112e257a57c35e8059b2f22684fa"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/run_reference_grid.py",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/run_reference_grid.py",
+          "sha256": "18f49174c9eed85b7a08eca650bb4a5b1a8e4cade459a193bc7b42b88a735273"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/shift_completion_reference.py",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/shift_completion_reference.py",
+          "sha256": "649b03cddc9394efc9896444152c4c86fd6749e2de20c4ee8f1b3c78b898a845"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/test_reference_grid.py",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/test_reference_grid.py",
+          "sha256": "211b16208cec7f499ef488462c9b1c644d120ada14868820e1258f0c4c2a026c"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/experiments/test_reference_kernel.py",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/experiments/test_reference_kernel.py",
+          "sha256": "bc953e0161bf9631a4ddfcbc35550373920f702bdfff7938c01fcbc9c8896f74"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/main.tex",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/main.tex",
+          "sha256": "200b00ad770158c61d376aba92c685f8aeb0552ea363cff971a246baa8f1d028"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-3-short-box-centered-sieve-kernels/references.bib",
+          "source_path": "papers/tpc-3-short-box-centered-sieve-kernels/references.bib",
+          "sha256": "482911921138d8d77046c43ace32f554c12efecd17d4751d2081c6c8d12b6e67"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/README.md",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/README.md",
+          "sha256": "d04b2080e782539577c2a97053635df7d36210d25a2836ef8deb408617a29982"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/.gitignore",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/README.md",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/README.md",
+          "sha256": "3b8d41b2627408301504a2f962f6a2a4398fc03949ddc42e536f519de9c541be"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/data/exact-certificate.json",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/data/exact-certificate.json",
+          "sha256": "d6637e1ba7432be9fadf2daea08519d66ae6207132a7efd7cb2412a5d2ecc0bc"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/exact_diagnostics.py",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/exact_diagnostics.py",
+          "sha256": "3503dfda93b75232238acb50a7373489f1ac5b38f8f55bb72c8a677b4879785e"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/test_exact_diagnostics.py",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/experiments/test_exact_diagnostics.py",
+          "sha256": "1036d7b1c34b8045d67bc1891870fac95bff69cb305841a36cf1ea4ded668451"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/low-conductor-power-short-rough-boxes.pdf",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/low-conductor-power-short-rough-boxes.pdf",
+          "sha256": "d80f23ea50a537e5bcae9244386120a7b1996eb33b799e558b83f50270577c01"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/main.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/main.tex",
+          "sha256": "53fbda9c7bb035b859be110caf47917d26adb70c54754df6abe92c2bc3328075"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/references.bib",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/references.bib",
+          "sha256": "29bd90e1966808cda202961636af38761fbf3ab543d78f3cb7286b37ee18786f"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/burgess-power-short.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/burgess-power-short.tex",
+          "sha256": "636d50ef52af6e35ac27982f339b26d81831c2b208cee15f75f58a67c6c886ff"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/certificates-boundaries.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/certificates-boundaries.tex",
+          "sha256": "4572bc8054f81be92e5cf5b75d2ef825f4dee0e7ecef01ec14fb09c2d2e865ba"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/introduction-scope.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/introduction-scope.tex",
+          "sha256": "15c5e245f94420d7b1cfd28fa4d8170409eea2fb25c9a40824c5d985780d531e"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/kernel-framework.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/kernel-framework.tex",
+          "sha256": "8d7842d52ce21f5603f3c85e98a5cf0b3772e83b55c97c395172d51985b1e0f0"
+        },
+        {
+          "path": "legacy/branches/structured-sieve-low-conductor/papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/shifted-square-design.tex",
+          "source_path": "papers/tpc-4-low-conductor-suppression-power-short-rough-boxes/sections/shifted-square-design.tex",
+          "sha256": "3534990a5f482e4554739cedd3baf230f3bcd79f3696b3424866387b93105f71"
+        }
+      ]
+    }
+  ]
+}

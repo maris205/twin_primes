@@ -1,0 +1,65 @@
+{
+  "source_commit": "02d51d372e9c95ffc2ed36727829363a32cec030",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "source_sha256": "6014af5a2b1df7a4519fab48b45684c712faab4164c22f981debd5f59b7684cb",
+      "migrated_sha256": "e8567b234f64968c39930bfa9006b7624e7b7a66ae913e044de3e82c6b421e59",
+      "reason": "TPC-only repository protocol and new SSH remote."
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "abafb5de352e38d6e687f11def4d8f3585c9089536c913f751167a8c766dbf0c",
+      "migrated_sha256": "61fc5e59577b36fd95aeadf6176a2e61669977dcaf2a1bc446fd78ae39b1ebf5",
+      "reason": "New TPC-only landing page; old original retained in provenance."
+    },
+    {
+      "path": "TPC_HANDOFF.md",
+      "source_sha256": "234aa1533a7ade0775cd91d4e9d6f79ad80eca0c28fb662a547a1bdc4bd5d2d4",
+      "migrated_sha256": "fee6147d2a01b324b723949a19c5a4ddd470237a315974b37acd18bd09e82bc8",
+      "reason": "Migration note and current TPC-only coverage; dated history retained."
+    },
+    {
+      "path": "research/tpc-big-road/PAPER_MATERIALS_INDEX.md",
+      "source_sha256": "55ad2716cf7469b3d5e4fcd2851fd89fac4aee41f728bc2b1519afc8d1bfdac3",
+      "migrated_sha256": "d10b1c95979277b3704cdcbed80e617d2974988782a8f4de52dc10bdae001d20",
+      "reason": "Remove unrelated RH rows and refresh current counts."
+    },
+    {
+      "path": "research/tpc-big-road/PAPER_MATERIALS_LINKS.md",
+      "source_sha256": "761a214ed705168d234911131a85fb21ff40a77775750f32ac50dd2a37c91249",
+      "migrated_sha256": "9045077e6d4fba316f0f4aa9678c7dca86a3c0a1a0e01f5d27352e49b1babe3b",
+      "reason": "Remove unrelated RH links and refresh timestamp."
+    },
+    {
+      "path": "research/tpc-big-road/PAPER_MATERIALS_REMAINING.md",
+      "source_sha256": "3c0ddb4100f0c3ee1937c28f2f7d54351089d8b130db3902e8dea15f0e73b468",
+      "migrated_sha256": "834a7c365399148a5f90797b2bdb1060af4b06db155727f9685e5045cb056aab",
+      "reason": "Regenerate TPC-only maintenance backlog."
+    },
+    {
+      "path": "research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md",
+      "source_sha256": "89255aab5b2b66901c40fd551d233978e965eb30d18c6f2f74a4261e9b5ace92",
+      "migrated_sha256": "1f6e46645a3c1cd5e668794a5d0c6f2ac272d549f1f4cee2edb93bf2c1c7366f",
+      "reason": "Refresh TPC inventory context and timestamp."
+    },
+    {
+      "path": "research/tpc-big-road/TPC_HISTORY_SUMMARY.md",
+      "source_sha256": "8ee5b897f61103b2a0ff862aeb8e5f8274dd400dd7547c93d5895201405abce2",
+      "migrated_sha256": "ff722966718353e80b0c68ed5bf18da4d58e9893802a66354d8e872acb56fcda",
+      "reason": "Current coverage scoped to 420 TPC directories."
+    },
+    {
+      "path": "research/tpc-big-road/refresh_source_markdown_inventory.py",
+      "source_sha256": "06d9f0eb3e0fad3f763f6532a36577ca98367b3c63fa88593f024c7848ca6693",
+      "migrated_sha256": "fabe7427f6033fe66e4527bf0af0902ecece0acccf53089662649fc23901b0a9",
+      "reason": "Replace mixed-repository count with exact TPC directory coverage guard."
+    },
+    {
+      "path": "research/tpc-big-road/test_source_markdown_inventory.py",
+      "source_sha256": "c62907a21dc1767dc80f13320dcec3b8d7bf946275033f712c381c47c2836434",
+      "migrated_sha256": "8e25b885040d34eb673538733490ef16916fc4a9420450501df2c8cd453dd4af",
+      "reason": "TPC-only backlog fixtures and expectations."
+    }
+  ]
+}

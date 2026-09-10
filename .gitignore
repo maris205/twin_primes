@@ -1,0 +1,17 @@
+# Local environments, caches, and newly generated build intermediates.
+# Existing committed proof/checker inputs remain versioned, even if matched.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+*.aux
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.log
+
+# Original PDF aliases and provenance packs are intentional archive material.

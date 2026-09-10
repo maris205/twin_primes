@@ -1,0 +1,9 @@
+# Versions present in the migration-validation environment (Python 3.12.3).
+# Historical experiments may have additional requirements; see their README.
+numpy==2.4.4
+scipy==1.16.1
+sympy==1.14.0
+mpmath==1.3.0
+matplotlib==3.10.5
+pandas==2.3.2
+networkx==3.5

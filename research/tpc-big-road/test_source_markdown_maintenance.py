@@ -170,7 +170,7 @@ class ConversionIntegration(unittest.TestCase):
 
     def test_original_paper_pdf_fallback_keeps_provenance(self):
         paper, md, record, report = m.convert(305, source_commit="ed725e6537012bd17a32d061d9d8e6dd3b253613")
-        self.assertEqual(m.preserved_pdf(paper), paper / 'paper/paper.pdf')
+        self.assertEqual(m.preserved_pdf(paper, source_commit="ed725e6537012bd17a32d061d9d8e6dd3b253613"), paper / 'paper/paper.pdf')
         self.assertIn("Preserved PDF: [paper.pdf](paper.pdf)", md)
         self.assertIn("Preserved PDF: [paper/paper.pdf](paper/paper.pdf)", record)
         self.assertEqual(report['pdf_sha256'], m.digest((paper / 'paper/paper.pdf').read_bytes()))

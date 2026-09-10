@@ -18,6 +18,7 @@
 - [全文转换范围与已知限制](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
 - [逐目录未完成事项](research/tpc-big-road/PAPER_MATERIALS_REMAINING.md)
 - [迁移范围、历史源与复现说明](docs/REPRODUCIBILITY.md)
+- [本次迁移验证记录](docs/MIGRATION_VALIDATION.md)
 
 ## 内容组织
 

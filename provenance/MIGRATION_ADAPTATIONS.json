@@ -10,7 +10,7 @@
     {
       "path": "README.md",
       "source_sha256": "abafb5de352e38d6e687f11def4d8f3585c9089536c913f751167a8c766dbf0c",
-      "migrated_sha256": "61fc5e59577b36fd95aeadf6176a2e61669977dcaf2a1bc446fd78ae39b1ebf5",
+      "migrated_sha256": "92b87da6332c53efb497ea2b3909bc251e57efb82585efd5cfd1b54adf1127c7",
       "reason": "New TPC-only landing page; old original retained in provenance."
     },
     {
@@ -60,6 +60,12 @@
       "source_sha256": "c62907a21dc1767dc80f13320dcec3b8d7bf946275033f712c381c47c2836434",
       "migrated_sha256": "8e25b885040d34eb673538733490ef16916fc4a9420450501df2c8cd453dd4af",
       "reason": "TPC-only backlog fixtures and expectations."
+    },
+    {
+      "path": "research/tpc-big-road/test_source_markdown_maintenance.py",
+      "source_sha256": "1eb7981da361a1665714c498afd5770e9f5bba12da0cd1e9b54be40ebca5b1f7",
+      "migrated_sha256": "5f01883ae2135c4c6d3562289ec92b7f74b75e7d1b34bd6e8ac26936de1b3ce6",
+      "reason": "Pin historical PDF fallback assertion to its explicit source commit, not current HEAD with a restored alias."
     }
   ]
 }

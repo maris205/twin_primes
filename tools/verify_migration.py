@@ -19,6 +19,7 @@ ADAPTED = {
     'research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md': 'Refresh TPC inventory context and timestamp.',
     'research/tpc-big-road/refresh_source_markdown_inventory.py': 'Replace mixed-repository count with exact TPC directory coverage guard.',
     'research/tpc-big-road/test_source_markdown_inventory.py': 'TPC-only backlog fixtures and expectations.',
+    'research/tpc-big-road/test_source_markdown_maintenance.py': 'Pin historical PDF fallback assertion to its explicit source commit, not current HEAD with a restored alias.',
 }
 
 def baseline(root):

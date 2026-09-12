@@ -1,0 +1,20 @@
+{
+  "scope": "Translation document integrity; not semantic proof or novelty certification",
+  "chinese_files_preserved": 30,
+  "map_sha256": "83c729864e69fc87569ec23ad0b1c7d6251fedd3b61f059881d17fec37ef24fa",
+  "pdf_sha256": "cbe2587a122816583141e68dea7ec352769f237e2519b50d1255b20b9e855867",
+  "section_parity": {
+    "abstract.tex": "labels/citations/proofs/formal statements match",
+    "arithmetic.tex": "labels/citations/proofs/formal statements match",
+    "barriers.tex": "labels/citations/proofs/formal statements match",
+    "boundary.tex": "labels/citations/proofs/formal statements match",
+    "bridges.tex": "labels/citations/proofs/formal statements match",
+    "dynamics.tex": "labels/citations/proofs/formal statements match",
+    "emitter.tex": "labels/citations/proofs/formal statements match",
+    "introduction.tex": "labels/citations/proofs/formal statements match",
+    "models.tex": "labels/citations/proofs/formal statements match",
+    "operator.tex": "labels/citations/proofs/formal statements match",
+    "provenance.tex": "labels/citations/proofs/formal statements match",
+    "structure.tex": "labels/citations/proofs/formal statements match"
+  }
+}

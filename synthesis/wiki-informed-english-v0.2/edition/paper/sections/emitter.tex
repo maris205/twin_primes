@@ -1,0 +1,94 @@
+\section{Kloosterman emission and two-sided attachment}\label{sec:emitter}
+The full-range representation and the critical-range estimate concern different inputs. The former retains the exact positive packets and has a saturation identity; the latter acts on two short arrays. The relevant attachment must therefore be made to the signed, diagonal-removed expression, with explicit recombination and residual costs. This section makes that distinction quantitative.
+\subsection{The complete Kloosterman representation}
+Let $\eta_b$ be the real partition functions constructed in Section~\ref{sec:boundary}, and define the finite set of physical labels
+\[
+\mathcal J_x=\{j\in\ZZ:\operatorname{supp}\eta_{j,H}\cap[x/2,x]\ne\varnothing\},
+\qquad |\mathcal J_x|=O(x/H+1).
+\]
+All ordered block pairs and their sums in this section are restricted to $(b,c)\in\mathcal J_x^2$. Set
+$a^{(j)}(t)=\eta_b(t)\beta(t)+\ii^j\eta_c(t)w(t)$ for $j=0,1,2,3$.
+For fixed $q\in\QQ$ and $v\in\RR$, define the sums on unit residue classes and their centered versions by
+\[
+F_r^{(j)}=\sum_{t\in I_x,\ t\equiv r(q)}a^{(j)}(t)\e(vt/H),\qquad
+F_r^{(j),0}=F_r^{(j)}-\frac1{q-1}\sum_{s\ne0}F_s^{(j)}.
+\]
+Set the centered vector to zero at the zero residue class. Suppressing the superscript $j$, put
+\[
+\alpha_m=\frac1q\sum_{r\ne0}F_r^0\e(-mr/q),\quad
+\gamma_n=\frac1q\sum_{r\ne0}\overline{F_r^0}\e(-n\bar r/q),\quad 1\le m,n<q,
+\]
+where $\bar r$ is the multiplicative inverse of $r$ modulo $q$.
+\begin{proposition}[Emission identity and saturation]\label{prop:emitter}
+For the unnormalized Kloosterman sum $S(m,n;q)=\sum_{r\ne0}\e((mr+n\bar r)/q)$,
+\[
+\mathcal B=\sum_{m,n=1}^{q-1}\alpha_m\gamma_nS(m,n;q)
+=\sum_{r\ne0}|F_r^0|^2
+=q\norm\alpha\norm\gamma.
+\]
+\end{proposition}
+\begin{proof}
+Centering makes the zero frequency of both Fourier transforms vanish. Expand $S$ and apply finite Fourier inversion to the two inner sums, recovering $F_r^0$ and $\overline{F_r^0}$. Parseval gives
+$\norm\alpha^2=\norm\gamma^2=q^{-1}\norm{F^0}^2$, since inversion permutes the unit residue classes.
+\end{proof}
+This is an exact representation, not a cancellation estimate. The arrays have range $q-1$; centering does not shorten them to length $\sqrt q$. For example, if $F^0=e_1-e_2$, every nonzero frequency of the first array is nonzero. This example tests the interface; it does not identify the actual arithmetic vector with that example.
+
+Appendix~\ref{sec:models} gives the complementary one-sided obstruction: even two first coordinates and a complete centered second array retain the generic norm scale $q$. Neither statement excludes cancellation after signed reassembly of the actual coefficients.
+
+\subsection{Signed recombination before residual estimates}
+Write
+\[
+d_j(q)=\frac{q-2}{q-1}\sum_{t\in I_x,\ q\nmid t}|a^{(j)}(t)|^2,\qquad
+E_{bcq}=\int\psi_+(v)\frac14\sum_{j=0}^3\ii^j[\mathcal B_j-d_j(q)]\,dv.
+\]
+Expanding the four squares and using $\sum_j\ii^j=\sum_j\ii^{2j}=0$ gives
+\begin{equation}
+\Cx=\sum_{b,c}\sum_{q\in\QQ}qE_{bcq}.\label{eq:polarreturn}
+\end{equation}
+The phase inside the integral is $\e(v(t-u)/H)$, with the same orientation as the kernel in Section~\ref{sec:operator}.
+Subtracting $d_j$ removes the diagonal exactly; the outer factor $q$ must not be counted twice. Each of the four positive packages may saturate even when their signed combination exhibits cancellation. Taking their absolute values separately loses this distinction.
+
+For arrays supported on integer intervals and vanishing at multiples of $q$, write
+\[
+\mathcal B_q(A_1,A_2)=\sum_{m,n}A_1(m)A_2(n)S(m,n;q).
+\]
+The unit multiplier is always $1$ here and does not vary with the decomposition index.
+When both integer intervals have length at most a constant multiple of $\sqrt q$, the unit multiplier and coprimality hypotheses of the Blomer--Pascadi theorem yield the critical-scale bound
+\begin{equation}
+|\mathcal B_q(A_1,A_2)|\ll_\epsilon q^{31/32+\epsilon}
+\norm{A_1}\norm{A_2}.\label{eq:bp}
+\end{equation}
+We use the prime-modulus, nonzero-index specialization of their Theorem~1.1~\cite{blomer2026}, not a direct application to the complete emitted arrays.
+Cutting each length-$q-1$ array into $k\asymp\sqrt q$ blocks gives
+\[
+\sum_{A,B}\norm{\alpha_A}\norm{\gamma_B}\le k\norm\alpha\norm\gamma.
+\]
+Applying \eqref{eq:bp} rectangle by rectangle therefore produces only a $q^{47/32+o(1)}$ norm factor, worse than the full scale in Proposition~\ref{prop:emitter}. This is the cost of that recombination method, not an impossibility theorem for every decomposition.
+
+\begin{condition}[Unproved two-sided attachment with a loss budget]\label{cond:compression}
+Fix a loss exponent $\ell\ge0$ and $A_0>2$ before sending $x\to\infty$; let
+$\omega_{bc}=(1+|b-c|)^{-A_0}$ for $(b,c)\in\mathcal J_x^2$.
+For the already signed, diagonal-removed, integrated quantity $E_{bcq}$, there is a decomposition
+\[
+E_{bcq}=\sum_\nu\lambda_\nu\mathcal B_q(A_{1,\nu},A_{2,\nu})+R_{bcq},
+\]
+in which every rectangle satisfies all hypotheses of \eqref{eq:bp}, and
+\begin{align*}
+\sum_\nu|\lambda_\nu|\norm{A_{1,\nu}}\norm{A_{2,\nu}}
+&\ll\omega_{bc}(H/q)x^{\ell+o(1)},\\
+|R_{bcq}|&\ll\omega_{bc}Hq^{-1/32}x^{\ell+o(1)}.
+\end{align*}
+The constants and small-exponent terms are uniform over all original ordered block pairs and the full prime shell, with no unpaid exceptional set.
+\end{condition}
+If this condition holds, then
+\[
+\sum_{b,c\in\mathcal J_x}\omega_{bc}
+\le |\mathcal J_x|\sum_{h\in\ZZ}(1+|h|)^{-A_0}\ll x/H,
+\]
+and \eqref{eq:bp}, followed by the outer prime sum, gives
+\[
+|\Cx|\ll (x/H)H\sum_{q\in\QQ}q^{31/32}x^{\ell+o(1)}
+\ll xQ^2x^{-1/96+\ell+o(1)}.
+\]
+Here $o(1)$ means that an arbitrarily small fixed positive exponent loss can be absorbed at sufficiently large scales: first fix a strict margin, then choose $\epsilon$ in \eqref{eq:bp} sufficiently small.
+Thus $\ell<19/2400$ suffices to pay for $\delta>1/400$. This is a conditional exponent ledger. We do not prove Condition~\ref{cond:compression}, nor require every successful route to use this decomposition.

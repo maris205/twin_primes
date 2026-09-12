@@ -1,0 +1,136 @@
+{
+  "pdf": "main.pdf",
+  "pdf_sha256": "cbe2587a122816583141e68dea7ec352769f237e2519b50d1255b20b9e855867",
+  "page_count": 24,
+  "command": [
+    "pdftoppm",
+    "-r",
+    "105",
+    "-png",
+    "/root/autodl-tmp/math_research3/twin_primes/synthesis/seven-island-monograph/paper-en/main.pdf",
+    "/tmp/tpc-english-visual-20fy3j2q/page"
+  ],
+  "purpose": "Rendering provenance, not mathematical verification",
+  "pages": [
+    {
+      "page": 1,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-01.png",
+      "sha256": "57e9cd5f171b0cd7f4b8fd49edb7661b19e8321b90b11fc8ed2349ef6dc55de9"
+    },
+    {
+      "page": 2,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-02.png",
+      "sha256": "ee211d63ab931319cea71477da57e0fec156b61a28533da26bdf059aa123c28a"
+    },
+    {
+      "page": 3,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-03.png",
+      "sha256": "ea3e39aed3fb55c25c6545e00c68969f09bf01c6af190e97af9588096ae2bb1e"
+    },
+    {
+      "page": 4,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-04.png",
+      "sha256": "624a0fbfb67d6da19e5610a77d8016d6da33730ea258d4a7168ba6e73c131325"
+    },
+    {
+      "page": 5,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-05.png",
+      "sha256": "dd699e28b4601cd0297c6a80499b981695b1792d0efa3828f270d2af7a43413a"
+    },
+    {
+      "page": 6,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-06.png",
+      "sha256": "bd0598b69f43c49a9b733b7f0bee7a4f5c28f320a949a6265c3f9330952f605b"
+    },
+    {
+      "page": 7,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-07.png",
+      "sha256": "b520e469a0de0a0368e9749a3b79db96e8e4163473c7495fb17f639ef2c5e7c9"
+    },
+    {
+      "page": 8,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-08.png",
+      "sha256": "6f84137bdbc6e2c3570008fbe622d044f21f85fa453442f3487a4eca7299957f"
+    },
+    {
+      "page": 9,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-09.png",
+      "sha256": "224c219b17370690795d6cdb2120e8378f191c8792d05cbf2bafd9fa97ee6b15"
+    },
+    {
+      "page": 10,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-10.png",
+      "sha256": "bdb397c3b9b35b135f69aa8d15dc9fced8c58c62c3e6e16758b610493d4534b0"
+    },
+    {
+      "page": 11,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-11.png",
+      "sha256": "e76519bb4eca1879f14b3e3b57ea1765ac8feb3069f571372d02f99727d7fc1b"
+    },
+    {
+      "page": 12,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-12.png",
+      "sha256": "c1b251c695337185ea56bd75d70a93c60e4aa7648d59ba9509a51a0552e36535"
+    },
+    {
+      "page": 13,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-13.png",
+      "sha256": "07bdc1ca86be6a2d67899d0bdfa6467e916a7a63a32bc5412b87297b87fc83ce"
+    },
+    {
+      "page": 14,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-14.png",
+      "sha256": "674b2e1207e2de59592f0a06c7ac39830cec072299ab7abd7170377c9acaa603"
+    },
+    {
+      "page": 15,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-15.png",
+      "sha256": "b904f1fda6f37c6d63b83dd90fec1415f8872ed848c0c4ea7e781971005fa9aa"
+    },
+    {
+      "page": 16,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-16.png",
+      "sha256": "c6db6a619ea2935f493ec08b16526c0725eed6492f3edaeec4c4ca898e95846a"
+    },
+    {
+      "page": 17,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-17.png",
+      "sha256": "7b80eff2e3ac8610f4ee69eda0502f1e6aaa0f10bb6394af0437b0b1829eb328"
+    },
+    {
+      "page": 18,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-18.png",
+      "sha256": "91f9ba8c84054e19ceaa036aeb10977c2f10238fd3b86948039187d847b94401"
+    },
+    {
+      "page": 19,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-19.png",
+      "sha256": "853fcc28206193f4184eafad37673d23413dc80b712cb6dc946b1d4345b95f99"
+    },
+    {
+      "page": 20,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-20.png",
+      "sha256": "a52aece631a3bc4ec8c0c900d3d6846eade18903749b87a30874465b71e75652"
+    },
+    {
+      "page": 21,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-21.png",
+      "sha256": "923dd337b8d8a9d9cbec6784b9661b8cb09805cb034518158af2f9ce2cff9ad2"
+    },
+    {
+      "page": 22,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-22.png",
+      "sha256": "1e2efa4f921deff5004148de657b658a8cc27b88b869c3af12334d0d965dbfe3"
+    },
+    {
+      "page": 23,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-23.png",
+      "sha256": "a056f76f212b3a8ea10d370360aab0c111887f282b8df71775658021cb356fbc"
+    },
+    {
+      "page": 24,
+      "image": "/tmp/tpc-english-visual-20fy3j2q/page-24.png",
+      "sha256": "c74038c0ad28b8f0027e2f11ca1a03c217da391208b66b12aece9ddd04f77741"
+    }
+  ]
+}

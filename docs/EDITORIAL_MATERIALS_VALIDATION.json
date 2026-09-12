@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "Artifact and source fidelity; no mathematical certification",
+  "groups": {
+    "wiki": {
+      "files": 7784,
+      "bytes": 297862144
+    },
+    "english-v0.2": {
+      "files": 51,
+      "bytes": 25001392
+    },
+    "original-synthesis": {
+      "files": 81,
+      "bytes": 22413986
+    },
+    "ai-v0.3": {
+      "files": 64,
+      "bytes": 25255326
+    }
+  },
+  "wiki_generated_files_checked": 7768,
+  "wiki_source_copies_checked": 4361,
+  "repository_facing_links_checked": 43,
+  "raw_audits_retained": 4,
+  "original_protected_files_checked": 156,
+  "ai_v0_3_final_pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "fresh_wiki_navigation": {
+    "status": "PASS",
+    "note_count": 3393,
+    "internal_links": 79799,
+    "unreachable_core_notes": [],
+    "cache_write_location": "/tmp/tpc-import-wiki-links-vemlf1rw",
+    "scope": "Fresh Markdown/Obsidian internal navigation parsing, not desktop or proof verification"
+  }
+}

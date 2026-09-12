@@ -1,0 +1,183 @@
+\section{Norm scales, actual coefficient costs, and low-rank obstructions}\label{sec:barriers}
+\subsection{An upper bound from frequency separation}
+Fix finite constants $B_\psi,B_\kappa$ such that
+\[
+0\le\psi_+(v)\le B_\psi(1+|v|)^{-2},\qquad
+|\kappa(y)|\le B_\kappa(1+|y|)^{-2}.
+\]
+\begin{lemma}\label{lem:upper}
+For $Q\ge2$,
+\[
+\norm A\le4B_\psi(H+4Q^2)+3Q^2.
+\]
+\end{lemma}
+\begin{proof}
+Distinct reduced fractions $a/q$ are separated on the circle by at least $(4Q^2)^{-1}$, including the gap across zero. The convolution kernel
+$\kappa(h/H)\sum_{q,a}\e(ah/q)$ on all integers has Fourier multiplier
+\[
+m(\theta)=H\sum_{q,a}\sum_{k\in\ZZ}\psi_+\big(H(a/q-\theta-k)\big)\ge0
+\]
+by Poisson summation for the fixed Schwartz kernel. The points on the right are separated on the real line by at least $s=H/(4Q^2)$. Each half-open unit interval contains at most $1+1/s$ points. Splitting the positive and negative half-lines and summing $(1+j)^{-2}$ gives
+$m(\theta)\le4B_\psi H(1+1/s)$.
+Compression to $I_x$ cannot increase the norm. Proposition~\ref{prop:decomp} gives $\norm{A+\diag\Delta}\le\norm T$, and
+$\max\Delta<\sum_{Q<q\le2Q}q\le3Q^2$. The claimed bound follows.
+\end{proof}
+Since $H<Q^2$, the physical scales satisfy $\norm A\ll_\psi Q^2$. No cancellation in $\beta,w$ is used.
+
+\subsection{Energy of every actual row}
+\begin{proposition}\label{prop:energy}
+For the fixed kernel and every sufficiently large $x$, uniformly in $u\in I_x$,
+\[
+G(u)\asymp_\psi\frac{HQ^2}{\log Q}.
+\]
+\end{proposition}
+\begin{proof}
+Continuity and $\kappa(0)=1$ give fixed $0<\rho,b\le1$ with $|\kappa(y)|\ge b$ for $|y|\le\rho$. For $q\nmid u$, put
+\[
+S_q(u)=\sum_{\substack{t\in I_x\\t\ne u,\ q\nmid t}}|\kappa((u-t)/H)|^2,\quad
+C_q(u)=\sum_{\substack{t\in I_x\\t\ne u,\ q\mid u-t}}|\kappa((u-t)/H)|^2.
+\]
+Squaring gives the exact identity
+\[
+G(u)=\sum_{\substack{q\in\QQ\\q\nmid u}}a_q^2
+\big(S_q(u)+(q-1)(q-3)C_q(u)\big).
+\]
+Integral comparison yields $S_q(u)\le2B_\kappa^2H/3$ and
+$C_q(u)\le2B_\kappa^2H/(3q)$. Since $1+(q-1)(q-3)/q\le q$, the contribution of each prime is at most $(2B_\kappa^2/3)a_q^2qH$.
+
+If $N-1\ge2\rho H$ and $H\ge2Q/\rho$, at least one side of every row contains
+$\lfloor\rho H/q\rfloor\ge\rho H/(2q)$ nonzero congruent differences. Their entries are still units, and $(q-2)^2\ge q^2/9$. This prime therefore contributes at least $(\rho b^2/18)a_q^2qH$.
+
+An integer $u\le x=Q^3$ has at most two distinct prime factors greater than $Q$. Removing the primes dividing $u$ from
+$S_Q=\sum_{q\in\QQ}a_q^2q$ loses at most $9Q$. The prime number theorem and partial summation give $S_Q\sim(3/2)Q^2/\log Q$. Beyond a common threshold $S_Q\ge18Q$, so
+\[
+\frac{\rho b^2}{36}HS_Q\le G(u)\le\frac{2B_\kappa^2}{3}HS_Q
+\]
+for all actual rows.
+\end{proof}
+The restriction $u\le Q^3$ is essential to this argument. This is not a theorem for equal-length intervals at arbitrary huge origins or for arbitrary coordinate prefixes.
+
+\subsection{A constant-vector witness and the actual coefficients}
+\begin{theorem}[Obstruction to coefficient-blind norm bounds]\label{thm:normbarrier}
+For the fixed data of Section~\ref{sec:operator},
+\[
+\norm A\ge(3/2+o(1))\frac{Q^2}{\log Q},\qquad
+\norm w^2\sim\frac x2\log x,\qquad
+\norm\beta^2\ge\left(\frac12\log\frac{27}{22}+o(1)\right)\frac x{\log x}.
+\]
+Consequently,
+\[
+\liminf_{x\to\infty}\frac{\log Q}{xQ^2}\norm A\,\norm\beta\,\norm w
+\ge\frac34\sqrt{\log(27/22)}>0.
+\]
+Any proof using only $B_x\norm\beta\norm w$, with $B_x\ge\norm A$, cannot by itself supply a fixed positive power saving.
+\end{theorem}
+\begin{proof}
+Let $f=N^{-1/2}\1_{I_x}$. Before diagonal deletion, the positive form is
+\[
+\ip f{(A+\diag\Delta)f}=\frac1N\sum_q q\int\psi_+(v)V_q(v/H)\,dv,
+\]
+where $V_q(\alpha)$ is the sum of squared deviations of the unit-residue sums
+$\sum_{n\equiv r(q),\,n\in I_x}\e(\alpha n)$ from their mean over the units. It is not further divided by $q-1$. Write
+$I_x=\{a+1,\ldots,a+N\}$ and $N=mq+s$, $0\le s<q$, and define
+\[
+\begin{gathered}
+G_m(y)=\sum_{k=0}^{m-1}\e(ky),\\
+S_j(\alpha)=\e(\alpha(a+j))\bigl(G_m(\alpha q)+\1_{j\le s}\e(\alpha mq)\bigr),
+\quad1\le j\le q.
+\end{gathered}
+\]
+The sum $S_j$ is exactly the residue sum for $a+j$, comprising $m$ complete periods and at most one terminal term. If $0<|\alpha|q\le1/2$,
+\[
+|G_m(\alpha q)|\le(2|\alpha|q)^{-1},\qquad
+|\e(\alpha j)-1|\le2\pi|\alpha|q\quad(1\le j\le q).
+\]
+Each sum thus lies within $\pi+1$ of a common center, and within $1$ when $\alpha=0$. Subtracting the mean minimizes the sum of squared distances, giving $V_q(\alpha)\le q(\pi+1)^2$. The fixed frequency support and the eventual inequality $2Q/H<1/2$ place the whole integral in this range. The positive form is therefore
+$O(Q^3/(N\log Q))=O(1/\log Q)$.
+On the other hand, the number of unit integers is $N_q=N(1-1/q)+O(1)$, whence
+\[
+\ip f{Af}=-\sum_{q\in\QQ}(q-2)+O(1/\log Q).
+\]
+The prime number theorem and partial summation give the operator lower bound.
+
+For $w$, define $c(p)=((p-1)/(p-2))^2-1=O(1/p)$ and extend multiplicatively on squarefree integers. Expand the nonnegative Euler product, discard masks bounded by $1$, and enlarge the interval to obtain
+\[
+\norm{b_x^{(z)}}^2\le xW_z^2\prod_{p>z}(1+c(p)/p)\ll xW_z^2.
+\]
+The product converges since $c(p)/p=O(p^{-2})$. Mertens' product theorem gives
+$W_z\ll\log z\ll_K\log\log x$. The prime number theorem also gives
+$\sum_{u\in I_x}\Lambda(u+2)^2\sim(x/2)\log x$, with proper prime powers contributing a lower-order term. The two-sided triangle inequality for norms proves the asymptotic for $w$, without assuming orthogonality between $b_x^{(z)}$ and $\Lambda$.
+
+For $\beta$, take primes $x^{2/5}<p\le x^{9/20}$ and $x/(2p)<r\le x/p$. Eventually $p<r$, and both exceed $U$. Thus $n=pr\in I_x$, $\Lambda(n)=0$, and the only divisor of $n$ at most $U$ is $1$, so $\beta(n)=-1$. The smaller prime factor is unique, avoiding repeated counts. The ordinary prime number theorem in doubling intervals is uniform over this range. The number of such products is
+\[
+(1+o(1))\frac x2\sum_{x^{2/5}<p\le x^{9/20}}\frac1{p\log(x/p)}
+=\left(\frac12\log\frac{27}{22}+o(1)\right)\frac x{\log x}.
+\]
+The final equality follows by partial summation and
+$\int_{2/5}^{9/20}[a(1-a)]^{-1}\,da=\log(27/22)$.
+Multiplying the three lower bounds proves the last assertion.
+\end{proof}
+
+\begin{corollary}\label{cor:normalized}
+For the specified row-energy normalization,
+\[
+H^{-1}\ll_\psi\norm Z\ll_\psi(\log Q)/H.
+\]
+Moreover, $\norm Z\,\norm{D_G^{1/2}\beta}\,\norm{D_G^{1/2}w}$ is still at least
+$c_\psi xQ^2/\log Q$ for some $c_\psi>0$.
+\end{corollary}
+\begin{proof}
+Since $A=D_G^{1/2}ZD_G^{1/2}$,
+$\norm A/G_{\max}\le\norm Z\le\norm A/G_{\min}$.
+Each weighted vector contributes a factor of at least $\sqrt{G_{\min}}$ relative to its unweighted norm. Thus the norm-product expression is at least
+\[
+(G_{\min}/G_{\max})\norm A\norm\beta\norm w.
+\]
+Apply Proposition~\ref{prop:energy} and Theorem~\ref{thm:normbarrier}.
+\end{proof}
+This is a lower bound on an upper-bound expression, not a lower bound on $|\Cx|$. It does not rule out cancellation between the actual coefficients, other preconditioners, or coefficient-sensitive methods.
+
+\subsection{A growing number of negative directions}
+\begin{theorem}[A scoped obstruction to low-rank repairs]\label{thm:rank}
+Put $\tau_x=Q^2/\log Q$ and
+\[
+J_x=\left\lfloor N\left(\frac1{4Q}-\frac1H\right)\right\rfloor,\qquad
+d_x=2J_x+1,\qquad k_x=d_x-35.
+\]
+For all sufficiently large $x$, there is a complex subspace $W_x$ such that
+\[
+\dim_\CC W_x\ge k_x,\qquad
+\ip f{Af}\le-\frac{\tau_x}{2}\norm f^2\quad(f\in W_x).
+\]
+Every matrix $E$ of complex rank less than $k_x$, even if non-Hermitian, satisfies
+$\norm{A-E}\ge\tau_x/2$, and $k_x=Q^2/4-x^{11/32}+O(1)$.
+\end{theorem}
+\begin{proof}
+Set $U_0=A+\diag\Delta\ge0$ and take $f_j(n)=N^{-1/2}\e(jn/N)$ for $|j|\le J_x$. These vectors are orthonormal on $N$ consecutive integers, and eventually $d_x<N$. For all $q\le2Q$ and $|v|\le1$, we have $q|j/N+v/H|\le1/2$. The preceding residue-variance bound gives
+\[
+\ip{f_j}{U_0f_j}\le\frac{C_0}{N}\sum_q q^2,\qquad C_0=(\pi+1)^2.
+\]
+Let $F$ have these vectors as columns, $B=F^*U_0F\ge0$, and $M_1=\sum_q q$. Then
+\[
+\tr B\le C_0(1+2Q/N)M_1.
+\]
+An actual integer is divisible by at most two shell primes, so
+\[
+\Delta(n)\ge D_*:=\sum_q\frac{q(q-2)}{q-1}-4Q\sim\frac32\tau_x.
+\]
+The number of eigenvalues of $B$ exceeding $D_*/2$ is at most $2\tr B/D_*<35$ eventually, and eventually $D_*\ge\tau_x$. Map the $[0,D_*/2]$ spectral subspace of $B$ through $F$ to obtain $W_x$. At most $35$ dimensions are lost; on this space the $U_0$ form is at most $D_*/2$, whereas the removed diagonal is at least $D_*$. This proves negativity. If $\rank E<k_x$, then $W_x\cap\ker E$ is nonzero. A unit vector in the intersection gives
+$\norm{A-E}\ge|\ip f{(A-E)f}|\ge\tau_x/2$.
+Finally, expand $d_x$ using $N=x/2+O(1)$ to obtain the dimension asymptotic.
+\end{proof}
+The spectral cutoff does not say that the whole low-frequency band is negative, or that repairs above some higher rank must succeed.
+
+Real witnesses require a separate construction; a complex spectral space cannot simply be renamed a real one. In the same symmetric band, form the real orthonormal matrix $V$ from
+$f_0$, $(f_j+f_{-j})/\sqrt2$, and $(f_j-f_{-j})/(\ii\sqrt2)$.
+The real symmetric matrix $\operatorname{Re}(V^*U_0V)$ is positive semidefinite and has trace $\tr B$. Repeating the spectral cutoff gives a different real subspace of dimension at least $k_x$. In particular, for a real-linear map
+\[
+E:\RR^{I_x}\longrightarrow\CC^{I_x},\qquad\rank_{\RR}E<k_x,
+\]
+a unit vector in its kernel intersected with this real negative subspace gives
+$\|A-E\|_{\RR^{I_x}\to\CC^{I_x}}\ge\tau_x/2$.
+The norm uses the Euclidean unit sphere in the real domain, and rank means real image dimension, not complex rank. The identity
+$f^TAf=f^T\operatorname{Re}(A)f$ applies to a quadratic form at one real vector. It cannot replace the mixed scalar $w^TA\beta$ by $w^T\operatorname{Re}(A)\beta$.

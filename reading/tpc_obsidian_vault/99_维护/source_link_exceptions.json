@@ -1,0 +1,164 @@
+{
+  "issue-cc925afe5dc43728": {
+    "target": "#tab:ledger",
+    "source": "synthesis/seven-island-monograph/paper/main.md",
+    "destination": "05_综合与进展/七岛综合稿-中文.md",
+    "reason": "Source anchor has no parsed heading or label"
+  },
+  "issue-4181582e08762901": {
+    "target": "agent-reports/",
+    "source": "research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/README.md",
+    "destination": "05_综合与进展/实际算子研究汇总-2026-09-09.md",
+    "reason": "Directory has no selected reading entry"
+  },
+  "issue-ef7513bf9554b8be": {
+    "target": "#tab:ledger",
+    "source": "synthesis/seven-island-monograph/paper-en/main.md",
+    "destination": "05_综合与进展/七岛综合稿-English.md",
+    "reason": "Source anchor has no parsed heading or label"
+  },
+  "issue-7b7f17bafc366f70": {
+    "target": "docs/REPRODUCIBILITY.md",
+    "source": "TPC_HANDOFF.md",
+    "destination": "05_综合与进展/交接文档-完整快照.md",
+    "reason": "Outside the standalone TPC source scope"
+  },
+  "issue-9e37ef5e3d217b10": {
+    "target": "/root/autodl-tmp/math_research3/prime_dynamics_theory/research-rounds/2026-09-09-multi-agent-recon/agent-reports/recon-physical-attachment.md:97",
+    "source": "research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/agent-reports/physical-loop-finite-attachment-audit.md",
+    "destination": "06_研究资料/历史与证明/physical-loop-finite-attachment-audit--91a04d41.md",
+    "reason": "Outside the standalone TPC source scope"
+  },
+  "issue-a97568b0df1bb232": {
+    "target": "/root/autodl-tmp/math_research3/prime_dynamics_theory/papers/tpc-418-c1-shell-parity-envelope/results/tpc418_counterexample.json:1",
+    "source": "research/tpc-big-road/research-rounds/2026-09-09-multi-agent-recon/agent-reports/recon418-regression.md",
+    "destination": "06_研究资料/历史与证明/recon418-regression--d4cf588f.md",
+    "reason": "Source path is unavailable; no substitute invented"
+  },
+  "issue-2a720b9fa6c30f9b": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-226.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-226-first-primitive-collision-transition/paper/main.md",
+    "destination": "03_全文/TPC-226.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-81f05217729d7b6c": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-227.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-227-packet-profile-axis-separation/paper/main.md",
+    "destination": "03_全文/TPC-227.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-8d9d6625c9a5077b": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-228.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-228-source-native-polarized-collision-compiler/paper/main.md",
+    "destination": "03_全文/TPC-228.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-eecfc2543e1e8a05": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-229.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-229-primitive-resonance-matching-spectrum/paper/main.md",
+    "destination": "03_全文/TPC-229.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-bb4cf02781d1b356": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-230.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-230-matched-resonance-mass-ceiling/paper/main.md",
+    "destination": "03_全文/TPC-230.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-e0bd2fc0cf4e6227": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-231.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-231-finite-resonance-sieve-obstruction/paper/main.md",
+    "destination": "03_全文/TPC-231.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-8ceccca293975fcc": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-232.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-232-subcritical-growing-resonance-depth/paper/main.md",
+    "destination": "03_全文/TPC-232.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-f126103862300371": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-233.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-233-critical-depth-row-mass-obstruction/paper/main.md",
+    "destination": "03_全文/TPC-233.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-bfdd3c1b0b263de7": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-234.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-234-normalized-collision-bessel-stability/paper/main.md",
+    "destination": "03_全文/TPC-234.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-5b192c7a089466b4": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-235.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-235-v59-physical-depth-crosswalk/paper/main.md",
+    "destination": "03_全文/TPC-235.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-b6dd944facb3cbae": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-236.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-236-physical-multiwrap-collision-envelope/paper/main.md",
+    "destination": "03_全文/TPC-236.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-10a480da7cfbb8e7": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-237.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-237-collision-compressed-finite-window-reassembly/paper/main.md",
+    "destination": "03_全文/TPC-237.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-23a687940594c99c": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-238.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-238-finite-window-lower-frame-obstruction/paper/main.md",
+    "destination": "03_全文/TPC-238.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-593e38bec6bde3c1": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-239.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/paper/main.md",
+    "destination": "03_全文/TPC-239.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-6c496b41e681d11e": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-240.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-240-top-prime-direct-energy-floor/paper/main.md",
+    "destination": "03_全文/TPC-240.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-84f19e5f0c1a5803": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-241.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-241-top-prime-collision-sharpness/paper/main.md",
+    "destination": "03_全文/TPC-241.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-3657747c631bf6df": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-242.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-242-phase-fourier-collision-separation/paper/main.md",
+    "destination": "03_全文/TPC-242.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-580af4c020965eb0": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-243.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-243-hard-window-near-isometry-bilinear-transfer/paper/main.md",
+    "destination": "03_全文/TPC-243.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-bf1268f48e223cda": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-244.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-244-common-multiplier-sign-localization/paper/main.md",
+    "destination": "03_全文/TPC-244.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-4d3d0f75a28ee8ad": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-245.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/paper/main.md",
+    "destination": "03_全文/TPC-245.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  },
+  "issue-5bcfa1bc02f5f1ba": {
+    "target": "../99_%E7%BB%B4%E6%8A%A4/%E8%BD%AC%E6%8D%A2%E8%AE%B0%E5%BD%95/TPC-246.md#pending-static-tex-dependency-provenance",
+    "source": "papers/tpc-246-weighted-covariance-disk-reassembly/paper/main.md",
+    "destination": "03_全文/TPC-246.md",
+    "reason": "Cross-document source anchor unavailable after parsing"
+  }
+}

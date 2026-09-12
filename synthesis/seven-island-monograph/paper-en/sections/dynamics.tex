@@ -1,0 +1,129 @@
+\section{Islands 5 and 7: moving targets, a distinguished seed, and geometric attachment}\label{sec:dynamics}
+\subsection{Exact arithmetic encoding and a metric hitting theorem}
+Let $\widehat\ZZ$ be the group of profinite integers, let $m_H$ be Haar probability measure, and let $T(\xi)=\xi+1$.
+We write $m_H$ to avoid confusion with the M\"obius function $\mu$. Set
+\[
+y_n=\sqrt{n+2},\quad Q_n=\prod_{p\le y_n}p,\quad
+E_n=\{\xi:p\nmid\xi(\xi+2)\text{ for every }p\le y_n\},\quad
+Z_n(\xi)=\1_{E_n}(T^n\xi).
+\]
+For $n\ge3$, $Z_n(0)=1$ if and only if both $n$ and $n+2$ are prime: both exceed the common sieve threshold, whereas every composite integer at most $n+2$ has a prime factor at most $\sqrt{n+2}$.
+The Chinese remainder theorem gives
+\[
+\alpha_n=m_H(E_n)=\frac12\prod_{2<p\le y_n}(1-2/p)\asymp(\log n)^{-2}.
+\]
+The underlying $T$ is an autonomous adding map, not a mixing transformation. Nonautonomy enters through the targets and sieve scales that change with $n$.
+
+\begin{theorem}[Haar moving-target variance and almost-everywhere hitting]\label{thm:haar}
+Let $S_N=\sum_{3\le n\le N}Z_n$ and $A_N=\sum_{3\le n\le N}\alpha_n$. Then
+\[
+\operatorname{Var}_{m_H}(S_N)\ll N,\qquad A_N\asymp N/(\log N)^2.
+\]
+For $m_H$-almost every $\xi$, $S_N(\xi)\to\infty$.
+\end{theorem}
+\begin{proof}
+For $m<n$, put $d=n-m$. Separating common sieve primes from newly added primes in the Chinese remainder theorem gives
+\[
+\operatorname{Cov}(Z_m,Z_n)=\alpha_m\alpha_n(K_{y_m}(d)-1).
+\]
+For a common prime $p$, the forbidden classes are $0,-2,-d,-d-2$. Counting their coincidences gives
+\begin{align*}
+k_2(d)&=2\1_{2\mid d},&k_3(d)&=3\1_{3\mid d},\\
+k_p(d)&=1-\frac4{(p-2)^2}+\frac{2p}{(p-2)^2}\1_{p\mid d}
++\frac p{(p-2)^2}(\1_{p\mid d-2}+\1_{p\mid d+2})\quad(p\ge5),
+\end{align*}
+where $K_y=\prod_{p\le y}k_p$. Every factor has mean $1$ over a complete residue system.
+Expanding into indicators of Chinese-remainder residue classes, the sum of absolute coefficients is at most
+\[
+D(y)=6\prod_{5\le p\le y}(1-2/p)^{-2}\ll\log^4(2y).
+\]
+The final bound follows from Mertens' product theorem and a convergent $O(p^{-2})$ correction.
+The count of any residue class in an integer interval differs from the interval length divided by its modulus by at most $1$. Hence
+\[
+\left|\sum_{d\in J}(K_y(d)-1)\right|\le D(y).
+\]
+For fixed $m$, Abel summation against the nonincreasing weights $\alpha_{m+d}$ yields
+\[
+\left|\sum_{d=1}^{N-m}\alpha_{m+d}(K_{y_m}(d)-1)\right|
+\le\alpha_{m+1}D(y_m).
+\]
+When $y_m\ge3$, $\alpha_m^2D(y_m)=1/6$, so the absolute value of the grouped covariance for each $m$ is at most $1/6$.
+The finitely many initial $m$ contribute a bounded amount, and the diagonal variance is at most $\sum\alpha_n\le N$. This proves the variance estimate.
+Mertens' product theorem and the fixed two-point singular series give the order of $A_N$.
+Chebyshev's inequality along $N=j^2$ gives
+\[
+m_H\{|S_{j^2}-A_{j^2}|>A_{j^2}/2\}\ll\frac{(\log j)^4}{j^2}.
+\]
+The right-hand side is summable. The first Borel--Cantelli lemma implies that almost every seed eventually satisfies $S_{j^2}\ge A_{j^2}/2\to\infty$. Monotonicity of $S_N$ extends the conclusion to all $N$.
+\end{proof}
+This argument comes from the original moving-target proof\cite{archivedynamics}. It is a metric theorem for the actual sieve events, not merely a finite-model statement.
+Its null exceptional set may nevertheless contain $0$, so it does not cross the map's Bridge B.
+
+\subsection{A precise form of the distinguished-seed gap}
+The following sufficient criterion comes from the existing distinguished-seed reconnaissance report\cite{archiveseed}; we reproduce its short proof.
+Choose $q_N\mid Q_N$, put $U_N=q_N\widehat\ZZ$, and define
+\[
+V_N=\|S_N-A_N\|_{L^2(m_H)},\qquad
+\Omega_N=\sup_{\xi\in U_N}(S_N(\xi)-S_N(0)).
+\]
+\begin{proposition}[A sufficient cylinder-set return criterion]\label{prop:seed}
+For every $N$,
+\[
+S_N(0)\ge A_N-\sqrt{q_N}V_N-\Omega_N.
+\]
+If, along an unbounded sequence $N_j$, some fixed $\eta>0$ satisfies
+$\Omega_{N_j}+\sqrt{q_{N_j}}V_{N_j}\le(1-\eta)A_{N_j}$, then there are infinitely many twin primes.
+\end{proposition}
+\begin{proof}
+We have $m_H(U_N)=1/q_N$. The definition of $\Omega_N$ and Cauchy--Schwarz imply
+\[
+S_N(0)\ge q_N\int_{U_N}S_N\,dm_H-\Omega_N
+\ge A_N-\sqrt{q_N}V_N-\Omega_N.
+\]
+The assumed condition gives $S_{N_j}(0)\ge\eta A_{N_j}\to\infty$; apply the exact arithmetic encoding.
+\end{proof}
+The known bound $V_N\ll\sqrt N$ ensures that $q_N=o(N/\log^4N)$ implies
+$\sqrt{q_N}V_N=o(A_N)$. This is sufficient, not necessary, and the required bound for $\Omega_N$ is not known in this regime.
+For the fine cylinder $q_N=Q_N$, $S_N$ is constant on the cylinder and $\Omega_N=0$, but
+$Q_N=\exp((1+o(1))\sqrt N)$ makes the generic point-evaluation cost too large.
+The proposition is a sufficient criterion, not an assertion that its hypothesis holds or that it is the only possible return mechanism.
+
+\subsection{Stage-preserving sieve evolution and a scoped obstruction to strongly mixing carriers}
+Let $P_k=\prod_{j\le k}p_j$, equip $V_k=\CC^{\ZZ/P_k\ZZ}$ with the normalized counting inner product, and put
+$B_k(r)=\1_{(r(r+2),P_k)=1}$, $a_k=\operatorname{mean}B_k$, and $W_k=B_k-a_k$.
+When a new odd prime $p$ is added, define the replication-and-deletion operator by
+\[
+(R_pf)(r+jP_k)=f(r)\1_{p\nmid(r+jP_k)(r+jP_k+2)},\quad 0\le j<p.
+\]
+Exactly $p-2$ children survive for every parent residue. Thus, with $\alpha_p=1-2/p$,
+\[
+R_p^*R_p=\alpha_p I,\quad \operatorname{mean}(R_pf)=\alpha_p\operatorname{mean}f.
+\]
+Set $g=R_p1-\alpha_p$. Direct averaging gives $\|g\|^2=\alpha_p(1-\alpha_p)$, and every mean-zero $f$ satisfies $\langle R_pf,g\rangle=0$. Consequently,
+\[
+W_{k+1}=R_pW_k+a_kg,\qquad \|W_k/a_k\|^2=a_k^{-1}-1\asymp(\log p_k)^2.
+\]
+The forcing term is part of the actual evolution; this is not a homogeneous exponentially contracting system.
+
+More precisely, suppose maps $J_k$ are uniformly bounded and coercive on the entire mean-zero space,
+$c\|f\|\le\|J_kf\|\le C\|f\|$, and satisfy the exact intertwining relation
+$J_{k+1}R_{p_{k+1}}=Q_kJ_k$.
+They cannot also satisfy a uniform arbitrary-product estimate
+$\|Q_{b-1}\cdots Q_a\|\le C_Q\theta^{b-a}$ with $0<\theta<1$.
+Indeed, the three assumptions imply
+\[
+c\prod_{a<j\le b}(1-2/p_j)^{1/2}\le CC_Q\theta^{b-a}.
+\]
+For fixed $a$, the left side is only of order $1/\log p_b$, and the prime number theorem gives $p_b\asymp b\log b$, contradicting exponential decay on the right.
+This excludes only the simultaneous validity of those three assumptions. It does not exclude noncoercive quotient maps, observable seminorms, or nonautonomous representations with controlled defects\cite{archiveintertwiner}.
+
+\subsection{The role and limits of Island 7}
+A useful geometric lift must at least supply a time-preserving semiconjugacy, event pullback, an applicable measure correspondence, and a correspondence for the \emph{distinguished seed}.
+For example, candidate maps $\rho_k$ and transformations $H_k,F_k$ must satisfy
+$\rho_{k+1}H_k=F_k\rho_k$, and lifted events must be exactly the inverse images of the original events.
+These are attachment conditions to be proved. We do not construct a twin-prime-specific H\'enon lift here.
+
+Even a stationary mixing system cannot have a nontrivial addition-by-one clock modulo $M$ as a measure-preserving factor: the clock's mean-zero eigenfunction $\e(r/M)$ has autocorrelation of constant absolute value $1$, contradicting mixing after pullback.
+This finite-factor argument does not establish impossibility for all nonautonomous geometric representations.
+Nor does a two-dimensional phase space imply that all relevant observables have a two-dimensional linear carrier.
+Island 7 is therefore an auxiliary representation route; a geometric picture cannot replace the distinguished-orbit hitting requirement on Island 5.

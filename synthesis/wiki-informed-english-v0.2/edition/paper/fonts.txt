@@ -1,0 +1,28 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+QEDXTQ+LMRoman17-Regular             Type 1            Custom           yes yes yes     56  0
+FBDLCY+LMRoman12-Regular             Type 1            Custom           yes yes yes     57  0
+FYIPMZ+LMRoman10-Bold                Type 1            Custom           yes yes yes     58  0
+LOXYGF+LMRoman10-Regular             Type 1            Custom           yes yes yes     59  0
+LCWNPE+LMMathItalic10-Regular        Type 1            Custom           yes yes yes     60  0
+LOXYGF+LMRoman10-Regular             Type 1            Custom           yes yes yes     61  0
+JFHNAS+LMRoman7-Regular              Type 1            Custom           yes yes yes     62  0
+GNYBOM+LMMathItalic7-Regular         Type 1            Custom           yes yes yes     63  0
+GMYOWI+LMMathSymbols7-Regular        Type 1            Custom           yes yes yes     64  0
+SDQGXL+LMRoman12-Bold                Type 1            Custom           yes yes yes     95  0
+YOHJZU+EUFM10                        Type 1            Builtin          yes yes yes     96  0
+CQRNZY+LMMathSymbols10-Regular       Type 1            Custom           yes yes yes     97  0
+ONQSAA+LMMathExtension10-Regular     Type 1            Custom           yes yes yes     98  0
+PKDJTA+LMMathItalic5-Regular         Type 1            Custom           yes yes yes     99  0
+MYHPVV+LMRoman8-Regular              Type 1            Custom           yes yes yes    100  0
+VIFGLH+LMMathItalic8-Regular         Type 1            Custom           yes yes yes    101  0
+XPLTIT+LMMathSymbols8-Regular        Type 1            Custom           yes yes yes    159  0
+FYIPMZ+LMRoman10-Bold                Type 1            Custom           yes yes yes    161  0
+HWCIXD+LMMathItalic6-Regular         Type 1            Custom           yes yes yes    162  0
+NKGLYT+MSBM10                        Type 1            Builtin          yes yes yes    163  0
+IYJFCJ+LMRoman10-Italic              Type 1            Custom           yes yes yes    180  0
+TCBRII+LMSans10-Regular              Type 1            Custom           yes yes yes    191  0
+LNZWRM+LMSans8-Regular               Type 1            Custom           yes yes yes    192  0
+UWTHNF+LMMathSymbols6-Regular        Type 1            Custom           yes yes yes    195  0
+CDPWUW+LMRoman6-Regular              Type 1            Custom           yes yes yes    242  0
+UWEUAD+LMMono10-Regular              Type 1            Custom           yes yes yes    343  0

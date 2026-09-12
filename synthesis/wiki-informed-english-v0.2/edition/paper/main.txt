@@ -1,0 +1,1319 @@
+       A Seven-Island Framework for Twin-Prime Research:
+            Exact Structures, Analytic Obstructions,
+                   and Two Bridging Problems
+
+
+                                      12 September 2026
+                                  English synthesis draft v0.2
+
+
+                                             Abstract
+         Exact representations of prime-pair problems become useful only when estimates retain
+     the original arithmetic coefficients, scales, and quantifiers. We synthesize a fixed-shift
+     research program around this requirement, using a seven-island map to distinguish objects
+     from the transfers between them. For the prescribed arithmetic operator at interval
+     scale x and prime-modulus scale Q = x1/3 , we give its exact positive-form decomposition
+     and uniform row-energy bounds. Actual coefficient costs prevent coefficient-blind norm
+     estimates, including ordinary row normalization, from supplying a fixed-power saving. A
+     separate low-frequency argument produces (1/4 + o(1))Q2 negative directions, obstructing
+     specified low-rank norm repairs. An exact Kloosterman representation identifies the
+     unproved two-sided attachment needed to exploit a critical-range bilinear estimate. In
+     contrast, an explicit smooth partition already bounds the collective boundary contribution
+     by xQ2 x−11/64+o(1) . For the actual moving sieve events, a Chinese-remainder and Abel-
+     summation argument yields variance O(N ) and Haar-almost-everywhere infinite recurrence,
+     but not recurrence at the arithmetic seed 0. The analytic route thus lacks a coefficient-
+     sensitive signed estimate, while the dynamical route lacks a distinguished-point conclusion.
+     We restate and prove selected archived results, clarify their dependencies and conditional
+     loss budgets, and distinguish them from the unresolved twin-prime endpoint. This paper
+     does not prove the twin-prime conjecture.
+
+Keywords: twin primes; Möbius correlations; reduced residue classes; Gram operators;
+Kloosterman sums; distinguished seeds.
+
+
+
+
+                                                  1
+Contents
+1 Introduction: exact structure and arithmetic return                                              3
+
+2 Arithmetic foundations and the endpoint                                                          6
+
+3 Fixed atoms and actual occurrences                                                               7
+
+4 The actual operator: definition and exact structure                                            10
+
+5 Norm bounds and coefficient-blind obstructions                                                 12
+
+6 Kloosterman emission and two-sided attachment                                                  16
+
+7 Constructive partitioning and the boundary bound                                               18
+
+8 Moving targets and the distinguished arithmetic seed                                           19
+
+9 Two conditional bridges and their remaining gaps                                               21
+
+A One-sided short support and model evidence                                                     24
+
+B Sources and the scope of verification                                                          24
+
+References                                                                                       25
+
+Principal notation and distinct counting objects.
+
+Notation                Meaning and scope
+π2 (y), S2 (y)          Prime-pair count and von Mangoldt pair sum; Section 2.
+Ix , Q, H, U            Actual interval, prime-modulus scale, kernel scale, and divisor cutoff; Sec-
+                        tion 4.
+β, w, A                 Prescribed real coefficient vectors and a possibly complex Hermitian matrix.
+Cx = ⟨w, Aβ⟩            Mixed off-diagonal scalar; not Pa prime-pair count.
+Sxphys                  Auxiliary same-index scalar t∈Ix β(t)w(t); Section 9.
+SN , AN , QN            Moving-target hit count, its Haar mean, and sieve primorial; Section 8.
+A∗ , E∗ , K∗            Imported folding scalar, error, and terminal divisor; A∗ is not the matrix A.
+
+The norm ∥ · ∥2 is Euclidean for vectors and induced for matrices unless a different inner
+product is stated. The analytic interval size N = |Ix | and the dynamical time N are local to
+their respective sections.
+
+
+
+
+                                               2
+1     Introduction: exact structure and arithmetic return
+The twin-prime problem asks for infinitely many prime pairs at the fixed displacement 2. A
+recurring difficulty in approaches to this problem is not the absence of useful representations,
+but the passage from a representation to an estimate for the original arithmetic data. An exact
+change of variables may preserve every coefficient without producing cancellation. A small
+normalized matrix may carry large coefficient costs. A full-measure recurrence theorem may
+omit the one initial point that encodes the integers. These are different gaps, and identifying
+their mathematical content is the organizing purpose of this article.
+    We use the seven-island map in Figure 1 to separate arithmetic foundations, analytic
+cancellation, fixed atoms, actual occurrences, moving-target dynamics, the twin-prime endpoint,
+and auxiliary geometric lifts. The islands are not successive steps of a proved implication. We
+reconstruct selected results by their dependencies, rather than by the order of the archived
+investigations. The contribution is a source-traceable synthesis with explicit proofs and transfer
+requirements, not a claim of first discovery or an exhaustive account of every route to twin
+primes.
+
+1.1   Two gaps, with different endpoint connections
+The analytic core concerns a specific mixed scalar Cx = ⟨w, Aβ⟩, of natural scale xQ2 . The
+vectors, unit masks, physical interval, Fourier convention, and deleted diagonal are part of its
+definition. A full-scalar saving with exponent strictly greater than 1/400 would be useful in
+the imported analytic interface, but that interface also requires a separate full-shell estimate
+called Gate A. Both gates lie inside map Bridge A. Their conditional output in this paper is a
+bound for another auxiliary scalar, Sxphys ; the complete upstream implication to prime-pair
+counting is not reproved here.
+    The dynamical connection is pointwise and explicit: the moving sieve events at seed 0
+identify the pairs n, n + 2 that are both prime. Adequate mass and covariance control do
+prove infinite recurrence for almost every seed. They do not establish that the prescribed seed
+belongs to that good set. Map Bridge B names this return to the distinguished arithmetic point.
+An auxiliary geometric representation must preserve the same event and seed correspondence;
+changing the ambient space alone cannot close the gap.
+
+1.2   Results and their roles
+The main results serve distinct roles. Proposition 4.1 identifies the exact positive-form structure
+behind the actual operator. Theorem 5.3, Corollary 5.4, and Theorem 5.5 delimit coefficient-
+blind norm bounds and low-rank repairs. Proposition 6.1 identifies the complete Kloosterman
+arrays, whereas Condition 6.2 states an unproved, loss-controlled attachment to a two-sided
+short-array estimate. Theorem 7.1 supplies a genuine bound for one component of the original
+scalar. Finally, Theorem 8.1 proves metric recurrence for the actual moving targets, and
+Proposition 8.2 isolates a sufficient, still-unverified way to reach seed 0.
+    The distinction between these roles matters. A method obstruction is not a lower bound
+for the actual scalar. A boundary estimate is not an interior estimate. A sufficient criterion is
+not a verified hypothesis. In particular, the fixed-atom and occurrence interfaces in Section 3
+explain what an arithmetic attachment must preserve; they do not construct all the upstream
+attachments needed by the analytic program.
+
+
+
+
+                                                3
+1.3   Mathematical inputs and scope
+Our prime-counting input is the classical prime number theorem and its partial-summation
+consequences [12]. The hybrid coefficient’s second-moment estimate uses the unconditional
+Mertens product baseline stated at the beginning of [11]; none of that paper’s conditional
+bias-distribution results is used. Frequency separation, positive-semidefinite compression, finite
+Fourier orthogonality, and spectral min–max arguments provide the structural tools.
+    The critical-interval bilinear estimate of Blomer–Pascadi [10] supplies an external bench-
+mark. Its square-root-length specialization offers a local Kloosterman saving under specified
+support and coprimality conditions. Our question is whether the actual signed expression can
+be attached to those inputs with all losses paid. The external theorem does not itself provide
+that attachment.
+    The source-linked research wiki helped organize the distinctions between definitions, esti-
+mates, obstructions, and conditional transfers. It is a secondary reading aid, not independent
+evidence for a theorem. The original proofs remain the mathematical sources; Appendix B
+and the companion concordance explain how to locate them. A systematic external literature
+comparison and novelty assessment remain necessary before submission.
+
+1.4   Reading guide
+Section 2 fixes the endpoint and the transfer requirements. Section 3 distinguishes literal
+atom identities, occurrence conservation, and weighted-cover costs. Sections 4–7 develop the
+analytic results on one common object. Section 8 treats the metric theorem, seed criterion,
+and geometric limitations. Section 9 puts the remaining analytic and dynamical obligations
+side by side. Readers can follow either branch without reading the historical manuscripts in
+sequence; exact source locations and material not selected here remain in the source matrix
+and full catalog.
+
+
+
+
+                                                4
+Figure 1: The user’s seven-island map, reproduced unchanged. Islands name objects and
+tasks, not completed steps. Connections are proposed routes, not certified implications; broken
+bridges mark unproved transfers, not universal impossibility. Schematic formulae do not
+establish isomorphisms, savings, or prime-pair asymptotics: the hypotheses in the text govern
+those claims. Map Bridge A contains both analytic Gate A and Gate B; map Bridge B concerns
+the distinguished arithmetic seed. Rare-event mass alone does not establish recurrence at that
+seed. The full-resolution companion preserves the small labels for enlargement.
+
+
+
+
+                                              5
+2     Arithmetic foundations and the endpoint
+2.1   The endpoint and auxiliary quantities
+Write π2 (y) = #{p ≤ y : p, p + 2 are both prime}. The endpoint is π2 (y) → ∞, not the
+discovery of more pairs in a finite interval. A customary weighted auxiliary quantity is
+                                              X
+                                   S2 (y) =         Λ(n)Λ(n + 2),
+                                              n≤y
+
+where Λ denotes the von Mangoldt function. An asymptotic such as S2 (y) ∼ cy with c > 0
+would imply infinitely many twin primes. This is a sufficient condition, not an asymptotic
+proved here.
+                                                                                      √
+    To justify the implication, one must remove proper prime powers. There are O( y log y)
+pairs in which at least one coordinate is pk with k ≥ 2, and each weight is O(log2 y). Their
+total contribution is o(y). Finitely many genuine prime pairs cannot account for a positive
+linear main term. Even for a standard auxiliary quantity, its connection to the endpoint should
+therefore be stated rather than inferred from its name.
+
+2.2   Island 1: local sieve factors versus prime-pair counts
+For y ≥ 2, put Py = p≤y p, sy (n) = 1(n,Py )=1 , and ρy = p≤y (1 − 1/p). Let H =
+                          Q                                             Q
+
+{h1 , . . . , hr } ⊂ Z be a fixed finite nonempty set of distinct shifts, and let νp (H) count its
+distinct residues modulo p. The Chinese remainder theorem (CRT) gives
+
+                             1                                  νp (H)
+                                  X      Y               Y                 
+                   Cy (H) :=                sy (n + h) =     1−        .
+                             Py n mod P h∈H              p≤y
+                                                                   p
+                                         y
+
+
+Indeed, there are p − νp (H) allowed classes at each prime, and CRT multiplies these counts.
+If H is admissible, meaning νp < p for every prime, then νp = r for all sufficiently large p.
+The normalized factor is (1 − r/p)(1 − 1/p)−r = 1 + Or (p−2 ), so the product converges. In
+particular,
+                       Cy ({0, 2})                    Y p(p − 2)
+                                   −→  2C 2 ,    C2 =              > 0.
+                           ρ2y                        p>2
+                                                          (p − 1)2
+
+This is a classical local calculation, not a new prime-pair asymptotic [4].
+                                                                                 √
+    Translate min H to zero, set hmax = max H, and let X → ∞. If YX = X + hmax and
+YX < n ≤ X, then every n + h exceeds YX and is at most YX2 . These integers survive the sieve
+through YX if and only if they are all prime. This is a pointwise identification, not an estimate
+for the number of survivors. By contrast, complete-period decomposition on 1 ≤ n ≤ X only
+gives
+                              X   Y
+                                       sy (n + h) − XCy (H) ≤ Py + 1.
+                           1≤n≤X h∈H
+
+Complete periods contribute exactly; the remaining partial period costs at most Py , with an
+additional 1 for a noninteger endpoint. If Py = o(Xρry ), this bound makes the normalized error
+                                                                                          √
+vanish. At the primality-exact cutoff, however, the prime number theorem gives log PYX ∼ X,
+so this error bound provides no useful relative control. This is a mismatch between two
+elementary arguments, not an impossibility theorem for all sieve methods.
+
+
+
+
+                                                    6
+2.3     The seven islands are not a serial proof
+
+
+Table 1: Division of mathematical tasks. The final column does not assert necessary conditions
+for every possible route.
+ Island   Object or task              Transfer still requiring identification in this framework
+    1     Arithmetic foundations      Preserve the original counting interpretation when starting
+                                      from sieves, correlations, or encodings.
+    2     Analytic cancellation       Pass from local structure to a signed saving for the complete
+                                      actual coefficients.
+    3     Fixed atoms                 Control the specified shift, phase, and packet pointwise.
+    4     Actual occurrences / H1     Supply complete carriers, source correspondences, multiplicities,
+                                      and coefficientwise conservation.
+    5     Nonautonomous dynam-        Pass from a measure statement to recurrence at the specified
+          ics                         arithmetic seed.
+    6     Twin-prime endpoint         Obtain infinitely many genuine prime pairs, not a model state-
+                                      ment or finite certificate.
+    7     Auxiliary geometric lifts   Preserve time and event readout, without assuming arithmetic
+                                      genericity for free.
+
+
+2.4     What every transfer must retain
+To compare expressions from different stages, we record a source specification as
+
+                   O = (coefficients, h0 , support and order, parameter range,
+                           quantifiers, normalization, loss budget).
+
+This is bookkeeping against misapplication, not a new mathematical object. Similar notation
+does not imply equal specifications. An arbitrarily large CRT origin is not an origin in the
+prescribed physical interval; a prefix of a full prime shell is not an arbitrary prime selection;
+recomputing local row energy is not compressing the original normalized matrix.
+    We distinguish four evidence types: finite identities verified by expansion; uniform proposi-
+tions with complete hypotheses and proofs; conditional consequences retaining their unproved
+premises; and finite numerical diagnostics. Diagnostics do not carry infinite quantifiers, and a
+successful program check does not make a conditional implication unconditional. The results
+below should be read in this hierarchy, not by their order of appearance in the archive.
+
+
+3       Fixed atoms and actual occurrences
+This layer separates three tasks: identifying a retained atom, reconstructing its literal coefficient
+from children, and covering the actual occurrence vector with estimable blocks. A fixed
+displacement, phase, modulus, and support are distinct requirements. The identities below are
+useful only after their source data have been supplied; none constructs the missing production
+pair-to-atom attachment. A carrier means the indexing set of terms or occurrences, with their
+source data. The label H1 is inherited from the source program; it does not name an additional
+result proved here.
+
+
+
+
+                                                  7
+3.1   The order-preserving determinant-two pullback
+Let I be an integer interval, a, s positive integers, and d, u integers satisfying
+
+                D(z) = d + sz > 0,       V (z) = u + az > 0     (z ∈ I),   su − ad = 2,
+                           (a, s) = 1,    (as, 2) = 1,    (d, s) = (u, a) = 1.
+
+Write λ for the Liouville function, distinct from the truncated projector weight below. Let
+B, τ be the specified integers and χ, WX the functions prescribed by the original block. Its
+literal coefficient is
+
+                   aξ,X (z) = µ(D(z))µ(V (z))1(B,V (z))=1 χ(τ + Bz)WX (τ + Bz).
+
+Proposition 3.1 (Exact masked pullback). Set qprog = as and n(z) = su + asz = sV (z) =
+aD(z) + 2. This is an order-preserving bijection from I onto its image NI , and
+
+                         µ(D(z))µ(V (z)) = λ(qprog )λ(n − 2)λ(n)Qa,s (n),
+                                   Qa,s (n) = µ2 ((n − 2)/a)µ2 (n/s).
+
+For every α ∈ R, the original sum is therefore exactly
+          X                                  X
+                aξ,X (z)e(−αz) = λ(qprog )          λ(n − 2)λ(n)Qa,s (n)Wξ,X (n)e(−αz(n)),
+          z∈I                                n∈NI
+
+where Wξ,X (n) = 1(B,n/s)=1 χ(τ + Bz(n))WX (τ + Bz(n)). The same identity holds for every
+initial prefix.
+
+Proof. The positivity of as gives order preservation, and su − ad = 2 gives the two integer
+quotients. Since µ(m) = µ2 (m)λ(m) and λ is completely multiplicative, λ(n − 2)λ(n) =
+λ(a)λ(s)λ(D(z))λ(V (z)). Multiplying by λ(as), whose square is 1, proves the coefficient
+identity. Substitute all remaining factors unchanged, without taking absolute values or
+removing the quotient-squarefree masks. The increasing bijection maps each initial prefix to
+its corresponding prefix.
+
+   This is the core interface of TPC127 [5]. It also preserves variation along consecutive
+image points and absolute comparison mass, but does not estimate either quantity. Fixing
+h0 = 2 neither fixes one phase across scales nor permits the quotient-squarefree conditions to
+be discarded.
+
+3.2   Ordered pairs, child reassembly, and occurrence conservation
+The following examples specify distinct interfaces, not successive completed constructions. The
+first display illustrates the data that an ordered-pair attachment would have to preserve; its
+purpose is not to define a new self-contained block estimate. Squaring a sum produces ordered
+row pairs, a different carrier from the pair of affine forms above. For example, in the opened-D
+construction, Nα (j) = ℓα dα j + h0 , and the off-diagonal coefficient contains
+
+                    µ(dα )µ(dγ )(log ℓα )(log ℓγ )rR (Nα (j))rR (Nγ (j))Bα (j)Bγ (j).
+
+Here rR and Bα denote the truncation factor and row-weight aliases in the source expan-
+sion. They are not newly defined free functions, and the display does not attach an actual
+production pair to an affine atom. The complete TPC18 formula is located in the source
+matrix. Attachment to a retained atom must still preserve the original joint mask, schedule,
+and normalization.
+
+                                                      8
+    For a legitimately retained source term, divisor decomposition gives a useful conservation
+identity. For G > 0, set                      X
+                                   λG (v) =         µ(v/g).
+                                                    g|v, g≤G
+
+Then, for positive integers d, e,
+                                        X
+                                                 λG (v) = 1(d,e)≤G .
+                                       v|(d,e)
+                          P
+Interchange g, v and use h|m µ(h) = 1m=1 to prove the identity. Reconstructing the source
+requires the weighted sum of all children; one child is not the source coefficient. TPC93’s inverse
+and signed reconstruction hold on its squarefree primitive support. TPC205’s composition
+from production pairs remains conditional on a legitimate attachment [8].
+    A linear occurrence lift is a separate issue. The source labels EPS, ETO, and FUM
+mean eligible-prefix-soft, eligible-tail-open, and frontier-unmapped. The nonsoft domain is
+C = C ETO ⊔ C FUM ; retaining only the frontier would omit the eligible tail. If the upstream cut
+satisfies
+                                   1TEPS M EPS + 1TC M ns = 1TN ,
+and a supplied lift L : CC → CO satisfies 1TO L = 1TC , multiplication gives
+
+                                    1TEPS M EPS + 1TO LM ns = 1TN .
+
+The sets N , C, O are respectively native terms, nonsoft branches, and retained occurrences
+with source paths. A retained carrier is not the certified nonzero active support: after
+inverse aggregation, the literal coefficient must still be certified nonzero. An unevaluated
+coefficient cannot simply be declared zero. This conditional statement does not construct L;
+row separation, metadata fidelity, and the actual nonzero support must also be supplied. A
+formal support envelope is not the actual occurrence set.
+
+3.3   A weighted-cover criterion
+Suppose the actual coefficient vector cphys and admissible-block synthesis matrix B have been
+supplied, with the specified positive-definite inner products on both spaces. Let B † be the
+corresponding Moore–Penrose inverse and P = BB † .
+
+Proposition 3.2 (Cover and orthogonal obstruction). In finite dimensions, the following are
+equivalent:
+
+             cphys ∈ Ran B,         P cphys = cphys ,           ⟨y, cphys ⟩ = 0     (y ∈ ker B ∗ ).
+
+Moreover,
+                           ∥(I − P )cphys ∥ =             max          |⟨y, cphys ⟩|.
+                                                   y∈ker B ∗ , ∥y∥≤1
+
+Proof. The singular value decomposition identifies P as the orthogonal projection onto Ran B,
+whose orthogonal complement is ker B ∗ . Orthogonal decomposition gives the equivalences.
+Cauchy–Schwarz proves the upper bound in the distance formula. A normalized nonzero
+residual attains equality; when the residual vanishes, both sides are zero.
+
+    This is the linear-algebraic content of the TPC117 criterion [8]. Even if B † cphys gives an
+exact cover, block bounds Ub still incur the transport cost b |(B † cphys )b |Ub . The existence of
+                                                           P
+
+a cover is not the existence of an inexpensive cover, much less an arithmetic saving for the
+actual growing family.
+
+                                                      9
+Where this leaves the analytic argument. Coefficient conservation, identification of
+active nonzero occurrences, and a cost-controlled weighted cover are separate requirements.
+In particular, membership in a union of blocks is weaker than reconstruction of the signed
+coefficient vector. Section 4 therefore starts from its own fully specified source scalar; it is
+not presented as a consequence of a production lift proved in this section. This keeps a useful
+structural interface from being mistaken for a completed arithmetic reduction.
+
+
+4      The actual operator: definition and exact structure
+Sections 4–7 use one object from the fully recovered scalar specification [1, 9]. Here “physical”
+means the arithmetic data actually prescribed by the research problem, as opposed to models
+in which signs, origins, or kernels may be freely selected. We first define that object, then
+establish its operator structure; subsequent sections distinguish what follows from generic
+norm information, exact Kloosterman representation, and the small support of the boundary.
+
+4.1     Parameters, coefficients, and kernel
+Let x → ∞ and set
+        Ix = (x/2, x] ∩ Z,      N = ⌊x⌋ − ⌊x/2⌋,           Q = x1/3 ,    H = x21/32 ,   U = x133/400 .
+The older source scale is x = 2X, so N = X + O(1). Let Q = {q prime : Q < q ≤ 2Q}. Fix
+K > 0, put z = (log x)K , and define
+                                                                        p                   1
+               Y                                                     Y            Y                      
+    P (z) =          p,                                     Wz =           , Cz =     1−          ,
+               p≤z                                                 p≤z
+                                                                       p−1        p>z    (p − 1)2
+                                             Y p−1
+ b(z)
+  x (u) = 1Ix (u)Cz Wz 1(u+2,P (z))=1                  ,                                                  (1)
+                                             p|u
+                                                 p−2
+                                            p>z
+               Λ(t) X
+      β(t) =         −     µ(d),
+               log t   d|t
+                          d≤U
+
+    w(u) = Λ(u + 2) − b(z)
+                       x (u).                                                                             (2)
+Take x sufficiently large that z ≥ 2. The parameter K is fixed before the threshold is chosen;
+no assertion is made for growing K. The small-prime product includes 2, and its forbidden
+residue is −2. The symbol µ in β is the Möbius function. Both actual coefficient vectors are
+real, but their signs may vary.
+    Fix a nonnegative real smooth function ψ+ supported in [−1, 1] with integral 1. Write
+e(t) = exp(2πit) and
+                                     Z
+                            κ(y) =       ψ+ (v)e(−vy) dv,        KH (h) = κ(h/H).
+                                     R
+
+The profile need not be even, so κ need not be real. Nevertheless, κ(−y) = κ(y) and κ(0) = 1.
+The kernel is Schwartz, not identically zero for |h| > H. Reflection, ψ+ (v) = ψ(−v), reconciles
+this convention with the older positive-sign Fourier convention.
+
+4.2     The complete scalar and row energy
+Set aq = q/(q − 1) and define, on ℓ2 (Ix ; C),
+                                                                                            X
+           Aq (u, t) = aq κ((u − t)/H) (q − 1)1q|u−t − 1 1q∤u 1q∤t 1u̸=t ,              A=         Aq .
+                                                                                             q∈Q
+
+
+                                                       10
+With ⟨f, g⟩ =
+                P
+                    f g, the target scalar is
+                                                                                                  1
+                                   X          X                                                       
+            Cx = ⟨w, Aβ⟩ =              q                w(u)β(t)KH (u − t) 1u≡t (q) −               .         (3)
+                                  q∈Q         u,t∈Ix
+                                                                                                 q−1
+                                            u̸=t, q∤ut
+
+The outer factor q is already present in the matrix definition and must not be inserted twice.
+The matrix is Hermitian, but its mixed scalar between two real vectors can still be complex.
+   The row energy under consideration is
+                       X X                                                                −1/2     −1/2
+            G(u) =                |Aq (u, t)|2 ,     DG = diag(G(u)),              Z = DG        ADG       .
+                       q∈Q t∈Ix
+
+The square is taken separately at each prime; cross-prime terms are absent. Whenever every
+G(u) > 0,
+                                           1/2      1/2
+                                   Cx = ⟨DG w, ZDG β⟩.                                 (4)
+A smaller normalized operator norm therefore need not reduce the original scalar: the costs of
+both weighted vectors must also be counted.
+
+4.3   The reduced-residue correction
+Proposition 4.1 (Exact positive-form decomposition). Let rq (n) = q1q|n − 1 and define
+                                                                 X q−1
+                                                                   X
+                            T (u, t) = κ((u − t)/H)                          e(a(u − t)/q),
+                                                              q∈Q a=1
+                                                                 X rq (u)rq (t)
+                            R(u, t) = κ((u − t)/H)                                 ,
+                                                              q∈Q
+                                                                         q−1
+                                            X
+                              ∆(u) =              aq (q − 2)1q∤u .
+                                            q∈Q
+
+Then A = T − R − diag ∆ and, in positive-semidefinite order,
+                                     R ≥ 0,              0 ≤ A + diag ∆ ≤ T.
+
+Proof. On residues modulo q, put
+                                                                                          
+                Fq (r, s) = q1r=s − 1,              Sq (r, s) = aq (q − 1)1r=s − 1 1r̸=0 1s̸=0 .
+When both residues are nonzero, exactly one is zero, or both are zero, respectively, Fq − Sq
+equals 1/(q − 1), −1, or q − 1. Hence
+                                                                  rq rq∗
+                                                  Fq − Sq =              .
+                                                                  q−1
+Also, Fq /q projects orthogonally onto the mean-zero subspace of all residues, while Sq /q
+projects onto the subspace vanishing at zero and summing to zero over the units. Thus
+0 ≤ Sq ≤ Fq .
+    Pullback along Ix → Z/qZ preserves this order and does not require equal residue multi-
+plicities. For the diagonal matrix Dv (n, n) = e(−vn/H),
+                                                                     Z
+                         [κ((u − t)/H)Sq (u, t)]u,t∈Ix =                 ψ+ (v)Dv Sq Dv∗ dv.
+
+Integration against a nonnegative weight preserves the order. Sum over primes and remove
+the exact diagonal Sq (n, n) = aq (q − 2)1q∤n to conclude.
+
+    After diagonal deletion, A need not be positive semidefinite. The negative directions below
+arise precisely at this stage. Dropping ∆ during reassembly changes the problem.
+
+                                                            11
+5     Norm bounds and coefficient-blind obstructions
+The next bounds answer a methodological question: can the desired saving follow from the
+operator norm and coefficient-vector norms alone? The row estimates and actual coefficient
+norms quantify the cost of that approach. The later rank argument strengthens the obstruction
+to a particular family of repairs, without identifying the arithmetic vectors with extremizing
+directions.
+
+5.1   An upper bound from frequency separation
+Fix finite constants Bψ , Bκ such that
+
+                   0 ≤ ψ+ (v) ≤ Bψ (1 + |v|)−2 ,            |κ(y)| ≤ Bκ (1 + |y|)−2 .
+
+Lemma 5.1. For Q ≥ 2,
+                                  ∥A∥2 ≤ 4Bψ (H + 4Q2 ) + 3Q2 .
+
+Proof. Distinct reduced fractions a/q are separated on the circle by at least (4Q2 )−1 , including
+                                                      P
+the gap across zero. The convolution kernel κ(h/H) q,a e(ah/q) on all integers has Fourier
+multiplier                          XX                          
+                          m(θ) = H          ψ+ H(a/q − θ − k) ≥ 0
+                                          q,a k∈Z
+
+by Poisson summation for the fixed Schwartz kernel. The points on the right are separated
+on the real line by at least s = H/(4Q2 ). Each half-open unit interval contains at most
+1 + 1/s points. Splitting the positive and negative half-lines and summing (1 + j)−2 gives
+m(θ) ≤ 4Bψ H(1 + 1/s). Compression to Ix cannot increase the norm. Proposition 4.1 gives
+∥A + diag ∆∥2 ≤ ∥T ∥2 , and max ∆ < Q<q≤2Q q ≤ 3Q2 . The claimed bound follows.
+                                      P
+
+
+    Since H < Q2 , the physical scales satisfy ∥A∥2 ≪ψ Q2 . No cancellation in β, w is used.
+
+5.2   Energy of every actual row
+Proposition 5.2. For the fixed kernel and every sufficiently large x, uniformly in u ∈ Ix ,
+
+                                                         HQ2
+                                            G(u) ≍ψ            .
+                                                         log Q
+
+Proof. Continuity and κ(0) = 1 give fixed 0 < ρ, b ≤ 1 with |κ(y)| ≥ b for |y| ≤ ρ. For q ∤ u,
+put                  X                                   X
+            Sq (u) =      |κ((u − t)/H)|2 , Cq (u) =           |κ((u − t)/H)|2 .
+                         t∈Ix                                          t∈Ix
+                      t̸=u, q∤t                                    t̸=u, q|u−t
+
+Squaring gives the exact identity
+                                   X
+                                          a2q Sq (u) + (q − 1)(q − 3)Cq (u) .
+                                                                                 
+                          G(u) =
+                                   q∈Q
+                                    q∤u
+
+Integral comparison yields Sq (u) ≤ 2Bκ2 H/3 and Cq (u) ≤ 2Bκ2 H/(3q). Since 1 + (q − 1)(q −
+3)/q ≤ q, the contribution of each prime is at most (2Bκ2 /3)a2q qH.
+    If N − 1 ≥ 2ρH and H ≥ 2Q/ρ, at least one side of every row contains ⌊ρH/q⌋ ≥ ρH/(2q)
+nonzero congruent differences. Their entries are still units, and (q − 2)2 ≥ q 2 /9. This prime
+therefore contributes at least (ρb2 /18)a2q qH.
+
+                                                    12
+   An integer u ≤ x = Q3 has at most two distinct prime factors greater than Q. Removing
+the primes dividing u from SQ = q∈Q a2q q loses at most 9Q. The prime number theorem and
+                               P
+
+partial summation give SQ ∼ (3/2)Q2 / log Q. Beyond a common threshold SQ ≥ 18Q, so
+
+                                    ρb2              2Bκ2
+                                        HSQ ≤ G(u) ≤      HSQ
+                                    36                3
+for all actual rows.
+
+    The restriction u ≤ Q3 is essential to this argument. This is not a theorem for equal-length
+intervals at arbitrary huge origins or for arbitrary coordinate prefixes.
+
+5.3     A constant-vector witness and the actual coefficients
+The following lower bounds concern the norm-product upper-bound expression
+
+                                     |Cx | ≤ ∥A∥2 ∥w∥2 ∥β∥2 .
+
+They do not give a lower bound for |Cx |.
+
+Theorem 5.3 (Obstruction to coefficient-blind norm bounds). For the fixed data of Section 4,
+
+                           Q2                 x                                  1     27          x
+                                                                                               
+      ∥A∥2 ≥ (3/2 + o(1))       ,      ∥w∥22 ∼ log x,              ∥β∥22 ≥         log    + o(1)       .
+                          log Q                 2                                2     22        log x
+Consequently,
+                            log Q                    3q
+                       lim inf    ∥A∥ 2 ∥β∥ 2 ∥w∥2 ≥    log(27/22) > 0.
+                        x→∞ xQ2                      4
+Any proof using only Bx ∥β∥2 ∥w∥2 , with Bx ≥ ∥A∥2 , cannot by itself supply a fixed positive
+power saving.
+
+Proof. Let f = N −1/2 1Ix . Before diagonal deletion, the positive form is
+                                               1 X
+                                                          Z
+                       ⟨f, (A + diag ∆)f ⟩ =       q          ψ+ (v)Vq (v/H) dv,
+                                               N q
+                                                                                    P
+where Vq (α) is the sum of squared deviations of the unit-residue sums n≡r(q), n∈Ix e(αn) from
+their mean over the units. It is not further divided by q − 1. Write Ix = {a + 1, . . . , a + N }
+and N = mq + s, 0 ≤ s < q, and define
+                                                    m−1
+                                                    X
+                                       Gm (y) =           e(ky),
+                                                    k=0
+                                                                       
+                   Sj (α) = e(α(a + j)) Gm (αq) + 1j≤s e(αmq) ,              1 ≤ j ≤ q.
+
+The sum Sj is exactly the residue sum for a + j, comprising m complete periods and at most
+one terminal term. If 0 < |α|q ≤ 1/2,
+
+                 |Gm (αq)| ≤ (2|α|q)−1 ,       |e(αj) − 1| ≤ 2π|α|q          (1 ≤ j ≤ q).
+
+Each sum thus lies within π + 1 of a common center, and within 1 when α = 0. Subtracting the
+mean minimizes the sum of squared distances, giving Vq (α) ≤ q(π + 1)2 . The fixed frequency
+support and the eventual inequality 2Q/H < 1/2 place the whole integral in this range. The
+
+
+
+                                                 13
+positive form is therefore O(Q3 /(N log Q)) = O(1/ log Q). On the other hand, the number of
+unit integers is Nq = N (1 − 1/q) + O(1), whence
+                                                       X
+                                    ⟨f, Af ⟩ = −             (q − 2) + O(1/ log Q).
+                                                       q∈Q
+
+The prime number theorem and partial summation give the operator lower bound.
+    For w, define c(p) = ((p − 1)/(p − 2))2 − 1 = O(1/p) and extend multiplicatively on
+squarefree integers. Expand the nonnegative Euler product, discard masks bounded by 1, and
+enlarge the interval to obtain
+                                            2            Y
+                                    b(z)
+                                     x          ≤ xWz2         (1 + c(p)/p) ≪ xWz2 .
+                                            2
+                                                         p>z
+
+The product converges since c(p)/p = O(p−2 ). Mertens’ product theorem gives Wz ≪ log z ≪K
+log log x. The prime number theorem also gives u∈Ix Λ(u + 2)2 ∼ (x/2) log x, with proper
+                                                  P
+
+prime powers contributing a lower-order term. The two-sided triangle inequality for norms
+                                                                         (z)
+proves the asymptotic for w, without assuming orthogonality between bx and Λ.
+    For β, take primes x2/5 < p ≤ x9/20 and x/(2p) < r ≤ x/p. Eventually p < r, and both
+exceed U . Thus n = pr ∈ Ix , Λ(n) = 0, and the only divisor of n at most U is 1, so β(n) = −1.
+The smaller prime factor is unique, avoiding repeated counts. The ordinary prime number
+theorem in doubling intervals is uniform over this range. The number of such products is
+                                x                          1              1     27          x
+                                           X                                            
+                (1 + o(1))                                       =          log    + o(1)       .
+                                2                     p log(x/p)          2     22        log x
+                                    x2/5 <p≤x    9/20
+
+
+                                                                      R 9/20
+The final equality follows by partial summation and 2/5 [a(1 − a)]−1 da = log(27/22). Multi-
+plying the three lower bounds proves the last assertion.
+
+Corollary 5.4. For the specified row-energy normalization,
+
+                                           H −1 ≪ψ ∥Z∥2 ≪ψ (log Q)/H.
+                    1/2               1/2
+Moreover, ∥Z∥2 DG β                 DG w            is still at least cψ xQ2 / log Q for some cψ > 0.
+                            2                   2
+
+                      1/2           1/2
+Proof. Since A = DG ZDG √       , ∥A∥2 /Gmax ≤ ∥Z∥2 ≤ ∥A∥2 /Gmin . Each weighted vector
+contributes a factor of at least Gmin relative to its unweighted norm. Thus the norm-product
+expression is at least
+                                 (Gmin /Gmax ) ∥A∥2 ∥β∥2 ∥w∥2 .
+Apply Proposition 5.2 and Theorem 5.3.
+
+    This is a lower bound on an upper-bound expression, not a lower bound on |Cx |. It does
+not rule out cancellation between the actual coefficients, other preconditioners, or coefficient-
+sensitive methods.
+    The distinction also explains why the norm upper bound remains useful. In Section 7, one
+coefficient vector is restricted to a much smaller boundary support. That support gain pays
+for a remainder even though the same norm estimate, applied to both full vectors, cannot pay
+for the desired full-scalar saving.
+
+
+
+
+                                                               14
+5.4   A growing number of negative directions
+The subspaces in the next result witness an operator obstruction; they are not identified with
+the actual coefficient vectors β, w.
+
+Theorem 5.5 (A scoped obstruction to low-rank repairs). Put τx = Q2 / log Q and
+
+                               1   1
+                                     
+                 Jx = N          −          ,         dx = 2Jx + 1,        kx = dx − 35.
+                              4Q H
+For all sufficiently large x, there is a complex subspace Wx such that
+                                                               τx
+                     dimC Wx ≥ kx ,             ⟨f, Af ⟩ ≤ −      ∥f ∥22   (f ∈ Wx ).
+                                                               2
+Every matrix E of complex rank less than kx , even if non-Hermitian, satisfies ∥A − E∥2 ≥ τx /2,
+and kx = Q2 /4 − x11/32 + O(1).
+
+Proof. Set U0 = A + diag ∆ ≥ 0 and take fj (n) = N −1/2 e(jn/N ) for |j| ≤ Jx . These vectors
+are orthonormal on N consecutive integers, and eventually dx < N . For all q ≤ 2Q and |v| ≤ 1,
+we have q|j/N + v/H| ≤ 1/2. The preceding residue-variance bound gives
+
+                                            C0 X 2
+                          ⟨fj , U0 fj ⟩ ≤       q ,            C0 = (π + 1)2 .
+                                            N q
+
+Let F have these vectors as columns, B = F ∗ U0 F ≥ 0, and M1 =
+                                                                              P
+                                                                                 q q. Then
+
+                                    tr B ≤ C0 (1 + 2Q/N )M1 .
+
+An actual integer is divisible by at most two shell primes, so
+                                                X q(q − 2)       3
+                           ∆(n) ≥ D∗ :=                    − 4Q ∼ τx .
+                                                  q    q−1       2
+
+The number of eigenvalues of B exceeding D∗ /2 is at most 2 tr B/D∗ < 35 eventually, and
+eventually D∗ ≥ τx . Map the [0, D∗ /2] spectral subspace of B through F to obtain Wx . At
+most 35 dimensions are lost; on this space the U0 form is at most D∗ /2, whereas the removed
+diagonal is at least D∗ . This proves negativity. If rank E < kx , then Wx ∩ ker E is nonzero. A
+unit vector in the intersection gives ∥A − E∥2 ≥ |⟨f, (A − E)f ⟩| ≥ τx /2. Finally, expand dx
+using N = x/2 + O(1) to obtain the dimension asymptotic.
+
+     The spectral cutoff does not say that the whole low-frequency band is negative, or that
+repairs above some higher rank must succeed.
+     Real witnesses require a separate construction; a complex spectral space cannot simply be
+renamed a real√one. In the same symmetric
+                                       √       band, form the real orthonormal matrix V from
+f0 , (fj + f−j )/ 2, and (fj − f−j )/(i 2). The real symmetric matrix Re(V ∗ U0 V ) is positive
+semidefinite and has trace tr B. Repeating the spectral cutoff gives a different real subspace of
+dimension at least kx . In particular, for a real-linear map
+
+                               E : RIx −→ CIx ,            rankR E < kx ,
+
+a unit vector in its kernel intersected with this real negative subspace gives ∥A − E∥RIx →CIx ≥
+τx /2. The norm uses the Euclidean unit sphere in the real domain, and rank means real image
+dimension, not complex rank. The identity f T Af = f T Re(A)f applies to a quadratic form at
+one real vector. It cannot replace the mixed scalar wT Aβ by wT Re(A)β.
+
+                                                      15
+6     Kloosterman emission and two-sided attachment
+The full-range representation and the critical-range estimate concern different inputs. The
+former retains the exact positive packets and has a saturation identity; the latter acts on two
+short arrays. The relevant attachment must therefore be made to the signed, diagonal-removed
+expression, with explicit recombination and residual costs. This section makes that distinction
+quantitative.
+
+6.1     The complete Kloosterman representation
+Let ηb be the real partition functions constructed in Section 7, and define the finite set of
+physical labels
+
+               Jx = {j ∈ Z : supp ηj,H ∩ [x/2, x] ̸= ∅},                        |Jx | = O(x/H + 1).
+
+All ordered block pairs and their sums in this section are restricted to (b, c) ∈ Jx2 . Set
+a(j) (t) = ηb (t)β(t) + ij ηc (t)w(t) for j = 0, 1, 2, 3. For fixed q ∈ Q and v ∈ R, define the sums
+on unit residue classes and their centered versions by
+                            X                                                               1 X (j)
+              Fr(j) =                   a(j) (t)e(vt/H),          Fr(j),0 = Fr(j) −                 F .
+                        t∈Ix , t≡r(q)
+                                                                                          q − 1 s̸=0 s
+
+Set the centered vector to zero at the zero residue class. Suppressing the superscript j, put
+                      1X 0                                  1X 0
+             αm =           F e(−mr/q),              γn =         F e(−nr̄/q),             1 ≤ m, n < q,
+                      q r̸=0 r                              q r̸=0 r
+
+where r̄ is the multiplicative inverse of r modulo q.
+Proposition 6.1 (Emission identity and saturation). For the unnormalized Kloosterman sum
+            P
+S(m, n; q) = r̸=0 e((mr + nr̄)/q),
+                               q−1
+                               X                                 X
+                        B=              αm γn S(m, n; q) =              |Fr0 |2 = q ∥α∥2 ∥γ∥2 .
+                             m,n=1                               r̸=0
+
+Proof. Centering makes the zero frequency of both Fourier transforms vanish. Expand S and
+apply finite Fourier inversion to the two inner sums, recovering Fr0 and Fr0 . Parseval gives
+                         2
+∥α∥22 = ∥γ∥22 = q −1 F 0 2 , since inversion permutes the unit residue classes.
+
+    This is an exact representation, not a cancellation estimate. The arrays have range q − 1;
+                                             √
+centering does not shorten them to length q. For example, if F 0 = e1 − e2 , every nonzero
+frequency of the first array is nonzero. This example tests the interface; it does not identify
+the actual arithmetic vector with that example.
+    Appendix A gives the complementary one-sided obstruction: even two first coordinates and
+a complete centered second array retain the generic norm scale q. Neither statement excludes
+cancellation after signed reassembly of the actual coefficients.
+
+6.2     Signed recombination before residual estimates
+Write
+                                                                                        3
+                     q−2 X                                                           1X
+                                                                        Z
+          dj (q) =                   |a(j) (t)|2 ,      Ebcq =              ψ+ (v)         ij [Bj − dj (q)] dv.
+                     q − 1 t∈I , q∤t                                                 4 j=0
+                                x
+
+
+
+                                                            16
+                                                P j   P 2j
+Expanding the four squares and using             ji =  j i = 0 gives
+                                                  XX
+                                            Cx =               qEbcq .                          (5)
+                                                     b,c q∈Q
+
+The phase inside the integral is e(v(t − u)/H), with the same orientation as the kernel in
+Section 4. Subtracting dj removes the diagonal exactly; the outer factor q must not be counted
+twice. Each of the four positive packages may saturate even when their signed combination
+exhibits cancellation. Taking their absolute values separately loses this distinction.
+   For arrays supported on integer intervals and vanishing at multiples of q, write
+                                                 X
+                              Bq (A1 , A2 ) =          A1 (m)A2 (n)S(m, n; q).
+                                                 m,n
+
+The unit multiplier is always 1 here and does not vary with the decomposition index. When
+                                                                 √
+both integer intervals have length at most a constant multiple of q, the unit multiplier and
+coprimality hypotheses of the Blomer–Pascadi theorem yield the critical-scale bound
+                               |Bq (A1 , A2 )| ≪ϵ q 31/32+ϵ ∥A1 ∥2 ∥A2 ∥2 .                     (6)
+We use the prime-modulus, nonzero-index specialization of their Theorem 1.1 [10], not a direct
+                                                                                    √
+application to the complete emitted arrays. Cutting each length-q − 1 array into k ≍ q blocks
+gives                          X
+                                   ∥αA ∥2 ∥γB ∥2 ≤ k ∥α∥2 ∥γ∥2 .
+                                   A,B
+
+Applying (6) rectangle by rectangle therefore produces only a q 47/32+o(1) norm factor, worse
+than the full scale in Proposition 6.1. This is the cost of that recombination method, not an
+impossibility theorem for every decomposition.
+Condition 6.2 (Unproved two-sided attachment with a loss budget). Fix a loss exponent
+ℓ ≥ 0 and A0 > 2 before sending x → ∞; let ωbc = (1 + |b − c|)−A0 for (b, c) ∈ Jx2 . For the
+already signed, diagonal-removed, integrated quantity Ebcq , there is a decomposition
+                                           X
+                                 Ebcq =         λν Bq (A1,ν , A2,ν ) + Rbcq ,
+                                            ν
+
+in which every rectangle satisfies all hypotheses of (6), and
+                         X
+                               |λν | ∥A1,ν ∥2 ∥A2,ν ∥2 ≪ ωbc (H/q)xℓ+o(1) ,
+                          ν
+                                                  |Rbcq | ≪ ωbc Hq −1/32 xℓ+o(1) .
+The constants and small-exponent terms are uniform over all original ordered block pairs and
+the full prime shell, with no unpaid exceptional set.
+
+   If this condition holds, then
+                                                           (1 + |h|)−A0 ≪ x/H,
+                               X                     X
+                                       ωbc ≤ |Jx |
+                              b,c∈Jx                 h∈Z
+
+and (6), followed by the outer prime sum, gives
+                                                q 31/32 xℓ+o(1) ≪ xQ2 x−1/96+ℓ+o(1) .
+                                           X
+                    |Cx | ≪ (x/H)H
+                                          q∈Q
+
+Here o(1) means that an arbitrarily small fixed positive exponent loss can be absorbed at
+sufficiently large scales: first fix a strict margin, then choose ϵ in (6) sufficiently small. Thus
+ℓ < 19/2400 suffices to pay for δ > 1/400. This is a conditional exponent ledger. We do not
+prove Condition 6.2, nor require every successful route to use this decomposition.
+
+                                                        17
+7    Constructive partitioning and the boundary bound
+The norm method has a useful local application despite its full-vector obstruction: one can
+gain from the size of a boundary support. We construct a partition for which this gain controls
+the collective boundary contribution in the original scalar [1]. The statement is about that
+remainder alone and leaves the full signed interior as an arithmetic problem.
+
+Theorem 7.1 (Collective bound for the actual weighted boundary). There is a nonnegative
+                                                                                         (r)
+smooth partition j ηj,H = 1 with finite overlap, each support of length H, and H r ∥ηj,H ∥∞ ≤
+                 P
+
+Cr uniformly in j, H. Classify labels only inside the physical set Jx of supports meeting [x/2, x]:
+
+                               J∂ = {j ∈ Jx : supp ηj,H ̸⊂ (x/2, x)}.
+
+            j∈J∂ ηj,H be their total weight and set θint = 1 − θ∂ . Then
+           P
+Let θ∂ =
+
+                          |Cx − ⟨θint w, A(θint β)⟩| ≪ xQ2 x−11/64+o(1) .
+
+Proof. Take χ(s) = exp[−1/(1 − 4s2 )] for |s| < 1/2 and zero elsewhere, and set
+                               X                                     χ(t/H − j/2)
+                      D(s) =         χ(s − j/2),        ηj,H (t) =                .
+                               j∈Z
+                                                                        D(t/H)
+
+The function D is positive, smooth and 1/2-periodic: every point lies within 1/4 of a half-
+integer. All derivatives of D and D−1 are bounded on one period. The chain rule gives the
+required derivative estimates. Each closed support is contained in [(j − 1)H/2, (j + 1)H/2], at
+most three closed supports overlap, and |Jx | = O(x/H + 1). Since every classified support
+meets the physical closed interval, a boundary support must contain at least one endpoint.
+There are therefore at most six such supports, and
+
+               suppIx θ∂ ⊂ [x/2, x/2 + H] ∪ [x − H, x],         | suppIx θ∂ | = O(H + 1).
+
+Only pointwise envelopes for the actual coefficients are needed. The divisor bound τ (n) ≪ϵ nϵ
+                                       (z)
+gives |β(n)| ≤ 1 + τ (n). By (1), 0 ≤ bx (n) ≤ Wz 2ω(n) ≤ Wz τ (n), so |β(n)| + |w(n)| ≤ xo(1)
+uniformly on the actual interval, for fixed K. The divisor bound follows prime power by
+prime power: for p ≥ 21/ϵ , k + 1 ≤ 2k ≤ pϵk ; for each of the finitely many remaining primes,
+supk (k + 1)p−ϵk is finite.
+   Thus each boundary vector has norm H 1/2 xo(1) , while each full vector has norm x1/2+o(1) .
+Expand exactly, counting the double-boundary term only once:
+
+                     Cx − ⟨wint , Aβint ⟩ = ⟨w∂ , Aβ⟩ + ⟨wint , Aβ∂ ⟩.
+                                             √
+Lemma 5.1, namely ∥A∥2 ≪ Q2 , now gives Q2 xHxo(1) = xQ2 x−11/64+o(1) .
+
+    The theorem bounds the collective contribution of all weighted ordered pairs with a
+boundary label, not the absolute value of each positive polarization package. It makes an
+admissible explicit choice of partition; it does not assert derivative bounds for every previously
+specified partition. The interior cutoff is genuinely smooth, but this does not turn Λ, the
+Möbius coefficients, or the hybrid main term into smooth coefficients. If an interior saving
+δint is proved in the future, this recombination certifies a full saving of min(δint , 11/64). The
+signed interior estimate remains unresolved here. In particular, this theorem does not establish
+Condition 6.2 or construct its residual Rbcq : paying for a boundary contribution and paying
+for a two-sided array decomposition are different tasks.
+
+
+                                                   18
+8      Moving targets and the distinguished arithmetic seed
+This branch uses the same local sieve factors as Island 1, but changes the question from
+interval counting to recurrence in a probability space. Three statements must be distinguished:
+exact prime-pair encoding at seed 0, infinite recurrence for almost every seed, and a sufficient
+criterion that could connect the two. The required joint estimate in the last criterion remains
+unproved; the metric theorem below applies to the actual events, not a surrogate random
+model.
+
+8.1      Exact arithmetic encoding and a metric hitting theorem
+    b be the group of profinite integers, let mH be Haar probability measure, and let T (ξ) = ξ+1.
+Let Z
+We write mH to avoid confusion with the Möbius function µ. Set
+      √                 Y
+yn = n + 2, Qn =             p, En = {ξ : p ∤ ξ(ξ + 2) for every p ≤ yn }, Zn (ξ) = 1En (T n ξ).
+                        p≤yn
+
+For n ≥ 3, Zn (0) = 1 if and only if both n and n + 2 are prime: both exceed the common
+                                                                                     √ sieve
+threshold, whereas every composite integer at most n + 2 has a prime factor at most n + 2.
+The Chinese remainder theorem gives
+                                              1 Y
+                         αn = mH (En ) =              (1 − 2/p) ≍ (log n)−2 .
+                                              2 2<p≤y
+                                                       n
+
+The underlying T is an autonomous adding map, not a mixing transformation. Nonautonomy
+enters through the targets and sieve scales that change with n.
+Theorem 8.1 (Haar moving-target variance and almost-everywhere hitting). Let SN =
+P                   P
+  3≤n≤N Zn and AN =  3≤n≤N αn . Then
+
+                            VarmH (SN ) ≪ N,               AN ≍ N/(log N )2 .
+For mH -almost every ξ, SN (ξ) → ∞.
+
+Proof. For m < n, put d = n − m. Separating common sieve primes from newly added primes
+in the Chinese remainder theorem gives
+                                Cov(Zm , Zn ) = αm αn (Kym (d) − 1).
+For a common prime p, the forbidden classes are 0, −2, −d, −d − 2. Counting their coincidences
+gives
+    k2 (d) = 212|d ,                                                                       k3 (d) = 313|d ,
+                    4          2p              p
+    kp (d) = 1 −          +          1p|d +         (1     + 1p|d+2 )           (p ≥ 5),
+                 (p − 2)2   (p − 2)2        (p − 2)2 p|d−2
+                Q
+where Ky = p≤y kp . Every factor has mean 1 over a complete residue system. Expanding
+into indicators of Chinese-remainder residue classes, the sum of absolute coefficients is at most
+                                                  (1 − 2/p)−2 ≪ log4 (2y).
+                                            Y
+                               D(y) = 6
+                                          5≤p≤y
+
+The final bound follows from Mertens’ product theorem and a convergent O(p−2 ) correction.
+The count of any residue class in an integer interval differs from the interval length divided by
+its modulus by at most 1. Hence
+                                      X
+                                            (Ky (d) − 1) ≤ D(y).
+                                      d∈J
+
+
+                                                     19
+For fixed m, Abel summation against the nonincreasing weights αm+d yields
+                            −m
+                           NX
+                                  αm+d (Kym (d) − 1) ≤ αm+1 D(ym ).
+                            d=1
+
+When ym ≥ 3, αm  2 D(y ) = 1/6, so the absolute value of the grouped covariance for each m
+                      m
+is at most 1/6. The finitely many initial m contribute a bounded amount, and the diagonal
+variance is at most αn ≤ N . This proves the variance estimate. Mertens’ product theorem
+                    P
+
+and the fixed two-point singular series give the order of AN . Chebyshev’s inequality along
+N = j 2 gives
+                                                            (log j)4
+                            mH {|Sj 2 − Aj 2 | > Aj 2 /2} ≪          .
+                                                               j2
+The right-hand side is summable. The first Borel–Cantelli lemma implies that almost every
+seed eventually satisfies Sj 2 ≥ Aj 2 /2 → ∞. Monotonicity of SN extends the conclusion to all
+N.
+
+    This argument comes from the original moving-target proof [6]. It is a metric theorem
+for the actual sieve events, not merely a finite-model statement. Its null exceptional set may
+nevertheless contain 0, so it does not cross the map’s Bridge B.
+
+8.2   A precise form of the distinguished-seed gap
+The following sufficient criterion comes from the existing distinguished-seed reconnaissance
+report [2]; we reproduce its short proof. Choose qN | QN , put UN = qN Z,
+                                                                        b and define
+
+                 VN = ∥SN − AN ∥L2 (mH ) ,        ΩN = sup (SN (ξ) − SN (0)).
+                                                          ξ∈UN
+
+Proposition 8.2 (A sufficient cylinder-set return criterion). For every N ,
+                                                  √
+                                  SN (0) ≥ AN −       qN VN − ΩN .
+                                                                          √
+If, along an unbounded sequence Nj , some fixed η > 0 satisfies ΩNj +         qNj VNj ≤ (1 − η)ANj ,
+then there are infinitely many twin primes.
+
+Proof. We have mH (UN ) = 1/qN . The definition of ΩN and Cauchy–Schwarz imply
+                                                                 √
+                                  Z
+                   SN (0) ≥ qN         SN dmH − ΩN ≥ AN −         qN VN − ΩN .
+                                  UN
+
+The assumed condition gives SNj (0) ≥ ηANj → ∞; apply the exact arithmetic encoding.
+                                √                                              √
+    The known bound VN ≪ N ensures that qN = o(N/ log4 N ) implies qN VN = o(AN ).
+This is sufficient, not necessary, and the required bound for ΩN is not known in this regime.
+For the fine cylinder
+                √       qN = QN , SN is constant on the cylinder and ΩN = 0, but QN =
+exp((1 + o(1)) N ) makes the generic point-evaluation cost too large. The proposition is a
+sufficient criterion, not an assertion that its hypothesis holds or that it is the only possible
+return mechanism.
+    Within this cylinder criterion, both error terms must be controlled on the same unbounded
+sequence. Other exact routes to a distinguished-seed hitting theorem remain possible.
+
+
+
+
+                                              20
+8.3   Prime-stage evolution and a mixing obstruction
+We now change from integer time n to prime-index stage k. The following exact evolution
+                                                                                      Q
+and scoped carrier obstruction do not bound ΩN or prove hitting at seed 0. Let Pk = j≤k pj ,
+equip Vk = CZ/Pk Z with the normalized counting inner product, and put Bk (r) = 1(r(r+2),Pk )=1 ,
+ak = mean Bk , and Wk = Bk − ak . When a new odd prime p is added, define the replication-
+and-deletion operator by
+                    (Rp f )(r + jPk ) = f (r)1p∤(r+jPk )(r+jPk +2) ,   0 ≤ j < p.
+Exactly p − 2 children survive for every parent residue. Thus, with αp = 1 − 2/p,
+                           Rp∗ Rp = αp I,     mean(Rp f ) = αp mean f.
+Set g = Rp 1 − αp . Direct averaging gives ∥g∥2 = αp (1 − αp ), and every mean-zero f satisfies
+⟨Rp f, g⟩ = 0. Consequently,
+                 Wk+1 = Rp Wk + ak g,          ∥Wk /ak ∥2 = a−1               2
+                                                             k − 1 ≍ (log pk ) .
+
+The forcing term is part of the actual evolution; this is not a homogeneous exponentially
+contracting system.
+   More precisely, suppose maps Jk are uniformly bounded and coercive on the entire mean-zero
+space, c∥f ∥ ≤ ∥Jk f ∥ ≤ C∥f ∥, and satisfy the exact intertwining relation Jk+1 Rpk+1 = Qk Jk .
+They cannot also satisfy a uniform arbitrary-product estimate ∥Qb−1 · · · Qa ∥ ≤ CQ θb−a with
+0 < θ < 1. Indeed, the three assumptions imply
+                                     Y
+                                c        (1 − 2/pj )1/2 ≤ CCQ θb−a .
+                                    a<j≤b
+
+For fixed a, the left side is only of order 1/ log pb , and the prime number theorem gives
+pb ≍ b log b, contradicting exponential decay on the right. This excludes only the simultaneous
+validity of those three assumptions. It does not exclude noncoercive quotient maps, observable
+seminorms, or nonautonomous representations with controlled defects [7].
+
+8.4   The role and limits of Island 7
+A useful geometric lift must at least supply a time-preserving semiconjugacy, event pullback,
+an applicable measure correspondence, and a correspondence for the distinguished seed. For
+example, candidate maps ρk and transformations Hk , Fk must satisfy ρk+1 Hk = Fk ρk , and
+lifted events must be exactly the inverse images of the original events. These are attachment
+conditions to be proved. We do not construct a twin-prime-specific Hénon lift here.
+     Even a stationary mixing system cannot have a nontrivial addition-by-one clock modulo M
+as a measure-preserving factor: the clock’s mean-zero eigenfunction e(r/M ) has autocorrelation
+of constant absolute value 1, contradicting mixing after pullback. This finite-factor argument
+does not establish impossibility for all nonautonomous geometric representations. Nor does a
+two-dimensional phase space imply that all relevant observables have a two-dimensional linear
+carrier. Island 7 is therefore an auxiliary representation route; a geometric picture cannot
+replace the distinguished-orbit hitting requirement on Island 5.
+
+
+9     Two conditional bridges and their remaining gaps
+9.1   The analytic bridge: established structure and unpaid estimates
+Bridge A in the map runs from Island 2 to Island 6. The repository’s Gate A and Gate B
+are both analytic obligations inside this bridge, not the two different red bridges in the map.
+
+                                                  21
+Table 2 places the quantities used here on a common scale.
+
+Component               Content on the common scale                                             Status
+                          2                          2
+Actual operator         Q / log Q ≪ ∥A∥2 ≪ Q ; every actual row has energy                      Proved, scoped
+                        ≍ HQ2 / log Q
+Actual coefficients     A norm-product argument alone cannot pay for a fixed                    Proved method
+                        power saving                                                            obstruction
+Boundary                xQ2 x−11/64+o(1)                                                        This component
+recombination                                                                                   paid
+Critical-array input    Factor q 31/32+o(1) for admissible two-sided short arrays               External theorem
+Two-sided               Condition 6.2, including every residual                                 Unproved
+attachment
+Analytic Gate B:        |Cx | ≪ xQ2 x−δ+o(1) , δ > 1/400                                        Unproved
+full scalar target
+Analytic Gate A         Original full-shell signed folding with positive margin ηA              Separately
+                                                                                                unproved
+
+Table 2: The exponent ledger. A logarithmic gap remains between the operator bounds.
+Structural identities, method obstructions, and target upper bounds are different kinds of
+evidence.
+
+
+Imported conditional interface and reference exponent. To specify what the ledger
+estimates, write
+                                  X                             X q−2
+                       Sxphys =          β(t)w(t),       K∗ =         q         = x2/3+o(1) .
+                                  t∈Ix                          q∈Q
+                                                                          q−1
+
+The scalar Sxphys is not S2 (x) from Section 2. The source folding scalar A∗ and error scalar E∗
+in V58 provide the imported interface [3]
+                                         A∗ − Cx + E∗
+                              Sxphys =                ,         |E∗ | ≪ x143/96+o(1) .
+                                              K∗
+Here A∗ is a complex scalar, not the matrix A. Its source definition is the full-shell fold
+P                   P
+   q qPq , and E∗ =   q qEq ; the cited source interface supplies the rowwise construction of
+Pq , Eq and the error proof. We import these identities and the error bound as premises,
+without reconstructing the upstream row data. The still-unproved analytic Gate A hypothesis
+is explicitly
+                             |A∗ | ≪ x1997/1200−ηA +o(1) , ηA > 0.
+Under this hypothesis and the full scalar target |Cx | ≪ x5/3−δ+o(1) , division by K∗ gives the
+three output exponents
+                                399                         79
+                                     − ηA ,      1 − δ,        .
+                                400                         96
+The conditional output is therefore |Sxphys | ≪ x399/400−η+o(1) , where
+                                  0 < η < min{ηA , δ − 1/400, 419/2400}.                                         (7)
+The margins in (7) are exactly those relative to 399/400: (399/400) − (1 − δ) = δ − 1/400
+and (399/400) − (79/96) = 419/2400. This is an exponent calculation under the source
+contract [1, 3, 9], not a new independent proof of the entire upstream implication chain to the
+twin-prime conjecture. In particular, a saving for this paper’s scalar alone does not dispense
+with Gate A or the historical upstream structural attachments. If the critical-array route
+succeeds, δ = 1/96 − ℓ, requiring strictly ℓ < 19/2400. For a different interior estimate,
+boundary recombination limits the full saving certified here to min(δint , 11/64).
+
+                                                         22
+9.2   The dynamical bridge: from a metric theorem to a distinguished point
+Bridge B runs from Island 5 to Island 6. Exact sieve-event encoding, mass estimates, and the
+metric hitting theorem in Theorem 8.1 are already available; the missing step is to establish
+the conclusion for the distinguished seed 0. Proposition 8.2 expresses one sufficient gap in
+terms of within-cylinder oscillation and point-evaluation cost, but does not supply the required
+joint bound. Any representation from Island 7 must return to this pointwise requirement or to
+another equally exact arithmetic readout condition.
+
+9.3   What the synthesis establishes
+The seven islands distinguish research objects and transfer tasks; they do not turn a sequence of
+historical paper numbers into a closed proof chain. Basic arithmetic supplies local consistency.
+The fixed-atom results preserve coefficients, masks, and prefixes on their stated source support.
+The occurrence results specify conditional attachment, conservation, and weighted-cover
+interfaces; they do not construct the production lift or pay its coefficient-transport cost. The
+analytic layer supplies actual operator structure, growing-dimensional obstructions, and a
+boundary contribution that can be paid for. The dynamical layer supplies metric hitting for
+the actual moving targets and exact sieve geometry. These results have distinct mathematical
+content: they should neither be merged into a proof of the twin-prime conjecture nor dismissed
+indiscriminately as toy models.
+    The two gaps should not be conflated. The analytic branch needs coefficient-sensitive
+signed estimates and valid upstream attachments; the dynamical branch needs a conclusion
+at the distinguished seed. The present synthesis isolates those obligations without supplying
+them. Authorship, venue, systematic literature positioning, and novelty assessment remain
+unspecified. This paper does not prove the twin-prime conjecture.
+
+
+
+
+                                               23
+A     One-sided short support and model evidence
+The complete Kloosterman matrix K = (S(m, n; q))1≤m,n<q satisfies the directly verifiable
+identity
+                               KK∗ = q 2 I − (q + 1)J,
+where J is the all-ones matrix. To verify it, expand the two Kloosterman sums. Summation
+over n gives q1r=s − 1. The first contribution is q r̸=0 e((m − m′ )r/q) = q(q1m=m′ − 1), and
+                                                   P
+
+the second is 1, giving the stated matrix. Every row sums to 1. Thus any vector a with zero
+coordinate sum satisfies ∥K∗ a∥2 = q∥a∥2 . Choosing a = em1 − em2 supported on two distinct
+indices shows that scale q is still attained when one side has only two coordinates while the
+other is complete and centered. One-sided short support therefore cannot replace the two-sided
+critical-array hypotheses.
+    This extremal example does not assert that the actual emitted coefficients attain that
+extremum. It shows that a universal bound knowing only support and centering cannot be
+stronger. Likewise, finite matrix checks test only the chosen scales. A model with a common
+growing-parameter theorem is stronger than a finite check, but still needs attachment of actual
+coefficients, a fixed starting point, parameter ranges, and residuals before it can address the
+original arithmetic problem. We do not reissue historical finite certificates as asymptotic
+theorems or add synthetic experiments merely to increase the manuscript’s length.
+
+
+B     Sources and the scope of verification
+This synthesis selects core sources from a repository containing 420 TPC directories and
+organizes them by mathematical dependency. The directory count is not a count of independent
+contributions, and the catalog is not a manual semantic audit of every full text.
+    The accompanying source catalog records original names, primary-source hashes, and
+provisional island labels. The core source matrix supplies the files, line ranges, SHA-256 hashes,
+and claim boundaries used here. Its original paths are relative to the twin-prime repository;
+the revision’s readable copy rebases navigation links without changing source claims. Hashes
+establish source fidelity, not mathematical correctness. Status files and the map provide
+context, not substitute proofs.
+    Section 3 uses original TeX manuscripts. The operator, coefficient, rank, emitter, and
+boundary results come from the unnumbered research cycle of 9 September 2026. Section 8
+uses the original moving-target proof, seed reconnaissance criterion, and physical-intertwining
+document. Classical inputs remain classical; no first-discovery claim is made for reorganized
+results.
+    The wiki’s fourteen knowledge cards distinguish definitions, estimates, obstructions, and
+conditional transfers. The companion concordance maps each card to the revised sections and
+original source IDs. These navigation aids provide no independent proof evidence.
+    English v0.2 preserves the earlier edition’s formal statements, proof blocks, bibliography,
+and supplied map while revising its exposition. Both original editions and the research archive
+remain unchanged; this is not a new numbered paper or a reopened research route. Full
+raw editorial reviews and presentation checks are retained separately. Their scope is explicit:
+neither successful compilation and visual inspection nor a bounded editorial review certifies
+the entire archive, theorem correctness, or novelty.
+
+
+
+
+                                               24
+References
+ [1] Exact physical return: operator, lane norms, growing rank, emitter and boundary proofs.
+     Twin-prime research archive, 9 September unnumbered proof packages, 2026. See
+     CORE_SOURCE_MATRIX entries PHYSICAL; internal research sources.
+
+ [2] Distinguished-seed reconnaissance: an exact sufficient cylinder criterion. Twin-prime
+     research archive, 9 September reconnaissance report, 2026. See
+     CORE_SOURCE_MATRIX entry SEED, lines 78–105; the short lemma is reproved
+     here.
+
+ [3] Terminal scalar root and q-transverse variance split (V58). Twin-prime research archive,
+     13 August source Markdown, 2026. See CORE_SOURCE_MATRIX entry V58,
+     equations (1.5)–(1.10) and Theorem 5.1.
+
+ [4] Two-scale prime-sieve correlations (TPC1). Twin-prime research archive, original LaTeX
+     manuscript, n.d.. See CORE_SOURCE_MATRIX entry BASELINE; local product is
+     classical.
+
+ [5] Determinant-two Liouville pullback (TPC127). Twin-prime research archive, original
+     LaTeX manuscript, n.d.. See CORE_SOURCE_MATRIX; archived source, not a
+     publication-status assertion.
+
+ [6] CRT resonance partial sums and Haar moving-target variance. Twin-prime research
+     archive, original research README, Theorems 4.1–4.2, n.d.. See
+     CORE_SOURCE_MATRIX entry DYNAMICS.
+
+ [7] Physical intertwiner: exact replication-deletion geometry and scoped mixing obstruction.
+     Twin-prime research archive, source-locked Markdown, n.d.. See
+     CORE_SOURCE_MATRIX entry INTERTWINER.
+
+ [8] Literal source-child reconstruction, physical cover, occurrence lift and pair-native
+     interface (TPC93, TPC117, TPC143, TPC205). Twin-prime research archive, original
+     LaTeX manuscripts, n.d.. Individual paths and ranges are recorded in
+     CORE_SOURCE_MATRIX.
+
+ [9] Polarized local BDH scalar compiler (V59). Twin-prime research archive, source-locked
+     Markdown, n.d.. See CORE_SOURCE_MATRIX, entry V59; internal research source,
+     not a journal publication.
+
+[10] Valentin Blomer and Alexandru Pascadi. Bilinear forms with kloosterman sums via
+     quadratic characters. arXiv:2607.24311v1, 2026. URL
+     https://arxiv.org/abs/2607.24311.
+
+[11] Youness Lamzouri. A bias in mertens’ product formula. arXiv:1410.3777v2, 2015. URL
+     https://arxiv.org/abs/1410.3777.
+
+[12] Atle Selberg. An elementary proof of the prime-number theorem. Annals of Mathematics,
+     50(2):305–313, 1949. URL https://www.math.lsu.edu/~mahlburg/teaching/
+     handouts/2014-7230/Selberg-ElemPNT1949.pdf.
+
+
+
+
+                                             25
+

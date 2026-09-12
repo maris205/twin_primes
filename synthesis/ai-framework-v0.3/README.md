@@ -42,7 +42,7 @@ PDF SHA-256：916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41�
 
 edition/ 是原工作区交付目录的逐文件字节快照；[文件清单](IMPORT_MANIFEST.json)用于核对。原来的 README、来源导航、日志和验证脚本保留当时的相对路径及绝对临时目录，因此它们不全是克隆后可执行的入口。请优先使用本页、SOURCES.md 和上面的独立编译命令。
 
-本次没有同步整个 Obsidian Wiki、完整英文 v0.2 工作目录或先前未跟踪的综合稿目录。与这些对象相关的链接和检查是原工作区历史记录，不代表它们随本次 Git 交付而可用。特别是 edition/tools/edition.py 的完整工作区复核依赖原来的基线、Wiki 和临时渲染图片；不要把它当作克隆环境的核验入口。
+首次推送本版本时仅包含 v0.3。随后已补齐 [Obsidian Wiki](../../reading/README.md)、[英文 v0.2](../wiki-informed-english-v0.2/README.md)和[原综合稿](../seven-island-monograph/README.md)，统一说明见[相关新增资料总入口](../../docs/EDITORIAL_MATERIALS.md)。edition/ 内的旧路径仍按原始快照保留；其工作区检查器依赖当时的布局及临时渲染图片，不能直接当作克隆环境的核验入口。
 
 现有数学来源直接链接到本仓库的 papers/ 和 research/ 等原始路径；Wiki 的资源规模与显示限制仍以论文所引用的原报告为准，没有在这次推送中重跑或扩大认证。
 

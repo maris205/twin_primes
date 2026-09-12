@@ -1,0 +1,36 @@
+---
+type: "source-reading"
+source_path: "papers/tpc-382-c1-origin-family-magnitude-audit/notes/claim_firewall.md"
+snapshot_date: "2026-09-12"
+owner: "TPC-382"
+generated: true
+semantic_review: "not-certified-by-conversion"
+---
+
+<!-- ORIGINAL_BYTES_LINK -->
+[原始Markdown文件（逐字节保留）](../../90_%E9%99%84%E4%BB%B6/%E5%8E%9F%E5%A7%8B%E8%B5%84%E6%96%99/papers/tpc-382-c1-origin-family-magnitude-audit/notes/claim_firewall.md.txt)；可用外部编辑器核对。
+
+
+论文入口：[[02_论文/TPC-382|TPC-382]] · [[00_开始阅读|首页]]
+
+# TPC-382 claim firewall
+
+```text
+TPC382_PARENT_LOCKS = PROVED_EXACT_FINITE_HASHED
+TPC382_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_CERTIFICATE_BLIND
+TPC382_SAME_N_ORIGIN_MAGNITUDE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_72_VALUES
+TPC382_ALL_PLUS_HIGH_Q_STABILITY_1PCT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC382_LAW_DEPENDENT_MAGNITUDE_SPREAD = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC382_CROSS_COUNT_MAGNITUDE_INVARIANCE = REFUTED_FINITE_SCOPED
+TPC382_ORIGIN_UNIFORMITY = OPEN
+TPC382_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC382_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC382_GROWING_OPERATOR_BOUND = OPEN
+TPC382_SOURCE_UNIFORM_L2 = OPEN
+TPC382_ARITHMETIC_ADVANCE = NO
+TPC382_FIXED_POWER_CREDIT = 0
+TPC382_FULL_GATE_B = OPEN
+TPC382_TWIN_PRIME_RESULT = NONE
+```
+
+The word `REFUTED` applies only to the predeclared one-percent matched-count versus scale-control hypothesis in this finite audit.

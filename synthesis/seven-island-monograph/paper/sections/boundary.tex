@@ -1,0 +1,53 @@
+\section{一个已支付的部分：构造性分割与边界贡献}\label{sec:boundary}
+与全标量消去不同，边界项可以在保持实际对象的情况下用支持大小控制\cite{archivephysical}。
+\begin{theorem}[实际加权边界的集体上界]\label{thm:boundary}
+存在非负、光滑、有限重叠的分割 $\sum_j\eta_{j,H}=1$，每个支持长度为 $H$，且
+$H^r\|\eta_{j,H}^{(r)}\|_\infty\le C_r$ 一致于 $j,H$。
+只在与 $[x/2,x]$ 相交的物理标签集 $\mathcal J_x$ 内分类：
+\[
+\mathcal J_\partial=\{j\in\mathcal J_x:\operatorname{supp}\eta_{j,H}\not\subset(x/2,x)\}.
+\]
+这些边界块的总权为 $\theta_\partial=\sum_{j\in\mathcal J_\partial}\eta_{j,H}$，
+令 $\theta_{\rm int}=1-\theta_\partial$，则
+\[
+\left|\Cx-\ip{\theta_{\rm int}w}{A(\theta_{\rm int}\beta)}\right|
+\ll xQ^2x^{-11/64+o(1)}.
+\]
+\end{theorem}
+\begin{proof}
+取 $\chi(s)=\exp[-1/(1-4s^2)]$ 于 $|s|<1/2$，其他处为零，并置
+\[
+D(s)=\sum_{j\in\ZZ}\chi(s-j/2),\qquad
+\eta_{j,H}(t)=\frac{\chi(t/H-j/2)}{D(t/H)}.
+\]
+$D$ 是正的 $1/2$ 周期光滑函数，因为每一点距某个半整数不超过 $1/4$。
+它及其倒数的各阶导数在一个周期上有界。链式法则给出所需导数界。
+每个闭支持包含于 $[(j-1)H/2,(j+1)H/2]$，至多三个闭支持相交，
+且 $|\mathcal J_x|=O(x/H+1)$。由于已要求支持与物理闭区间相交，
+边界支持必须包含至少一个端点，因此至多六个，并且
+\[
+\operatorname{supp}_{I_x}\theta_\partial
+\subset [x/2,x/2+H]\cup[x-H,x],
+\quad |\operatorname{supp}_{I_x}\theta_\partial|=O(H+1).
+\]
+只需使用实际系数的点态包络。约数界 $\tau(n)\ll_\epsilon n^\epsilon$ 给出
+$|\beta(n)|\le1+\tau(n)$。又由式~\eqref{eq:hybrid}，
+$0\le b_x^{(z)}(n)\le W_z2^{\omega(n)}\le W_z\tau(n)$，故
+$|\beta(n)|+|w(n)|\le x^{o(1)}$，一致于实际区间，$K$ 固定。
+约数界可逐素数幂证明：对 $p\ge2^{1/\epsilon}$ 有 $k+1\le2^k\le p^{\epsilon k}$；
+剩余有限多个素数各自的 $\sup_k(k+1)p^{-\epsilon k}$ 有限。
+
+因此两个边界向量的范数为 $H^{1/2}x^{o(1)}$，全部向量的范数为 $x^{1/2+o(1)}$。
+精确展开并使双边界项只计一次：
+\[
+\Cx-\ip{w_{\rm int}}{A\beta_{\rm int}}
+=\ip{w_\partial}{A\beta}+\ip{w_{\rm int}}{A\beta_\partial}.
+\]
+用引理~\ref{lem:upper}的 $\norm A\ll Q^2$，得到
+$Q^2\sqrt{xH}x^{o(1)}=xQ^2x^{-11/64+o(1)}$。
+\end{proof}
+这个定理处理的是所有含边界标签的加权有序对的\emph{集体贡献}，不是每个正极化包的绝对上界。
+它作出了一个允许的显式分割选择，不宣称任意已有分割都满足导数界。
+内部截断是真正的光滑函数，但这不把 $\Lambda$、Möbius 和混合主项变成光滑系数。
+若今后证明内部节省 $\delta_{\rm int}$，本节重组能认证的全体节省为
+$\min(\delta_{\rm int},11/64)$。内部带符号估计在本稿中仍未解决。

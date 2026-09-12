@@ -1,0 +1,131 @@
+{
+  "pdf": "main.pdf",
+  "pdf_sha256": "687fb29ea34d0f339564b2a1a790135f71cb73303e6f793edf9ec5a9d3db9b55",
+  "page_count": 23,
+  "command": [
+    "pdftoppm",
+    "-r",
+    "105",
+    "-png",
+    "/root/autodl-tmp/math_research3/twin_primes/synthesis/seven-island-monograph/paper/main.pdf",
+    "/tmp/tpc-monograph-final-visual-faxtne_8/page"
+  ],
+  "purpose": "Rendering provenance, not proof verification",
+  "pages": [
+    {
+      "page": 1,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-01.png",
+      "sha256": "6a20525224ce7c2cf22d858ef96b55683cf7c73c40c86d58e607056bba86005c"
+    },
+    {
+      "page": 2,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-02.png",
+      "sha256": "4ebd090afe5b563848384b562a721a47871ef4fda34c995e6f9688f4676158fb"
+    },
+    {
+      "page": 3,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-03.png",
+      "sha256": "ad8ff37f6c0a4c4741a36f8b1c3221bfa103808f41917191984d376fa2819b6b"
+    },
+    {
+      "page": 4,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-04.png",
+      "sha256": "c28ff7a2da9e2e97d2a2ead24e1a3c5b8378795d5c295c6f0ffe2e0b03232e70"
+    },
+    {
+      "page": 5,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-05.png",
+      "sha256": "5fb082dcc6e37a2e57245fd840522428e26766b67218356ab306e7804420e30f"
+    },
+    {
+      "page": 6,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-06.png",
+      "sha256": "27af739ce51c79949a1b281f6a25a708fca38f6e50e91593dbc6968d61da3ab6"
+    },
+    {
+      "page": 7,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-07.png",
+      "sha256": "babed042dcb9a7e673b1479dbeb5d999b1bdc02c3271977579512b80cad3b46e"
+    },
+    {
+      "page": 8,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-08.png",
+      "sha256": "39c2be07dafcad5f703f1f5a9b78fc1d34e756cd1a39171c70f38ebe9cff27ae"
+    },
+    {
+      "page": 9,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-09.png",
+      "sha256": "45af99b65db4a5d599c308d47a62285fd98ac985d0efd315081615dfbda95d99"
+    },
+    {
+      "page": 10,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-10.png",
+      "sha256": "cb667bf4672d254bd03e8074f4d9de2bb6679a6ac88890bf48d61caf884ebd2f"
+    },
+    {
+      "page": 11,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-11.png",
+      "sha256": "008ea09137bdb0ac04d39393e976bf318efc22423c825c0aa1ace04832a2d72e"
+    },
+    {
+      "page": 12,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-12.png",
+      "sha256": "f1ba988e43f4f846292e2c38c1cb89b6c2c05e72b462d426f445d88e107c4fb7"
+    },
+    {
+      "page": 13,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-13.png",
+      "sha256": "b0dd99a2d1f05ef94cf03c6f07bdc859bc0b29932f8a9f44929d279cd3ea03dc"
+    },
+    {
+      "page": 14,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-14.png",
+      "sha256": "3355ff42e44149cffd9562e62e781ab790285aa8bf2566069a887825380bd0e1"
+    },
+    {
+      "page": 15,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-15.png",
+      "sha256": "c27a0a2fbdbd48cfb868e82079dc654b09658b2db9d11eb490dad8ffb7d112c7"
+    },
+    {
+      "page": 16,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-16.png",
+      "sha256": "4e0ccdab70587a26af8834afa4264dd06ecfcf045e7abf562e90ccfce275ee28"
+    },
+    {
+      "page": 17,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-17.png",
+      "sha256": "d486300078cbb14219ea50ee37445741b3bcdac6d979038e47362e8c6a735330"
+    },
+    {
+      "page": 18,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-18.png",
+      "sha256": "99bea868a4df26dba7bc668e3718e1b3a3e605511f60dabce58552775f873bb4"
+    },
+    {
+      "page": 19,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-19.png",
+      "sha256": "825697d89e16afc3f3e3fb844fd5c9a2fe7d1a0faf18bd9e144ee3e240738bff"
+    },
+    {
+      "page": 20,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-20.png",
+      "sha256": "77fb9befcdb443bcfb49cd8989d000a4953b76a66796845196486be1666cded8"
+    },
+    {
+      "page": 21,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-21.png",
+      "sha256": "aa07d4cd0c7e989da574ba4a5bdf7bd9f8d1195ef91e53211abbc53dc7deff1f"
+    },
+    {
+      "page": 22,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-22.png",
+      "sha256": "6c04d48e1ce652507ba1d93c739f098a9113a0267abf9da6d62bea8ce31bf401"
+    },
+    {
+      "page": 23,
+      "image": "/tmp/tpc-monograph-final-visual-faxtne_8/page-23.png",
+      "sha256": "e7e9d75c77ed1dac3865f1ac80d3650f59fa4c2208608aba2e756f30f0d629a7"
+    }
+  ]
+}

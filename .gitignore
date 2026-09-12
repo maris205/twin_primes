@@ -15,3 +15,10 @@ __pycache__/
 *.log
 
 # Original PDF aliases and provenance packs are intentional archive material.
+
+# Editorial import: retain audit logs; exclude only local regenerated caches.
+/reading/tpc_obsidian_vault/.build/
+!/synthesis/seven-island-monograph/paper/*.log
+!/synthesis/seven-island-monograph/paper-en/*.log
+!/synthesis/wiki-informed-english-v0.2/edition/paper/*.log
+!/synthesis/wiki-informed-english-v0.2/edition/paper/main.aux

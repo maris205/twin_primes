@@ -1,0 +1,34 @@
+---
+type: "source-reading"
+source_path: "papers/tpc-321-cross-shell-profile-stability/notes/claim_firewall.md"
+snapshot_date: "2026-09-12"
+owner: "TPC-321"
+generated: true
+semantic_review: "not-certified-by-conversion"
+---
+
+<!-- ORIGINAL_BYTES_LINK -->
+[原始Markdown文件（逐字节保留）](../../90_%E9%99%84%E4%BB%B6/%E5%8E%9F%E5%A7%8B%E8%B5%84%E6%96%99/papers/tpc-321-cross-shell-profile-stability/notes/claim_firewall.md.txt)；可用外部编辑器核对。
+
+
+论文入口：[[02_论文/TPC-321|TPC-321]] · [[00_开始阅读|首页]]
+
+# TPC-321 claim firewall
+
+```text
+TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+TPC321_ARITHMETIC_ADVANCE = NO
+TPC321_FIXED_POWER_CREDIT = 0
+TPC321_FULL_GATE_B = OPEN
+TPC321_TWIN_PRIME_RESULT = NONE
+TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+```
+
+`REFUTED_FINITE_PANEL` means that the tested finite universal rule is incompatible with the certificate. It does not mean a theorem about all shells or all scales has been proved false.

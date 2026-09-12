@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Warning--to sort, need author or key in archive1
+Warning--to sort, need author or key in archive127
+Warning--to sort, need author or key in archivestructure
+Warning--to sort, need author or key in archivev59
+Warning--to sort, need author or key in archivephysical
+Warning--to sort, need author or key in archivedynamics
+Warning--to sort, need author or key in archiveseed
+Warning--to sort, need author or key in archiveintertwiner
+Warning--to sort, need author or key in archivev58
+You've used 12 entries,
+            2773 wiz_defined-function locations,
+            647 strings with 7063 characters,
+and the built_in function-call counts, 3360 in all, are:
+= -- 339
+> -- 41
+< -- 3
++ -- 31
+- -- 12
+* -- 215
+:= -- 370
+add.period$ -- 39
+call.type$ -- 12
+change.case$ -- 40
+chr.to.int$ -- 5
+cite$ -- 42
+duplicate$ -- 185
+empty$ -- 420
+format.name$ -- 17
+if$ -- 792
+int.to.chr$ -- 8
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 71
+num.names$ -- 12
+pop$ -- 146
+preamble$ -- 1
+purify$ -- 28
+quote$ -- 0
+skip$ -- 140
+stack$ -- 0
+substring$ -- 58
+swap$ -- 21
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 9
+while$ -- 11
+width$ -- 0
+write$ -- 158
+(There were 9 warnings)

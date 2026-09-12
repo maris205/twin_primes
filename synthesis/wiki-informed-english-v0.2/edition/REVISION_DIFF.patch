@@ -1,0 +1,372 @@
+--- english-v0.1/main.tex
++++ english-v0.2/main.tex
+@@ -5,6 +5,7 @@
+ \usepackage[margin=27mm]{geometry}
+ \usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+ \usepackage{graphicx,booktabs,longtable,array,tabularx}
++\usepackage{float}
+ \usepackage[numbers,sort&compress]{natbib}
+ \usepackage{xcolor,hyperref,microtype}
+ \hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black}
+@@ -23,7 +24,7 @@
+ \title{A Seven-Island Framework for Twin-Prime Research:\\
+ Exact Structures, Analytic Obstructions,\\and Two Bridging Problems}
+ \author{}
+-\date{12 September 2026\\English synthesis draft v0.1}
++\date{12 September 2026\\English synthesis draft v0.2}
+ \begin{document}
+ \pagestyle{plain}
+ \maketitle
+@@ -34,6 +35,8 @@
+ \clearpage
+ \setcounter{tocdepth}{1}
+ \tableofcontents
++\medskip
++\input{notation.tex}
+ \clearpage
+ \input{sections/introduction.tex}
+ \input{sections/arithmetic.tex}
+--- english-v0.1/notation.tex
++++ english-v0.2/notation.tex
+@@ -0,0 +1,16 @@
++\noindent\textbf{Principal notation and distinct counting objects.}
++\begin{center}\small
++\begin{tabularx}{\linewidth}{@{}p{.24\linewidth}X@{}}
++\toprule
++Notation & Meaning and scope\\\midrule
++$\pi_2(y),\ S_2(y)$ & Prime-pair count and von Mangoldt pair sum; Section~\ref{sec:arithmetic}.\\
++$I_x,\ Q,\ H,\ U$ & Actual interval, prime-modulus scale, kernel scale, and divisor cutoff; Section~\ref{sec:operator}.\\
++$\beta,\ w,\ A$ & Prescribed real coefficient vectors and a possibly complex Hermitian matrix.\\
++$\Cx=\ip w{A\beta}$ & Mixed off-diagonal scalar; not a prime-pair count.\\
++$S_x^{\rm phys}$ & Auxiliary same-index scalar $\sum_{t\in I_x}\beta(t)w(t)$; Section~\ref{sec:bridges}.\\
++$S_N,\ A_N,\ Q_N$ & Moving-target hit count, its Haar mean, and sieve primorial; Section~\ref{sec:dynamics}.\\
++$A_*,\ E_*,\ K_*$ & Imported folding scalar, error, and terminal divisor; $A_*$ is not the matrix $A$.\\
++\bottomrule
++\end{tabularx}
++\end{center}
++\noindent The norm $\|\cdot\|_2$ is Euclidean for vectors and induced for matrices unless a different inner product is stated. The analytic interval size $N=|I_x|$ and the dynamical time $N$ are local to their respective sections.
+--- english-v0.1/sections/abstract.tex
++++ english-v0.2/sections/abstract.tex
+@@ -1 +1 @@
+-We organize a collection of fixed-shift prime-pair investigations into seven modules: arithmetic foundations, analytic cancellation, fixed atoms, actual-occurrence structures, nonautonomous dynamics, the twin-prime endpoint, and auxiliary geometric lifts. The purpose is to distinguish established structures from transfers that still require arithmetic input, while keeping the objects, quantifiers, and normalizations consistent. The analytic core is an arithmetic operator retaining unit masks, a smooth kernel, and diagonal deletion. We restate and prove its exact positive-form decomposition, norm and row-energy bounds, and the restrictions that the actual coefficient norms impose on coefficient-blind methods. At interval scale $x$ and prime-modulus scale $Q=x^{1/3}$, a low-frequency compression yields $(1/4+o(1))Q^2$ negative directions. An exact Kloosterman representation explains why one-sided short support does not automatically supply a two-sided critical-range estimate. For an explicitly constructed smooth partition, the collective boundary contribution is bounded by $xQ^2x^{-11/64+o(1)}$. On the dynamical side, the Chinese remainder theorem and Abel summation give a linear variance bound and Haar-almost-everywhere infinite recurrence for the actual moving sieve events, while leaving the return to the distinguished arithmetic seed $0$ unproved. These results establish neither the required signed interior cancellation nor the twin-prime conjecture. They provide a source-traceable synthesis of structures and obstructions that separates two unresolved bridging problems from the available results.
++Exact representations of prime-pair problems become useful only when estimates retain the original arithmetic coefficients, scales, and quantifiers. We synthesize a fixed-shift research program around this requirement, using a seven-island map to distinguish objects from the transfers between them. For the prescribed arithmetic operator at interval scale $x$ and prime-modulus scale $Q=x^{1/3}$, we give its exact positive-form decomposition and uniform row-energy bounds. Actual coefficient costs prevent coefficient-blind norm estimates, including ordinary row normalization, from supplying a fixed-power saving. A separate low-frequency argument produces $(1/4+o(1))Q^2$ negative directions, obstructing specified low-rank norm repairs. An exact Kloosterman representation identifies the unproved two-sided attachment needed to exploit a critical-range bilinear estimate. In contrast, an explicit smooth partition already bounds the collective boundary contribution by $xQ^2x^{-11/64+o(1)}$. For the actual moving sieve events, a Chinese-remainder and Abel-summation argument yields variance $O(N)$ and Haar-almost-everywhere infinite recurrence, but not recurrence at the arithmetic seed $0$. The analytic route thus lacks a coefficient-sensitive signed estimate, while the dynamical route lacks a distinguished-point conclusion. We restate and prove selected archived results, clarify their dependencies and conditional loss budgets, and distinguish them from the unresolved twin-prime endpoint. This paper does not prove the twin-prime conjecture.
+--- english-v0.1/sections/arithmetic.tex
++++ english-v0.2/sections/arithmetic.tex
+@@ -1,4 +1,4 @@
+-\section{The arithmetic endpoint, quantifiers, and division of tasks}\label{sec:arithmetic}
++\section{Arithmetic foundations and the endpoint}\label{sec:arithmetic}
+ \subsection{The endpoint and auxiliary quantities}
+ Write $\pi_2(y)=\#\{p\le y:p,p+2\text{ are both prime}\}$. The endpoint is $\pi_2(y)\to\infty$, not the discovery of more pairs in a finite interval. A customary weighted auxiliary quantity is
+ \[
+@@ -28,7 +28,7 @@
+ Complete periods contribute exactly; the remaining partial period costs at most $P_y$, with an additional $1$ for a noninteger endpoint. If $P_y=o(X\rho_y^r)$, this bound makes the normalized error vanish. At the primality-exact cutoff, however, the prime number theorem gives $\log P_{Y_X}\sim\sqrt X$, so this error bound provides no useful relative control. This is a mismatch between two elementary arguments, not an impossibility theorem for all sieve methods.
+ 
+ \subsection{The seven islands are not a serial proof}
+-\begin{table}[ht]
++\begin{table}[H]
+ \centering\small
+ \caption{Division of mathematical tasks. The final column does not assert necessary conditions for every possible route.}
+ \begin{tabularx}{\textwidth}{c p{.25\textwidth} X}
+--- english-v0.1/sections/barriers.tex
++++ english-v0.2/sections/barriers.tex
+@@ -1,4 +1,5 @@
+-\section{Norm scales, actual coefficient costs, and low-rank obstructions}\label{sec:barriers}
++\section{Norm bounds and coefficient-blind obstructions}\label{sec:barriers}
++The next bounds answer a methodological question: can the desired saving follow from the operator norm and coefficient-vector norms alone? The row estimates and actual coefficient norms quantify the cost of that approach. The later rank argument strengthens the obstruction to a particular family of repairs, without identifying the arithmetic vectors with extremizing directions.
+ \subsection{An upper bound from frequency separation}
+ Fix finite constants $B_\psi,B_\kappa$ such that
+ \[
+@@ -58,6 +59,11 @@
+ The restriction $u\le Q^3$ is essential to this argument. This is not a theorem for equal-length intervals at arbitrary huge origins or for arbitrary coordinate prefixes.
+ 
+ \subsection{A constant-vector witness and the actual coefficients}
++The following lower bounds concern the norm-product upper-bound expression
++\[
++|\Cx|\le\norm A\,\norm w\,\norm\beta.
++\]
++They do not give a lower bound for $|\Cx|$.
+ \begin{theorem}[Obstruction to coefficient-blind norm bounds]\label{thm:normbarrier}
+ For the fixed data of Section~\ref{sec:operator},
+ \[
+@@ -137,7 +143,10 @@
+ \end{proof}
+ This is a lower bound on an upper-bound expression, not a lower bound on $|\Cx|$. It does not rule out cancellation between the actual coefficients, other preconditioners, or coefficient-sensitive methods.
+ 
++The distinction also explains why the norm upper bound remains useful. In Section~\ref{sec:boundary}, one coefficient vector is restricted to a much smaller boundary support. That support gain pays for a remainder even though the same norm estimate, applied to both full vectors, cannot pay for the desired full-scalar saving.
++
+ \subsection{A growing number of negative directions}
++The subspaces in the next result witness an operator obstruction; they are not identified with the actual coefficient vectors $\beta,w$.
+ \begin{theorem}[A scoped obstruction to low-rank repairs]\label{thm:rank}
+ Put $\tau_x=Q^2/\log Q$ and
+ \[
+--- english-v0.1/sections/boundary.tex
++++ english-v0.2/sections/boundary.tex
+@@ -1,5 +1,5 @@
+-\section{A paid component: constructive partitioning and the boundary contribution}\label{sec:boundary}
+-Unlike cancellation of the full scalar, the boundary term can be controlled by support size while preserving the actual objects\cite{archivephysical}.
++\section{Constructive partitioning and the boundary bound}\label{sec:boundary}
++The norm method has a useful local application despite its full-vector obstruction: one can gain from the size of a boundary support. We construct a partition for which this gain controls the collective boundary contribution in the original scalar~\cite{archivephysical}. The statement is about that remainder alone and leaves the full signed interior as an arithmetic problem.
+ \begin{theorem}[Collective bound for the actual weighted boundary]\label{thm:boundary}
+ There is a nonnegative smooth partition $\sum_j\eta_{j,H}=1$ with finite overlap, each support of length $H$, and
+ $H^r\|\eta_{j,H}^{(r)}\|_\infty\le C_r$ uniformly in $j,H$.
+@@ -47,3 +47,4 @@
+ It makes an admissible explicit choice of partition; it does not assert derivative bounds for every previously specified partition.
+ The interior cutoff is genuinely smooth, but this does not turn $\Lambda$, the M\"obius coefficients, or the hybrid main term into smooth coefficients.
+ If an interior saving $\delta_{\rm int}$ is proved in the future, this recombination certifies a full saving of $\min(\delta_{\rm int},11/64)$. The signed interior estimate remains unresolved here.
++In particular, this theorem does not establish Condition~\ref{cond:compression} or construct its residual $R_{bcq}$: paying for a boundary contribution and paying for a two-sided array decomposition are different tasks.
+--- english-v0.1/sections/bridges.tex
++++ english-v0.2/sections/bridges.tex
+@@ -1,4 +1,4 @@
+-\section{The two bridges: conditional ledgers and conclusions}\label{sec:bridges}
++\section{Two conditional bridges and their remaining gaps}\label{sec:bridges}
+ \subsection{The analytic bridge: established structure and unpaid estimates}
+ Bridge A in the map runs from Island 2 to Island 6. The repository's Gate A and Gate B are both analytic obligations inside this bridge, not the two different red bridges in the map.
+ Table~\ref{tab:ledger} places the quantities used here on a common scale.
+@@ -12,7 +12,7 @@
+ Boundary recombination & $xQ^2x^{-11/64+o(1)}$ & This component paid\\
+ Critical-array input & Factor $q^{31/32+o(1)}$ for admissible two-sided short arrays & External theorem\\
+ Two-sided attachment & Condition~\ref{cond:compression}, including every residual & Unproved\\
+-Full scalar target & $|\Cx|\ll xQ^2x^{-\delta+o(1)}$, $\delta>1/400$ & Unproved\\
++Analytic Gate B: full scalar target & $|\Cx|\ll xQ^2x^{-\delta+o(1)}$, $\delta>1/400$ & Unproved\\
+ Analytic Gate A & Original full-shell signed folding with positive margin $\eta_A$ & Separately unproved\\
+ \bottomrule
+ \end{tabularx}
+@@ -25,7 +25,7 @@
+ K_* =\sum_{q\in\QQ}q\frac{q-2}{q-1}=x^{2/3+o(1)}.
+ \]
+ The scalar $S_x^{\rm phys}$ is not $S_2(x)$ from Section~\ref{sec:arithmetic}.
+-The source folding scalar $A_*$ and error scalar $E_*$ in V58 provide the imported interface\cite{archivev58}
++The source folding scalar $A_*$ and error scalar $E_*$ in V58 provide the imported interface~\cite{archivev58}
+ \[
+ S_x^{\rm phys}=\frac{A_*-\Cx+E_*}{K_*},\qquad
+ |E_*|\ll x^{143/96+o(1)}.
+@@ -47,7 +47,7 @@
+ The margins in \eqref{eq:terminal} are exactly those relative to $399/400$:
+ $(399/400)-(1-\delta)=\delta-1/400$ and
+ $(399/400)-(79/96)=419/2400$.
+-This is an exponent calculation under the source contract\cite{archivev58,archivev59,archivephysical}, not a new independent proof of the entire upstream implication chain to the twin-prime conjecture.
++This is an exponent calculation under the source contract~\cite{archivev58,archivev59,archivephysical}, not a new independent proof of the entire upstream implication chain to the twin-prime conjecture.
+ In particular, a saving for this paper's scalar alone does not dispense with Gate A or the historical upstream structural attachments.
+ If the critical-array route succeeds, $\delta=1/96-\ell$, requiring strictly $\ell<19/2400$.
+ For a different interior estimate, boundary recombination limits the full saving certified here to $\min(\delta_{\rm int},11/64)$.
+@@ -59,9 +59,7 @@
+ 
+ \subsection{What the synthesis establishes}
+ The seven islands distinguish research objects and transfer tasks; they do not turn a sequence of historical paper numbers into a closed proof chain.
+-Basic arithmetic supplies local consistency. The fixed atom and occurrence layer fix the coefficients, support, and prefixes. The analytic layer supplies actual operator structure, growing-dimensional obstructions, and a boundary contribution that can be paid for. The dynamical layer supplies metric hitting for the actual moving targets and exact sieve geometry.
++Basic arithmetic supplies local consistency. The fixed-atom results preserve coefficients, masks, and prefixes on their stated source support. The occurrence results specify conditional attachment, conservation, and weighted-cover interfaces; they do not construct the production lift or pay its coefficient-transport cost. The analytic layer supplies actual operator structure, growing-dimensional obstructions, and a boundary contribution that can be paid for. The dynamical layer supplies metric hitting for the actual moving targets and exact sieve geometry.
+ These results have distinct mathematical content: they should neither be merged into a proof of the twin-prime conjecture nor dismissed indiscriminately as toy models.
+ 
+-This manuscript is a research synthesis of existing results, not a final paper with completed novelty assessment and submission positioning.
+-A future version for external readers should further compress historical interfaces, expand the systematic external related-work discussion, and specify authorship and a target journal.
+-The essential mathematical change cannot come from editorial work: the analytic bridge still needs signed estimates sensitive to the actual coefficients, and the dynamical bridge still needs a return to the distinguished arithmetic seed. This paper does not prove the twin-prime conjecture.
++The two gaps should not be conflated. The analytic branch needs coefficient-sensitive signed estimates and valid upstream attachments; the dynamical branch needs a conclusion at the distinguished seed. The present synthesis isolates those obligations without supplying them. Authorship, venue, systematic literature positioning, and novelty assessment remain unspecified. This paper does not prove the twin-prime conjecture.
+--- english-v0.1/sections/dynamics.tex
++++ english-v0.2/sections/dynamics.tex
+@@ -1,4 +1,5 @@
+-\section{Islands 5 and 7: moving targets, a distinguished seed, and geometric attachment}\label{sec:dynamics}
++\section{Moving targets and the distinguished arithmetic seed}\label{sec:dynamics}
++This branch uses the same local sieve factors as Island 1, but changes the question from interval counting to recurrence in a probability space. Three statements must be distinguished: exact prime-pair encoding at seed $0$, infinite recurrence for almost every seed, and a sufficient criterion that could connect the two. The required joint estimate in the last criterion remains unproved; the metric theorem below applies to the actual events, not a surrogate random model.
+ \subsection{Exact arithmetic encoding and a metric hitting theorem}
+ Let $\widehat\ZZ$ be the group of profinite integers, let $m_H$ be Haar probability measure, and let $T(\xi)=\xi+1$.
+ We write $m_H$ to avoid confusion with the M\"obius function $\mu$. Set
+@@ -56,11 +57,11 @@
+ \]
+ The right-hand side is summable. The first Borel--Cantelli lemma implies that almost every seed eventually satisfies $S_{j^2}\ge A_{j^2}/2\to\infty$. Monotonicity of $S_N$ extends the conclusion to all $N$.
+ \end{proof}
+-This argument comes from the original moving-target proof\cite{archivedynamics}. It is a metric theorem for the actual sieve events, not merely a finite-model statement.
++This argument comes from the original moving-target proof~\cite{archivedynamics}. It is a metric theorem for the actual sieve events, not merely a finite-model statement.
+ Its null exceptional set may nevertheless contain $0$, so it does not cross the map's Bridge B.
+ 
+ \subsection{A precise form of the distinguished-seed gap}
+-The following sufficient criterion comes from the existing distinguished-seed reconnaissance report\cite{archiveseed}; we reproduce its short proof.
++The following sufficient criterion comes from the existing distinguished-seed reconnaissance report~\cite{archiveseed}; we reproduce its short proof.
+ Choose $q_N\mid Q_N$, put $U_N=q_N\widehat\ZZ$, and define
+ \[
+ V_N=\|S_N-A_N\|_{L^2(m_H)},\qquad
+@@ -88,7 +89,10 @@
+ $Q_N=\exp((1+o(1))\sqrt N)$ makes the generic point-evaluation cost too large.
+ The proposition is a sufficient criterion, not an assertion that its hypothesis holds or that it is the only possible return mechanism.
+ 
+-\subsection{Stage-preserving sieve evolution and a scoped obstruction to strongly mixing carriers}
++Within this cylinder criterion, both error terms must be controlled on the same unbounded sequence. Other exact routes to a distinguished-seed hitting theorem remain possible.
++
++\subsection{Prime-stage evolution and a mixing obstruction}
++We now change from integer time $n$ to prime-index stage $k$. The following exact evolution and scoped carrier obstruction do not bound $\Omega_N$ or prove hitting at seed $0$.
+ Let $P_k=\prod_{j\le k}p_j$, equip $V_k=\CC^{\ZZ/P_k\ZZ}$ with the normalized counting inner product, and put
+ $B_k(r)=\1_{(r(r+2),P_k)=1}$, $a_k=\operatorname{mean}B_k$, and $W_k=B_k-a_k$.
+ When a new odd prime $p$ is added, define the replication-and-deletion operator by
+@@ -115,7 +119,7 @@
+ c\prod_{a<j\le b}(1-2/p_j)^{1/2}\le CC_Q\theta^{b-a}.
+ \]
+ For fixed $a$, the left side is only of order $1/\log p_b$, and the prime number theorem gives $p_b\asymp b\log b$, contradicting exponential decay on the right.
+-This excludes only the simultaneous validity of those three assumptions. It does not exclude noncoercive quotient maps, observable seminorms, or nonautonomous representations with controlled defects\cite{archiveintertwiner}.
++This excludes only the simultaneous validity of those three assumptions. It does not exclude noncoercive quotient maps, observable seminorms, or nonautonomous representations with controlled defects~\cite{archiveintertwiner}.
+ 
+ \subsection{The role and limits of Island 7}
+ A useful geometric lift must at least supply a time-preserving semiconjugacy, event pullback, an applicable measure correspondence, and a correspondence for the \emph{distinguished seed}.
+--- english-v0.1/sections/emitter.tex
++++ english-v0.2/sections/emitter.tex
+@@ -1,4 +1,5 @@
+-\section{From exact emission to two-sided short arrays: the costs that remain}\label{sec:emitter}
++\section{Kloosterman emission and two-sided attachment}\label{sec:emitter}
++The full-range representation and the critical-range estimate concern different inputs. The former retains the exact positive packets and has a saturation identity; the latter acts on two short arrays. The relevant attachment must therefore be made to the signed, diagonal-removed expression, with explicit recombination and residual costs. This section makes that distinction quantitative.
+ \subsection{The complete Kloosterman representation}
+ Let $\eta_b$ be the real partition functions constructed in Section~\ref{sec:boundary}, and define the finite set of physical labels
+ \[
+@@ -32,6 +33,8 @@
+ \end{proof}
+ This is an exact representation, not a cancellation estimate. The arrays have range $q-1$; centering does not shorten them to length $\sqrt q$. For example, if $F^0=e_1-e_2$, every nonzero frequency of the first array is nonzero. This example tests the interface; it does not identify the actual arithmetic vector with that example.
+ 
++Appendix~\ref{sec:models} gives the complementary one-sided obstruction: even two first coordinates and a complete centered second array retain the generic norm scale $q$. Neither statement excludes cancellation after signed reassembly of the actual coefficients.
++
+ \subsection{Signed recombination before residual estimates}
+ Write
+ \[
+@@ -55,7 +58,7 @@
+ |\mathcal B_q(A_1,A_2)|\ll_\epsilon q^{31/32+\epsilon}
+ \norm{A_1}\norm{A_2}.\label{eq:bp}
+ \end{equation}
+-We use the prime-modulus, nonzero-index specialization of their Theorem~1.1\cite{blomer2026}, not a direct application to the complete emitted arrays.
++We use the prime-modulus, nonzero-index specialization of their Theorem~1.1~\cite{blomer2026}, not a direct application to the complete emitted arrays.
+ Cutting each length-$q-1$ array into $k\asymp\sqrt q$ blocks gives
+ \[
+ \sum_{A,B}\norm{\alpha_A}\norm{\gamma_B}\le k\norm\alpha\norm\gamma.
+--- english-v0.1/sections/introduction.tex
++++ english-v0.2/sections/introduction.tex
+@@ -1,37 +1,33 @@
+-\section{Introduction: a common problem behind local results}
+-The twin-prime problem asks for infinitely many prime pairs at the fixed displacement $2$. Producing an expression that resembles a correlation sum, or a finite matrix with a small norm, is not enough. If a method transfers the original counting problem to another space, its coefficients, support, quantifiers, and normalization must travel with it. Omitting any of these can produce a correct statement that does not apply to the original problem.
++\section{Introduction: exact structure and arithmetic return}
++The twin-prime problem asks for infinitely many prime pairs at the fixed displacement $2$. A recurring difficulty in approaches to this problem is not the absence of useful representations, but the passage from a representation to an estimate for the original arithmetic data. An exact change of variables may preserve every coefficient without producing cancellation. A small normalized matrix may carry large coefficient costs. A full-measure recurrence theorem may omit the one initial point that encodes the integers. These are different gaps, and identifying their mathematical content is the organizing purpose of this article.
+ 
+-The research archive contains successive local investigations numbered TPC1--TPC418, together with prototypes, source-unavailable markers, and later unnumbered work. Its development was problem-driven: an obstruction motivated a different representation, and a source audit sometimes required the actual object to be identified again. A chronological condensation would preserve this history without necessarily preserving the mathematical dependencies. We instead use Figure~\ref{fig:map} as a shared coordinate system and reconstruct a readable argument, leaving material outside that argument in a traceable companion index.
++We use the seven-island map in Figure~\ref{fig:map} to separate arithmetic foundations, analytic cancellation, fixed atoms, actual occurrences, moving-target dynamics, the twin-prime endpoint, and auxiliary geometric lifts. The islands are not successive steps of a proved implication. We reconstruct selected results by their dependencies, rather than by the order of the archived investigations. The contribution is a source-traceable synthesis with explicit proofs and transfer requirements, not a claim of first discovery or an exhaustive account of every route to twin primes.
+ 
++\subsection{Two gaps, with different endpoint connections}
++The analytic core concerns a specific mixed scalar $\Cx=\ip w{A\beta}$, of natural scale $xQ^2$. The vectors, unit masks, physical interval, Fourier convention, and deleted diagonal are part of its definition. A full-scalar saving with exponent strictly greater than $1/400$ would be useful in the imported analytic interface, but that interface also requires a separate full-shell estimate called Gate A. Both gates lie inside map Bridge A. Their conditional output in this paper is a bound for another auxiliary scalar, $S_x^{\rm phys}$; the complete upstream implication to prime-pair counting is not reproved here.
++
++The dynamical connection is pointwise and explicit: the moving sieve events at seed $0$ identify the pairs $n,n+2$ that are both prime. Adequate mass and covariance control do prove infinite recurrence for almost every seed. They do not establish that the prescribed seed belongs to that good set. Map Bridge B names this return to the distinguished arithmetic point. An auxiliary geometric representation must preserve the same event and seed correspondence; changing the ambient space alone cannot close the gap.
++
++\subsection{Results and their roles}
++The main results serve distinct roles. Proposition~\ref{prop:decomp} identifies the exact positive-form structure behind the actual operator. Theorem~\ref{thm:normbarrier}, Corollary~\ref{cor:normalized}, and Theorem~\ref{thm:rank} delimit coefficient-blind norm bounds and low-rank repairs. Proposition~\ref{prop:emitter} identifies the complete Kloosterman arrays, whereas Condition~\ref{cond:compression} states an unproved, loss-controlled attachment to a two-sided short-array estimate. Theorem~\ref{thm:boundary} supplies a genuine bound for one component of the original scalar. Finally, Theorem~\ref{thm:haar} proves metric recurrence for the actual moving targets, and Proposition~\ref{prop:seed} isolates a sufficient, still-unverified way to reach seed $0$.
++
++The distinction between these roles matters. A method obstruction is not a lower bound for the actual scalar. A boundary estimate is not an interior estimate. A sufficient criterion is not a verified hypothesis. In particular, the fixed-atom and occurrence interfaces in Section~\ref{sec:structure} explain what an arithmetic attachment must preserve; they do not construct all the upstream attachments needed by the analytic program.
++
++\subsection{Mathematical inputs and scope}
++Our prime-counting input is the classical prime number theorem and its partial-summation consequences~\cite{selberg1949}. The hybrid coefficient's second-moment estimate uses the unconditional Mertens product baseline stated at the beginning of~\cite{lamzouri2015}; none of that paper's conditional bias-distribution results is used. Frequency separation, positive-semidefinite compression, finite Fourier orthogonality, and spectral min--max arguments provide the structural tools.
++
++The critical-interval bilinear estimate of Blomer--Pascadi~\cite{blomer2026} supplies an external benchmark. Its square-root-length specialization offers a local Kloosterman saving under specified support and coprimality conditions. Our question is whether the actual signed expression can be attached to those inputs with all losses paid. The external theorem does not itself provide that attachment.
++
++The source-linked research wiki helped organize the distinctions between definitions, estimates, obstructions, and conditional transfers. It is a secondary reading aid, not independent evidence for a theorem. The original proofs remain the mathematical sources; Appendix~\ref{sec:provenance} and the companion concordance explain how to locate them. A systematic external literature comparison and novelty assessment remain necessary before submission.
++
++\subsection{Reading guide}
++Section~\ref{sec:arithmetic} fixes the endpoint and the transfer requirements. Section~\ref{sec:structure} distinguishes literal atom identities, occurrence conservation, and weighted-cover costs. Sections~\ref{sec:operator}--\ref{sec:boundary} develop the analytic results on one common object. Section~\ref{sec:dynamics} treats the metric theorem, seed criterion, and geometric limitations. Section~\ref{sec:bridges} puts the remaining analytic and dynamical obligations side by side. Readers can follow either branch without reading the historical manuscripts in sequence; exact source locations and material not selected here remain in the source matrix and full catalog.
++
++\clearpage
+ \begin{figure}[p]
+ \centering
+ \includegraphics[width=\textwidth]{figures/tpc_route_en.png}
+-\caption{The user's English seven-island map, reproduced unchanged. Islands name objects and tasks, not completed steps. Solid and dashed connections depict proposed main and auxiliary routes; broken bridges indicate unproved transfers, not impossibility for every method. Schematic labels and formulae do not certify isomorphisms, positive savings, or twin-prime asymptotics: the hypotheses and qualifications in the text govern all mathematical claims. In particular, rare-event mass does not establish recurrence at the arithmetic seed. Map Bridge A contains both archive Gate A and Gate B; map Bridge B is the distinguished-seed dynamical bridge, not a filename containing ``Bridge-B.'' Enlarge the image for small labels; an identical full-resolution companion is supplied.}
++\caption{The user's seven-island map, reproduced unchanged. Islands name objects and tasks, not completed steps. Connections are proposed routes, not certified implications; broken bridges mark unproved transfers, not universal impossibility. Schematic formulae do not establish isomorphisms, savings, or prime-pair asymptotics: the hypotheses in the text govern those claims. Map Bridge A contains both analytic Gate A and Gate B; map Bridge B concerns the distinguished arithmetic seed. Rare-event mass alone does not establish recurrence at that seed. The full-resolution companion preserves the small labels for enlargement.}
+ \label{fig:map}
+ \end{figure}
+-
+-\subsection{One framework, two substantive gaps}
+-The analytic route seeks to pass from local correlation structure to signed collective cancellation with the complete coefficients. One target considered here has natural scale $xQ^2$. To be an effective input to the specified endpoint interface, it must exhibit a power saving strictly exceeding $1/400$. Exact identities preserve the object but do not themselves supply that saving. Islands 3 and 4 concern the identification of local atoms and actual occurrences; Island 2 concerns the required estimates.
+-
+-The dynamical gap is different. Adequate event mass and covariance control in an encoding system do not show that the particular orbit selected by arithmetic belongs to the good set. A statement about almost every initial point need not hold at a prescribed one. Calling that point ``typical'' cannot remove the quantifier gap. A geometric lift that merely changes the representation cannot supply the missing input either.
+-
+-\subsection{Results retained in this synthesis}
+-The analytic exposition develops four groups of statements that can be checked separately:
+-\begin{enumerate}
+-\item An exact decomposition and row-energy bounds for the actual operator, under specified fixed-shift coefficients, unit masks, and kernel conventions, without substituting a model matrix.
+-\item A constant-vector norm lower bound, lower bounds for the actual coefficient norms, and a growing-dimensional obstruction to low-rank repairs. These restrict particular bounding methods, not the size of the actual mixed scalar.
+-\item An exact full-range Kloosterman representation and the norm of a one-short/one-complete array interface, separating algebraic representation, support compression, and signed reassembly.
+-\item An explicit partition with uniform derivative control and a paid collective boundary bound in the original mixed scalar, leaving the signed interior estimate open.
+-\end{enumerate}
+-The dynamical section additionally gives the $O(N)$ variance and Haar-almost-everywhere infinite-recurrence proof for the actual moving sieve events, separately from the unproved assertion at seed $0$. These are unified statements and reorganized proofs of archived results; no first-discovery or optimality claim is made. The appendix distinguishes the evidentiary roles of earlier finite certificates and later growing-model results, rather than counting them as savings for the actual arithmetic problem.
+-
+-\subsection{Relation to existing mathematical inputs}
+-Our prime-counting input is the classical prime number theorem and its partial-summation consequences~\cite{selberg1949}. The second-moment estimate for the hybrid coefficient uses the unconditional Mertens product baseline, stated at the beginning of~\cite{lamzouri2015}; none of that paper's conditional conclusions on bias distributions is used. Frequency separation, positive-semidefinite compression, finite Fourier orthogonality, and spectral min--max arguments are standard tools in the structural proofs, not new prime-pair theorems.
+-
+-The critical-interval bilinear estimate of Blomer--Pascadi~\cite{blomer2026} supplies an external benchmark: with the appropriate lengths and coprimality conditions, a Kloosterman bilinear form admits a local power saving. We use only the square-root-length specialization of their Theorem~1.1 and examine whether the actual representation satisfies its input conditions. The existence of that theorem is not an estimate for the complete arithmetic expression.
+-
+-This article is not an exhaustive literature survey, and the number of internal documents is not a substitute for comparison with external work. It is a mathematical synthesis draft for a delimited research program. Submission would still require contribution positioning, a fuller bibliography, verification of all selected historical dependencies, and independent mathematical scrutiny of the complete argument.
+-
+-\subsection{Reading guide}
+-Section~\ref{sec:arithmetic} fixes the endpoint and the transfer requirements. Section~\ref{sec:structure} treats the fixed atom and occurrence interfaces. Sections~\ref{sec:operator}--\ref{sec:boundary} develop the analytic core on one common object. Section~\ref{sec:dynamics} separates metric recurrence, the distinguished seed, and geometric attachment. Section~\ref{sec:bridges} assembles the two conditional bridge ledgers. The appendices distinguish model evidence and document provenance.
+-Readers need not read every historical manuscript in sequence to understand the main text; exact sources, material not selected for this synthesis, and the scope of review can be found in the accompanying source matrix and full catalog.
++\clearpage
+--- english-v0.1/sections/models.tex
++++ english-v0.2/sections/models.tex
+@@ -1,4 +1,4 @@
+-\section{Complete kernels, one-sided short support, and the status of model evidence}
++\section{One-sided short support and model evidence}\label{sec:models}
+ The complete Kloosterman matrix $\mathsf K=(S(m,n;q))_{1\le m,n<q}$ satisfies the directly verifiable identity
+ \[
+ \mathsf K\mathsf K^*=q^2I-(q+1)\mathbf J,
+--- english-v0.1/sections/operator.tex
++++ english-v0.2/sections/operator.tex
+@@ -1,5 +1,5 @@
+-\section{The analytic core: the actual operator and its exact structure}\label{sec:operator}
+-Sections~\ref{sec:operator}--\ref{sec:boundary} use one object from the fully recovered scalar specification~\cite{archivev59,archivephysical}. Here ``physical'' means the arithmetic data actually prescribed by the research problem, as opposed to models in which signs, origins, or kernels may be freely selected.
++\section{The actual operator: definition and exact structure}\label{sec:operator}
++Sections~\ref{sec:operator}--\ref{sec:boundary} use one object from the fully recovered scalar specification~\cite{archivev59,archivephysical}. Here ``physical'' means the arithmetic data actually prescribed by the research problem, as opposed to models in which signs, origins, or kernels may be freely selected. We first define that object, then establish its operator structure; subsequent sections distinguish what follows from generic norm information, exact Kloosterman representation, and the small support of the boundary.
+ 
+ \subsection{Parameters, coefficients, and kernel}
+ Let $x\to\infty$ and set
+--- english-v0.1/sections/provenance.tex
++++ english-v0.2/sections/provenance.tex
+@@ -1,20 +1,10 @@
+-\section{Sources, deduplication, and the scope of verification}\label{sec:provenance}
+-This paper selects core original sources from a standalone repository containing 420 TPC directories and rewrites them by mathematical dependency rather than paper number.
+-Every proposition proved in the body remains subject to its stated hypotheses; classical inputs such as the Chinese remainder theorem, the prime number theorem, and Mertens' theorem are not new discoveries here.
+-The number of historical manuscripts is not the number of independent contributions.
++\section{Sources and the scope of verification}\label{sec:provenance}
++This synthesis selects core sources from a repository containing 420 TPC directories and organizes them by mathematical dependency. The directory count is not a count of independent contributions, and the catalog is not a manual semantic audit of every full text.
+ 
+-The accompanying \texttt{SOURCE\_CATALOG.md/json} enumerates all 420 directories, retaining original names, primary-source hashes, and candidate island labels obtained by text matching.
+-These labels aid retrieval; they do not represent a manual semantic audit of all 420 full texts.
+-The \texttt{CORE\_SOURCE\_MATRIX.md/json} records the core files actually used here, their source line ranges, SHA-256 hashes, and claim boundaries.
+-Source proofs, historical interfaces, current handoff state, and independent reviews are listed separately; status files do not replace proofs.
++The accompanying source catalog records original names, primary-source hashes, and provisional island labels. The core source matrix supplies the files, line ranges, SHA-256 hashes, and claim boundaries used here. Its original paths are relative to the twin-prime repository; the revision's readable copy rebases navigation links without changing source claims. Hashes establish source fidelity, not mathematical correctness. Status files and the map provide context, not substitute proofs.
+ 
+-The early structural interfaces in Section~\ref{sec:structure} come from original TeX sources.
+-The main operator results in Sections~\ref{sec:operator}--\ref{sec:boundary} come from the unnumbered research cycle of 9 September 2026.
+-The CRT--Abel proof in Section~\ref{sec:dynamics} comes from the original moving-target proof, and the replication-and-deletion structure comes from the exact physical-intertwining document.
+-Original papers, research manuscripts, handoff files, and maps remain unchanged. The new synthesis is stored separately and adds no TPC paper number.
++Section~\ref{sec:structure} uses original TeX manuscripts. The operator, coefficient, rank, emitter, and boundary results come from the unnumbered research cycle of 9 September 2026. Section~\ref{sec:dynamics} uses the original moving-target proof, seed reconnaissance criterion, and physical-intertwining document. Classical inputs remain classical; no first-discovery claim is made for reorganized results.
+ 
+-The verifiable core consists of complete definitions of shared objects, step-by-step proofs, and source hashes.
+-Successful compilation, resolved citations, embedded fonts, and page-by-page visual inspection verify presentation, not theorems.
+-Independent reviews apply only to their explicitly read scope; they certify neither the entire 420-directory collection nor novelty.
++The wiki's fourteen knowledge cards distinguish definitions, estimates, obstructions, and conditional transfers. The companion concordance maps each card to the revised sections and original source IDs. These navigation aids provide no independent proof evidence.
+ 
+-This full English translation preserves the Chinese edition's proofs and claim boundaries and reproduces the supplied English map unchanged. The Chinese sources remain the provenance baseline; no research route is reopened.
++English v0.2 preserves the earlier edition's formal statements, proof blocks, bibliography, and supplied map while revising its exposition. Both original editions and the research archive remain unchanged; this is not a new numbered paper or a reopened research route. Full raw editorial reviews and presentation checks are retained separately. Their scope is explicit: neither successful compilation and visual inspection nor a bounded editorial review certifies the entire archive, theorem correctness, or novelty.
+--- english-v0.1/sections/structure.tex
++++ english-v0.2/sections/structure.tex
+@@ -1,5 +1,5 @@
+-\section{Fixed atoms and actual occurrences: Islands 3 and 4}\label{sec:structure}
+-This layer identifies the object to which a downstream estimate must apply. A fixed displacement, phase, modulus, and support are four distinct requirements; estimating a convenient substitute does not settle them.
++\section{Fixed atoms and actual occurrences}\label{sec:structure}
++This layer separates three tasks: identifying a retained atom, reconstructing its literal coefficient from children, and covering the actual occurrence vector with estimable blocks. A fixed displacement, phase, modulus, and support are distinct requirements. The identities below are useful only after their source data have been supplied; none constructs the missing production pair-to-atom attachment. A carrier means the indexing set of terms or occurrences, with their source data. The label H1 is inherited from the source program; it does not name an additional result proved here.
+ 
+ \subsection{The order-preserving determinant-two pullback}
+ Let $I$ be an integer interval, $a,s$ positive integers, and $d,u$ integers satisfying
+@@ -35,6 +35,7 @@
+ This is the core interface of TPC127~\cite{archive127}. It also preserves variation along consecutive image points and absolute comparison mass, but does not estimate either quantity. Fixing $h_0=2$ neither fixes one phase across scales nor permits the quotient-squarefree conditions to be discarded.
+ 
+ \subsection{Ordered pairs, child reassembly, and occurrence conservation}
++The following examples specify distinct interfaces, not successive completed constructions. The first display illustrates the data that an ordered-pair attachment would have to preserve; its purpose is not to define a new self-contained block estimate.
+ Squaring a sum produces ordered row pairs, a different carrier from the pair of affine forms above. For example, in the opened-$D$ construction, $N_\alpha(j)=\ell_\alpha d_\alpha j+h_0$, and the off-diagonal coefficient contains
+ \[
+ \mu(d_\alpha)\mu(d_\gamma)(\log\ell_\alpha)(\log\ell_\gamma)
+@@ -83,3 +84,6 @@
+ This is the linear-algebraic content of the TPC117 criterion~\cite{archivestructure}. Even if $B^\dagger c_{\rm phys}$ gives an exact cover, block bounds $U_b$ still incur the transport cost
+ $\sum_b|(B^\dagger c_{\rm phys})_b|U_b$.
+ The existence of a cover is not the existence of an inexpensive cover, much less an arithmetic saving for the actual growing family.
++
++\paragraph{Where this leaves the analytic argument.}
++Coefficient conservation, identification of active nonzero occurrences, and a cost-controlled weighted cover are separate requirements. In particular, membership in a union of blocks is weaker than reconstruction of the signed coefficient vector. Section~\ref{sec:operator} therefore starts from its own fully specified source scalar; it is not presented as a consequence of a production lift proved in this section. This keeps a useful structural interface from being mistaken for a completed arithmetic reduction.

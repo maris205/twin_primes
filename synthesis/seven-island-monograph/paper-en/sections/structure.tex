@@ -1,0 +1,85 @@
+\section{Fixed atoms and actual occurrences: Islands 3 and 4}\label{sec:structure}
+This layer identifies the object to which a downstream estimate must apply. A fixed displacement, phase, modulus, and support are four distinct requirements; estimating a convenient substitute does not settle them.
+
+\subsection{The order-preserving determinant-two pullback}
+Let $I$ be an integer interval, $a,s$ positive integers, and $d,u$ integers satisfying
+\[
+\begin{gathered}
+D(z)=d+sz>0,\quad V(z)=u+az>0\quad(z\in I),\quad su-ad=2,\\
+(a,s)=1,\quad(as,2)=1,\quad(d,s)=(u,a)=1.
+\end{gathered}
+\]
+Write $\lambda$ for the Liouville function, distinct from the truncated projector weight below. Let $B,\tau$ be the specified integers and $\chi,W_X$ the functions prescribed by the original block. Its literal coefficient is
+\[
+a_{\xi,X}(z)=\mu(D(z))\mu(V(z))\1_{(B,V(z))=1}\chi(\tau+Bz)W_X(\tau+Bz).
+\]
+\begin{proposition}[Exact masked pullback]\label{prop:pullback}
+Set $q_{\rm prog}=as$ and $n(z)=su+as z=sV(z)=aD(z)+2$. This is an order-preserving bijection from $I$ onto its image $\mathcal N_I$, and
+\begin{align*}
+\mu(D(z))\mu(V(z))&=\lambda(q_{\rm prog})\lambda(n-2)\lambda(n)\mathcal Q_{a,s}(n),\\
+\mathcal Q_{a,s}(n)&=\mu^2((n-2)/a)\mu^2(n/s).
+\end{align*}
+For every $\alpha\in\RR$, the original sum is therefore exactly
+\[
+\sum_{z\in I}a_{\xi,X}(z)\e(-\alpha z)
+=\lambda(q_{\rm prog})\sum_{n\in\mathcal N_I}
+\lambda(n-2)\lambda(n)\mathcal Q_{a,s}(n)\mathcal W_{\xi,X}(n)\e(-\alpha z(n)),
+\]
+where $\mathcal W_{\xi,X}(n)=\1_{(B,n/s)=1}\chi(\tau+Bz(n))W_X(\tau+Bz(n))$. The same identity holds for every initial prefix.
+\end{proposition}
+\begin{proof}
+The positivity of $as$ gives order preservation, and $su-ad=2$ gives the two integer quotients. Since $\mu(m)=\mu^2(m)\lambda(m)$ and $\lambda$ is completely multiplicative,
+$\lambda(n-2)\lambda(n)=\lambda(a)\lambda(s)\lambda(D(z))\lambda(V(z))$.
+Multiplying by $\lambda(as)$, whose square is $1$, proves the coefficient identity. Substitute all remaining factors unchanged, without taking absolute values or removing the quotient-squarefree masks. The increasing bijection maps each initial prefix to its corresponding prefix.
+\end{proof}
+This is the core interface of TPC127~\cite{archive127}. It also preserves variation along consecutive image points and absolute comparison mass, but does not estimate either quantity. Fixing $h_0=2$ neither fixes one phase across scales nor permits the quotient-squarefree conditions to be discarded.
+
+\subsection{Ordered pairs, child reassembly, and occurrence conservation}
+Squaring a sum produces ordered row pairs, a different carrier from the pair of affine forms above. For example, in the opened-$D$ construction, $N_\alpha(j)=\ell_\alpha d_\alpha j+h_0$, and the off-diagonal coefficient contains
+\[
+\mu(d_\alpha)\mu(d_\gamma)(\log\ell_\alpha)(\log\ell_\gamma)
+r_R(N_\alpha(j))r_R(N_\gamma(j))B_\alpha(j)B_\gamma(j).
+\]
+Here $r_R$ and $B_\alpha$ denote the truncation factor and row-weight aliases in the source expansion. They are not newly defined free functions, and the display does not attach an actual production pair to an affine atom. The complete TPC18 formula is located in the source matrix. Attachment to a retained atom must still preserve the original joint mask, schedule, and normalization.
+
+For a legitimately retained source term, divisor decomposition gives a useful conservation identity. For $G>0$, set
+\[
+\lambda_G(v)=\sum_{g\mid v,\ g\le G}\mu(v/g).
+\]
+Then, for positive integers $d,e$,
+\[
+\sum_{v\mid(d,e)}\lambda_G(v)=\1_{(d,e)\le G}.
+\]
+Interchange $g,v$ and use $\sum_{h\mid m}\mu(h)=\1_{m=1}$ to prove the identity. Reconstructing the source requires the weighted sum of all children; one child is not the source coefficient. TPC93's inverse and signed reconstruction hold on its squarefree primitive support. TPC205's composition from production pairs remains conditional on a legitimate attachment~\cite{archivestructure}.
+
+A linear occurrence lift is a separate issue. The source labels $\mathsf{EPS}$, $\mathsf{ETO}$, and $\mathsf{FUM}$ mean eligible-prefix-soft, eligible-tail-open, and frontier-unmapped. The nonsoft domain is
+$\mathcal C=\mathcal C^{\mathsf{ETO}}\sqcup\mathcal C^{\mathsf{FUM}}$; retaining only the frontier would omit the eligible tail. If the upstream cut satisfies
+\[
+\1_{\mathsf{EPS}}^TM^{\mathsf{EPS}}+\1_{\mathcal C}^TM^{\rm ns}=\1_{\mathcal N}^T,
+\]
+and a supplied lift $L:\CC^{\mathcal C}\to\CC^{\mathcal O}$ satisfies $\1_{\mathcal O}^TL=\1_{\mathcal C}^T$, multiplication gives
+\[
+\1_{\mathsf{EPS}}^TM^{\mathsf{EPS}}+\1_{\mathcal O}^TLM^{\rm ns}=\1_{\mathcal N}^T.
+\]
+The sets $\mathcal N,\mathcal C,\mathcal O$ are respectively native terms, nonsoft branches, and retained occurrences with source paths. A retained carrier is not the certified nonzero active support: after inverse aggregation, the literal coefficient must still be certified nonzero. An unevaluated coefficient cannot simply be declared zero. This conditional statement does not construct $L$; row separation, metadata fidelity, and the actual nonzero support must also be supplied. A formal support envelope is not the actual occurrence set.
+
+\subsection{A weighted-cover criterion}
+Suppose the actual coefficient vector $c_{\rm phys}$ and admissible-block synthesis matrix $B$ have been supplied, with the specified positive-definite inner products on both spaces. Let $B^\dagger$ be the corresponding Moore--Penrose inverse and $P=BB^\dagger$.
+\begin{proposition}[Cover and orthogonal obstruction]
+In finite dimensions, the following are equivalent:
+\[
+c_{\rm phys}\in\operatorname{Ran}B,\qquad Pc_{\rm phys}=c_{\rm phys},\qquad
+\langle y,c_{\rm phys}\rangle=0\quad(y\in\ker B^*).
+\]
+Moreover,
+\[
+\|(I-P)c_{\rm phys}\|=
+\max_{y\in\ker B^*,\ \|y\|\le1}|\langle y,c_{\rm phys}\rangle|.
+\]
+\end{proposition}
+\begin{proof}
+The singular value decomposition identifies $P$ as the orthogonal projection onto $\operatorname{Ran}B$, whose orthogonal complement is $\ker B^*$. Orthogonal decomposition gives the equivalences. Cauchy--Schwarz proves the upper bound in the distance formula. A normalized nonzero residual attains equality; when the residual vanishes, both sides are zero.
+\end{proof}
+This is the linear-algebraic content of the TPC117 criterion~\cite{archivestructure}. Even if $B^\dagger c_{\rm phys}$ gives an exact cover, block bounds $U_b$ still incur the transport cost
+$\sum_b|(B^\dagger c_{\rm phys})_b|U_b$.
+The existence of a cover is not the existence of an inexpensive cover, much less an arithmetic saving for the actual growing family.

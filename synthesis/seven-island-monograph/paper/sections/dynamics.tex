@@ -1,0 +1,130 @@
+\section{岛⑤与岛⑦：移动靶、指定种子及几何附接}\label{sec:dynamics}
+\subsection{真正的算术编码和度量命中结论}
+令 $\widehat\ZZ$ 为 profinite 整数群，$m_H$ 为 Haar 概率测度，$T(\xi)=\xi+1$。
+这里用 $m_H$ 避免与 Möbius 函数 $\mu$ 混淆。设
+\[
+y_n=\sqrt{n+2},\quad Q_n=\prod_{p\le y_n}p,\quad
+E_n=\{\xi:p\nmid\xi(\xi+2)\text{ 对所有 }p\le y_n\},\quad
+Z_n(\xi)=\1_{E_n}(T^n\xi).
+\]
+对 $n\ge3$，$Z_n(0)=1$ 当且仅当 $n,n+2$ 均为素数：两数均大于其共同筛阈值，而每个不超过 $n+2$ 的合数都有不超过 $\sqrt{n+2}$ 的素因子。
+CRT 给出
+\[
+\alpha_n=m_H(E_n)=\frac12\prod_{2<p\le y_n}(1-2/p)\asymp(\log n)^{-2}.
+\]
+底层 $T$ 是自治加法器，不是混合变换；非自治性在随 $n$ 改变的靶与筛尺度中。
+
+\begin{theorem}[Haar 移动靶方差与几乎处处命中]\label{thm:haar}
+令 $S_N=\sum_{3\le n\le N}Z_n$，$A_N=\sum_{3\le n\le N}\alpha_n$。则
+\[
+\operatorname{Var}_{m_H}(S_N)\ll N,\qquad A_N\asymp N/(\log N)^2.
+\]
+对 $m_H$ 几乎处处的 $\xi$，有 $S_N(\xi)\to\infty$。
+\end{theorem}
+\begin{proof}
+对 $m<n$，设 $d=n-m$。CRT 按共同筛素数与新增筛素数分开给出
+\[
+\operatorname{Cov}(Z_m,Z_n)=\alpha_m\alpha_n(K_{y_m}(d)-1).
+\]
+对于共同素数 $p$，需避开的剩余类为 $0,-2,-d,-d-2$；数它们的重合得到
+\begin{align*}
+k_2(d)&=2\1_{2\mid d},&k_3(d)&=3\1_{3\mid d},\\
+k_p(d)&=1-\frac4{(p-2)^2}+\frac{2p}{(p-2)^2}\1_{p\mid d}
++\frac p{(p-2)^2}(\1_{p\mid d-2}+\1_{p\mid d+2})\quad(p\ge5),
+\end{align*}
+其中 $K_y=\prod_{p\le y}k_p$。每个因子在完整剩余类上的均值为 $1$。
+展开成 CRT 剩余类指示函数，其系数绝对和不超过
+\[
+D(y)=6\prod_{5\le p\le y}(1-2/p)^{-2}\ll\log^4(2y).
+\]
+最后的界来自 Mertens 乘积定理及收敛的 $O(p^{-2})$ 修正。
+每个剩余类在任意整数区间内的点数距区间长度除以模数不超过 $1$，所以
+\[
+\left|\sum_{d\in J}(K_y(d)-1)\right|\le D(y).
+\]
+固定 $m$ 后对单调不增的 $\alpha_{m+d}$ 作 Abel 求和，得到
+\[
+\left|\sum_{d=1}^{N-m}\alpha_{m+d}(K_{y_m}(d)-1)\right|
+\le\alpha_{m+1}D(y_m).
+\]
+当 $y_m\ge3$ 时，$\alpha_m^2D(y_m)=1/6$，因此每个 $m$ 的分组协方差绝对值至多 $1/6$。
+有限多个初始 $m$ 贡献有界；对角方差不超过 $\sum\alpha_n\le N$，即得方差界。
+Mertens 乘积与固定二点奇异级数给出 $A_N$ 的量级。
+Chebyshev 不等式在 $N=j^2$ 上给出
+\[
+m_H\{|S_{j^2}-A_{j^2}|>A_{j^2}/2\}\ll\frac{(\log j)^4}{j^2}.
+\]
+右侧可求和，第一 Borel--Cantelli 引理说明几乎每个种子最终满足
+$S_{j^2}\ge A_{j^2}/2\to\infty$。$S_N$ 单调不减，故推广到全部 $N$。
+\end{proof}
+这一论证来自原始移动靶证明\cite{archivedynamics}，是实际筛事件的度量定理，不能贬为仅有限模型。
+但其零测例外集可以包含 $0$，所以它还没有跨过图像 Bridge B。
+
+\subsection{指定种子缺口的一个精确形式}
+以下充分准则来自已有的指定种子侦察报告\cite{archiveseed}，这里重新给出其短证明。
+取 $q_N\mid Q_N$，$U_N=q_N\widehat\ZZ$，并定义
+\[
+V_N=\|S_N-A_N\|_{L^2(m_H)},\qquad
+\Omega_N=\sup_{\xi\in U_N}(S_N(\xi)-S_N(0)).
+\]
+\begin{proposition}[柱集回接的充分条件]\label{prop:seed}
+对每个 $N$，
+\[
+S_N(0)\ge A_N-\sqrt{q_N}V_N-\Omega_N.
+\]
+若沿无界序列 $N_j$，存在固定 $\eta>0$ 使
+$\Omega_{N_j}+\sqrt{q_{N_j}}V_{N_j}\le(1-\eta)A_{N_j}$，则有无穷多个孪生素数。
+\end{proposition}
+\begin{proof}
+$m_H(U_N)=1/q_N$。按 $\Omega_N$ 的定义及 Cauchy--Schwarz，
+\[
+S_N(0)\ge q_N\int_{U_N}S_N\,dm_H-\Omega_N
+\ge A_N-\sqrt{q_N}V_N-\Omega_N.
+\]
+所给条件使 $S_{N_j}(0)\ge\eta A_{N_j}\to\infty$，再用精确算术编码。
+\end{proof}
+已知 $V_N\ll\sqrt N$ 保证：若 $q_N=o(N/\log^4N)$，则 $\sqrt{q_N}V_N=o(A_N)$。
+这是充分条件，不是必要性断言；此时没有已证的所需 $\Omega_N$ 界。
+若取细柱 $q_N=Q_N$，则 $S_N$ 在柱上恒定，$\Omega_N=0$，但
+$Q_N=\exp((1+o(1))\sqrt N)$ 使通用点值代价过大。
+命题是一个充分条件，不是宣称这个条件已经成立，也不是唯一可能的回接方式。
+
+\subsection{保阶段筛演化与强混合载体的限定障碍}
+令 $P_k=\prod_{j\le k}p_j$，$V_k=\CC^{\ZZ/P_k\ZZ}$ 使用归一化计数内积，
+$B_k(r)=\1_{(r(r+2),P_k)=1}$，$a_k=\operatorname{mean}B_k$，$W_k=B_k-a_k$。
+加入新奇素数 $p$ 时，复制并删除算子定义为
+\[
+(R_pf)(r+jP_k)=f(r)\1_{p\nmid(r+jP_k)(r+jP_k+2)},\quad 0\le j<p.
+\]
+每个父剩余类恰有 $p-2$ 个子项保留，故若 $\alpha_p=1-2/p$，
+\[
+R_p^*R_p=\alpha_p I,\quad \operatorname{mean}(R_pf)=\alpha_p\operatorname{mean}f.
+\]
+令 $g=R_p1-\alpha_p$。直接平均给出 $\|g\|^2=\alpha_p(1-\alpha_p)$，
+并且均值零的 $f$ 满足 $\langle R_pf,g\rangle=0$。于是
+\[
+W_{k+1}=R_pW_k+a_kg,\qquad \|W_k/a_k\|^2=a_k^{-1}-1\asymp(\log p_k)^2.
+\]
+强迫项是真实演化的一部分，不能把这个系统当作齐次指数收缩。
+
+更精确地，若一族映射 $J_k$ 在整个均值零空间上一致有界且强制有下界
+$c\|f\|\le\|J_kf\|\le C\|f\|$，同时精确满足 $J_{k+1}R_{p_{k+1}}=Q_kJ_k$，
+则不可能再有一致任意乘积界 $\|Q_{b-1}\cdots Q_a\|\le C_Q\theta^{b-a}$，$0<\theta<1$。
+事实上这三者推出
+\[
+c\prod_{a<j\le b}(1-2/p_j)^{1/2}\le CC_Q\theta^{b-a}.
+\]
+固定 $a$，左边仅为 $1/\log p_b$ 量级，而素数定理给出 $p_b\asymp b\log b$，与右边指数衰减矛盾。
+这只排除三个假设同时成立；不排除非强制商映射、可观测量半范数或有控制缺陷的非自治表示\cite{archiveintertwiner}。
+
+\subsection{岛⑦的作用与边界}
+几何提升要有用，至少须给出保时半共轭、事件拉回、适用测度对应和\emph{指定种子}对应。
+例如候选空间间的 $\rho_k$ 与变换 $H_k,F_k$ 须满足
+$\rho_{k+1}H_k=F_k\rho_k$，并使提升事件准确等于原事件的逆像。
+这些是需要证明的附接条件，本稿没有构造一个孪生素数专用的 Hénon 提升。
+
+甚至一个平稳混合系统也不能测度保持地因子映到非平凡的模 $M$ 加一时钟：
+后者的均值零特征函数 $\e(r/M)$ 的自相关绝对值恒为 $1$，拉回后与混合性矛盾。
+这个有限因子论证不能推广为所有非自治几何表示的不可能性。
+二维相空间也不代表全部相关可观测量只需二维线性载体。
+因此岛⑦是辅助表示路线，不能用几何图像替代岛⑤的指定轨道命中条件。

@@ -1,0 +1,104 @@
+\section{固定原子与实际出现项：岛③和岛④}\label{sec:structure}
+这一层的任务不是先估计一个方便的代用品，而是确定下游估计必须作用于哪个对象。固定移位、固定相位、固定模数和固定支持是四种不同的要求。
+
+\subsection{行列式二的保序拉回}
+取整数区间 $I$，正整数 $a,s$，整数 $d,u$，满足
+\[
+\begin{gathered}
+D(z)=d+sz>0,\quad V(z)=u+az>0\quad(z\in I),\quad su-ad=2,\\
+(a,s)=1,\quad(as,2)=1,\quad(d,s)=(u,a)=1.
+\end{gathered}
+\]
+以 $\lambda$ 表示 Liouville 函数，区别于后面的截断投影权。设 $B,\tau$ 为已指定整数，$\chi,W_X$ 为原块指定的函数。字面系数为
+\[
+a_{\xi,X}(z)=\mu(D(z))\mu(V(z))\1_{(B,V(z))=1}
+\chi(\tau+Bz)W_X(\tau+Bz).
+\]
+\begin{proposition}[保留掩码的精确变换]\label{prop:pullback}
+令 $q_{\rm prog}=as$，$n(z)=su+as z=sV(z)=aD(z)+2$。
+它是 $I$ 到其像 $\mathcal N_I$ 的保序双射，而且
+\begin{align*}
+\mu(D(z))\mu(V(z))
+&=\lambda(q_{\rm prog})\lambda(n-2)\lambda(n)\mathcal Q_{a,s}(n),\\
+\mathcal Q_{a,s}(n)&=\mu^2((n-2)/a)\mu^2(n/s).
+\end{align*}
+因此任意相位 $\alpha\in\RR$ 下，原和精确等于
+\[
+\sum_{z\in I}a_{\xi,X}(z)\e(-\alpha z)
+=\lambda(q_{\rm prog})\sum_{n\in\mathcal N_I}
+\lambda(n-2)\lambda(n)\mathcal Q_{a,s}(n)
+\mathcal W_{\xi,X}(n)\e(-\alpha z(n)),
+\]
+其中 $\mathcal W_{\xi,X}(n)=\1_{(B,n/s)=1}\chi(\tau+Bz(n))W_X(\tau+Bz(n))$。
+每一个初始前缀也满足同样的等式。
+\end{proposition}
+\begin{proof}
+$as>0$ 给出保序性；$su-ad=2$ 给出两个整数商。由
+$\mu(m)=\mu^2(m)\lambda(m)$ 及 $\lambda$ 的完全乘法性，
+$\lambda(n-2)\lambda(n)=\lambda(a)\lambda(s)\lambda(D(z))\lambda(V(z))$。
+再乘 $\lambda(as)$，其平方等于 $1$，即得系数恒等式。其余因子原样代入，
+不取绝对值也不删除平方自由掩码。保序双射将每个前缀映为对应前缀。
+\end{proof}
+这是 TPC127 的核心接口\cite{archive127}。它也保留沿相邻像点计算的变差和绝对比较质量，但并未估计这些量。固定 $h_0=2$ 不保证跨尺度固定一个相位，亦不允许删去商的平方自由条件。
+
+\subsection{有序对、子项重组与出现项守恒}
+平方展开所产生的是有序行对。它与上面一对仿射形式不是同一个载体。
+例如 opened-$D$ 构造中 $N_\alpha(j)=\ell_\alpha d_\alpha j+h_0$，非对角对的系数含
+\[
+\mu(d_\alpha)\mu(d_\gamma)(\log\ell_\alpha)(\log\ell_\gamma)
+r_R(N_\alpha(j))r_R(N_\gamma(j))B_\alpha(j)B_\gamma(j).
+\]
+这里 $r_R$ 与 $B_\alpha$ 是源展开的截断因子和行权别名；本稿不把它们另定义为可自由选择的函数，也不据此声称生产对已映入某个仿射原子。完整源公式见来源矩阵中的 TPC18；对到保留原子的附接仍需原有联合掩码、调度和归一化。
+
+对于已经合法保留的源项，约数分解有一个简洁的守恒恒等式。令 $G>0$，
+\[
+\lambda_G(v)=\sum_{g\mid v,\ g\le G}\mu(v/g).
+\]
+则对正整数 $d,e$，
+\[
+\sum_{v\mid(d,e)}\lambda_G(v)=\1_{(d,e)\le G}.
+\]
+证明是交换 $g,v$ 后使用 $\sum_{h\mid m}\mu(h)=\1_{m=1}$。
+这说明需要\emph{全部子项的带权和}来重组源项；一个子项不等于源系数。
+TPC93 的逆变换和符号重组是在其平方自由、primitive 支持上成立的；TPC205 的生产对复合仍以合法附接为条件\cite{archivestructure}。
+
+线性的出现项提升又是另一个问题。源标签 $\mathsf{EPS}$ 表示 eligible-prefix-soft（可用前缀的软分支），
+$\mathsf{ETO}$ 表示 eligible-tail-open（可用尾部的开放分支），
+$\mathsf{FUM}$ 表示 frontier-unmapped（前沿未映射分支）。
+非软域为 $\mathcal C=\mathcal C^{\mathsf{ETO}}\sqcup\mathcal C^{\mathsf{FUM}}$，不能只保留前沿而删掉尾部。
+若上游分割满足
+\[
+\1_{\mathsf{EPS}}^TM^{\mathsf{EPS}}+\1_{\mathcal C}^TM^{\rm ns}
+=\1_{\mathcal N}^T,
+\]
+且一个已提供的提升 $L:\CC^{\mathcal C}\to\CC^{\mathcal O}$ 满足
+$\1_{\mathcal O}^TL=\1_{\mathcal C}^T$，则相乘便得
+\[
+\1_{\mathsf{EPS}}^TM^{\mathsf{EPS}}+\1_{\mathcal O}^TLM^{\rm ns}
+=\1_{\mathcal N}^T.
+\]
+其中 $\mathcal N,\mathcal C,\mathcal O$ 分别是原生项、非软分支、带来源路径的保留出现项载体。
+保留载体不是已认证非零的 active support：后者还需对逆聚合后的字面系数作非零认证，不能将未求值的系数直接判零。
+这个条件命题不构造 $L$；还需逐行分离、元数据保真与非零实际系数支持。形式支持包络不能代替实际出现项集。
+
+\subsection{带权覆盖的可检验判据}
+设已给定实际系数向量 $c_{\rm phys}$ 和合法块合成矩阵 $B$，两侧均使用指定的正定内积。令 $B^\dagger$ 为相应 Moore--Penrose 逆，$P=BB^\dagger$。
+\begin{proposition}[覆盖与正交障碍]
+在有限维空间中，以下条件等价：
+\[
+c_{\rm phys}\in\operatorname{Ran}B,\qquad Pc_{\rm phys}=c_{\rm phys},\qquad
+\langle y,c_{\rm phys}\rangle=0\quad(y\in\ker B^*).
+\]
+且到可合成空间的距离等于
+\[
+\|(I-P)c_{\rm phys}\|=
+\max_{y\in\ker B^*,\ \|y\|\le1}|\langle y,c_{\rm phys}\rangle|.
+\]
+\end{proposition}
+\begin{proof}
+奇异值分解说明 $P$ 是到 $\operatorname{Ran}B$ 的正交投影，而其正交补为 $\ker B^*$。
+正交分解给出三个等价条件。Cauchy--Schwarz 给出距离公式的上界；残差非零时取其单位化向量得到等号，残差为零时两侧均零。
+\end{proof}
+这是 TPC117 判据的线性代数内容\cite{archivestructure}。即使 $B^\dagger c_{\rm phys}$ 是精确覆盖系数，若各块上界为 $U_b$，传输仍要支付
+$\sum_b|(B^\dagger c_{\rm phys})_b|U_b$。
+覆盖存在与覆盖廉价不是一回事；更不是实际增长族的算术节省。

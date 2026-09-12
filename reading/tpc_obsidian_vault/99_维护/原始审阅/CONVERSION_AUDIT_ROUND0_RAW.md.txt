@@ -1,0 +1,43 @@
+Read-only audit complete. **Conversion-safety acceptance should remain STOP_SCOPED:** I found one actual content-loss defect in TPC-041 and additional fail-closed gaps. Original-byte preservation and faithful conversion are separate questions.
+
+### Findings
+
+**Critical:** None observed within the checked scope.
+
+**Major:**
+
+1. **TPC-041 loses the convolution symbol while reporting a full conversion.**  
+   The [original source, line 8](/root/autodl-tmp/math_research3/twin_primes/papers/tpc-41-row-diagonal-four-mobius-isolation/sections/convolution-shadow.tex:8) says `Let \(*\) denote Dirichlet convolution`; the [cached Markdown](/root/autodl-tmp/math_research3/tpc_obsidian_vault/.build/papers/TPC-041.json) says `Let \(\) ...`. A read-only reproduction confirmed that Pandoc produces an empty Math node for this nonempty source token. The [empty-node extension](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/converter_extensions.py:34) then inserts a fabricated empty literal. Both downstream roundtrip checks pass because their reference content is already altered. Empty AST nodes must not be assumed to represent empty original source; preserve the source-backed token or block conversion.
+
+2. **The verbatim allowance can bypass conditional-input rejection and does not guarantee literal preservation.**  
+   The [delimiter matcher](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/converter_extensions.py:20) recognizes delimiters even inside TeX comments. A synthetic fixture with commented-out delimiters around live `\iffalse`/`\fi` passed validation and expanded an input inside that conditional. Separately, an accepted literal `\begin{proof}…\end{proof}` block was rewritten by downstream `preserve_environments`; its roundtrip checks still passed. Literal spans need protection throughout preprocessing, with ambiguous/commented delimiters rejected.
+
+3. **Commented-reference normalization bypasses original shape checks.**  
+   The [reference extension](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/converter_extensions.py:46) overwrites visible text and attributes before the original strict validator examines them. Synthetic references containing custom visible text or extra attributes were rejected by the original implementation but accepted—with those fields discarded—after installation. It also concatenates internal label whitespace: `a b` can become `ab`. Validate the original canonical shape before making narrowly defined comment changes.
+
+4. **Unconditional math-newline normalization can change comment boundaries.**  
+   The [newline replacement](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/converter_extensions.py:38) changes `a% note\n+b` into `a% note +b`, extending the TeX comment over `+b`. The synthetic reader/writer reproduction passed both existing roundtrip checks. Reject comment-sensitive cases or handle them explicitly. This is a synthetic finding: the checked TPC-061 AST contained no unescaped comment-before-newline cases.
+
+5. **Successful caches bypass revalidation and survive adapter fixes.**  
+   The [cache-return branch](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/prepare_sources.py:109) returns existing successful JSON without checking source identity, Markdown hash, or converter/extension version. Synthetic tests confirmed this with both values of `--retry-failed`. Consequently, fixing the extension alone would leave the currently successful-but-damaged TPC-041 cache reusable. The build owner needs explicit cache invalidation/revalidation.
+
+**Minor:** No additional independent minor findings.
+
+### Checks that passed
+
+- All **42 TeX dependency hashes** recorded for TPC-004/041/061/063 match the corresponding current source bytes.
+- All **five cached Markdown hashes** match their embedded conversion records.
+- TPC-004’s actual two-line verbatim command block is retained exactly as code.
+- Both commented references in TPC-063 retain target order and correct original-source line links.
+- TPC-061 has **827 reader math nodes**, including **229 multiline nodes**; normalization preserves its existing whitespace-normalized signature.
+- Sixteen expected guard checks passed, including rejection of missing/duplicate reference labels, unbalanced/nested verbatim, external-input text inside verbatim, and ordinary outside conditional/dynamic commands.
+
+### Counts, collision handling, and scope limits
+
+The [preparation report](/root/autodl-tmp/math_research3/tpc_obsidian_vault/.build/preparation_report.json) reports **140 fresh + 279 reused + 1 unavailable = 420 identities**, hence **419 accessible-source entries**, with `source_preserved: true` over 7,752 files.
+
+The catalog code enforces 420 distinct IDs. An in-memory 420-row fixture confirmed that an accessible/unavailable number collision receives distinct IDs, while an unsuffixed duplicate is rejected. **Actual collision-directory mappings and final vault-note reachability were not independently checked**: the inventory and build outputs were outside the read allowlist.
+
+Checked scope: `twin_primes/AGENTS.md`; both vault scripts; the preparation report; the five named paper caches; both original converter modules; and necessary TeX sources for papers 4/41/61/63. Testing used `python -B` and in-memory reader/AST fixtures. No writes, Git commands, build execution, experiments, or access to the old `prime_dynamics_theory` repository.
+
+The sampled hashes support byte preservation, not the full-tree claim independently—and neither hashes nor conversion PASS results establish mathematical correctness or a proof of the twin-prime conjecture.

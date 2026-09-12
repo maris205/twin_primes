@@ -1,0 +1,39 @@
+---
+type: "source-reading"
+source_path: "papers/tpc-397-c1-interpolation-transition-replication/notes/claim_firewall.md"
+snapshot_date: "2026-09-12"
+owner: "TPC-397"
+generated: true
+semantic_review: "not-certified-by-conversion"
+---
+
+<!-- ORIGINAL_BYTES_LINK -->
+[原始Markdown文件（逐字节保留）](../../90_%E9%99%84%E4%BB%B6/%E5%8E%9F%E5%A7%8B%E8%B5%84%E6%96%99/papers/tpc-397-c1-interpolation-transition-replication/notes/claim_firewall.md.txt)；可用外部编辑器核对。
+
+
+论文入口：[[02_论文/TPC-397|TPC-397]] · [[00_开始阅读|首页]]
+
+# TPC-397 claim firewall
+
+```text
+TPC397_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC397_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC397_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC397_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC397_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+TPC397_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC397_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC397_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+TPC397_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+TPC397_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC397_GROWING_OPERATOR_BOUND = OPEN
+TPC397_SOURCE_UNIFORM_L2 = OPEN
+TPC397_ARITHMETIC_ADVANCE = NO
+TPC397_FIXED_POWER_CREDIT = 0
+TPC397_FULL_GATE_B = OPEN
+TPC397_TWIN_PRIME_RESULT = NONE
+```
+
+`blend_3_4`, `blend_5_6`, `blend_11_12`, and `blend_1` are finite matrix probes. Only the endpoint labels have the inherited all-plus/alternating interpretation; the fractional probes are not asserted to be arithmetic sign laws.
+
+ROUND2\_CLUE = TEST\_C1\_INTERPOLATION\_ENDPOINT\_MICROGRID

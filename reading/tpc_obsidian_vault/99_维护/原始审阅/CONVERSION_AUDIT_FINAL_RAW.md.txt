@@ -1,0 +1,13 @@
+**两项定点复核完成，原两项 Major 均可关闭：GO_SCOPED。** 本次范围内 Critical / Major / Minor 均为 0。
+
+1. **行内字面代码保护通过。**  
+   [converter_extensions.py](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/converter_extensions.py:71) 在星号替换之前拒绝非 `verbatim` 区域的 `\verb`、`\verb*`。原反例及不同分隔符变体均被拒绝，未进入后续预处理；真正的 `verbatim` 内容保持不变，正常数学星号分组仍有效。
+
+2. **缓存元数据完整性修复通过。**  
+   [prepare_sources.py](/root/autodl-tmp/math_research3/tpc_obsidian_vault/_tools/prepare_sources.py:25) 的规范化 JSON 哈希覆盖除 `content_integrity` 自身外的全部字段。仅修改 status、report 或其他元数据，实际缓存返回分支均拒绝。即使重新计算哈希，空载荷冒充成功、未知状态、blocked/unavailable 携带内容，以及 FULL 状态与 report 不一致，也会被载荷检查拒绝。
+
+验证：从正式测试文件中仅选取相关 **2 个测试方法，内存隔离执行**，另做 **33 项定点检查**；普通 Python 与 `-O` 模式分别全部通过，未重跑旧全套。
+
+版本标识：extensions `4eaa9a1f…491a43`；prepare `d3bb727b…3fb403`；tests `9630006b…ac4d97`。
+
+全程只读，仅检查指定三个脚本和内存最小例。未读取 builder/adapter、未扫描 419 份原稿、未检查正在重刷的缓存结果，也未访问旧仓库。**本结论只关闭这两项源读取器问题，不代表全批构建或数学内容认证。**

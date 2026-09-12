@@ -1,0 +1,4141 @@
+{
+  "scope": "Server-side MathJax compatibility, not desktop Obsidian or mathematical verification",
+  "version": "3.2.2",
+  "totalExpressions": 75287,
+  "uniqueExpressions": 41766,
+  "failedOccurrences": 590,
+  "failedUnique": 188,
+  "input_sha256": "e3cf182902da88524536cee1afb363dbe29aea3cc3726f1602cf36ec51de5224",
+  "failures": [
+    {
+      "note": "03_全文/TPC-006.md",
+      "index": 438,
+      "kind": "DisplayMath",
+      "tex": "\\label{eq:certificate-signature} \\begin{array}{c@{\\qquad}ccc} \\toprule p&m\\bmod p&n\\bmod p&(mn+2)\\bmod p\\\\ \\midrule 5&1&4&1\\\\ 7&1&6&1\\\\ 11&1&10&1\\\\ \\bottomrule \\end{array}",
+      "error": "Undefined control sequence \\toprule"
+    },
+    {
+      "note": "03_全文/TPC-006.md",
+      "index": 479,
+      "kind": "DisplayMath",
+      "tex": "\\label{eq:implication-ledger} \\begin{gathered} \\text{finite CRT kernel} \\quad+\\quad \\text{TPC-5 conductor estimates} \\quad\\Longrightarrow\\quad \\text{rough-target main term},\\\\ \\text{Bombieri--Vinogradov} \\quad\\Longrightarrow\\quad \\text{one-sided target-prime Type~I range},\\\\ \\text{full fixed-shift prime-pair asymptotic} \\quad\\Longleftrightarrow\\quad \\text{large-divisor tail cancellation in \\cref{thm:large-source-tail-equivalence}}. \\end{gathered}",
+      "error": "Undefined control sequence \\cref"
+    },
+    {
+      "note": "03_全文/TPC-035.md",
+      "index": 550,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  r(x,y)  &\\ll_h1+\\min\\left\\{\\frac Ay,\\frac Sx\\right\\}  \\le_h1+\\frac AT,  \\label{eq:tpc35-point-degree-bound}\\\\ \\intertext{and every line \\(L_{a,s}\\) in the coefficient family satisfies}  |L_{a,s}\\cap\\mathcal P|  &\\le1+\\frac{X_0}{s}.  \\label{eq:tpc35-line-point-bound}\\end{aligned}",
+      "error": "Undefined control sequence \\intertext"
+    },
+    {
+      "note": "03_全文/TPC-040.md",
+      "index": 282,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde\\mathcal A=r,  \\label{eq:tpc40-partial-tensor-A}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-040.md",
+      "index": 307,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal E_{\\Phi}(x)  \\ge\\frac1\\mathcal A  \\left\\|\\sum_\\alpha x_\\alpha\\right\\|^2.  \\label{eq:tpc40-physical-energy-dominates-target}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 359,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  \\widetilde\\mathcal D  &:=\\sum_i\\sum_w|\\widetilde b_{i,w}|^2  \\le\\rho_R\\mathcal D_0  \\le X^{(\\lambda_L-\\theta)_++o(1)}\\mathcal D_0,  \\label{eq:tpc45-grouped-diagonal-bound}\\\\  \\mathbb E_{\\varepsilon_p:p\\notin\\mathcal P_R}  Z_0(-\\mathbf 1_{\\mathcal P_R},\\varepsilon)  &=\\widetilde\\mathcal D.  \\label{eq:tpc45-band-frozen-mean}\\end{aligned}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 386,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal A_z",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 388,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde\\nu_z:=|\\widetilde\\mathcal A_z|.  \\label{eq:tpc45-descended-projection-count}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 390,
+      "kind": "DisplayMath",
+      "tex": "H_{i,a}(\\xi)  :=\\sum_{w_{\\le z}=a}    \\widetilde b_{i,w}\\chi_{w_{>z}}(\\xi),  \\qquad  W_z(\\xi):=\\sum_i\\sum_{a\\in\\widetilde\\mathcal A_z}|H_{i,a}(\\xi)|^2.  \\label{eq:tpc45-descended-Wz}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 392,
+      "kind": "DisplayMath",
+      "tex": "\\mathbb P_\\xi\\!\\left(   \\sup_{\\sigma_{p\\le z}}   Z_0(-\\mathbf 1_{\\mathcal P_R},\\sigma,\\xi)   >L\\widetilde\\nu_z\\widetilde\\mathcal D  \\right)  \\le L^{-1}.  \\label{eq:tpc45-robust-descended-tail}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 393,
+      "kind": "DisplayMath",
+      "tex": "\\mathbb E_\\xi W_z(\\xi)=\\widetilde\\mathcal D.  \\label{eq:tpc45-descended-W-mean}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 396,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde S_i(\\sigma,\\xi)  =\\sum_{a\\in\\widetilde\\mathcal A_z}\\chi_a(\\sigma)H_{i,a}(\\xi).  \\label{eq:tpc45-descended-coordinate-grouping}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 414,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde\\mathcal D  \\le X^{(\\lambda_L-\\theta)_++o(1)}\\mathcal D_0.  \\label{eq:tpc45-tradeoff-diagonal}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-045.md",
+      "index": 419,
+      "kind": "DisplayMath",
+      "tex": "L_X\\widetilde\\nu_z\\widetilde\\mathcal D  \\le X^{1/400-\\delta}\\mathcal D_0  \\le K_B\\mathcal D_0  \\label{eq:tpc45-tradeoff-budget}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 129,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde\\mathcal H=\\mathcal V\\widehat\\otimes\\ell^2(\\mathbb Z).  \\label{eq:tpc47-abstract-output-space}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 137,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 149,
+      "kind": "DisplayMath",
+      "tex": "E_I:\\mathcal V\\widehat\\otimes\\ell^2(I)\\longrightarrow\\widetilde\\mathcal H  \\label{eq:tpc47-zero-extension}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 164,
+      "kind": "InlineMath",
+      "tex": "(F_h)_h\\subset\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 214,
+      "kind": "InlineMath",
+      "tex": "\\ell^1(\\mathbb Z;\\widetilde\\mathcal H)",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 220,
+      "kind": "InlineMath",
+      "tex": "L^2(\\mathbb T;\\widetilde\\mathcal H)",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-047.md",
+      "index": 221,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\bigoplus_m\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 61,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 135,
+      "kind": "DisplayMath",
+      "tex": "\\widetilde\\mathcal H=\\mathcal V\\widehat\\otimes\\ell^2(\\mathbb Z).  \\label{eq:tpc48-abstract-orbit-space}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 147,
+      "kind": "DisplayMath",
+      "tex": "\\Pi_k\\Pi_\\ell=\\mathbf 1_{k=\\ell}\\Pi_k,  \\qquad  \\sum_{k\\bmod L}\\Pi_k=I_{\\widetilde\\mathcal H}.  \\label{eq:tpc48-projector-resolution}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 158,
+      "kind": "DisplayMath",
+      "tex": "E_{I,v}:\\ell^2(I)\\longrightarrow\\widetilde\\mathcal H,  \\qquad  E_{I,v}a:=v\\otimes\\widetilde a,  \\label{eq:tpc48-scalar-fiber-inclusion}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 226,
+      "kind": "InlineMath",
+      "tex": "\\bm y=(y_m)_{m\\in\\mathcal M}\\in\\bigoplus_m\\widetilde\\mathcal H",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 227,
+      "kind": "DisplayMath",
+      "tex": "(\\mathcal A_{\\alpha,L}\\bm y)_q  :=\\sum_{m\\in\\mathcal M}R_{m,q}(\\alpha)y_m  \\quad\\in\\widetilde\\mathcal H.  \\label{eq:tpc48-channel-lift}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 253,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal H",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 268,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal Q_L:\\bigoplus_{q\\bmod L}\\widetilde\\mathcal H  \\longrightarrow\\widetilde\\mathcal H,  \\qquad  \\mathcal Q_L((z_q)_q):=\\sum_qz_q.  \\label{eq:tpc48-channel-collapse}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 270,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal Q_L\\mathcal A_{\\alpha,L}\\bm y  =\\sum_{m\\in\\mathcal M}U_{m\\alpha}y_m  =:T_\\alpha\\bm y.  \\label{eq:tpc48-channel-factorization}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 303,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal L_{\\phi,a,\\alpha}(\\bm b)  :=\\sum_{\\substack{j\\in\\mathbb Z\\\\j\\equiv a\\!\\!\\pmod{H_0}}}  \\phi(j/J)  \\left(\\sum_{m\\in\\mathcal M}b_m\\mathrm e(mj\\alpha)\\right)\\otimes e_j.  \\label{eq:tpc48-common-profile-operator}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 327,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\|\\mathcal L_{\\phi,a,\\alpha}(\\bm b)\\|^2  \\le C_{\\phi,H_0}\\frac{J}{H_0}  D_J(t;K)\\sum_{m\\in\\mathcal M}\\|b_m\\|^2.}  \\label{eq:tpc48-common-profile-large-sieve}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 342,
+      "kind": "DisplayMath",
+      "tex": "\\|\\mathcal L_{\\phi,a,\\alpha}(\\bm b)\\|^2  =\\sum_{k\\bmod L}\\|\\Pi_k  \\mathcal L_{\\phi,a,\\alpha}(\\bm b)\\|^2  \\label{eq:tpc48-large-sieve-all-band}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-048.md",
+      "index": 352,
+      "kind": "DisplayMath",
+      "tex": "\\|\\mathcal L_{\\phi,a,\\alpha}(\\bm b)\\|^2  \\ge C_{\\phi,H_0}^{-1}\\frac{J}{H_0}D  \\sum_m\\|b_m\\|^2.  \\label{eq:tpc48-cluster-lower-bound}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 55,
+      "kind": "DisplayMath",
+      "tex": "\\begin{split}  \\bm\\tau&=(t_1,s_1,t_2,s_2)\\in\\mathbb R^4,\\\\  d\\nu_{\\rm Mel}(\\bm\\tau)  &:=(2\\pi)^{-4}    \\widetilde W_1(t_1)\\widetilde\\Psi_1(s_1)    \\widetilde W_2(t_2)\\widetilde\\Psi_2(s_2)\\,d\\bm\\tau.  \\end{split}  \\label{eq:tpc51-provenance-Mellin-measure}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 189,
+      "kind": "DisplayMath",
+      "tex": "Z_{\\bm y}(t)  :=\\bigl(a_ne^{ity_n}\\bigr)_{n=1}^N\\in\\mathbb C^N.  \\label{eq:tpc51-phase-dictionary}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 191,
+      "kind": "DisplayMath",
+      "tex": "g_{\\bm y,\\rho}(t)  :=\\prod_{n=1}^N(\\partial_t+iy_n)\\rho(t)  \\label{eq:tpc51-explicit-phase-kernel-function}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 192,
+      "kind": "DisplayMath",
+      "tex": "\\int_\\mathbb Rg_{\\bm y,\\rho}(t)Z_{\\bm y}(t)\\,dt=0.  \\label{eq:tpc51-explicit-phase-kernel-output}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 193,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal F_+g_{\\bm y,\\rho}(y)  =i^N\\prod_{n=1}^N(y_n-y)\\mathcal F_+\\rho(y).  \\label{eq:tpc51-explicit-kernel-multiplier}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 195,
+      "kind": "InlineMath",
+      "tex": "a_k\\mathcal F_+g_{\\bm y,\\rho}(y_k)=0",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 196,
+      "kind": "InlineMath",
+      "tex": "g_{\\bm y,\\rho}\\ne0",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 224,
+      "kind": "DisplayMath",
+      "tex": "\\|Z_{\\bm y}(t+q)-Z_{\\bm y}(t)\\|_2  \\le\\frac{2\\pi}{Q}\\|\\bm a\\|_2.  \\label{eq:tpc51-phase-alias-bound}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-051.md",
+      "index": 233,
+      "kind": "InlineMath",
+      "tex": "2\\|\\bm a\\|_2",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 262,
+      "kind": "DisplayMath",
+      "tex": "w_B(\\bm t)\\leq C_B(1+|\\bm t|)^B.  \\label{eq:tpc52-Mellin-profile-weight}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 263,
+      "kind": "DisplayMath",
+      "tex": "d\\mu_{\\mathbf W}(\\bm t)  :=(2\\pi)^{-q}\\prod_{\\nu=1}^q        |\\widetilde W_\\nu(t_\\nu)|\\,d\\bm t  \\label{eq:tpc52-Mellin-variation-measure}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 264,
+      "kind": "DisplayMath",
+      "tex": "\\varsigma_{\\mathbf W}(\\bm t)  :=\\prod_{\\nu=1}^q    \\begin{cases}     \\widetilde W_\\nu(t_\\nu)/        |\\widetilde W_\\nu(t_\\nu)|,        &\\widetilde W_\\nu(t_\\nu)\\ne0,\\\\     0,&\\widetilde W_\\nu(t_\\nu)=0.    \\end{cases}  \\label{eq:tpc52-Mellin-polar-phase}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 266,
+      "kind": "DisplayMath",
+      "tex": "A_B(\\mathbf W)  :=\\int_{\\mathbb R^q}w_B(\\bm t)\\,d\\mu_{\\mathbf W}(\\bm t)  =\\frac1{(2\\pi)^q}\\int_{\\mathbb R^q}    w_B(\\bm t)\\prod_{\\nu=1}^q    |\\widetilde W_\\nu(t_\\nu)|\\,d\\bm t.  \\label{eq:tpc52-weighted-Mellin-mass}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 272,
+      "kind": "DisplayMath",
+      "tex": "A_{\\bm t}(c)_i  :=\\varsigma_{\\mathbf W}(\\bm t)c_i    \\prod_{\\nu=1}^q x_{i,\\nu}^{it_\\nu}  \\in\\ell^2(\\mathcal I).  \\label{eq:tpc52-diagonal-Mellin-layer}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 275,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  \\mathcal S_{\\mathbf W}c  &:=\\int_{\\mathbb R^q}A_{\\bm t}(c)\\,        d\\mu_{\\mathbf W}(\\bm t),  \\label{eq:tpc52-diagonal-Mellin-synthesis}\\\\  \\mathcal E_B(\\mathbf W;c)  &:=\\int_{\\mathbb R^q}w_B(\\bm t)        \\|A_{\\bm t}(c)\\|_{\\ell^2(\\mathcal I)}        \\,d\\mu_{\\mathbf W}(\\bm t).  \\label{eq:tpc52-diagonal-Mellin-envelope}\\end{aligned}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 290,
+      "kind": "DisplayMath",
+      "tex": "\\|A_{\\bm t}(c)\\|_2=\\|c\\|_2  \\quad\\text{for }\\mu_{\\mathbf W}\\text{-almost every }\\bm t  \\label{eq:tpc52-unit-layer-norm}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 293,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  \\int_{\\mathbb R^q}A_{\\bm t}(c)_i\\,       d\\mu_{\\mathbf W}(\\bm t)  &=\\frac{c_i}{(2\\pi)^q}    \\int_{\\mathbb R^q}\\prod_{\\nu=1}^q      \\widetilde W_\\nu(t_\\nu)x_{i,\\nu}^{it_\\nu}      \\,d\\bm t\\notag\\\\  &=c_i\\prod_{\\nu=1}^qW_\\nu(x_{i,\\nu}),  \\label{eq:tpc52-coordinatewise-Mellin-inversion}\\end{aligned}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-052.md",
+      "index": 296,
+      "kind": "InlineMath",
+      "tex": "\\bm t",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-053.md",
+      "index": 95,
+      "kind": "DisplayMath",
+      "tex": "d\\lambda(\\bm\\tau)  =(2\\pi)^{-4}  \\widetilde W_1(\\tau_1)\\widetilde\\Psi_1(\\tau_2)  \\widetilde W_2(\\tau_3)\\widetilde\\Psi_2(\\tau_4)  \\,d\\bm\\tau.  \\label{eq:tpc53-four-factor-measure}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-053.md",
+      "index": 103,
+      "kind": "DisplayMath",
+      "tex": "\\Phi_{\\bm\\tau}(i)  :=\\eta_\\gamma\\varepsilon(\\bm\\tau)    \\prod_{\\nu=1}^4 z_\\nu(i)^{i\\tau_\\nu}.  \\label{eq:tpc53-unimodular-phase}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-053.md",
+      "index": 105,
+      "kind": "InlineMath",
+      "tex": "|\\Phi_{\\bm\\tau}(i)|=1",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-053.md",
+      "index": 106,
+      "kind": "DisplayMath",
+      "tex": "\\int_{\\mathbb R^4}\\mathfrak c_X(i)\\Phi_{\\bm\\tau}(i)\\,d\\mu(\\bm\\tau)  =a_mK_{m\\gamma}\\eta_\\gamma R(q_\\gamma)\\xi_a    \\prod_{\\nu=1}^4U_\\nu(z_\\nu(i)).  \\label{eq:tpc53-coordinate-reassembly}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-055.md",
+      "index": 121,
+      "kind": "InlineMath",
+      "tex": "\\widetilde\\mathcal Y_{h_0}=\\widetilde q(\\mathcal U_{h_0}^{\\rm term})",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-055.md",
+      "index": 122,
+      "kind": "DisplayMath",
+      "tex": "(\\mathcal R_{h_0}g)_{\\widetilde y}  :=\\sum_{\\substack{u\\in\\mathcal U_{h_0}^{\\rm term}\\\\                     \\widetilde q(u)=\\widetilde y}}        (D_{h_0}g)_u,  \\qquad \\widetilde y\\in\\widetilde\\mathcal Y_{h_0}.  \\label{eq:tpc55-prime-resolved-lift}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-055.md",
+      "index": 124,
+      "kind": "DisplayMath",
+      "tex": "(\\Sigma_p x)_{\\gamma,s,j}  :=\\sum_{p:(\\gamma,s,j,p)\\in\\widetilde\\mathcal Y_{h_0}}  x_{\\gamma,s,j,p}.  \\label{eq:tpc55-forget-prime}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-055.md",
+      "index": 143,
+      "kind": "InlineMath",
+      "tex": "\\widetilde q:\\mathcal U_{h_0}^{\\rm term}\\to\\widetilde\\mathcal Y_{h_0}",
+      "error": "Missing argument for \\mathcal"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 143,
+      "kind": "DisplayMath",
+      "tex": "\\bm\\mu_i=(\\mu_{i,t})_{t\\in\\mathcal T_i},  \\qquad |\\mu_{i,t}|=1,  \\label{eq:tpc58-unit-mobius-gauge}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 145,
+      "kind": "DisplayMath",
+      "tex": "\\Pi_i z_i  :=\\frac{\\overline{\\bm\\mu_i}}{k_i}        \\sum_{t\\in\\mathcal T_i}\\mu_{i,t}z_{i,t}.  \\label{eq:tpc58-bright-projector}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 147,
+      "kind": "InlineMath",
+      "tex": "\\operatorname{span}\\{\\overline{\\bm\\mu_i}\\}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 148,
+      "kind": "InlineMath",
+      "tex": "\\operatorname{span}\\{\\bm\\mu_i\\}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 157,
+      "kind": "InlineMath",
+      "tex": "\\bm\\mu_i^{\\mathsf T}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 158,
+      "kind": "DisplayMath",
+      "tex": "C_{\\mu,i}^*C_{\\mu,i}  =\\overline{\\bm\\mu_i}\\,\\bm\\mu_i^{\\mathsf T}.  \\label{eq:tpc58-rank-one-outer-product}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 159,
+      "kind": "InlineMath",
+      "tex": "\\overline{\\bm\\mu_i}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-058.md",
+      "index": 160,
+      "kind": "InlineMath",
+      "tex": "\\|\\bm\\mu_i\\|^2=k_i",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-063.md",
+      "index": 399,
+      "kind": "DisplayMath",
+      "tex": "\\item \\emph{Pair faithfulness.}  Apply the pre-terminal, terminal, and        grouped rectangularization tests to the literal full incidence.  If        pair projection creates a terminal-active spurious cross, retain the        full incidence hypergraph; do not force a pair-only model.  \\item \\emph{Alignment first.}  Compute the parent-to-terminal        alignment mass \\(W_A(m)\\).  A row with        \\(W_A(m)=0<W_H(m)\\) kills a uniform activation theorem on every        coefficient class containing that row.  Enlarging the retained pair        relation cannot repair this zero.  \\item \\emph{Relation completion.}  On aligned mass, compute the exact        completion ratio.  Passing to \\(\\mathcal I_X^{\\max}\\) removes only the        relation-induced defect; it does not improve the alignment ratio.  \\item \\emph{Labeled multiscale realization.}  Retain every nonempty        cofactor block as an orthogonal label.  This passes the raw-energy        gate exactly, but each newly included block still needs its own        literal coefficient and terminal compatibility theorem.  \\item \\emph{Erasure kernels.}  Identify the actual upstream range \\(S_X\\)        and compute \\(S_X\\cap\\operatorname{Ker}\\mathcal E_a\\).  A nonzero intersection kills the        full-coefficient lower bound for that declared physical        composition.  A kernel in the ambient labeled space but outside        \\(S_X\\) does not kill the composition.  \\item \\emph{Weighted exposure or exact shorting.}  The single-band        inherited freezing certificate is incompatible with the critical        face by \\eqref{eq:tpc63-balanced-band-gap}.  After any independently        justified retuning, the cardinality proof is still closed by        \\eqref{eq:tpc63-cardinality-certified-saving}.  Either prove a new        weighted terminal/largest-prime-factor estimate, or use the exact        signed or shorted-Gram route.  Do not rename label count as missing        mass saving.  \\item \\emph{Represented and downstream chain.}  Only after activation,        represented native transfer, and reassembly are quantified in one        scope should boundary and tail arrows be attached and        \\eqref{eq:tpc63-strict-endpoint-budget} tested. \\end{enumerate}  The exact deaths and surviving pivots can be summarized as follows. \\begin{center} \\small \\begin{tabular}{>{\\raggedright\\arraybackslash}p{0.29\\textwidth}                 >{\\raggedright\\arraybackslash}p{0.31\\textwidth}                 >{\\raggedright\\arraybackslash}p{0.29\\textwidth}} \\toprule Observed event & What is killed & Honest pivot\\\\ \\midrule No pair-only terminal-faithful relation exists & Pair-rectangular completion of the literal incidence. & Retain the full incidence hypergraph.\\\\ \\addlinespace The inherited freezing inequality certifies the single band & Its intersection with the critical high face: the certified band is   eventually empty. & Prove a new band/freezing theorem or realize a genuinely multiscale   carrier.\\\\ \\addlinespace Retuning the old band to \\(R_0\\asymp J\\) & The inherited sufficient freezing route: its first loss already exceeds   \\(1/400\\). & A new coefficient-sensitive freezing estimate is required.\\\\ \\addlinespace \\(W_A(m_0)=0<W_H(m_0)\\) on a required row & Uniform parent-to-terminal activation on a class containing that row. & A justified distinguished class may avoid the row; otherwise reopen the   terminal carrier.\\\\ \\addlinespace The canonical completion ratio is one but \\(W_A/W_H\\) is small & The assertion that relation completion alone repairs exposure. & Prove terminal alignment or a weighted alignment theorem.\\\\ \\addlinespace \\(S_X\\cap\\operatorname{Ker}\\mathcal E_a\\ne\\{0\\}\\) & Uniform lower transfer through that actual erasure composition. & Change the physical representation, restrict to a justified   distinguished vector, or estimate a different exact shorted map.\\\\ \\addlinespace Best possible positive-part cardinality saving is zero & The support-cardinality/harmonic proof of the strict product test. & Weighted distribution, signed cancellation, or exact shorting.\\\\ \\addlinespace A necessary proved loss reaches \\(1/400\\) & The stated endpoint exponent route without constant-level recovery. & Change the architecture; do not absorb the loss into \\(X^{o(1)}\\).\\\\ \\bottomrule \\end{tabular} \\end{center}  \\subsection{Forbidden substitutions}  None of these gates is repaired by specializing \\(h_0\\) to \\(2\\), averaging over shifts, deleting a coefficient-dependent zero, normalizing raw atoms by fiber size, choosing phases after seeing the coefficient vector, or replacing the literal active support by its terminal image. Those operations change either the object or the quantifier.  Their conclusions cannot be entered into \\eqref{eq:tpc63-complete-endpoint-ledger} for the present fixed carrier. \\section{Result ledger, claim boundary, and the next gate} \\label{sec:tpc63-claims-next}  TPC--63 completes a missing support-provenance interface and proves that one inherited single-band certificate cannot deliver a fixed-power exposure saving.  It does not prove that the underlying arithmetic mass is bad.  The distinction is the main conclusion of this paper.  \\subsection{Result ledger}  \\begingroup \\small \\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.23\\textwidth}                  >{\\raggedright\\arraybackslash}p{0.52\\textwidth}                  >{\\raggedright\\arraybackslash}p{0.14\\textwidth}} \\toprule Object & Exact conclusion & Status\\\\ \\midrule \\endfirsthead \\toprule Object & Exact conclusion & Status\\\\ \\midrule \\endhead Literal provenance & The upstream retained support is the coefficient-independent projection   of a full incidence; preservation of already supported pairs does not   prove exposure on an independently declared native-high carrier. & L0 logic; L1 audit\\\\ \\addlinespace Rectangular completion & Pre-terminal raw-form, terminal-atomic, and grouped-operator faithfulness   have different finite incidence tests; spurious crosses are explicit. & L0 iff tests\\\\ \\addlinespace Canonical pair relation & When pair-only terminal completion is possible there is a unique least   terminal-faithful relation; otherwise the full incidence hypergraph is   the faithful replacement. & L0 theorem\\\\ \\addlinespace Maximal eligible core & Every declared retained relation selects the same native-high carrier as   its intersection with the coefficient-independent maximal eligible   relation; rectangular terminal output still needs the faithfulness test. & L0 identity\\\\ \\addlinespace Exposure factorization & Row exposure is exactly the product of parent-to-terminal alignment and   retained completion inside the aligned measure; the corresponding   uniform and distinguished constants are sharp minimax quantities. & L0 theorem; L1 specialization\\\\ \\addlinespace Single-band geometry & The exact sandwich is \\(R_0\\le r<R_{\\max}(y)\\), up to one fixed-ratio   transition window.  The balanced band, and every band certified by the   inherited freezing inequality, is eventually disjoint from the critical   high face; retuning to \\(R_0\\asymp J\\) makes the inherited freezing loss   exceed \\(1/400\\). & L1 support no-go\\\\ \\addlinespace Support-only barrier & After any independently justified retuning, every fully omitted lower   dyadic block leaves the inherited   support-cardinality/Brun--Titchmarsh harmonic certificate with no positive   fixed-power saving, so it cannot pass the strict mass--degree test. & L1 certificate no-go\\\\ \\addlinespace Labeled completion & Orthogonal direct sum over all nonempty dyadic cofactor blocks preserves   raw energy exactly and uses \\(O(\\log X)=X^{o(1)}\\) labels. & L0 theorem\\\\ \\addlinespace Erasure/grouping & The fiber square masses give the exact operator norm and nonzero singular   values; fiber equations give the exact kernel and range-restricted   injectivity test. & L0 theorem\\\\ \\addlinespace Endpoint calculus & Provenance and logarithmic labeling cost zero; every genuine erasure or   physical loss is charged once, and the complete total must be strictly   below \\(1/400\\). & L0 ledger; L1 use conditional\\\\ \\bottomrule \\end{longtable} \\endgroup  \\subsection{The L0/L1/L2 boundary}  \\begin{center} \\small \\begin{tabular}{>{\\raggedright\\arraybackslash}p{0.12\\textwidth}                 >{\\raggedright\\arraybackslash}p{0.38\\textwidth}                 >{\\raggedright\\arraybackslash}p{0.38\\textwidth}} \\toprule Level & Established here & Not licensed by that level\\\\ \\midrule L0 & Finite incidence identities, canonical/minimal support constructions,   exact exposure minimax laws, orthogonal block energy, and grouping   spectrum/kernel tests. & No assertion about prime distribution, signed M\\\"obius cancellation, or   physical fixed-shift reassembly.\\\\ \\addlinespace L1 & Specialization to one literal fixed nonzero \\(h_0\\), its actual   coefficient-free support, raw atomic norm, cofactor window, and the   failure of the named support-only certificate. & No positive fixed-power missing-mass estimate, represented lower bound,   boundary/tail closure, or number-theoretic target lower bound.\\\\ \\addlinespace L2 & None. & In particular, no signed fixed-\\(h_0\\) parity-kernel estimate, fixed   \\(h_0=2\\) prime-pair estimate, prime-pair asymptotic, or twin-prime   implication.\\\\ \\bottomrule \\end{tabular} \\end{center}  The L1 negative result concerns a proof mechanism, not the truth of the desired weighted estimate.  Calling it an ``exposure barrier'' means that support cardinality and the inherited harmonic upper bound are insufficient on the omitted blocks.  It does not mean those blocks carry a large proportion of the actual raw weight.  \\subsection{What remains unproved}  The following inputs remain open. \\begin{enumerate}[leftmargin=2.3em]  \\item The parent-to-terminal alignment ratio is not shown to be positive,        much less \\(1-X^{-\\sigma+o(1)}\\), on every active physical row.  \\item The single-band low-cofactor complement is not shown to have a        fixed-power weighted saving in either uniform or distinguished        scope.  \\item The additional dyadic blocks in the labeled completion are not        shown automatically to inherit the literal coefficient identity,        terminal activation, or physical output formula of the original        band.  \\item The actual physical grouping map and its upstream range are not        shown to pass the kernel test or to have an endpoint-quality least        singular value.  \\item There is no single carrier on which critical occupancy, singleton        survival, represented transfer, alias control, boundary        reconnection, and the tail estimate are all proved.  \\item No term in the strict endpoint ledger is newly assigned a favorable        positive margin by this paper. \\end{enumerate}  In particular, setting \\(\\mathcal I_X=\\mathcal I_X^{\\max}\\) closes only the relation completion factor.  It cannot retroactively turn a terminal-inactive parent atom into an active one, and it cannot identify a labeled direct sum with an unlabeled physical sum.  \\subsection{The next theorem: terminal activation in a fixed scope}  The next useful paper should attack the alignment factor before spending a difficult cancellation estimate on a possibly empty carrier.  There are two quantitatively different targets.  \\paragraph{Positive activation target.} For a full-coefficient statement, prove with one fixed \\(\\lambda_{\\rm act}\\ge0\\) \\begin{equation}  \\inf_{m:W_H(m)>0}\\frac{W_A(m)}{W_H(m)}  \\ge X^{-\\lambda_{\\rm act}+o(1)}.  \\label{eq:tpc63-next-positive-activation}",
+      "error": "Undefined control sequence \\item"
+    },
+    {
+      "note": "03_全文/TPC-081.md",
+      "index": 36,
+      "kind": "DisplayMath",
+      "tex": "\\text{native coefficients}  \\xrightarrow{\\ \\mathcal A_X+\\mathcal M_X\\ }  \\text{pre-bin atoms}  \\xrightarrow{\\ \\mathcal J_X\\ }  \\text{determinant bins}  \\xrightarrow{\\ \\bm 1^*\\ }  \\text{zero mode}.",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-081.md",
+      "index": 78,
+      "kind": "DisplayMath",
+      "tex": "Z_X=\\langle a_X,\\bm 1\\rangle,  \\qquad  D_X=\\|a_X\\|_2^2,  \\qquad  \\mathfrak D_{h_0}(X)=\\frac{D_X}{Q_X^3J_X^2}.  \\label{eq:packet-statistics}",
+      "error": "Undefined control sequence \\bm"
+    },
+    {
+      "note": "03_全文/TPC-119.md",
+      "index": 63,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Audit}^{\\rm can}_{\\mathrm{H8}}  =  \\textnormal{\\textsc{not testable from current artifacts}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 2,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\text{\\normalfont\\textsc{not-testable}}}.",
+      "error": "Undefined control sequence \\normalfont"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 3,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 4,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 5,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 21,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 22,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 23,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 24,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 25,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 26,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 27,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 30,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 31,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 37,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 38,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 39,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 42,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{c@{\\quad}c@{\\quad}c} \\boxed{\\text{TPC-103--109}}& \\boxed{\\text{TPC-110--112}}& \\boxed{\\text{TPC-113--119}}\\\\ \\downarrow&&\\downarrow\\qquad\\downarrow\\\\[-0.2em] \\{H2,H3\\}&\\{H5\\}&\\{H1,H4,H6,H7,H8,H9\\}\\\\ \\multicolumn{3}{c}{\\searrow\\qquad\\downarrow\\qquad\\swarrow}\\\\[-0.2em] \\multicolumn{3}{c}{ \\boxed{\\text{typed H1--H9 conjunction at fixed }h_0}}\\\\ \\multicolumn{3}{c}{\\downarrow}\\\\[-0.2em] \\multicolumn{3}{c}{ \\boxed{B_{h_0,\\delta}(X)=o(X)\\ \\text{within the MVP1 route}}.} \\end{array}",
+      "error": "Undefined control sequence \\multicolumn"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 45,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 49,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 52,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 66,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 74,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 76,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 77,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 78,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 79,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 83,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 84,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 86,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 89,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 90,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 91,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 93,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{103:119}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 95,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 96,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 101,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{ccl} \\Lambda_*<1/400  &\\Longrightarrow& \\textnormal{\\textsc{go}}\\ \\text{for a complete theorem-backed ledger},\\\\ \\Lambda_*=1/400  &\\Longrightarrow& \\text{equality stop},\\\\ \\Lambda_*>1/400  &\\Longrightarrow& \\text{stop that route},\\\\ \\text{required token unknown}  &\\Longrightarrow& \\textnormal{\\textsc{not-testable}}. \\end{array}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 119,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-120.md",
+      "index": 120,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 7,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 104,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 105,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 106,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 108,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 110,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 111,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 112,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 113,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 115,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 118,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Archive}_{123}  =  \\textsc{not-testable}\\ \\text{from current artifacts}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-123.md",
+      "index": 122,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 12,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 127,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 128,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 129,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 130,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 133,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 135,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 138,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 140,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 143,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Reassembly}_{124}  =  \\textsc{not-testable}\\ \\text{from current artifacts}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-124.md",
+      "index": 151,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 15,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 88,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 89,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 90,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 93,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 94,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 98,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 101,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 104,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{FixedShift}_{125}  =  \\textsc{not-testable}\\ \\text{from current artifacts}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-125.md",
+      "index": 108,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 86,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 89,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-h3}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 90,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 91,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 92,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-interface}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 93,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go-h3}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-126.md",
+      "index": 98,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 1,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 2,
+      "kind": "InlineMath",
+      "tex": "\\textsc{architecture-infeasible}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 3,
+      "kind": "InlineMath",
+      "tex": "\\textsc{reroute}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 4,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 5,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 6,
+      "kind": "InlineMath",
+      "tex": "\\textsc{arithmetic-frontier}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 7,
+      "kind": "InlineMath",
+      "tex": "\\textsc{open}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 8,
+      "kind": "InlineMath",
+      "tex": "\\textsc{open}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 9,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 10,
+      "kind": "InlineMath",
+      "tex": "\\textsc{go}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 12,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 13,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{conditional}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 14,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 15,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 16,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{refuted}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 29,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 31,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 32,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 34,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 35,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 37,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 39,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{conditional}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{refuted}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 42,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 43,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 45,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 49,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 61,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 72,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{conditional}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 73,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 101,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 103,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 105,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 107,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 109,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 112,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 114,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 116,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 118,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 121,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 123,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{121:131}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 124,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 125,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 126,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 127,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 128,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 129,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 130,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 134,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 142,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 147,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 148,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-132.md",
+      "index": 149,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-133.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-133.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-134.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-134.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-135.md",
+      "index": 61,
+      "kind": "InlineMath",
+      "tex": "\\textsc{stop-declared-route}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-135.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 4,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 40,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\mathsf{H1.native\\_cut}=\\mathrm{PROVED}_{\\mathrm{L1}},} \\qquad  \\boxed{\\mathsf{H1.actual\\_carrier}  =\\text{\\normalfont\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\normalfont"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-136.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not-testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-141.md",
+      "index": 61,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 1,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered} \\textsc{go},\\quad \\textsc{architecture-infeasible},\\quad \\textsc{reroute},\\\\ \\textsc{stop-route},\\quad \\textsc{not-testable},\\quad \\textsc{arithmetic-frontier},\\quad \\textsc{open}. \\end{gathered}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 7,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{133:141}  =\\textsc{not-testable}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 10,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid-snapshot}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 11,
+      "kind": "DisplayMath",
+      "tex": "\\textnormal{\\textsc{proved}},\\quad \\textnormal{\\textsc{conditional}},\\quad \\textnormal{\\textsc{open}},\\quad \\textnormal{\\textsc{not-testable}},\\quad \\textnormal{\\textsc{refuted}}.",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 17,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 18,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 19,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 20,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 21,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 22,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 23,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 25,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 26,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered} \\textnormal{\\textsc{invalid-snapshot}},\\quad \\textnormal{\\textsc{go}},\\quad \\textnormal{\\textsc{architecture-infeasible}},\\quad \\textnormal{\\textsc{reroute}},\\\\ \\textnormal{\\textsc{stop-route}},\\quad \\textnormal{\\textsc{not-testable}},\\quad \\textnormal{\\textsc{arithmetic-frontier}},\\quad \\textnormal{\\textsc{open}}. \\end{gathered}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 27,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 32,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 37,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 39,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 53,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 57,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{aligned} \\mathrm{node}&=\\mathsf{H1.frontier\\_totalization},\\\\ \\mathrm{status}&=\\textnormal{\\textsc{not-testable}},\\\\ \\mathrm{artifact}&= \\text{total downstream frontier maps or a complete frontier theorem}. \\end{aligned}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 58,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{133:141}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 61,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid-snapshot}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 63,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 67,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 77,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 78,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 79,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-142.md",
+      "index": 85,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-143.md",
+      "index": 67,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L1}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-143.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-143.md",
+      "index": 72,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-143.md",
+      "index": 73,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-143.md",
+      "index": 76,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\mathsf{H1.frontier\\_occurrence\\_lift}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 74,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L0}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 76,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 78,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 80,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 81,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-144.md",
+      "index": 83,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{aligned} \\mathsf{H1.frontier\\_QD\\_totality}&=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{H1.frontier\\_QZ\\_totality}&=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{H1.frontier\\_QD\\_QZ\\_intertwining}&=\\textnormal{\\textsc{not-testable}}. \\end{aligned}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 48,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{aligned} \\mathsf{H1.cut\\_Ph0}&=\\textnormal{\\textsc{proved}}_{\\mathrm{L1}},\\\\ \\mathsf{H1.frontier\\_G\\_totality}&=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{H1.frontier\\_Ph0\\_downstream\\_totality}&=\\textnormal{\\textsc{not-testable}}. \\end{aligned}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 52,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L1}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 53,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L0}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L0}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-145.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 23,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 49,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 52,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 53,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\mathsf{H1.frontier\\_totalization}=\\textnormal{\\textsc{not-testable}},}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-146.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-147.md",
+      "index": 74,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-147.md",
+      "index": 78,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-147.md",
+      "index": 79,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-147.md",
+      "index": 81,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-147.md",
+      "index": 82,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-148.md",
+      "index": 87,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-148.md",
+      "index": 89,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-148.md",
+      "index": 90,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-148.md",
+      "index": 92,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-148.md",
+      "index": 93,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 92,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\mathsf{H1.frontier\\_occurrence\\_lift}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 95,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 97,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 100,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 102,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 103,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-149.md",
+      "index": 104,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 7,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 15,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\mathsf{H1.frontier\\_occurrence\\_lift}=\\textnormal{\\textsc{not-testable}}.} \\label{eq:first-missing}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 63,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-150.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 9,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 13,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{H1.cut\\_shift\\_selector}=\\textnormal{\\textsc{proved}}_{\\mathrm{L1}},  \\qquad P_{h_0}^{\\rm cut}=I",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 35,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{A149.actual\\_mobius\\_periodic\\_corridor}  =\\textnormal{\\textsc{proved}}_{\\mathrm{L1}_{\\rm actual\\mbox{-}core}}.",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-151.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 4,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{143:151}=\\textsc{not-testable}},",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 13,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 15,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal M=  \\{v\\in\\mathcal A:    \\operatorname{status}(v)=\\textnormal{\\textsc{not-testable}}    \\text{ or }v\\text{ fails scope matching}\\}.",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 18,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 21,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 22,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 23,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 24,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 25,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 26,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 29,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered}  \\textnormal{\\textsc{invalid}},\\quad \\textnormal{\\textsc{go}},\\quad \\textnormal{\\textsc{architecture-infeasible}},\\quad \\textnormal{\\textsc{reroute}},\\\\  \\textnormal{\\textsc{stop-route}},\\quad \\textnormal{\\textsc{not-testable}},\\quad \\textnormal{\\textsc{arithmetic-frontier}},\\quad \\textnormal{\\textsc{open}}. \\end{gathered}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 30,
+      "kind": "DisplayMath",
+      "tex": "\\text{all declared cells stopped}  \\;\\not\\Longrightarrow\\;  \\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 31,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 35,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 53,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 66,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 67,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Verdict}_{143:151}=\\textnormal{\\textsc{not-testable}},  \\qquad  \\min(\\mathcal M)=  \\{\\mathsf{H1.frontier\\_occurrence\\_lift}\\}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 72,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 73,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 74,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 82,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-152.md",
+      "index": 87,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-153.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L1}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-153.md",
+      "index": 73,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-153.md",
+      "index": 74,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-153.md",
+      "index": 80,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-154.md",
+      "index": 54,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\mathsf{current\\ artifacts\\ only\\ canonical\\ actual\\ lift}  =\\textnormal{\\textsc{stop-declared-route}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-154.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}_{\\mathrm{L0}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-154.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-declared-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-154.md",
+      "index": 66,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-155.md",
+      "index": 2,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-155.md",
+      "index": 42,
+      "kind": "InlineMath",
+      "tex": "\\operatorname{Verify}(\\mathcal W)=\\textnormal{\\textsc{pass}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-155.md",
+      "index": 66,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{ll} \\texttt{partial\\_shadow\\_status}   &=\\texttt{PROVED\\_L1\\_STRUCTURAL},\\\\ \\texttt{production\\_witness\\_present} & =\\texttt{false},\\\\ \\texttt{current\\_production\\_actual\\_witness\\_status}   &=\\textnormal{\\textsc{not-testable}},\\\\ \\texttt{occurrence\\_lift\\_candidate\\_status}&=\\textnormal{\\textsc{not-testable}},\\\\ \\texttt{QD\\_status},\\texttt{QZ\\_status}, \\texttt{G\\_status},\\texttt{P\\_h0\\_status}&=\\textnormal{\\textsc{not-testable}},\\\\ \\texttt{physical\\_cover\\_status}&=\\textnormal{\\textsc{not-testable}},\\\\ \\texttt{reconnection\\_status}&=\\textnormal{\\textsc{not-testable}},\\\\ \\texttt{occurrence\\_registry\\_status}&=\\textnormal{\\textsc{not-testable}}. \\end{array}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-155.md",
+      "index": 67,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Status}_{\\rm verifier}=\\textnormal{\\textsc{pass}}_{\\mathrm{L0}},  \\qquad  \\operatorname{Status}_{\\rm production\\ actual\\ lift}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-155.md",
+      "index": 82,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 6,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 24,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{production\\_witness\\_present}=\\mathrm{false},  \\qquad \\mathsf{actual\\_witness}=\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 42,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{rcl} \\mathsf{H1.cut\\_occurrence\\_shadow}   &=&\\textnormal{\\textsc{proved}}_{\\mathrm{L1}\\text{-structural}},\\\\ \\mathsf{H1.current\\_artifacts\\_only\\_canonical\\_actual\\_lift}   &=&\\textnormal{\\textsc{stop-declared-route}},\\\\ \\mathsf{H1.theorem\\_backed\\_occurrence\\_provenance\\_crosswalk}   &=&\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{MapClause}&=&\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{ScalarClause}&=&\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{H1Complete}&=&\\textnormal{\\textsc{not-testable}}. \\end{array}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 47,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-156.md",
+      "index": 50,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{H1}=\\textnormal{\\textsc{not-testable}}.}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 5,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 6,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 7,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\operatorname{Verdict}_{153:161}=\\textsc{not-testable}},  \\qquad  \\mathsf{FirstMissing}  =  \\begin{gathered}  \\mathsf{H1.theorem\\_backed\\_occurrence\\_}\\\\[-2pt]  \\mathsf{provenance\\_crosswalk}  \\end{gathered}  .",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 10,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{current\\ artifacts\\ only}  \\quad\\longmapsto\\quad  \\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 32,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 34,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal B_{\\rm NT}  =  \\min_{\\preceq}\\{v\\in\\mathcal A:        \\operatorname{status}(v)=\\textnormal{\\textsc{not-testable}}        \\text{ or }v\\text{ is scope-incompatible}\\}. \\tag{5}\\label{eq:nt-antichain}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 35,
+      "kind": "DisplayMath",
+      "tex": "\\mathcal F_{\\rm open}  =  \\{v\\in\\mathcal A:    \\operatorname{status}(v)=\\textnormal{\\textsc{open}},    v\\text{ is scope-compatible},\\    \\text{every active parent of }v\\text{ is proved}\\}. \\tag{6}\\label{eq:open-frontier}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 45,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 50,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered} \\textnormal{\\textsc{go}},\\quad\\textnormal{\\textsc{architecture-infeasible}},\\quad\\textnormal{\\textsc{reroute}},\\quad\\textnormal{\\textsc{stop-route}},\\\\ \\textnormal{\\textsc{not-testable}},\\quad\\textnormal{\\textsc{arithmetic-frontier}},\\quad\\textnormal{\\textsc{open}}. \\end{gathered} \\tag{9}\\label{eq:precedence}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 52,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 53,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 59,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered}  \\textnormal{\\textsc{invalid}},\\quad\\textnormal{\\textsc{go}},\\quad\\textnormal{\\textsc{architecture-infeasible}},\\quad\\textnormal{\\textsc{reroute}},\\\\  \\textnormal{\\textsc{stop-route}},\\quad\\textnormal{\\textsc{not-testable}},\\quad\\textnormal{\\textsc{arithmetic-frontier}},\\quad\\textnormal{\\textsc{open}}.  \\end{gathered}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 67,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\operatorname{Verdict}_{153:161}=\\textnormal{\\textsc{not-testable}},  \\qquad  \\mathsf{FirstMissing}  =  \\begin{gathered}  \\mathsf{H1.theorem\\_backed\\_occurrence\\_}\\\\[-2pt]  \\mathsf{provenance\\_crosswalk}  \\end{gathered}  .  }",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 70,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 72,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 75,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 76,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 83,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 84,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-162.md",
+      "index": 87,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-165.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-165.md",
+      "index": 66,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-165.md",
+      "index": 67,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-165.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-165.md",
+      "index": 69,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 6,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{Verdict}_{162}=\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 13,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 25,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 29,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 34,
+      "kind": "DisplayMath",
+      "tex": "\\operatorname{status}(K_{164})  =\\operatorname{status}(G_{165})=\\textnormal{\\textsc{proved}}.",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 35,
+      "kind": "DisplayMath",
+      "tex": "\\operatorname{status}(\\mathsf H_{\\rm local})  =\\operatorname{status}(\\mathsf H_{\\rm support})  =\\operatorname{status}(\\mathsf H_{\\rm canon})=\\textnormal{\\textsc{not-testable}}.",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{proved}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 57,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 58,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 60,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 61,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{\\mathsf{Verdict}_{166}=\\textnormal{\\textsc{not-testable}}},  \\qquad  \\mathsf{FirstChild}_{166}=\\mathsf H_{\\rm local},  \\qquad  \\mathcal A_{166}  =\\{\\mathsf H_{\\rm local},\\mathsf H_{\\rm support},\\mathsf H_{\\rm canon}\\}.  \\tag{5.2}\\label{eq:decision}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 67,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-166.md",
+      "index": 71,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 20,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 59,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 64,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 67,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 68,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 75,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\begin{gathered}  \\operatorname{Verdict}_{163:170}=\\textnormal{\\textsc{not-testable}},\\\\  \\mathsf{FirstMissing}  =\\mathsf{H1.source\\_backed\\_local\\_}\\\\[-2pt]  \\mathsf{occurrence\\_edge\\_family}.  \\end{gathered}  } \\tag{20}\\label{eq:verdict}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-171.md",
+      "index": 79,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 19,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 21,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 22,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 35,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 37,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{gathered} \\textnormal{\\textsc{go}},\\quad\\textnormal{\\textsc{architecture-infeasible}},\\quad\\textnormal{\\textsc{reroute}},\\quad\\textnormal{\\textsc{stop-route}},\\\\ \\textnormal{\\textsc{not-testable}},\\quad\\textnormal{\\textsc{arithmetic-frontier}},\\quad\\textnormal{\\textsc{open}} \\end{gathered} } \\tag{12}\\label{eq:order}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 38,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 39,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 41,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 42,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 43,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 45,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered} \\textnormal{\\textsc{invalid}},\\quad\\textnormal{\\textsc{go}},\\quad\\textnormal{\\textsc{architecture-infeasible}},\\quad\\textnormal{\\textsc{reroute}},\\\\ \\textnormal{\\textsc{stop-route}},\\quad\\textnormal{\\textsc{not-testable}},\\quad\\textnormal{\\textsc{arithmetic-frontier}},\\quad\\textnormal{\\textsc{open}}. \\end{gathered}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 46,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 47,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{gathered} \\operatorname{Verdict}_{163:171}=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{FirstMissing} =\\mathsf{H1.source\\_backed\\_local\\_}\\\\[-2pt] \\mathsf{occurrence\\_edge\\_family}. \\end{gathered} } \\tag{13}\\label{eq:mvp7}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 49,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{invalid}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{architecture-infeasible}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 51,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{reroute}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 52,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-route}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 53,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{arithmetic-frontier}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 55,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{go}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 62,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}/\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-172.md",
+      "index": 65,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-173.md",
+      "index": 12,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{lr} \\toprule \\text{Disposition}&\\text{Files}\\\\ \\midrule \\texttt{MAPPED\\_DISQUALIFIED}&30\\\\ \\texttt{REVIEWED\\_NO\\_CANDIDATE}&10\\\\ \\texttt{NOT\\_MAPPED\\_YET}&0\\\\ \\texttt{QUALIFYING}&0\\\\ \\bottomrule \\end{array} \\tag{1}\\label{eq:partition}",
+      "error": "Undefined control sequence \\toprule"
+    },
+    {
+      "note": "03_全文/TPC-174.md",
+      "index": 22,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{  \\#\\mathcal Q_{173}=0,\\qquad  \\operatorname{Status}_{\\rm production\\ witness}=\\textnormal{\\textsc{not-testable}}.} \\tag{4}\\label{eq:verdict}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-175.md",
+      "index": 17,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{lr} \\toprule \\text{Quantity}&\\text{Count}\\\\ \\midrule \\text{eligible source carriers}&0\\\\ \\text{local edges}&0\\\\ \\text{covered cuts}&0\\\\ \\text{duplicated cuts}&0\\\\ \\text{unmatched cuts}&2988\\\\ \\bottomrule \\end{array} \\tag{2}\\label{eq:coverage}",
+      "error": "Undefined control sequence \\toprule"
+    },
+    {
+      "note": "03_全文/TPC-176.md",
+      "index": 1,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-177.md",
+      "index": 2,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-177.md",
+      "index": 17,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-177.md",
+      "index": 18,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-178.md",
+      "index": 2,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-178.md",
+      "index": 24,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-178.md",
+      "index": 32,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 1,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 13,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 16,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 18,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 27,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-scoped}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 29,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 31,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 34,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-179.md",
+      "index": 44,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-180.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-180.md",
+      "index": 35,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-180.md",
+      "index": 40,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-181.md",
+      "index": 27,
+      "kind": "DisplayMath",
+      "tex": "\\begin{gathered} \\mathsf{H9.phase\\_cell\\_registry}=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{named\\_physical\\_atom\\_id}=\\mathsf{null},\\qquad \\mathsf{phase\\_value\\_mod\\_1}=\\mathsf{null}. \\end{gathered} \\tag{9}\\label{eq:registry}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-181.md",
+      "index": 48,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-scoped}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-181.md",
+      "index": 50,
+      "kind": "DisplayMath",
+      "tex": "\\boxed{ \\begin{gathered} \\mathsf{H2.metric\\_fixed\\_atom\\_crosswalk}=\\textnormal{\\textsc{not-testable}},\\\\ \\mathsf{SelectorConstructed}=\\mathsf{false},\\\\ \\mathsf{FixedAtomDecayObtained}=\\mathsf{false}. \\end{gathered}} \\tag{13}\\label{eq:verdict}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-181.md",
+      "index": 56,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{c|c} \\text{route cell}&\\text{state}\\\\ \\hline \\text{source-backed metric bridge}&\\textnormal{\\textsc{not-testable}}\\\\ \\text{uncontrolled atomic promotion}&\\textnormal{\\textsc{stop-scoped}}\\\\ \\text{bad-endpoint pointwise fixed atom}&   \\mathsf{OPEN\\_PARENT\\_READY}\\\\ \\text{direct additive twist fixed atom}&   \\mathsf{OPEN\\_PARENT\\_READY}\\\\ \\text{architecture reroute}&\\mathsf{false}. \\end{array} \\tag{16}\\label{eq:route-table}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 4,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 10,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 19,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-scoped}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 20,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}/\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 23,
+      "kind": "DisplayMath",
+      "tex": "\\mathsf{H9.phase\\_cell\\_registry}=\\textnormal{\\textsc{not-testable}},\\qquad \\mathsf{decay\\_axis}=\\mathsf{NONE}. \\tag{9}\\label{eq:phase-registry}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 31,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{rcl} \\mathsf{phase\\_metric\\_uncontrolled\\_atomic} &=&\\textnormal{\\textsc{stop-scoped}},\\\\ \\mathsf{phase\\_metric\\_source\\_backed} &=&\\textnormal{\\textsc{not-testable}}. \\end{array} \\tag{11}\\label{eq:selector}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 32,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}/\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 33,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-scoped}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 34,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{stop-scoped}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 35,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}/\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 36,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 37,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{open}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-182.md",
+      "index": 45,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-193.md",
+      "index": 50,
+      "kind": "InlineMath",
+      "tex": "\\textnormal{\\textsc{not-testable}}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-194.md",
+      "index": 28,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{SOURCE\\_\\allowbreak{}LOCKED\\_\\allowbreak{}PRODUCTION\\_\\allowbreak{}PACKET\\_\\allowbreak{}PREFIX\\_\\allowbreak{}CROSSWALK}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-195.md",
+      "index": 29,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{ALL\\_\\allowbreak{}SCALE\\_\\allowbreak{}BLOCK\\_\\allowbreak{}POWER\\_\\allowbreak{}BOUND\\_\\allowbreak{}ON\\_\\allowbreak{}THE\\_\\allowbreak{}LITERAL\\_\\allowbreak{}PHYSICAL\\_\\allowbreak{}SEQUENCE}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-196.md",
+      "index": 25,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{UNIFORM\\_\\allowbreak{}ALL\\_\\allowbreak{}RESIDUE\\_\\allowbreak{}CLASS\\_\\allowbreak{}CANCELLATION\\_\\allowbreak{}OR\\_\\allowbreak{}DIRECT\\_\\allowbreak{}MODE\\_\\allowbreak{}THEOREM}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-197.md",
+      "index": 19,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{SOURCE\\_\\allowbreak{}LOCKED\\_\\allowbreak{}CONDUCTOR\\_\\allowbreak{}ONE\\_\\allowbreak{}OCCURRENCE\\_\\allowbreak{}PACKET\\_\\allowbreak{}SCHEDULE\\_\\allowbreak{}AND\\_\\allowbreak{}RANGE\\_\\allowbreak{}ADMISSIBILITY}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-198.md",
+      "index": 22,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{ARITHMETIC\\_\\allowbreak{}TWO\\_\\allowbreak{}FACTOR\\_\\allowbreak{}COUPLING\\_\\allowbreak{}THEOREM}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-199.md",
+      "index": 16,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{THEOREM\\_\\allowbreak{}FOR\\_\\allowbreak{}COUPLED\\_\\allowbreak{}VALUES\\_\\allowbreak{}ON\\_\\allowbreak{}TWO\\_\\allowbreak{}AFFINE\\_\\allowbreak{}FORMS}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-200.md",
+      "index": 28,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{NONDEGENERATE\\_\\allowbreak{}GROWING\\_\\allowbreak{}FOUR\\_\\allowbreak{}MOBIUS\\_\\allowbreak{}CORRELATION\\_\\allowbreak{}BOUND}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-201.md",
+      "index": 26,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{UNIFORM\\_\\allowbreak{}NONDEGENERATE\\_\\allowbreak{}FOUR\\_\\allowbreak{}MOBIUS\\_\\allowbreak{}OFFDIAGONAL\\_\\allowbreak{}POWER\\_\\allowbreak{}BOUND}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-202.md",
+      "index": 11,
+      "kind": "DisplayMath",
+      "tex": "{1\\over H^{k-1}} \\sum_{1\\le h_2,\\ldots,h_k\\le H} \\left|{1\\over X}\\sum_{1\\le n\\le X} \\lambda(n)\\lambda(n+h_2)\\cdots\\lambda(n+h_k)\\right| \\ll k\\left\\{{\\log\\log H\\over\\log H} +{(\\log\\log X)^2\\over\\log X}\\right\\} \\citep{Menon2026}.",
+      "error": "Undefined control sequence \\citep"
+    },
+    {
+      "note": "03_全文/TPC-202.md",
+      "index": 22,
+      "kind": "DisplayMath",
+      "tex": "\\texttt{THEOREM\\_\\allowbreak{}SELECTING\\_\\allowbreak{}PRESCRIBED\\_\\allowbreak{}ORIGIN\\_\\allowbreak{}SHIFT\\_\\allowbreak{}RELATION\\_\\allowbreak{}AND\\_\\allowbreak{}PACKET}.",
+      "error": "Undefined control sequence \\allowbreak"
+    },
+    {
+      "note": "03_全文/TPC-205.md",
+      "index": 48,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{rcl} \\text{generic remainder}&=&\\text{\\nolinkurl{UNCONTROLLED_HARD_REMAINDER}},\\\\ \\text{square-root return}&=&\\text{\\nolinkurl{MISSING_UNSUPPLIED}},\\\\ \\text{full-block/endpoint return}&=&\\text{\\nolinkurl{MISSING_UNSUPPLIED}}. \\end{array}",
+      "error": "Undefined control sequence \\nolinkurl"
+    },
+    {
+      "note": "03_全文/TPC-205.md",
+      "index": 56,
+      "kind": "InlineMath",
+      "tex": "\\textsc{not testable}",
+      "error": "Undefined control sequence \\textsc"
+    },
+    {
+      "note": "03_全文/TPC-217.md",
+      "index": 21,
+      "kind": "DisplayMath",
+      "tex": "L^{-1}\\mathcal E_{\\mathrm{dir}}\\ll_{\\psi}x^{11/32}(\\log x)^3  \\cite{WangTPC215,WangTPC216}.",
+      "error": "Undefined control sequence \\cite"
+    },
+    {
+      "note": "03_全文/TPC-220.md",
+      "index": 34,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  \\Gamma_h^{(j,\\ell)}(q,q')   ={}&\\sum_{m\\in\\mathcal M_{h,q}^{*}}        \\sum_{m'\\in\\mathcal M_{h,q'}^{*}}        w_{h,m,q}^{(j)}\\overline{w_{h,m',q'}^{(\\ell)}}\\\\      &\\hspace{25mm}\\times        \\mathbf 1_{m q'\\equiv m'q\\ (h)}. \\tag{3}\\end{aligned}",
+      "error": "\\tag not allowed in aligned environment"
+    },
+    {
+      "note": "03_全文/TPC-249.md",
+      "index": 27,
+      "kind": "InlineMath",
+      "tex": "r_c\\overline\\mathbb D",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "03_全文/TPC-249.md",
+      "index": 28,
+      "kind": "InlineMath",
+      "tex": "R\\overline\\mathbb D",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "03_全文/TPC-249.md",
+      "index": 36,
+      "kind": "DisplayMath",
+      "tex": "C+R\\overline\\mathbb D,  \\qquad C=\\sum_c\\langle W_c^0,g_c\\rangle.",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "06_研究资料/论文补充/TPC-262--PROOF_PACKAGE.md",
+      "index": 11,
+      "kind": "InlineMath",
+      "tex": "a^{(j)}=\\beta+\\ii^jw",
+      "error": "Undefined control sequence \\ii"
+    },
+    {
+      "note": "03_全文/TPC-264.md",
+      "index": 76,
+      "kind": "DisplayMath",
+      "tex": "\\begin{array}{c|c|c|c}  \\text{label}&u&v&\\left\\langle u,v\\right\\rangle\\\\ \\midrule  \\text{plus}&(\\frac32,0)&(2,0)&3\\\\  \\text{minus}&(\\frac32,0)&(-2,0)&-3\\\\  \\text{zero}&(\\frac32,0)&(0,2)&0\\\\  \\text{quarter-turn}&(\\frac32,0)&(2i,0)&3i \\end{array}",
+      "error": "Undefined control sequence \\midrule"
+    },
+    {
+      "note": "03_全文/TPC-266.md",
+      "index": 17,
+      "kind": "InlineMath",
+      "tex": "\\mathrm{FIXED\\mathchar`\\_LOG}",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-266.md",
+      "index": 22,
+      "kind": "InlineMath",
+      "tex": "\\mathrm{FIXED\\mathchar`\\_LOG}",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-266.md",
+      "index": 30,
+      "kind": "InlineMath",
+      "tex": "\\mathrm{SIGNED\\mathchar`\\_PHASE}",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-266.md",
+      "index": 54,
+      "kind": "InlineMath",
+      "tex": "\\mathrm{FIXED\\mathchar`\\_LOG}\\to\\mathrm{POWER}(\\delta)",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-266.md",
+      "index": 81,
+      "kind": "DisplayMath",
+      "tex": "\\begin{aligned}  \\text{center}&=\\mathrm{FIXED\\mathchar`\\_LOG},\\\\  \\text{residual}&=\\text{Schur set with radius OPEN},\\\\  \\text{endpoint}&=\\text{radial envelope}.  \\end{aligned}",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-368.md",
+      "index": 26,
+      "kind": "DisplayMath",
+      "tex": "(a,1024,2048,1,\\mathrm{all\\mathchar`-plus}),\\quad (a,1024,8192,1,\\mathrm{all\\mathchar`-plus})",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-369.md",
+      "index": 30,
+      "kind": "DisplayMath",
+      "tex": "(a,1024,2048,1,\\mathrm{all\\mathchar`-plus}),\\qquad (a,1024,8192,1,\\mathrm{all\\mathchar`-plus})",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "06_研究资料/论文补充/TPC-369--DERIVATION_PACKAGE.md",
+      "index": 5,
+      "kind": "DisplayMath",
+      "tex": " (a,1024,2048,1,\\mathrm{all\\mathchar`-plus})\\quad\\text{and}\\quad (a,1024,8192,1,\\mathrm{all\\mathchar`-plus}) ",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "03_全文/TPC-370.md",
+      "index": 35,
+      "kind": "DisplayMath",
+      "tex": "(a,2048,2048,1,\\mathrm{all\\mathchar`-plus}),\\qquad (a,2048,8192,1,\\mathrm{all\\mathchar`-plus})",
+      "error": "Undefined control sequence \\mathchar"
+    },
+    {
+      "note": "06_研究资料/论文补充/TPC-372--DERIVATION_PACKAGE.md",
+      "index": 1,
+      "kind": "DisplayMath",
+      "tex": "  (P_0)_{ij}=1\\quad\\Longleftrightarrow\\quad  \\left\\lfloor i/256\\right\\rfloor=left\\lfloor j/256\\right\\rfloor,  \\qquad 0\\leq i,j<2048. ",
+      "error": "Missing \\left or extra \\right"
+    },
+    {
+      "note": "05_综合与进展/七岛综合稿-中文.md",
+      "index": 412,
+      "kind": "InlineMath",
+      "tex": "\\widehat\\mathbb Z",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "05_综合与进展/七岛综合稿-中文.md",
+      "index": 461,
+      "kind": "InlineMath",
+      "tex": "U_N=q_N\\widehat\\mathbb Z",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "05_综合与进展/七岛综合稿-English.md",
+      "index": 409,
+      "kind": "InlineMath",
+      "tex": "\\widehat\\mathbb Z",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "05_综合与进展/七岛综合稿-English.md",
+      "index": 459,
+      "kind": "InlineMath",
+      "tex": "U_N=q_N\\widehat\\mathbb Z",
+      "error": "Missing argument for \\mathbb"
+    },
+    {
+      "note": "05_综合与进展/交接文档-完整快照.md",
+      "index": 625,
+      "kind": "DisplayMath",
+      "tex": "  \\mathfrak M_*={|L_x|>x^{1+\\nu}\\}  \\cup\\{|\\mathcal B_x|>x^{1/2+\\nu}\\}  \\cup\\{|\\mathcal W_x|>x^{1/2+\\nu}\\} ",
+      "error": "Extra open brace or missing close brace"
+    }
+  ]
+}

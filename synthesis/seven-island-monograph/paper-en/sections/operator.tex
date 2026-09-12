@@ -1,0 +1,86 @@
+\section{The analytic core: the actual operator and its exact structure}\label{sec:operator}
+Sections~\ref{sec:operator}--\ref{sec:boundary} use one object from the fully recovered scalar specification~\cite{archivev59,archivephysical}. Here ``physical'' means the arithmetic data actually prescribed by the research problem, as opposed to models in which signs, origins, or kernels may be freely selected.
+
+\subsection{Parameters, coefficients, and kernel}
+Let $x\to\infty$ and set
+\[
+I_x=(x/2,x]\cap\ZZ,\quad N=\lfloor x\rfloor-\lfloor x/2\rfloor,\quad
+Q=x^{1/3},\quad H=x^{21/32},\quad U=x^{133/400}.
+\]
+The older source scale is $x=2X$, so $N=X+O(1)$. Let $\QQ=\{q\text{ prime}:Q<q\le2Q\}$. Fix $K>0$, put $z=(\log x)^K$, and define
+\begin{align}
+P(z)&=\prod_{p\le z}p,&W_z&=\prod_{p\le z}\frac p{p-1},&
+C_z&=\prod_{p>z}\left(1-\frac1{(p-1)^2}\right),\nonumber\\
+b_x^{(z)}(u)&=\1_{I_x}(u)C_zW_z\1_{(u+2,P(z))=1}
+\prod_{\substack{p\mid u\\p>z}}\frac{p-1}{p-2},\label{eq:hybrid}\\
+\beta(t)&=\frac{\Lambda(t)}{\log t}-\sum_{\substack{d\mid t\\d\le U}}\mu(d),\nonumber\\
+w(u)&=\Lambda(u+2)-b_x^{(z)}(u).\label{eq:lanes}
+\end{align}
+Take $x$ sufficiently large that $z\ge2$. The parameter $K$ is fixed before the threshold is chosen; no assertion is made for growing $K$. The small-prime product includes $2$, and its forbidden residue is $-2$. The symbol $\mu$ in $\beta$ is the M\"obius function. Both actual coefficient vectors are real, but their signs may vary.
+
+Fix a nonnegative real smooth function $\psi_+$ supported in $[-1,1]$ with integral $1$. Write $\e(t)=\exp(2\pi\ii t)$ and
+\[
+\kappa(y)=\int_{\RR}\psi_+(v)\e(-vy)\,dv,\qquad K_H(h)=\kappa(h/H).
+\]
+The profile need not be even, so $\kappa$ need not be real. Nevertheless, $\kappa(-y)=\overline{\kappa(y)}$ and $\kappa(0)=1$. The kernel is Schwartz, not identically zero for $|h|>H$. Reflection, $\psi_+(v)=\psi(-v)$, reconciles this convention with the older positive-sign Fourier convention.
+
+\subsection{The complete scalar and row energy}
+Set $a_q=q/(q-1)$ and define, on $\ell^2(I_x;\CC)$,
+\[
+A_q(u,t)=a_q\kappa((u-t)/H)
+\big((q-1)\1_{q\mid u-t}-1\big)\1_{q\nmid u}\1_{q\nmid t}\1_{u\ne t},
+\qquad A=\sum_{q\in\QQ}A_q.
+\]
+With $\ip fg=\sum\overline f g$, the target scalar is
+\begin{equation}
+\Cx=\ip w{A\beta}
+=\sum_{q\in\QQ}q\sum_{\substack{u,t\in I_x\\u\ne t,\ q\nmid ut}}
+w(u)\beta(t)K_H(u-t)\left(\1_{u\equiv t\ (q)}-\frac1{q-1}\right).
+\label{eq:scalar}
+\end{equation}
+The outer factor $q$ is already present in the matrix definition and must not be inserted twice. The matrix is Hermitian, but its mixed scalar between two real vectors can still be complex.
+
+The row energy under consideration is
+\[
+G(u)=\sum_{q\in\QQ}\sum_{t\in I_x}|A_q(u,t)|^2,\quad
+D_G=\diag(G(u)),\quad Z=D_G^{-1/2}AD_G^{-1/2}.
+\]
+The square is taken separately at each prime; cross-prime terms are absent. Whenever every $G(u)>0$,
+\begin{equation}
+\Cx=\ip{D_G^{1/2}w}{Z D_G^{1/2}\beta}.\label{eq:readout}
+\end{equation}
+A smaller normalized operator norm therefore need not reduce the original scalar: the costs of both weighted vectors must also be counted.
+
+\subsection{The reduced-residue correction}
+\begin{proposition}[Exact positive-form decomposition]\label{prop:decomp}
+Let $r_q(n)=q\1_{q\mid n}-1$ and define
+\begin{align*}
+T(u,t)&=\kappa((u-t)/H)\sum_{q\in\QQ}\sum_{a=1}^{q-1}\e(a(u-t)/q),\\
+R(u,t)&=\kappa((u-t)/H)\sum_{q\in\QQ}\frac{r_q(u)r_q(t)}{q-1},\\
+\Delta(u)&=\sum_{q\in\QQ}a_q(q-2)\1_{q\nmid u}.
+\end{align*}
+Then $A=T-R-\diag\Delta$ and, in positive-semidefinite order,
+\[
+R\ge0,\qquad0\le A+\diag\Delta\le T.
+\]
+\end{proposition}
+\begin{proof}
+On residues modulo $q$, put
+\[
+F_q(r,s)=q\1_{r=s}-1,\qquad
+S_q(r,s)=a_q\big((q-1)\1_{r=s}-1\big)\1_{r\ne0}\1_{s\ne0}.
+\]
+When both residues are nonzero, exactly one is zero, or both are zero, respectively, $F_q-S_q$ equals $1/(q-1)$, $-1$, or $q-1$. Hence
+\[
+F_q-S_q=\frac{r_qr_q^*}{q-1}.
+\]
+Also, $F_q/q$ projects orthogonally onto the mean-zero subspace of all residues, while $S_q/q$ projects onto the subspace vanishing at zero and summing to zero over the units. Thus $0\le S_q\le F_q$.
+
+Pullback along $I_x\to\ZZ/q\ZZ$ preserves this order and does not require equal residue multiplicities. For the diagonal matrix $D_v(n,n)=\e(-vn/H)$,
+\[
+[\kappa((u-t)/H)S_q(u,t)]_{u,t\in I_x}
+=\int\psi_+(v)D_vS_qD_v^*\,dv.
+\]
+Integration against a nonnegative weight preserves the order. Sum over primes and remove the exact diagonal $S_q(n,n)=a_q(q-2)\1_{q\nmid n}$ to conclude.
+\end{proof}
+After diagonal deletion, $A$ need not be positive semidefinite. The negative directions below arise precisely at this stage. Dropping $\Delta$ during reassembly changes the problem.

@@ -1,0 +1,91 @@
+\section{从精确发射到双侧短数组：不能省略的代价}\label{sec:emitter}
+\subsection{完整 Kloosterman 表示}
+设 $\eta_b$ 为第~\ref{sec:boundary}节构造的实分割函数，定义有限的物理标签集
+\[
+\mathcal J_x=\{j\in\ZZ:\operatorname{supp}\eta_{j,H}\cap[x/2,x]\ne\varnothing\},
+\qquad |\mathcal J_x|=O(x/H+1).
+\]
+本节所有有序块对及其求和均限定于 $(b,c)\in\mathcal J_x^2$，并令
+$a^{(j)}(t)=\eta_b(t)\beta(t)+\ii^j\eta_c(t)w(t)$，$j=0,1,2,3$。
+固定 $q\in\QQ,v\in\RR$，定义单位剩余类上的和及其中心化
+\[
+F_r^{(j)}=\sum_{t\in I_x,\ t\equiv r(q)}a^{(j)}(t)\e(vt/H),\qquad
+F_r^{(j),0}=F_r^{(j)}-\frac1{q-1}\sum_{s\ne0}F_s^{(j)}.
+\]
+在零剩余类令中心化向量为零。省略上标 $j$ 时，令
+\[
+\alpha_m=\frac1q\sum_{r\ne0}F_r^0\e(-mr/q),\quad
+\gamma_n=\frac1q\sum_{r\ne0}\overline{F_r^0}\e(-n\bar r/q),\quad 1\le m,n<q,
+\]
+其中 $\bar r$ 是模 $q$ 的乘法逆元。
+\begin{proposition}[发射恒等式与饱和]\label{prop:emitter}
+对非归一化 Kloosterman 和 $S(m,n;q)=\sum_{r\ne0}\e((mr+n\bar r)/q)$，
+\[
+\mathcal B=\sum_{m,n=1}^{q-1}\alpha_m\gamma_nS(m,n;q)
+=\sum_{r\ne0}|F_r^0|^2
+=q\norm\alpha\norm\gamma.
+\]
+\end{proposition}
+\begin{proof}
+中心化使两个 Fourier 变换的零频率都为零。打开 $S$ 并分别作有限 Fourier 反演，两个内和恢复 $F_r^0$ 与 $\overline{F_r^0}$。Parseval 给出
+$\norm\alpha^2=\norm\gamma^2=q^{-1}\norm{F^0}^2$，因为取逆是单位剩余类上的置换。
+\end{proof}
+这是精确表示，不是消去估计。数组范围为 $q-1$；即使已中心化，也没有得到 $\sqrt q$ 长度。例如 $F^0=e_1-e_2$ 的第一数组每个非零频率都非零。这个例子只检验接口，不认定实际算术向量就是它。
+
+\subsection{先带符号重组，再处理残差}
+记
+\[
+d_j(q)=\frac{q-2}{q-1}\sum_{t\in I_x,\ q\nmid t}|a^{(j)}(t)|^2,\qquad
+E_{bcq}=\int\psi_+(v)\frac14\sum_{j=0}^3\ii^j[\mathcal B_j-d_j(q)]\,dv.
+\]
+直接展开四个平方，使用 $\sum_j\ii^j=\sum_j\ii^{2j}=0$，得
+\begin{equation}
+\Cx=\sum_{b,c}\sum_{q\in\QQ}qE_{bcq}.\label{eq:polarreturn}
+\end{equation}
+积分中的相位是 $\e(v(t-u)/H)$，与第~\ref{sec:operator}节核的方向一致。
+减去 $d_j$ 精确删掉对角；外面的 $q$ 不可重复计入。四个正包各自可能饱和，而带符号组合仍可能消去。把它们先分别绝对化会丢失这一区别。
+
+对支撑在整数区间且在 $q$ 的倍数处取零的数组，记
+\[
+\mathcal B_q(A_1,A_2)=\sum_{m,n}A_1(m)A_2(n)S(m,n;q).
+\]
+此处始终使用单位乘子 $1$，不随分解指标改变。
+Blomer--Pascadi 的定理在两个整数区间长度均不超过常数倍 $\sqrt q$、单位乘子且满足其互素条件时，给出临界尺度界
+\begin{equation}
+|\mathcal B_q(A_1,A_2)|\ll_\epsilon q^{31/32+\epsilon}
+\norm{A_1}\norm{A_2}.\label{eq:bp}
+\end{equation}
+这里引用其定理~1.1 在素数模数、非零指标下的特例\cite{blomer2026}，并不将它直接应用于完整发射数组。
+若把长度 $q-1$ 的两数组各切成 $k\asymp\sqrt q$ 块，则
+\[
+\sum_{A,B}\norm{\alpha_A}\norm{\gamma_B}\le k\norm\alpha\norm\gamma.
+\]
+所以逐矩形应用式~\eqref{eq:bp}只得到 $q^{47/32+o(1)}$ 的范数因子，比命题~\ref{prop:emitter}的完整尺度还差。这是这种重组方法的代价，不是任意分解的不可能定理。
+
+\begin{condition}[尚未证明的带代价双侧附接]\label{cond:compression}
+先固定损失指数 $\ell\ge0$、$A_0>2$，再令 $x\to\infty$；
+$\omega_{bc}=(1+|b-c|)^{-A_0}$，$(b,c)\in\mathcal J_x^2$。
+对已经带符号、删对角、积分后的 $E_{bcq}$，存在
+\[
+E_{bcq}=\sum_\nu\lambda_\nu\mathcal B_q(A_{1,\nu},A_{2,\nu})+R_{bcq},
+\]
+每个矩形满足式~\eqref{eq:bp}的全部条件，并且
+\begin{align*}
+\sum_\nu|\lambda_\nu|\norm{A_{1,\nu}}\norm{A_{2,\nu}}
+&\ll\omega_{bc}(H/q)x^{\ell+o(1)},\\
+|R_{bcq}|&\ll\omega_{bc}Hq^{-1/32}x^{\ell+o(1)}.
+\end{align*}
+常数与小量一致于所有原有序块对及整个素数壳层，无未支付的例外集。
+\end{condition}
+若此条件成立，由
+\[
+\sum_{b,c\in\mathcal J_x}\omega_{bc}
+\le |\mathcal J_x|\sum_{h\in\ZZ}(1+|h|)^{-A_0}\ll x/H
+\]
+及式~\eqref{eq:bp}、外层素数求和给出
+\[
+|\Cx|\ll (x/H)H\sum_{q\in\QQ}q^{31/32}x^{\ell+o(1)}
+\ll xQ^2x^{-1/96+\ell+o(1)}.
+\]
+这里 $o(1)$ 表示任意固定正指数损失都可在足够大尺度吸收；先固定严格余量，再选式~\eqref{eq:bp}中的充分小 $\epsilon$。
+于是 $\ell<19/2400$ 足以支付 $\delta>1/400$。这一推导是条件性指数账本；本稿没有证明条件~\ref{cond:compression}，也不要求成功路线必须采用这一分解。

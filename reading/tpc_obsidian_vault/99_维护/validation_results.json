@@ -1,0 +1,27 @@
+{
+  "scope": "Document and source integrity, not semantic proof or theorem validation",
+  "paper_directories": 420,
+  "accessible_fulltexts": 419,
+  "source_unavailable": 1,
+  "note_count": 3393,
+  "internal_links": 79799,
+  "external_links_not_network_checked": 186,
+  "live_navigation_errors": [],
+  "unreachable_core_notes": [],
+  "source_files_preserved": 4361,
+  "historical_source_link_exceptions": 27,
+  "adapted_notes": 2156,
+  "math_nodes": 75250,
+  "literal_source_fallbacks": [
+    "06_研究资料/论文补充/TPC-267--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-302--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-319--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-321--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-322--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-384--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-385--DERIVATION_PACKAGE.md"
+  ],
+  "adapter_text_roundtrip_warnings": [],
+  "adapter_reader_warnings": [],
+  "status": "PASS"
+}

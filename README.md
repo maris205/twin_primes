@@ -9,6 +9,8 @@
 
 ## 从哪里开始
 
+- [本轮新增 Wiki、中文／英文综合稿及历次修订](docs/EDITORIAL_MATERIALS.md)
+- [Obsidian Wiki 阅读首页](reading/tpc_obsidian_vault/00_开始阅读.md)
 - [AI 辅助 TPC 研究框架 v0.3：论文、源码与后续规划](synthesis/ai-framework-v0.3/README.md)
 - [当前研究状态与下一步条件](TPC_HANDOFF.md)
 - [最新 physical-return 研究及评审汇总](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/README.md)

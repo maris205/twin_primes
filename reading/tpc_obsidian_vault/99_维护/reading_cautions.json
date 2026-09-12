@@ -1,0 +1,36 @@
+{
+  "literal_source_fallbacks": [
+    "06_研究资料/论文补充/TPC-267--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-302--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-319--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-321--PROOF_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-322--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-384--DERIVATION_PACKAGE.md",
+    "06_研究资料/论文补充/TPC-385--DERIVATION_PACKAGE.md"
+  ],
+  "mathjax_failed_occurrences": 590,
+  "mathjax_affected_notes": 80,
+  "error_counts": {
+    "Undefined control sequence \\toprule": 3,
+    "Undefined control sequence \\cref": 1,
+    "Undefined control sequence \\intertext": 1,
+    "Missing argument for \\mathcal": 29,
+    "Undefined control sequence \\bm": 39,
+    "Undefined control sequence \\item": 1,
+    "Undefined control sequence \\textsc": 480,
+    "Undefined control sequence \\normalfont": 2,
+    "Undefined control sequence \\multicolumn": 1,
+    "Undefined control sequence \\allowbreak": 9,
+    "Undefined control sequence \\citep": 1,
+    "Undefined control sequence \\nolinkurl": 1,
+    "Undefined control sequence \\cite": 1,
+    "\\tag not allowed in aligned environment": 1,
+    "Missing argument for \\mathbb": 7,
+    "Undefined control sequence \\ii": 1,
+    "Undefined control sequence \\midrule": 1,
+    "Undefined control sequence \\mathchar": 9,
+    "Missing \\left or extra \\right": 1,
+    "Extra open brace or missing close brace": 1
+  },
+  "scope": "Reading fidelity and display warnings; no mathematical corrections"
+}

@@ -1,0 +1,217 @@
+\section{范数规模、实际系数代价与低秩障碍}\label{sec:barriers}
+\subsection{频率分离给出的上界}
+固定常数 $B_\psi,B_\kappa<\infty$ 使
+\[
+0\le\psi_+(v)\le B_\psi(1+|v|)^{-2},\qquad
+|\kappa(y)|\le B_\kappa(1+|y|)^{-2}.
+\]
+\begin{lemma}\label{lem:upper}
+对 $Q\ge2$，
+\[
+\norm A\le4B_\psi(H+4Q^2)+3Q^2.
+\]
+\end{lemma}
+\begin{proof}
+不同约分分数 $a/q$ 在单位圆上至少相隔 $(4Q^2)^{-1}$，跨越零点的间隔亦然。定义在全部整数上的卷积核
+$\kappa(h/H)\sum_{q,a}\e(ah/q)$ 的 Fourier 乘子为
+\[
+m(\theta)=H\sum_{q,a}\sum_{k\in\ZZ}
+ \psi_+\big(H(a/q-\theta-k)\big)\ge0 .
+\]
+这由固定 Schwartz 核的 Poisson 求和得到。右边各点的实轴间距至少为
+$s=H/(4Q^2)$；每个半开单位区间含点不超过 $1+1/s$。分割正负半轴并求和
+$(1+j)^{-2}$，得到 $m(\theta)\le4B_\psi H(1+1/s)$。
+压缩到 $I_x$ 后范数不增加。命题~\ref{prop:decomp}给出
+$\norm{A+\diag\Delta}\le\norm T$，而
+$\max\Delta<\sum_{Q<q\le2Q}q\le3Q^2$，故结论成立。
+\end{proof}
+由于 $H<Q^2$，实际尺度上 $\norm A\ll_\psi Q^2$。这一上界不使用 $\beta,w$ 的消去。
+
+\subsection{所有实际行的能量}
+\begin{proposition}\label{prop:energy}
+对固定核和所有充分大的 $x$，一致于每个 $u\in I_x$，
+\[
+G(u)\asymp_\psi \frac{HQ^2}{\log Q}.
+\]
+\end{proposition}
+\begin{proof}
+连续性与 $\kappa(0)=1$ 给出固定 $0<\rho,b\le1$，使 $|\kappa(y)|\ge b$ 于 $|y|\le\rho$。在 $q\nmid u$ 时令
+\[
+S_q(u)=\sum_{\substack{t\in I_x\\t\ne u,\ q\nmid t}}|\kappa((u-t)/H)|^2,\quad
+C_q(u)=\sum_{\substack{t\in I_x\\t\ne u,\ q\mid u-t}}|\kappa((u-t)/H)|^2.
+\]
+平方展开得到精确式
+\[
+G(u)=\sum_{\substack{q\in\QQ\\q\nmid u}}
+ a_q^2\big(S_q(u)+(q-1)(q-3)C_q(u)\big).
+\]
+积分比较给出 $S_q(u)\le2B_\kappa^2H/3$、
+$C_q(u)\le2B_\kappa^2H/(3q)$。因为 $1+(q-1)(q-3)/q\le q$，
+每个素数的上界为 $(2B_\kappa^2/3)a_q^2qH$。
+
+当 $N-1\ge2\rho H$ 且 $H\ge2Q/\rho$ 时，每行至少一侧含
+$\lfloor\rho H/q\rfloor\ge\rho H/(2q)$ 个非零的同余差。这些点仍为单位剩余类，
+且 $(q-2)^2\ge q^2/9$，所以该素数的贡献至少为
+$(\rho b^2/18)a_q^2qH$。
+
+任何 $u\le x=Q^3$ 至多有两个大于 $Q$ 的不同素因子。因此从
+$S_Q=\sum_{q\in\QQ}a_q^2q$ 中因 $q\mid u$ 删除的质量至多 $9Q$。
+素数定理和分部求和给出
+$S_Q\sim(3/2)Q^2/\log Q$。在一个共同阈值后 $S_Q\ge18Q$，从而
+\[
+\frac{\rho b^2}{36}HS_Q\le G(u)\le\frac{2B_\kappa^2}{3}HS_Q
+\]
+对全部实际行成立。
+\end{proof}
+区间上界 $u\le Q^3$ 在这个论证中不可删除；这不是任意巨大起点上的同长度区间定理，也不是任意坐标前缀的行能量定理。
+
+\subsection{常向量见证与实际系数}
+\begin{theorem}[系数无关范数方法的障碍]\label{thm:normbarrier}
+对第~\ref{sec:operator}节的固定数据，
+\[
+\norm A\ge(3/2+o(1))\frac{Q^2}{\log Q},\qquad
+\norm w^2\sim\frac x2\log x,\qquad
+\norm\beta^2\ge\left(\frac12\log\frac{27}{22}+o(1)\right)\frac x{\log x}.
+\]
+因此
+\[
+\liminf_{x\to\infty}\frac{\log Q}{xQ^2}
+ \norm A\,\norm\beta\,\norm w
+\ge\frac34\sqrt{\log(27/22)}>0.
+\]
+任何仅用 $B_x\norm\beta\norm w$ 且 $B_x\ge\norm A$ 的上界证明，都不能单独支付固定正幂次节省。
+\end{theorem}
+\begin{proof}
+令 $f=N^{-1/2}\1_{I_x}$。未删对角的正形式为
+\[
+\ip f{(A+\diag\Delta)f}
+=\frac1N\sum_q q\int\psi_+(v)V_q(v/H)\,dv ,
+\]
+其中 $V_q(\alpha)$ 是各单位剩余类上
+$\sum_{n\equiv r(q),\,n\in I_x}\e(\alpha n)$ 减去其单位剩余类均值后的平方和，
+不再除以 $q-1$。写 $I_x=\{a+1,\ldots,a+N\}$、$N=mq+s$，$0\le s<q$，并定义
+\[
+G_m(y)=\sum_{k=0}^{m-1}\e(ky),\qquad
+S_j(\alpha)=\e(\alpha(a+j))
+\bigl(G_m(\alpha q)+\1_{j\le s}\e(\alpha mq)\bigr),\quad 1\le j\le q.
+\]
+$S_j$ 就是剩余类 $a+j$ 上的和，包含 $m$ 个完整周期加至多一个末项。当
+$0<|\alpha|q\le1/2$ 时，
+\[
+|G_m(\alpha q)|\le(2|\alpha|q)^{-1},\qquad
+|\e(\alpha j)-1|\le2\pi|\alpha|q,\quad 1\le j\le q.
+\]
+故各和距一个共同中心不超过 $\pi+1$，在 $\alpha=0$ 时不超过 $1$。
+减去均值最小化平方距离，得到 $V_q(\alpha)\le q(\pi+1)^2$。
+由于核的频率支撑固定且 $2Q/H<1/2$ 最终成立，整个积分都在这个范围内。
+正形式于是为 $O(Q^3/(N\log Q))=O(1/\log Q)$。
+另一方面，单位整数数目 $N_q=N(1-1/q)+O(1)$ 给出
+\[
+\ip f{Af}=-\sum_{q\in\QQ}(q-2)+O(1/\log Q).
+\]
+素数定理与分部求和推出所述算子下界。
+
+为控制 $w$，令
+$c(p)=((p-1)/(p-2))^2-1=O(1/p)$，并在无平方因子整数上乘法延拓。
+展开非负 Euler 乘积，去掉至多为 $1$ 的掩码，并扩大区间，得到
+\[
+\norm{b_x^{(z)}}^2
+\le xW_z^2\prod_{p>z}(1+c(p)/p)\ll xW_z^2.
+\]
+乘积收敛，因为 $c(p)/p=O(p^{-2})$。Mertens 乘积定理给出
+$W_z\ll\log z\ll_K\log\log x$。素数定理又给出
+$\sum_{u\in I_x}\Lambda(u+2)^2\sim(x/2)\log x$；
+真素数幂贡献为低阶项。三角不等式的双向范数比较即证明 $w$ 的渐近式，
+不需假定 $b_x^{(z)}$ 与 $\Lambda$ 正交。
+
+为控制 $\beta$，取素数
+$x^{2/5}<p\le x^{9/20}$ 和 $x/(2p)<r\le x/p$。
+最终 $p<r$ 且二者均大于 $U$，故 $n=pr\in I_x$、$\Lambda(n)=0$，
+且 $n$ 在 $U$ 以下唯一的约数是 $1$，所以 $\beta(n)=-1$。
+较小素因子唯一，计数不重复。普通二倍区间的素数定理在此范围内一致，故这些乘积数目为
+\[
+(1+o(1))\frac x2\sum_{x^{2/5}<p\le x^{9/20}}\frac1{p\log(x/p)}
+=\left(\frac12\log\frac{27}{22}+o(1)\right)\frac x{\log x}.
+\]
+最后一步由分部求和和
+$\int_{2/5}^{9/20}[a(1-a)]^{-1}\,da=\log(27/22)$ 得到。
+将三个下界相乘即得结论。
+\end{proof}
+
+\begin{corollary}\label{cor:normalized}
+对所定义的行能量归一化，
+\[
+H^{-1}\ll_\psi\norm Z\ll_\psi(\log Q)/H.
+\]
+而 $\norm Z\,\norm{D_G^{1/2}\beta}\,\norm{D_G^{1/2}w}$
+仍至少为 $c_\psi xQ^2/\log Q$，其中 $c_\psi>0$。
+\end{corollary}
+\begin{proof}
+由 $A=D_G^{1/2}ZD_G^{1/2}$，
+$\norm A/G_{\max}\le\norm Z\le\norm A/G_{\min}$。
+两个加权向量各自至少引入 $\sqrt{G_{\min}}$，
+故其范数乘积上界表达至少为
+$(G_{\min}/G_{\max})\norm A\norm\beta\norm w$。
+应用命题~\ref{prop:energy}和定理~\ref{thm:normbarrier}即可。
+\end{proof}
+这里得到的是\emph{一个上界表达式的下界}，不是 $|\Cx|$ 的下界。
+它不排除实际两系数之间的消去，也不排除其他预条件化或系数敏感方法。
+
+\subsection{增长维数的负方向}
+\begin{theorem}[低秩修补的限定障碍]\label{thm:rank}
+置 $\tau_x=Q^2/\log Q$，
+\[
+J_x=\left\lfloor N\left(\frac1{4Q}-\frac1H\right)\right\rfloor,\quad
+d_x=2J_x+1,\quad k_x=d_x-35.
+\]
+对全部充分大的 $x$，存在复子空间 $W_x$，使
+\[
+\dim_\CC W_x\ge k_x,\qquad
+\ip f{Af}\le-\frac{\tau_x}{2}\norm f^2\quad(f\in W_x).
+\]
+特别地，任何复秩小于 $k_x$ 的矩阵 $E$，即使非 Hermitian，也满足
+$\norm{A-E}\ge\tau_x/2$，且
+$k_x=Q^2/4-x^{11/32}+O(1)$。
+\end{theorem}
+\begin{proof}
+令 $U_0=A+\diag\Delta\ge0$，并取
+$f_j(n)=N^{-1/2}\e(jn/N)$，$|j|\le J_x$。
+这些向量在 $N$ 个连续整数上正交；最终 $d_x<N$。
+对全部 $q\le2Q$ 与 $|v|\le1$，
+$q|j/N+v/H|\le1/2$。前证的剩余类方差界于是给出
+\[
+\ip{f_j}{U_0f_j}\le\frac{C_0}{N}\sum_q q^2,\qquad C_0=(\pi+1)^2.
+\]
+令 $F$ 以这些向量为列，$B=F^*U_0F\ge0$，$M_1=\sum_q q$，则
+\[
+\tr B\le C_0(1+2Q/N)M_1.
+\]
+另一方面，任一实际整数至多被两个壳层素数整除，所以
+\[
+\Delta(n)\ge D_*:=\sum_q\frac{q(q-2)}{q-1}-4Q
+\sim\frac32\tau_x .
+\]
+$B$ 中大于 $D_*/2$ 的特征值数目至多 $2\tr B/D_*<35$，最终同时有
+$D_*\ge\tau_x$。取 $B$ 的 $[0,D_*/2]$ 谱子空间经 $F$ 映射后的空间为 $W_x$。
+它丢失至多 $35$ 个维度，并且其 $U_0$ 二次型不超过 $D_*/2$，
+而被删除对角至少为 $D_*$。这证明负性断言。
+若 $\rank E<k_x$，则 $W_x\cap\ker E$ 非零；在其中取单位向量即得
+$\norm{A-E}\ge|\ip f{(A-E)f}|\ge\tau_x/2$。
+用 $N=x/2+O(1)$ 展开 $d_x$ 得到维数渐近式。
+\end{proof}
+这一谱截断不意味着整个低频带都为负，也不声称某个更高秩阈值以上就能成功。
+
+若要求实见证，不能直接把复谱子空间改称实空间。
+在同一对称频带改用 $f_0$、$(f_j+f_{-j})/\sqrt2$、
+$(f_j-f_{-j})/(\ii\sqrt2)$ 组成实正交矩阵 $V$。
+实对称矩阵 $\operatorname{Re}(V^*U_0V)$ 正半定，且迹等于 $\tr B$。
+对它重复谱截断，得到不同的实子空间，维数仍至少 $k_x$。
+具体地，对于实线性映射
+\[
+E:\RR^{I_x}\longrightarrow\CC^{I_x},\qquad \rank_{\RR}E<k_x,
+\]
+在该实负空间与 $\ker E$ 的交中取单位向量，便得到
+$\|A-E\|_{\RR^{I_x}\to\CC^{I_x}}\ge\tau_x/2$。
+这里范数使用实定义域的 Euclidean 单位球，秩指实像空间的维数，不能与复秩混用。
+等式 $f^TAf=f^T\operatorname{Re}(A)f$ 只适用于同一个实向量的二次型，
+不能用来把两个不同实际系数的 $w^TA\beta$ 替换成 $w^T\operatorname{Re}(A)\beta$。

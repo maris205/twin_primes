@@ -1,0 +1,16 @@
+\section{Complete kernels, one-sided short support, and the status of model evidence}
+The complete Kloosterman matrix $\mathsf K=(S(m,n;q))_{1\le m,n<q}$ satisfies the directly verifiable identity
+\[
+\mathsf K\mathsf K^*=q^2I-(q+1)\mathbf J,
+\]
+where $\mathbf J$ is the all-ones matrix. To verify it, expand the two Kloosterman sums. Summation over $n$ gives $q\1_{r=s}-1$.
+The first contribution is
+$q\sum_{r\ne0}\e((m-m')r/q)=q(q\1_{m=m'}-1)$, and the second is $1$, giving the stated matrix. Every row sums to $1$.
+Thus any vector $a$ with zero coordinate sum satisfies $\|\mathsf K^*a\|_2=q\|a\|_2$.
+Choosing $a=e_{m_1}-e_{m_2}$ supported on two distinct indices shows that scale $q$ is still attained when one side has only two coordinates while the other is complete and centered.
+One-sided short support therefore cannot replace the two-sided critical-array hypotheses.
+
+This extremal example does not assert that the actual emitted coefficients attain that extremum.
+It shows that a universal bound knowing only support and centering cannot be stronger.
+Likewise, finite matrix checks test only the chosen scales. A model with a common growing-parameter theorem is stronger than a finite check, but still needs attachment of actual coefficients, a fixed starting point, parameter ranges, and residuals before it can address the original arithmetic problem.
+We do not reissue historical finite certificates as asymptotic theorems or add synthetic experiments merely to increase the manuscript's length.

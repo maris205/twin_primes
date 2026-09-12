@@ -1,0 +1,93 @@
+\section{解析核心：实际算子的定义与精确结构}\label{sec:operator}
+本节至第~\ref{sec:boundary}节采用同一对象，来自已恢复完整来源的标量契约\cite{archivev59,archivephysical}。这里“物理”仅指原研究问题实际指定的算术数据，用来与可自由选择符号、起点和核的模型区分。
+
+\subsection{参数、系数和核}
+令 $x\to\infty$，并置
+\[
+I_x=(x/2,x]\cap\ZZ,\quad N=\lfloor x\rfloor-\lfloor x/2\rfloor,\quad
+Q=x^{1/3},\quad H=x^{21/32},\quad U=x^{133/400}.
+\]
+旧来源的尺度是 $x=2X$，故 $N=X+O(1)$。令 $\QQ=\{q\text{ 为素数}:Q<q\le2Q\}$。固定 $K>0$，取 $z=(\log x)^K$，定义
+\begin{align}
+P(z)&=\prod_{p\le z}p,&
+W_z&=\prod_{p\le z}\frac p{p-1},&
+C_z&=\prod_{p>z}\left(1-\frac1{(p-1)^2}\right),\nonumber\\
+b_x^{(z)}(u)&=\1_{I_x}(u)C_zW_z\1_{(u+2,P(z))=1}
+ \prod_{\substack{p\mid u\\p>z}}\frac{p-1}{p-2},\label{eq:hybrid}\\
+\beta(t)&=\frac{\Lambda(t)}{\log t}-\sum_{\substack{d\mid t\\d\le U}}\mu(d),\nonumber\\
+w(u)&=\Lambda(u+2)-b_x^{(z)}(u).\label{eq:lanes}
+\end{align}
+所有 $x$ 充分大，使 $z\ge2$。$K$ 先固定再取阈值，不作 $K$ 随 $x$ 增长的断言。低素数乘积含素数 $2$，禁余类是 $-2$；$\beta$ 中的 $\mu$ 是 Möbius 函数。两个实际系数向量都为实数，但可具有变化的符号。
+
+固定一个非负、实值、光滑函数 $\psi_+$，支撑于 $[-1,1]$ 且积分为 $1$。记 $\e(t)=\exp(2\pi\ii t)$，
+\[
+\kappa(y)=\int_{\RR}\psi_+(v)\e(-vy)\,dv,\qquad K_H(h)=\kappa(h/H).
+\]
+不要求 $\psi_+$ 偶对称，因此 $\kappa$ 未必实值；但 $\kappa(-y)=\overline{\kappa(y)}$、$\kappa(0)=1$。它是 Schwartz 函数，而非在 $|h|>H$ 时严格为零的核。旧正号 Fourier 约定通过反射 $\psi_+(v)=\psi(-v)$ 与此一致。
+
+\subsection{完整标量与行能量}
+令 $a_q=q/(q-1)$，在 $\ell^2(I_x;\CC)$ 上定义
+\[
+A_q(u,t)=a_q\kappa((u-t)/H)
+ \big((q-1)\1_{q\mid u-t}-1\big)
+ \1_{q\nmid u}\1_{q\nmid t}\1_{u\ne t},\qquad A=\sum_{q\in\QQ}A_q.
+\]
+采用 $\ip fg=\sum\overline f g$ 的内积约定。目标标量为
+\begin{equation}
+\Cx=\ip w{A\beta}
+=\sum_{q\in\QQ}q
+ \sum_{\substack{u,t\in I_x\\u\ne t,\ q\nmid ut}}
+ w(u)\beta(t)K_H(u-t)
+ \left(\1_{u\equiv t\ (q)}-\frac1{q-1}\right).
+\label{eq:scalar}
+\end{equation}
+外面的 $q$ 已含在矩阵定义中，不能再乘一次。$A$ 是 Hermitian 矩阵，但两个实向量的混合标量仍可能为复数。
+
+所研究的行能量是
+\[
+G(u)=\sum_{q\in\QQ}\sum_{t\in I_x}|A_q(u,t)|^2,\quad
+D_G=\diag(G(u)),\quad Z=D_G^{-1/2}AD_G^{-1/2}.
+\]
+它先对每个素数取平方，不含跨素数交叉项。只要全部 $G(u)>0$，
+\begin{equation}
+\Cx=\ip{D_G^{1/2}w}{Z D_G^{1/2}\beta}.
+\label{eq:readout}
+\end{equation}
+因此，归一化算子范数变小不等于原标量变小；两个加权向量的代价必须同时计入。
+
+\subsection{单位剩余类修正}
+\begin{proposition}[精确正形式分解]\label{prop:decomp}
+令 $r_q(n)=q\1_{q\mid n}-1$，并定义
+\begin{align*}
+T(u,t)&=\kappa((u-t)/H)\sum_{q\in\QQ}\sum_{a=1}^{q-1}\e(a(u-t)/q),\\
+R(u,t)&=\kappa((u-t)/H)\sum_{q\in\QQ}\frac{r_q(u)r_q(t)}{q-1},\\
+\Delta(u)&=\sum_{q\in\QQ}a_q(q-2)\1_{q\nmid u}.
+\end{align*}
+则 $A=T-R-\diag\Delta$，且
+\[
+R\ge0,\qquad 0\le A+\diag\Delta\le T
+\]
+为正半定序关系。
+\end{proposition}
+\begin{proof}
+先在模 $q$ 的剩余类上令
+\[
+F_q(r,s)=q\1_{r=s}-1,\qquad
+S_q(r,s)=a_q\big((q-1)\1_{r=s}-1\big)\1_{r\ne0}\1_{s\ne0}.
+\]
+当两个剩余类都非零、恰一个为零、或两个都为零时，$F_q-S_q$ 分别等于
+$1/(q-1)$、$-1$、$q-1$，故
+\[
+F_q-S_q=\frac{r_qr_q^*}{q-1}.
+\]
+此外，$F_q/q$ 是全剩余类均值零子空间的正交投影，$S_q/q$ 是在零剩余类消失且在单位剩余类上和为零的子空间投影，故 $0\le S_q\le F_q$。
+
+沿 $I_x\to\ZZ/q\ZZ$ 拉回保持正半定序，不要求各剩余类出现次数相同。对对角矩阵 $D_v(n,n)=\e(-vn/H)$，
+\[
+[\kappa((u-t)/H)S_q(u,t)]_{u,t\in I_x}
+=\int\psi_+(v)D_vS_qD_v^*\,dv .
+\]
+非负权积分仍保持正半定序。对素数求和，并删除逐行精确对角
+$S_q(n,n)=a_q(q-2)\1_{q\nmid n}$，得到结论。
+\end{proof}
+删除对角后的 $A$ 不必正半定。后面的负方向正是对角删除后的现象；若在重组中丢掉 $\Delta$，便改变了问题。

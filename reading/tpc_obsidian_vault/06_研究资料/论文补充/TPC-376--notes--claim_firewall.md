@@ -1,0 +1,38 @@
+---
+type: "source-reading"
+source_path: "papers/tpc-376-bandwidth-holdout-replication/notes/claim_firewall.md"
+snapshot_date: "2026-09-12"
+owner: "TPC-376"
+generated: true
+semantic_review: "not-certified-by-conversion"
+---
+
+<!-- ORIGINAL_BYTES_LINK -->
+[原始Markdown文件（逐字节保留）](../../90_%E9%99%84%E4%BB%B6/%E5%8E%9F%E5%A7%8B%E8%B5%84%E6%96%99/papers/tpc-376-bandwidth-holdout-replication/notes/claim_firewall.md.txt)；可用外部编辑器核对。
+
+
+论文入口：[[02_论文/TPC-376|TPC-376]] · [[00_开始阅读|首页]]
+
+# TPC-376 claim firewall
+
+```text
+TPC376_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC376_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_ORIGIN_UNIFORMITY = OPEN
+TPC376_WINDOW_UNIFORMITY = OPEN
+TPC376_C1_SCALE_STABILITY = OPEN
+TPC376_CROSS_BLOCK_CAUSALITY = OPEN
+TPC376_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC376_GROWING_OPERATOR_BOUND = OPEN
+TPC376_SOURCE_UNIFORM_L2 = OPEN
+TPC376_ARITHMETIC_ADVANCE = NO
+TPC376_FIXED_POWER_CREDIT = 0
+TPC376_FULL_GATE_B = OPEN
+TPC376_TWIN_PRIME_RESULT = NONE
+```
+
+The holdout is index-disjoint from the training selection, not coordinate-disjoint. The official evaluator files are absent; local Bridge-B is fail-closed repository evidence.

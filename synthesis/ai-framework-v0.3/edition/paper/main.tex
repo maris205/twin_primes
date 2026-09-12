@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx,booktabs,longtable,array,tabularx}
+\usepackage{float}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor,hyperref,microtype}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0.25em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{condition}[theorem]{Condition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\input{math_commands.tex}
+\title{A Source-Traceable Framework for\\
+AI-Assisted Research on the\\Twin Prime Conjecture}
+\author{Liang Wang\\[0.4em]
+\small School of Artificial Intelligence and Automation,\\
+\small Huazhong University of Science and Technology,\\
+\small Wuhan 430070, P.R. China\\
+\small\href{mailto:wangliang.f@gmail.com}{\texttt{wangliang.f@gmail.com}}}
+\date{12 September 2026\\Research framework draft v0.3}
+\hypersetup{pdftitle={A Source-Traceable Framework for AI-Assisted Research on the Twin Prime Conjecture},pdfauthor={Liang Wang}}
+\begin{document}
+\pagestyle{plain}
+\maketitle
+\begin{abstract}
+\input{sections/abstract.tex}
+\end{abstract}
+\noindent\textbf{Keywords:} twin prime conjecture; AI-assisted mathematical research; source provenance; research knowledge base; analytic cancellation; distinguished seeds.
+\clearpage
+\setcounter{tocdepth}{1}
+\tableofcontents
+\medskip
+\input{notation.tex}
+\clearpage
+\input{sections/introduction.tex}
+\input{sections/framework.tex}
+\input{sections/arithmetic.tex}
+\input{sections/structure.tex}
+\input{sections/operator.tex}
+\input{sections/barriers.tex}
+\input{sections/emitter.tex}
+\input{sections/boundary.tex}
+\input{sections/dynamics.tex}
+\input{sections/bridges.tex}
+\input{sections/agenda.tex}
+\input{sections/conclusion.tex}
+\clearpage
+\appendix
+\input{sections/models.tex}
+\input{sections/provenance.tex}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begingroup\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,26 @@
+{
+  "round": 2,
+  "pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "source_files": {
+    "figures/tpc_route_en.png": "83c729864e69fc87569ec23ad0b1c7d6251fedd3b61f059881d17fec37ef24fa",
+    "main.tex": "d2102d4e41ec54f4ae0c2a7532a25d0ec6851bf791755713fd1373f299edf439",
+    "math_commands.tex": "b1363ddc9e2669c8b388524a660113f77bb0e94f60f6ea00a779cd35263dda0d",
+    "notation.tex": "1b6a442d45c31404a731f0dca107d7022452aa9bcfd5c55a526e924f507f36f6",
+    "references.bib": "8a740007100f0049563914c4210fe46d80c87074a791bdd0ff8c1433247b8c6d",
+    "sections/abstract.tex": "3a6c1a060c2c6c859f1375d6a9aa80eb8ebcc412d52bcba08b7b0d280c74c38d",
+    "sections/agenda.tex": "d19bc784823c71cff37463c6b710f8a8bb80920fd5f3c2dc0789e301e43cc307",
+    "sections/arithmetic.tex": "9c5a70217ddedce56e3e609cd743bf5f93388002d5c76cb34378e01a5c23c184",
+    "sections/barriers.tex": "080158731bfb8d1b07d1b2f22e0dc6703b110b731dec5bd6bcdb14a516295e06",
+    "sections/boundary.tex": "8ba829a30205b79dc865b7c1795acac8794fb8279a7ba706d88e700c460b8565",
+    "sections/bridges.tex": "3d094d7a355f2d6953cc4c5831acd142bdda2e41b609b83c1ef0adb6e68c866b",
+    "sections/conclusion.tex": "09648a8aac9791c8ef279ec0fe86cfca3894a927bb4a4143d91e151f3d59bbaa",
+    "sections/dynamics.tex": "0eed7913971bb46a873781f5b9ca2006d2376c0ae32542da32a8c321e4f65c58",
+    "sections/emitter.tex": "a225e1f6b0d1d46ba8ad585e7f61ff61032d7d7b1986fa83294cc334afe3a68b",
+    "sections/framework.tex": "1695fe447e42d486c9540ae19b525d4cb1a19fef4f5d6a407fcf569b9adcd052",
+    "sections/introduction.tex": "6109ce4ef412adceefa32873620733f27aff0ba7befd34933eb7fa3b3ed925e5",
+    "sections/models.tex": "289ce25b35919fbcb5582edae144e278fc1ba11b2299faef5aa1814dc7111cca",
+    "sections/operator.tex": "29c69011268bc5b47ea6f98b89ed40e5a01b8ed79fb99cf2c5c704b29e894c49",
+    "sections/provenance.tex": "2b966f38188110ae7fed55aaaea22d23f8fce5b895a9b321e9f2a249b06dfc21",
+    "sections/structure.tex": "8f1e94ee59c5dd7cc4990c0d321674c497efa5e3f0bcbcebd5cc03d87b0011ca"
+  }
+}

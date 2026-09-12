@@ -1,0 +1,190 @@
+--- english-v0.2/main.tex
++++ english-v0.3/main.tex
+@@ -21,17 +21,22 @@
+ \theoremstyle{remark}
+ \newtheorem{remark}[theorem]{Remark}
+ \input{math_commands.tex}
+-\title{A Seven-Island Framework for Twin-Prime Research:\\
+-Exact Structures, Analytic Obstructions,\\and Two Bridging Problems}
+-\author{}
+-\date{12 September 2026\\English synthesis draft v0.2}
++\title{A Source-Traceable Framework for\\
++AI-Assisted Research on the\\Twin Prime Conjecture}
++\author{Liang Wang\\[0.4em]
++\small School of Artificial Intelligence and Automation,\\
++\small Huazhong University of Science and Technology,\\
++\small Wuhan 430070, P.R. China\\
++\small\href{mailto:wangliang.f@gmail.com}{\texttt{wangliang.f@gmail.com}}}
++\date{12 September 2026\\Research framework draft v0.3}
++\hypersetup{pdftitle={A Source-Traceable Framework for AI-Assisted Research on the Twin Prime Conjecture},pdfauthor={Liang Wang}}
+ \begin{document}
+ \pagestyle{plain}
+ \maketitle
+ \begin{abstract}
+ \input{sections/abstract.tex}
+ \end{abstract}
+-\noindent\textbf{Keywords:} twin primes; M\"obius correlations; reduced residue classes; Gram operators; Kloosterman sums; distinguished seeds.
++\noindent\textbf{Keywords:} twin prime conjecture; AI-assisted mathematical research; source provenance; research knowledge base; analytic cancellation; distinguished seeds.
+ \clearpage
+ \setcounter{tocdepth}{1}
+ \tableofcontents
+@@ -39,6 +44,7 @@
+ \input{notation.tex}
+ \clearpage
+ \input{sections/introduction.tex}
++\input{sections/framework.tex}
+ \input{sections/arithmetic.tex}
+ \input{sections/structure.tex}
+ \input{sections/operator.tex}
+@@ -47,6 +53,8 @@
+ \input{sections/boundary.tex}
+ \input{sections/dynamics.tex}
+ \input{sections/bridges.tex}
++\input{sections/agenda.tex}
++\input{sections/conclusion.tex}
+ \clearpage
+ \appendix
+ \input{sections/models.tex}
+--- english-v0.2/sections/abstract.tex
++++ english-v0.3/sections/abstract.tex
+@@ -1 +1 @@
+-Exact representations of prime-pair problems become useful only when estimates retain the original arithmetic coefficients, scales, and quantifiers. We synthesize a fixed-shift research program around this requirement, using a seven-island map to distinguish objects from the transfers between them. For the prescribed arithmetic operator at interval scale $x$ and prime-modulus scale $Q=x^{1/3}$, we give its exact positive-form decomposition and uniform row-energy bounds. Actual coefficient costs prevent coefficient-blind norm estimates, including ordinary row normalization, from supplying a fixed-power saving. A separate low-frequency argument produces $(1/4+o(1))Q^2$ negative directions, obstructing specified low-rank norm repairs. An exact Kloosterman representation identifies the unproved two-sided attachment needed to exploit a critical-range bilinear estimate. In contrast, an explicit smooth partition already bounds the collective boundary contribution by $xQ^2x^{-11/64+o(1)}$. For the actual moving sieve events, a Chinese-remainder and Abel-summation argument yields variance $O(N)$ and Haar-almost-everywhere infinite recurrence, but not recurrence at the arithmetic seed $0$. The analytic route thus lacks a coefficient-sensitive signed estimate, while the dynamical route lacks a distinguished-point conclusion. We restate and prove selected archived results, clarify their dependencies and conditional loss budgets, and distinguish them from the unresolved twin-prime endpoint. This paper does not prove the twin-prime conjecture.
++AI-assisted work on a long-standing conjecture requires more than plausible proof fragments: it needs a persistent record of the mathematical objects, source dependencies, and unresolved obligations to which those fragments belong. We present a source-traceable, file-based framework designed to support human-supervised AI assistance in research on the twin prime conjecture. Organized by a seven-island map, it connects an existing manuscript archive and linked research wiki to an explicit task, review, and handoff protocol. The framework separates exact identities, proved estimates, method obstructions, conditional transfers, and finite diagnostics. This organization is intended to support source retrieval and bounded research tasks without promoting local or model evidence into a global arithmetic conclusion. A detailed mathematical case study retains the actual fixed-shift operator and develops its exact decomposition, coefficient-norm and growing-rank obstructions, full-range Kloosterman representation, and a collective boundary bound. A parallel moving-target formulation distinguishes Haar-almost-everywhere recurrence from the unresolved conclusion at the arithmetic seed $0$. These cases specify two different open bridges and the conditions that a proposed continuation must preserve. We also set out a prospective agenda for coefficient-sensitive analysis, distinguished-seed arguments, selective formalization, and controlled evaluation of AI research workflows. The contribution is a concrete research organization and mathematical interface framework, not an empirically validated autonomous prover. This paper does not prove the twin-prime conjecture.
+--- english-v0.2/sections/agenda.tex
++++ english-v0.3/sections/agenda.tex
+@@ -0,0 +1,24 @@
++\section{Research agenda and prospective evaluation}\label{sec:agenda}
++The next stage should treat mathematical progress, resource engineering, and AI performance as separate outcomes. The following agenda is prospective: no experiment, new theorem, or route reopening is reported by stating it. The current mathematical position is Island 2, toward map Bridge A and analytic Gate B, with both analytic gates unresolved.
++
++\subsection{Mathematical track: source-exact continuations}
++For Islands 2--4 and Bridge A, priorities include a coefficient-sensitive input for the literal signed interior and a two-sided attachment with every coefficient and residual cost paid. A continuation intended to satisfy Gate B must ultimately yield a full-scalar saving $\delta>1/400$ in the stated physical regime. Intermediate results should state precisely which attachment or loss obligation they resolve. For the critical-array route specifically, the additional loss must satisfy $\ell<19/2400$, with $\delta=1/96-\ell$. The already proved boundary contribution only permits the full saving $\min(\delta_{\rm int},11/64)$ after an interior bound is supplied. It does not provide that bound.
++
++A candidate should be written first as an attachment statement: actual expression, admissible supports, exact coefficients and masks, common parameter ranges, normalization, and total loss. The structural interfaces on Islands 3--4 do not themselves construct the production attachment. Gate A also remains separate, and the conditional output for $S_x^{\rm phys}$ in Section~\ref{sec:bridges} is not the von Mangoldt-weighted pair sum $S_2(x)$. This paper does not reconstruct the complete upstream implication to the twin-prime conjecture. The current stop condition excludes generic norm repairs without an identified new source-exact input; a plan or diagnostic alone is not such an input.
++
++For Island 5 and Bridge B, one concrete target is the joint cylinder bound in Proposition~\ref{prop:seed}, with a fixed positive margin on the same unbounded sequence. Any proposed cylinder scale must control both $\Omega_N$ and $\sqrt{q_N}V_N$; small point-evaluation cost alone is insufficient, while the finest cylinder eliminates oscillation at an unaffordable generic cost. The criterion is only one sufficient route. Alternative distinguished-orbit arguments remain possible if they preserve exact prime-pair encoding. Island 7 may assist through an exact event, time, and seed correspondence, but a geometric representation is not a replacement for that arithmetic return.
++
++\subsection{Resource track: selective formalization and maintainable records}
++The first engineering step is to standardize claim and task records on the selected source families, then test whether updates preserve locators, hypotheses, and evidence categories. A small formalization pilot could target self-contained finite identities or the cylinder averaging argument before attempting larger analytic dependencies. Each pilot would need an explicit formal statement, assumptions, a checked correspondence with the original source, and a kernel-checked proof. Library availability and formalization effort must be assessed before selecting the final pilot. Nothing in the current hash, rendering, or editorial checks supplies this formal guarantee.
++
++\subsection{Evaluation track: does the framework help an AI assistant?}
++The primary hypothesis is that a source-derived scope-record package reduces unsupported claim promotion on bounded source-grounded tasks. This is a hypothesis, not an observed benefit. Candidate tasks include source localization, hypothesis-preserving reconstruction, evidence-category classification, and detection of deliberately introduced scope errors in separate test copies. Examples include weakening a strict inequality, omitting a residual, confusing map Bridge B with analytic Gate B, and replacing a prescribed seed by an almost-everywhere quantifier.
++
++Compare three access conditions using the same model version and matched task, token, and tool allowances: unstructured source access, ordinary retrieval, and retrieval with scope records and the bounded output contract. All conditions should access the same underlying source corpus; actual usage, retrieval settings, review passes, and abstention policy must be reported. A fixed-review ablation should remove the records. This tests the complete record intervention, including its source-derived explanatory guidance, not formatting alone. Isolating structure itself would require a further control with the same record facts and wording in unstructured form.
++
++Reference answers require human mathematical adjudication on selected tasks; the archive is not already a verified benchmark. Construct admissible source-derived records without access to test questions or rubrics, and freeze them before evaluation. Exclude test-specific answers, planted-error locations, and adjudication rationales from every accessible index. The disclosed K02/K13/K14 cases are development illustrations, not evidence of undisclosed-task generalization. Split by underlying source family and audit shared-source duplication; card and manuscript numbers alone do not prevent leakage. A later temporal split remains prospective.
++
++Primary outcomes should pair unsupported-claim frequency with correct-answer coverage and hypothesis retention, so that universal abstention cannot count as success. Secondary measures can include correct source spans, appropriate abstention, and human correction effort. Blind adjudicators to the access condition, retain disagreements, and report paired task-level comparisons with uncertainty clustered by source family; repeated runs should not be counted as independent mathematical tasks.
++
++\subsection{Sequence and decision points}
++First freeze a small adjudicated task set and establish source and leakage checks. Next run a limited matched-budget pilot and inspect both task quality and failure categories. Only after those checks should a larger evaluation or selective formalization proceed under a separately approved resource budget. The companion experiment plan records these stages as not run, with explicit inputs, metrics, and stop conditions. No calendar, compute allocation, statistical power, or successful outcome is inferred from the existence of this agenda.
+--- english-v0.2/sections/bridges.tex
++++ english-v0.3/sections/bridges.tex
+@@ -62,4 +62,4 @@
+ Basic arithmetic supplies local consistency. The fixed-atom results preserve coefficients, masks, and prefixes on their stated source support. The occurrence results specify conditional attachment, conservation, and weighted-cover interfaces; they do not construct the production lift or pay its coefficient-transport cost. The analytic layer supplies actual operator structure, growing-dimensional obstructions, and a boundary contribution that can be paid for. The dynamical layer supplies metric hitting for the actual moving targets and exact sieve geometry.
+ These results have distinct mathematical content: they should neither be merged into a proof of the twin-prime conjecture nor dismissed indiscriminately as toy models.
+ 
+-The two gaps should not be conflated. The analytic branch needs coefficient-sensitive signed estimates and valid upstream attachments; the dynamical branch needs a conclusion at the distinguished seed. The present synthesis isolates those obligations without supplying them. Authorship, venue, systematic literature positioning, and novelty assessment remain unspecified. This paper does not prove the twin-prime conjecture.
++The two gaps should not be conflated. The analytic branch needs coefficient-sensitive signed estimates and valid upstream attachments; the dynamical branch needs a conclusion at the distinguished seed. The present synthesis isolates those obligations without supplying them. Section~\ref{sec:agenda} explains how they constrain prospective mathematical and AI-assisted work. This paper does not prove the twin-prime conjecture.
+--- english-v0.2/sections/conclusion.tex
++++ english-v0.3/sections/conclusion.tex
+@@ -0,0 +1,6 @@
++\section{Conclusion}
++The contribution of this work is a source-traceable framework for human-supervised AI assistance in twin-prime research, supported by concrete file-based resources and a detailed mathematical case study. It makes explicit which object a task concerns, which evidence supports a statement, what a proposed transfer must preserve, and when the output must remain conditional or unresolved.
++
++The analytic and dynamical cases reveal different obligations: coefficient-sensitive arithmetic estimates and valid attachments on one side, and a return to the distinguished arithmetic seed on the other. Their separation is part of the framework's content. Neither documentation coverage nor a coherent review workflow closes either bridge.
++
++The proposed research agenda gives the framework testable next steps without claiming that those steps have been completed. Controlled AI evaluation, selective formalization, systematic external positioning, and novelty assessment remain outstanding. The supplied authorship identifies this edition; it does not attribute first discovery of every archived result or certify the entire source collection. This paper does not prove the twin-prime conjecture.
+--- english-v0.2/sections/framework.tex
++++ english-v0.3/sections/framework.tex
+@@ -0,0 +1,38 @@
++\section{The source-traceable research framework}\label{sec:framework}
++\subsection{Existing resources and the proposed information contract}
++The framework has four layers, summarized in Table~\ref{tab:framework}. The existing resources comprise a source archive, source-linked wiki, selected explanatory cards, and documented review and update procedures. The wiki reports mechanical full-text conversion for 419 manuscripts within a 420-entry directory inventory, with fourteen source-backed knowledge cards. These are documentation-coverage counts, not numbers of independently verified theorems or benchmark tasks. The companion framework source map records the inspected artifacts and the limits of each evidence claim.
++
++\begin{table}[htbp]
++\centering\small
++\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.18\linewidth}XX@{}}
++\toprule
++Layer & Available artifact & Boundary or extension\\\midrule
++Source archive & Original manuscripts, source locators, and recorded digests & A digest preserves bytes; it does not validate a proof.\\
++Reading layer & Linked full texts, typed cards, source spans, and scope warnings & Navigation links are not a machine-checked proof graph.\\
++Task protocol & Existing scope rules and review records; the bounded contract specified here & Unified task fields and automatic enforcement remain proposed.\\
++Assessment & Documented preservation and presentation checks & Human-adjudicated AI evaluation and formal checking remain future work.\\
++\bottomrule
++\end{tabularx}
++\caption{A file-based instantiation with explicit implementation boundaries. The right column is not a list of completed capabilities.}\label{tab:framework}
++\end{table}
++
++An AI-facing claim record should contain an identifier, original source path and span, a source digest, an evidence category, hypotheses and parameter ranges, transfer requirements, and an unresolved obligation. The current cards already contain identifiers, locators, hashes, textual relationship types, and scope explanations; this paper proposes to standardize the complete record across tasks. Relationships such as \emph{uses}, \emph{obstructs this method}, and \emph{would imply under these hypotheses} should not collapse into an undifferentiated dependency arrow. Their mathematical validity still requires review of the corresponding source statements.
++
++The five working evidence categories are exact identity, proved estimate, method obstruction, conditional transfer, and finite diagnostic. Here \emph{proved} refers to the scoped argument reproduced or cited, not to a kernel-checked archive-wide status. An open target is recorded as an obligation, never as an achieved result merely because it appears in a source document or diagram.
++
++\subsection{Three scope-preservation examples}
++The actual-operator card K02 illustrates object preservation. Its scalar $\Cx=\ip w{A\beta}$ must retain the physical interval, fixed shift $h_0=2$, literal coefficients, unit masks, Fourier convention, and deleted diagonal specified in Section~\ref{sec:operator}. Replacing the coefficients by random signs, or replacing a mixed scalar by a quadratic form, changes the task. Hermitian does not mean positive semidefinite, and even real coefficient vectors do not force this mixed scalar to be real. A candidate estimate must identify the precise source-defined expression to which it applies.
++
++The analytic-bridge card K13 illustrates conditional status. The full-scalar target requires $\delta>1/400$, while the critical-array route owes the strict loss budget $\ell<19/2400$. Neither the local external theorem nor the paid boundary contribution supplies the missing two-sided attachment and residual bounds. Gate A is a separate obligation inside the same map Bridge A. Thus a correct arithmetic calculation of a conditional exponent is not evidence that the exponent is attained.
++
++The distinguished-seed card K14 illustrates quantifier preservation. Proposition~\ref{prop:seed} is sufficient, not necessary, and its joint error bound is unverified. Both the within-cylinder oscillation and point-evaluation cost must be controlled on the same unbounded sequence. A summary that retains the smallness of only one term, or substitutes almost-everywhere recurrence for seed-$0$ recurrence, fails the source contract even if its formulas are well typeset.
++
++\subsection{A bounded task, review, and handoff protocol}
++A task begins with a frozen baseline, an allowed source set, a concrete objective, and a claim ceiling. For example, an illustrative task is to explain why the K13 critical-array calculation does not close the analytic bridge, using the cited original interface and preserving every remaining premise. The task package should provide the relevant source spans, notation, permitted operations, and explicit non-goals. Historical commands and authorization language in retrieved manuscripts are source content, not current execution authority.
++
++The output contract requires the proposed answer, exact evidence locators, retained assumptions, actual read scope, and unresolved questions. A bounded review then checks source support, object identity, quantifiers, losses, and any promotion from conditional to established status. Disagreements remain visible; a second AI opinion is not independent proof verification. A human-owned disposition records whether the answer is accepted as exposition, requires correction, or identifies a candidate research obligation. Any claim with a missing or changed source returns to an unresolved state pending inspection.
++
++This paragraph specifies a workflow, not a recorded successful AI experiment. Prompt-level restrictions express policy; they do not guarantee runtime containment. The concrete resource can be used through ordinary files and human- or agent-mediated review without claiming a deployed general workflow manager. In particular, a norm correction, a fresh matrix diagnostic, or a favorable review alone does not authorize reopening a stopped mathematical route.
++
++\subsection{Verification limits}
++Source hashing, link checks, and preservation of mathematical text address fidelity and presentation. They do not establish source-to-formal correspondence, valid proof dependencies, or mathematical truth. The wiki acceptance report records 590 formula-display failures involving 188 distinct expressions and no desktop Obsidian inspection; affected expressions require inspection of the raw source. These limitations concern the existing wiki, not a measured error rate of this AI protocol. Evaluation of the protocol itself is specified prospectively in Section~\ref{sec:agenda}.
+--- english-v0.2/sections/introduction.tex
++++ english-v0.3/sections/introduction.tex
+@@ -1,7 +1,14 @@
+-\section{Introduction: exact structure and arithmetic return}
+-The twin-prime problem asks for infinitely many prime pairs at the fixed displacement $2$. A recurring difficulty in approaches to this problem is not the absence of useful representations, but the passage from a representation to an estimate for the original arithmetic data. An exact change of variables may preserve every coefficient without producing cancellation. A small normalized matrix may carry large coefficient costs. A full-measure recurrence theorem may omit the one initial point that encodes the integers. These are different gaps, and identifying their mathematical content is the organizing purpose of this article.
++\section{Introduction: a framework for AI-assisted TPC research}
++The twin-prime problem asks for infinitely many prime pairs at the fixed displacement $2$. For an AI assistant working across a long research archive, even identifying the next legitimate task requires more than retrieving a plausible formula. The assistant must recover the exact object, distinguish a proved statement from a proposed transfer, and retain the hypotheses that connect local work to the arithmetic endpoint. A change of variables may preserve every coefficient without producing cancellation. A small normalized matrix may carry large coefficient costs. A full-measure recurrence theorem may omit the one initial point that encodes the integers. Losing these distinctions can make an apparently coherent continuation address a different problem.
+ 
+-We use the seven-island map in Figure~\ref{fig:map} to separate arithmetic foundations, analytic cancellation, fixed atoms, actual occurrences, moving-target dynamics, the twin-prime endpoint, and auxiliary geometric lifts. The islands are not successive steps of a proved implication. We reconstruct selected results by their dependencies, rather than by the order of the archived investigations. The contribution is a source-traceable synthesis with explicit proofs and transfer requirements, not a claim of first discovery or an exhaustive account of every route to twin primes.
++We therefore present a source-traceable, file-based research framework: an existing mathematical archive and linked knowledge base, a specification for AI-facing source and task records, and a prospective evaluation agenda. Its purpose is to support human-supervised research on a difficult open problem while making object changes, unpaid losses, and unresolved obligations explicit. The mathematical synthesis is the worked case through which these requirements become concrete. The framework is not a general autonomous research engine, and its effects on model reliability or research efficiency have not been measured.
++
++We use the seven-island map in Figure~\ref{fig:map} to separate arithmetic foundations, analytic cancellation, fixed atoms, actual occurrences, moving-target dynamics, the twin-prime endpoint, and auxiliary geometric lifts. The islands are not successive steps of a proved implication. We reconstruct selected results by their dependencies, rather than by the order of the archived investigations. This is neither a claim of first discovery nor an exhaustive account of every route to twin primes.
++
++\subsection{Three contributions and their evidence levels}
++First, we provide a source-traceable mathematical synthesis with explicit proofs, transfer requirements, and unresolved endpoints. Second, we connect the existing source archive and research wiki to a bounded AI task protocol: what to read, which object and hypotheses to preserve, what evidence to return, and who may accept a proposed continuation. The companion framework source map distinguishes already present metadata and safeguards from fields proposed for standardization. Third, we formulate a research agenda and a controlled evaluation design. The archive and wiki are concrete artifacts; a fully automated workflow and demonstrated AI benefits are not results of this paper.
++
++The formal mathematics ecosystem addresses a related but different layer. The Lean mathematical library provides formalized mathematics, while LeanDojo supplies infrastructure and a benchmark for learning-based theorem proving in Lean~\cite{mathlib2019,yang2023leandojo}. Our emphasis is upstream informal research organization: selecting source-grounded tasks and preventing unsupported transfers between mathematical settings. This framework neither replaces proof checking nor formally verifies the TPC archive. Selective formalization is a proposed extension, and systematic positioning against other AI-research systems remains future work.
+ 
+ \subsection{Two gaps, with different endpoint connections}
+ The analytic core concerns a specific mixed scalar $\Cx=\ip w{A\beta}$, of natural scale $xQ^2$. The vectors, unit masks, physical interval, Fourier convention, and deleted diagonal are part of its definition. A full-scalar saving with exponent strictly greater than $1/400$ would be useful in the imported analytic interface, but that interface also requires a separate full-shell estimate called Gate A. Both gates lie inside map Bridge A. Their conditional output in this paper is a bound for another auxiliary scalar, $S_x^{\rm phys}$; the complete upstream implication to prime-pair counting is not reproved here.
+@@ -18,10 +25,10 @@
+ 
+ The critical-interval bilinear estimate of Blomer--Pascadi~\cite{blomer2026} supplies an external benchmark. Its square-root-length specialization offers a local Kloosterman saving under specified support and coprimality conditions. Our question is whether the actual signed expression can be attached to those inputs with all losses paid. The external theorem does not itself provide that attachment.
+ 
+-The source-linked research wiki helped organize the distinctions between definitions, estimates, obstructions, and conditional transfers. It is a secondary reading aid, not independent evidence for a theorem. The original proofs remain the mathematical sources; Appendix~\ref{sec:provenance} and the companion concordance explain how to locate them. A systematic external literature comparison and novelty assessment remain necessary before submission.
++The source-linked research wiki~\cite{archiveframework} organizes distinctions between definitions, estimates, obstructions, and conditional transfers. It is a secondary reading aid, not independent evidence for a theorem. The original proofs remain the mathematical sources; Appendix~\ref{sec:provenance} and the companion concordance explain how to locate them. A systematic external literature comparison and novelty assessment remain necessary before submission.
+ 
+ \subsection{Reading guide}
+-Section~\ref{sec:arithmetic} fixes the endpoint and the transfer requirements. Section~\ref{sec:structure} distinguishes literal atom identities, occurrence conservation, and weighted-cover costs. Sections~\ref{sec:operator}--\ref{sec:boundary} develop the analytic results on one common object. Section~\ref{sec:dynamics} treats the metric theorem, seed criterion, and geometric limitations. Section~\ref{sec:bridges} puts the remaining analytic and dynamical obligations side by side. Readers can follow either branch without reading the historical manuscripts in sequence; exact source locations and material not selected here remain in the source matrix and full catalog.
++Section~\ref{sec:framework} specifies the AI-facing framework. Sections~\ref{sec:arithmetic}--\ref{sec:structure} fix the arithmetic endpoint and structural interfaces. Sections~\ref{sec:operator}--\ref{sec:boundary} develop the analytic case; Section~\ref{sec:dynamics} treats metric recurrence and the distinguished seed. Section~\ref{sec:bridges} collects the remaining obligations, and Section~\ref{sec:agenda} gives the research agenda. The branches can be read separately; the companion source records provide exact locators.
+ 
+ \clearpage
+ \begin{figure}[p]
+--- english-v0.2/sections/provenance.tex
++++ english-v0.3/sections/provenance.tex
+@@ -1,10 +1,12 @@
+ \section{Sources and the scope of verification}\label{sec:provenance}
+-This synthesis selects core sources from a repository containing 420 TPC directories and organizes them by mathematical dependency. The directory count is not a count of independent contributions, and the catalog is not a manual semantic audit of every full text.
++This synthesis selects sources from 420 TPC directories. That inventory counts neither independent contributions nor manually verified full texts.
+ 
+-The accompanying source catalog records original names, primary-source hashes, and provisional island labels. The core source matrix supplies the files, line ranges, SHA-256 hashes, and claim boundaries used here. Its original paths are relative to the twin-prime repository; the revision's readable copy rebases navigation links without changing source claims. Hashes establish source fidelity, not mathematical correctness. Status files and the map provide context, not substitute proofs.
++The companion catalog records original names, hashes, and provisional island labels. The core matrix gives source paths, line ranges, SHA-256 hashes, and claim boundaries. Its JSON paths are repository-relative; the readable revision rebases links without changing claims. Hashes establish fidelity, not mathematical correctness. Status files and the map do not replace proofs.
+ 
+-Section~\ref{sec:structure} uses original TeX manuscripts. The operator, coefficient, rank, emitter, and boundary results come from the unnumbered research cycle of 9 September 2026. Section~\ref{sec:dynamics} uses the original moving-target proof, seed reconnaissance criterion, and physical-intertwining document. Classical inputs remain classical; no first-discovery claim is made for reorganized results.
++Section~\ref{sec:structure} uses original TeX manuscripts. The analytic core uses the unnumbered proof packages of 9 September 2026; Section~\ref{sec:dynamics} uses the original moving-target, seed, and physical-intertwining sources. Reorganization makes no first-discovery claim.
+ 
+-The wiki's fourteen knowledge cards distinguish definitions, estimates, obstructions, and conditional transfers. The companion concordance maps each card to the revised sections and original source IDs. These navigation aids provide no independent proof evidence.
++The wiki's fourteen cards distinguish definitions, estimates, obstructions, and conditional transfers. The concordance links them to revised sections and original source IDs; this navigation supplies no independent proof evidence.
+ 
+-English v0.2 preserves the earlier edition's formal statements, proof blocks, bibliography, and supplied map while revising its exposition. Both original editions and the research archive remain unchanged; this is not a new numbered paper or a reopened research route. Full raw editorial reviews and presentation checks are retained separately. Their scope is explicit: neither successful compilation and visual inspection nor a bounded editorial review certifies the entire archive, theorem correctness, or novelty.
++English v0.3 preserves v0.2's formal statement/proof blocks, displays, bibliography entries, and supplied map. It adds author-supplied attribution, the framework specification, agenda, and three framing references. Previous editions, the wiki, and research archive remain unchanged; no numbered paper or research route is opened. Raw editorial reviews and edition-specific checks are retained separately. Compilation, visual inspection, and bounded review certify neither theorem correctness nor archive-wide validity or novelty.
++
++AI assisted source organization, drafting, editorial review, and presentation checks. This is neither a formal mathematical audit nor an empirical framework evaluation. Review records state their scope; the affiliation implies neither institutional endorsement nor archive-wide author verification.

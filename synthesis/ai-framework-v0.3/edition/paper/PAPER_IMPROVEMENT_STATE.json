@@ -1,0 +1,13 @@
+{
+  "current_round": 2,
+  "reviewer_agent": "01a0961c-360c-7450-8bb8-ec35a93debde",
+  "reviewer_channel": "available inherited-model read-only agent; named GPT-5.4 MCP unavailable",
+  "last_score": null,
+  "status": "completed",
+  "round1_pdf_sha256": "fe37e1aeb41728277a83f86c56a3cddab46615008b9638c659e6e94ba41b21cf",
+  "round1_pages": 32,
+  "final_pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "final_pages": 30,
+  "timestamp": "2026-09-12T15:22:13Z",
+  "scope": "Two editorial rounds and final presentation-only page coverage complete; no experiments"
+}

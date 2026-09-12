@@ -1,0 +1,111 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[arc(2026{\natexlab{a}})]{archiveframework}
+Twin-prime source-linked research wiki: provenance, navigation, and
+  maintenance.
+\newblock Local research artifact, 12 September snapshot, 2026{\natexlab{a}}.
+\newblock Start page, maintenance guide, acceptance report, and
+  source-preserving tools; see FRAMEWORK\_SOURCE\_MAP. Not a journal
+  publication or a proof-verification report.
+
+\bibitem[arc(2026{\natexlab{b}})]{archivephysical}
+{Exact physical return: operator, lane norms, growing rank, emitter and
+  boundary proofs}.
+\newblock Twin-prime research archive, 9 September unnumbered proof packages,
+  2026{\natexlab{b}}.
+\newblock See CORE\_SOURCE\_MATRIX entries PHYSICAL; internal research sources.
+
+\bibitem[arc(2026{\natexlab{c}})]{archiveseed}
+{Distinguished-seed reconnaissance: an exact sufficient cylinder criterion}.
+\newblock Twin-prime research archive, 9 September reconnaissance report,
+  2026{\natexlab{c}}.
+\newblock See CORE\_SOURCE\_MATRIX entry SEED, lines 78--105; the short lemma
+  is reproved here.
+
+\bibitem[arc(2026{\natexlab{d}})]{archivev58}
+{Terminal scalar root and q-transverse variance split (V58)}.
+\newblock Twin-prime research archive, 13 August source Markdown,
+  2026{\natexlab{d}}.
+\newblock See CORE\_SOURCE\_MATRIX entry V58, equations (1.5)--(1.10) and
+  Theorem 5.1.
+
+\bibitem[arc(n.d.{\natexlab{a}})]{archive1}
+{Two-scale prime-sieve correlations (TPC1)}.
+\newblock Twin-prime research archive, original LaTeX manuscript,
+  n.d.{\natexlab{a}}.
+\newblock See CORE\_SOURCE\_MATRIX entry BASELINE; local product is classical.
+
+\bibitem[arc(n.d.{\natexlab{b}})]{archive127}
+{Determinant-two Liouville pullback (TPC127)}.
+\newblock Twin-prime research archive, original LaTeX manuscript,
+  n.d.{\natexlab{b}}.
+\newblock See CORE\_SOURCE\_MATRIX; archived source, not a publication-status
+  assertion.
+
+\bibitem[arc(n.d.{\natexlab{c}})]{archivedynamics}
+{CRT resonance partial sums and Haar moving-target variance}.
+\newblock Twin-prime research archive, original research README, Theorems
+  4.1--4.2, n.d.{\natexlab{c}}.
+\newblock See CORE\_SOURCE\_MATRIX entry DYNAMICS.
+
+\bibitem[arc(n.d.{\natexlab{d}})]{archiveintertwiner}
+{Physical intertwiner: exact replication-deletion geometry and scoped mixing
+  obstruction}.
+\newblock Twin-prime research archive, source-locked Markdown,
+  n.d.{\natexlab{d}}.
+\newblock See CORE\_SOURCE\_MATRIX entry INTERTWINER.
+
+\bibitem[arc(n.d.{\natexlab{e}})]{archivestructure}
+{Literal source-child reconstruction, physical cover, occurrence lift and
+  pair-native interface (TPC93, TPC117, TPC143, TPC205)}.
+\newblock Twin-prime research archive, original LaTeX manuscripts,
+  n.d.{\natexlab{e}}.
+\newblock Individual paths and ranges are recorded in CORE\_SOURCE\_MATRIX.
+
+\bibitem[arc(n.d.{\natexlab{f}})]{archivev59}
+{Polarized local BDH scalar compiler (V59)}.
+\newblock Twin-prime research archive, source-locked Markdown,
+  n.d.{\natexlab{f}}.
+\newblock See CORE\_SOURCE\_MATRIX, entry V59; internal research source, not a
+  journal publication.
+
+\bibitem[Blomer and Pascadi(2026)]{blomer2026}
+Valentin Blomer and Alexandru Pascadi.
+\newblock Bilinear forms with kloosterman sums via quadratic characters.
+\newblock arXiv:2607.24311v1, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.24311}.
+
+\bibitem[Lamzouri(2015)]{lamzouri2015}
+Youness Lamzouri.
+\newblock A bias in mertens' product formula.
+\newblock arXiv:1410.3777v2, 2015.
+\newblock URL \url{https://arxiv.org/abs/1410.3777}.
+
+\bibitem[Selberg(1949)]{selberg1949}
+Atle Selberg.
+\newblock An elementary proof of the prime-number theorem.
+\newblock \emph{Annals of Mathematics}, 50\penalty0 (2):\penalty0 305--313,
+  1949.
+\newblock URL
+  \url{https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf}.
+
+\bibitem[{The mathlib Community}(2019)]{mathlib2019}
+{The mathlib Community}.
+\newblock The {Lean} mathematical library.
+\newblock arXiv:1910.09336v2, 2019.
+\newblock URL \url{https://arxiv.org/abs/1910.09336v2}.
+
+\bibitem[Yang et~al.(2023)Yang, Swope, Gu, Chalamala, Song, Yu, Godil, Prenger,
+  and Anandkumar]{yang2023leandojo}
+Kaiyu Yang, Aidan~M. Swope, Alex Gu, Rahul Chalamala, Peiyang Song, Shixing Yu,
+  Saad Godil, Ryan Prenger, and Anima Anandkumar.
+\newblock {LeanDojo}: Theorem proving with retrieval-augmented language models.
+\newblock arXiv:2306.15626v2, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.15626v2}.
+
+\end{thebibliography}

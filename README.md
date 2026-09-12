@@ -9,6 +9,7 @@
 
 ## 从哪里开始
 
+- [AI 辅助 TPC 研究框架 v0.3：论文、源码与后续规划](synthesis/ai-framework-v0.3/README.md)
 - [当前研究状态与下一步条件](TPC_HANDOFF.md)
 - [最新 physical-return 研究及评审汇总](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/README.md)
 - [全部论文资料索引：MD / TeX / PDF](research/tpc-big-road/PAPER_MATERIALS_LINKS.md)

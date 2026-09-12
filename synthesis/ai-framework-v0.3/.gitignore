@@ -1,0 +1,5 @@
+# These four files are intentional parts of the byte-preserved delivery snapshot.
+!edition/paper/compile.log
+!edition/paper/main.log
+!edition/paper/main.aux
+!edition/portable_compile.log

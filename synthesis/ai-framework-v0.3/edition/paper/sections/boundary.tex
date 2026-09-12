@@ -1,0 +1,50 @@
+\section{Constructive partitioning and the boundary bound}\label{sec:boundary}
+The norm method has a useful local application despite its full-vector obstruction: one can gain from the size of a boundary support. We construct a partition for which this gain controls the collective boundary contribution in the original scalar~\cite{archivephysical}. The statement is about that remainder alone and leaves the full signed interior as an arithmetic problem.
+\begin{theorem}[Collective bound for the actual weighted boundary]\label{thm:boundary}
+There is a nonnegative smooth partition $\sum_j\eta_{j,H}=1$ with finite overlap, each support of length $H$, and
+$H^r\|\eta_{j,H}^{(r)}\|_\infty\le C_r$ uniformly in $j,H$.
+Classify labels only inside the physical set $\mathcal J_x$ of supports meeting $[x/2,x]$:
+\[
+\mathcal J_\partial=\{j\in\mathcal J_x:\operatorname{supp}\eta_{j,H}\not\subset(x/2,x)\}.
+\]
+Let $\theta_\partial=\sum_{j\in\mathcal J_\partial}\eta_{j,H}$ be their total weight and set $\theta_{\rm int}=1-\theta_\partial$. Then
+\[
+\left|\Cx-\ip{\theta_{\rm int}w}{A(\theta_{\rm int}\beta)}\right|
+\ll xQ^2x^{-11/64+o(1)}.
+\]
+\end{theorem}
+\begin{proof}
+Take $\chi(s)=\exp[-1/(1-4s^2)]$ for $|s|<1/2$ and zero elsewhere, and set
+\[
+D(s)=\sum_{j\in\ZZ}\chi(s-j/2),\qquad
+\eta_{j,H}(t)=\frac{\chi(t/H-j/2)}{D(t/H)}.
+\]
+The function $D$ is positive, smooth and $1/2$-periodic: every point lies within $1/4$ of a half-integer. All derivatives of $D$ and $D^{-1}$ are bounded on one period. The chain rule gives the required derivative estimates.
+Each closed support is contained in $[(j-1)H/2,(j+1)H/2]$, at most three closed supports overlap, and $|\mathcal J_x|=O(x/H+1)$.
+Since every classified support meets the physical closed interval, a boundary support must contain at least one endpoint. There are therefore at most six such supports, and
+\[
+\operatorname{supp}_{I_x}\theta_\partial
+\subset [x/2,x/2+H]\cup[x-H,x],
+\quad |\operatorname{supp}_{I_x}\theta_\partial|=O(H+1).
+\]
+Only pointwise envelopes for the actual coefficients are needed. The divisor bound $\tau(n)\ll_\epsilon n^\epsilon$ gives $|\beta(n)|\le1+\tau(n)$.
+By \eqref{eq:hybrid}, $0\le b_x^{(z)}(n)\le W_z2^{\omega(n)}\le W_z\tau(n)$, so
+$|\beta(n)|+|w(n)|\le x^{o(1)}$ uniformly on the actual interval, for fixed $K$.
+The divisor bound follows prime power by prime power: for $p\ge2^{1/\epsilon}$,
+$k+1\le2^k\le p^{\epsilon k}$; for each of the finitely many remaining primes,
+$\sup_k(k+1)p^{-\epsilon k}$ is finite.
+
+Thus each boundary vector has norm $H^{1/2}x^{o(1)}$, while each full vector has norm $x^{1/2+o(1)}$.
+Expand exactly, counting the double-boundary term only once:
+\[
+\Cx-\ip{w_{\rm int}}{A\beta_{\rm int}}
+=\ip{w_\partial}{A\beta}+\ip{w_{\rm int}}{A\beta_\partial}.
+\]
+Lemma~\ref{lem:upper}, namely $\norm A\ll Q^2$, now gives
+$Q^2\sqrt{xH}x^{o(1)}=xQ^2x^{-11/64+o(1)}$.
+\end{proof}
+The theorem bounds the \emph{collective contribution} of all weighted ordered pairs with a boundary label, not the absolute value of each positive polarization package.
+It makes an admissible explicit choice of partition; it does not assert derivative bounds for every previously specified partition.
+The interior cutoff is genuinely smooth, but this does not turn $\Lambda$, the M\"obius coefficients, or the hybrid main term into smooth coefficients.
+If an interior saving $\delta_{\rm int}$ is proved in the future, this recombination certifies a full saving of $\min(\delta_{\rm int},11/64)$. The signed interior estimate remains unresolved here.
+In particular, this theorem does not establish Condition~\ref{cond:compression} or construct its residual $R_{bcq}$: paying for a boundary contribution and paying for a two-sided array decomposition are different tasks.

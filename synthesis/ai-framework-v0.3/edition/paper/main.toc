@@ -1,0 +1,53 @@
+\contentsline {section}{\numberline {1}Introduction: a framework for AI-assisted TPC research}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Three contributions and their evidence levels}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Two gaps, with different endpoint connections}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Results and their roles}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Mathematical inputs and scope}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Reading guide}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {2}The source-traceable research framework}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Existing resources and the proposed information contract}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Three scope-preservation examples}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}A bounded task, review, and handoff protocol}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Verification limits}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Arithmetic foundations and the endpoint}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The endpoint and auxiliary quantities}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Island 1: local sieve factors versus prime-pair counts}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The seven islands are not a serial proof}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}What every transfer must retain}{9}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Fixed atoms and actual occurrences}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The order-preserving determinant-two pullback}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Ordered pairs, child reassembly, and occurrence conservation}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}A weighted-cover criterion}{11}{subsection.4.3}%
+\contentsline {paragraph}{Where this leaves the analytic argument.}{12}{section*.2}%
+\contentsline {section}{\numberline {5}The actual operator: definition and exact structure}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Parameters, coefficients, and kernel}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The complete scalar and row energy}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The reduced-residue correction}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Norm bounds and coefficient-blind obstructions}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}An upper bound from frequency separation}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Energy of every actual row}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}A constant-vector witness and the actual coefficients}{15}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}A growing number of negative directions}{17}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Kloosterman emission and two-sided attachment}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The complete Kloosterman representation}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Signed recombination before residual estimates}{18}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Constructive partitioning and the boundary bound}{20}{section.8}%
+\contentsline {section}{\numberline {9}Moving targets and the distinguished arithmetic seed}{21}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Exact arithmetic encoding and a metric hitting theorem}{21}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}A precise form of the distinguished-seed gap}{22}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Prime-stage evolution and a mixing obstruction}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}The role and limits of Island 7}{23}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Two conditional bridges and their remaining gaps}{23}{section.10}%
+\contentsline {subsection}{\numberline {10.1}The analytic bridge: established structure and unpaid estimates}{23}{subsection.10.1}%
+\contentsline {paragraph}{Imported conditional interface and reference exponent.}{24}{section*.3}%
+\contentsline {subsection}{\numberline {10.2}The dynamical bridge: from a metric theorem to a distinguished point}{25}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}What the synthesis establishes}{25}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Research agenda and prospective evaluation}{25}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Mathematical track: source-exact continuations}{25}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Resource track: selective formalization and maintainable records}{26}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Evaluation track: does the framework help an AI assistant?}{26}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Sequence and decision points}{27}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Conclusion}{27}{section.12}%
+\contentsline {section}{\numberline {A}One-sided short support and model evidence}{28}{appendix.A}%
+\contentsline {section}{\numberline {B}Sources and the scope of verification}{28}{appendix.B}%
+\contentsline {section}{References}{29}{section*.4}%

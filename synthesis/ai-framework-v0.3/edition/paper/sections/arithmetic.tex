@@ -1,0 +1,58 @@
+\section{Arithmetic foundations and the endpoint}\label{sec:arithmetic}
+\subsection{The endpoint and auxiliary quantities}
+Write $\pi_2(y)=\#\{p\le y:p,p+2\text{ are both prime}\}$. The endpoint is $\pi_2(y)\to\infty$, not the discovery of more pairs in a finite interval. A customary weighted auxiliary quantity is
+\[
+S_2(y)=\sum_{n\le y}\Lambda(n)\Lambda(n+2),
+\]
+where $\Lambda$ denotes the von Mangoldt function. An asymptotic such as $S_2(y)\sim cy$ with $c>0$ would imply infinitely many twin primes. This is a sufficient condition, not an asymptotic proved here.
+
+To justify the implication, one must remove proper prime powers. There are $O(\sqrt y\log y)$ pairs in which at least one coordinate is $p^k$ with $k\ge2$, and each weight is $O(\log^2y)$. Their total contribution is $o(y)$. Finitely many genuine prime pairs cannot account for a positive linear main term. Even for a standard auxiliary quantity, its connection to the endpoint should therefore be stated rather than inferred from its name.
+
+\subsection{Island 1: local sieve factors versus prime-pair counts}
+For $y\ge2$, put $P_y=\prod_{p\le y}p$, $s_y(n)=\1_{(n,P_y)=1}$, and $\rho_y=\prod_{p\le y}(1-1/p)$. Let $\mathcal H=\{h_1,\ldots,h_r\}\subset\ZZ$ be a fixed finite nonempty set of distinct shifts, and let $\nu_p(\mathcal H)$ count its distinct residues modulo $p$. The Chinese remainder theorem (CRT) gives
+\[
+C_y(\mathcal H):=\frac1{P_y}\sum_{n\bmod P_y}\prod_{h\in\mathcal H}s_y(n+h)
+=\prod_{p\le y}\left(1-\frac{\nu_p(\mathcal H)}p\right).
+\]
+Indeed, there are $p-\nu_p(\mathcal H)$ allowed classes at each prime, and CRT multiplies these counts. If $\mathcal H$ is admissible, meaning $\nu_p<p$ for every prime, then $\nu_p=r$ for all sufficiently large $p$. The normalized factor is $(1-r/p)(1-1/p)^{-r}=1+O_r(p^{-2})$, so the product converges. In particular,
+\[
+\frac{C_y(\{0,2\})}{\rho_y^2}\longrightarrow2C_2,\qquad
+C_2=\prod_{p>2}\frac{p(p-2)}{(p-1)^2}>0.
+\]
+This is a classical local calculation, not a new prime-pair asymptotic~\cite{archive1}.
+
+Translate $\min\mathcal H$ to zero, set $h_{\max}=\max\mathcal H$, and let $X\to\infty$. If $Y_X=\sqrt{X+h_{\max}}$ and $Y_X<n\le X$, then every $n+h$ exceeds $Y_X$ and is at most $Y_X^2$. These integers survive the sieve through $Y_X$ if and only if they are all prime. This is a pointwise identification, not an estimate for the number of survivors. By contrast, complete-period decomposition on $1\le n\le X$ only gives
+\[
+\left|\sum_{1\le n\le X}\prod_{h\in\mathcal H}s_y(n+h)-XC_y(\mathcal H)\right|\le P_y+1.
+\]
+Complete periods contribute exactly; the remaining partial period costs at most $P_y$, with an additional $1$ for a noninteger endpoint. If $P_y=o(X\rho_y^r)$, this bound makes the normalized error vanish. At the primality-exact cutoff, however, the prime number theorem gives $\log P_{Y_X}\sim\sqrt X$, so this error bound provides no useful relative control. This is a mismatch between two elementary arguments, not an impossibility theorem for all sieve methods.
+
+\subsection{The seven islands are not a serial proof}
+\begin{table}[H]
+\centering\small
+\caption{Division of mathematical tasks. The final column does not assert necessary conditions for every possible route.}
+\begin{tabularx}{\textwidth}{c p{.25\textwidth} X}
+\toprule
+Island & Object or task & Transfer still requiring identification in this framework\\\midrule
+1 & Arithmetic foundations & Preserve the original counting interpretation when starting from sieves, correlations, or encodings.\\
+2 & Analytic cancellation & Pass from local structure to a signed saving for the complete actual coefficients.\\
+3 & Fixed atoms & Control the specified shift, phase, and packet pointwise.\\
+4 & Actual occurrences / H1 & Supply complete carriers, source correspondences, multiplicities, and coefficientwise conservation.\\
+5 & Nonautonomous dynamics & Pass from a measure statement to recurrence at the specified arithmetic seed.\\
+6 & Twin-prime endpoint & Obtain infinitely many genuine prime pairs, not a model statement or finite certificate.\\
+7 & Auxiliary geometric lifts & Preserve time and event readout, without assuming arithmetic genericity for free.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{What every transfer must retain}
+To compare expressions from different stages, we record a source specification as
+\[
+\begin{split}
+\mathcal O=(&\text{coefficients},h_0,\text{support and order},\text{parameter range},\\
+&\text{quantifiers},\text{normalization},\text{loss budget}).
+\end{split}
+\]
+This is bookkeeping against misapplication, not a new mathematical object. Similar notation does not imply equal specifications. An arbitrarily large CRT origin is not an origin in the prescribed physical interval; a prefix of a full prime shell is not an arbitrary prime selection; recomputing local row energy is not compressing the original normalized matrix.
+
+We distinguish four evidence types: finite identities verified by expansion; uniform propositions with complete hypotheses and proofs; conditional consequences retaining their unproved premises; and finite numerical diagnostics. Diagnostics do not carry infinite quantifiers, and a successful program check does not make a conditional implication unconditional. The results below should be read in this hierarchy, not by their order of appearance in the archive.

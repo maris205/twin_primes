@@ -1,0 +1,65 @@
+\section{Two conditional bridges and their remaining gaps}\label{sec:bridges}
+\subsection{The analytic bridge: established structure and unpaid estimates}
+Bridge A in the map runs from Island 2 to Island 6. The repository's Gate A and Gate B are both analytic obligations inside this bridge, not the two different red bridges in the map.
+Table~\ref{tab:ledger} places the quantities used here on a common scale.
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.19\linewidth}X>{\raggedright\arraybackslash}p{.19\linewidth}@{}}
+\toprule
+Component & Content on the common scale & Status\\\midrule
+Actual operator & $Q^2/\log Q\ll\norm A\ll Q^2$; every actual row has energy $\asymp HQ^2/\log Q$ & Proved, scoped\\
+Actual coefficients & A norm-product argument alone cannot pay for a fixed power saving & Proved method obstruction\\
+Boundary recombination & $xQ^2x^{-11/64+o(1)}$ & This component paid\\
+Critical-array input & Factor $q^{31/32+o(1)}$ for admissible two-sided short arrays & External theorem\\
+Two-sided attachment & Condition~\ref{cond:compression}, including every residual & Unproved\\
+Analytic Gate B: full scalar target & $|\Cx|\ll xQ^2x^{-\delta+o(1)}$, $\delta>1/400$ & Unproved\\
+Analytic Gate A & Original full-shell signed folding with positive margin $\eta_A$ & Separately unproved\\
+\bottomrule
+\end{tabularx}
+\caption{The exponent ledger. A logarithmic gap remains between the operator bounds. Structural identities, method obstructions, and target upper bounds are different kinds of evidence.}\label{tab:ledger}
+\end{table}
+\paragraph{Imported conditional interface and reference exponent.}
+To specify what the ledger estimates, write
+\[
+S_x^{\rm phys}=\sum_{t\in I_x}\beta(t)w(t),\qquad
+K_* =\sum_{q\in\QQ}q\frac{q-2}{q-1}=x^{2/3+o(1)}.
+\]
+The scalar $S_x^{\rm phys}$ is not $S_2(x)$ from Section~\ref{sec:arithmetic}.
+The source folding scalar $A_*$ and error scalar $E_*$ in V58 provide the imported interface~\cite{archivev58}
+\[
+S_x^{\rm phys}=\frac{A_*-\Cx+E_*}{K_*},\qquad
+|E_*|\ll x^{143/96+o(1)}.
+\]
+Here $A_*$ is a complex scalar, not the matrix $A$. Its source definition is the full-shell fold $\sum_q qP_q$, and $E_*=\sum_q qE_q$; the cited source interface supplies the rowwise construction of $P_q,E_q$ and the error proof.
+We import these identities and the error bound as premises, without reconstructing the upstream row data.
+The still-unproved analytic Gate A hypothesis is explicitly
+\[
+|A_*|\ll x^{1997/1200-\eta_A+o(1)},\qquad \eta_A>0.
+\]
+Under this hypothesis and the full scalar target $|\Cx|\ll x^{5/3-\delta+o(1)}$, division by $K_*$ gives the three output exponents
+\[
+\frac{399}{400}-\eta_A,\qquad 1-\delta,\qquad \frac{79}{96}.
+\]
+The conditional output is therefore $|S_x^{\rm phys}|\ll x^{399/400-\eta+o(1)}$, where
+\begin{equation}
+0<\eta<\min\{\eta_A,\delta-1/400,419/2400\}.\label{eq:terminal}
+\end{equation}
+The margins in \eqref{eq:terminal} are exactly those relative to $399/400$:
+$(399/400)-(1-\delta)=\delta-1/400$ and
+$(399/400)-(79/96)=419/2400$.
+This is an exponent calculation under the source contract~\cite{archivev58,archivev59,archivephysical}, not a new independent proof of the entire upstream implication chain to the twin-prime conjecture.
+In particular, a saving for this paper's scalar alone does not dispense with Gate A or the historical upstream structural attachments.
+If the critical-array route succeeds, $\delta=1/96-\ell$, requiring strictly $\ell<19/2400$.
+For a different interior estimate, boundary recombination limits the full saving certified here to $\min(\delta_{\rm int},11/64)$.
+
+\subsection{The dynamical bridge: from a metric theorem to a distinguished point}
+Bridge B runs from Island 5 to Island 6. Exact sieve-event encoding, mass estimates, and the metric hitting theorem in Theorem~\ref{thm:haar} are already available; the missing step is to establish the conclusion for the distinguished seed $0$.
+Proposition~\ref{prop:seed} expresses one sufficient gap in terms of within-cylinder oscillation and point-evaluation cost, but does not supply the required joint bound.
+Any representation from Island 7 must return to this pointwise requirement or to another equally exact arithmetic readout condition.
+
+\subsection{What the synthesis establishes}
+The seven islands distinguish research objects and transfer tasks; they do not turn a sequence of historical paper numbers into a closed proof chain.
+Basic arithmetic supplies local consistency. The fixed-atom results preserve coefficients, masks, and prefixes on their stated source support. The occurrence results specify conditional attachment, conservation, and weighted-cover interfaces; they do not construct the production lift or pay its coefficient-transport cost. The analytic layer supplies actual operator structure, growing-dimensional obstructions, and a boundary contribution that can be paid for. The dynamical layer supplies metric hitting for the actual moving targets and exact sieve geometry.
+These results have distinct mathematical content: they should neither be merged into a proof of the twin-prime conjecture nor dismissed indiscriminately as toy models.
+
+The two gaps should not be conflated. The analytic branch needs coefficient-sensitive signed estimates and valid upstream attachments; the dynamical branch needs a conclusion at the distinguished seed. The present synthesis isolates those obligations without supplying them. Section~\ref{sec:agenda} explains how they constrain prospective mathematical and AI-assisted work. This paper does not prove the twin-prime conjecture.

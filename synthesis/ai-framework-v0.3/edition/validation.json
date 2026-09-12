@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "purpose": "Preservation and presentation, not theorem certification",
+  "build_source_hashes_verified": true,
+  "protected_files": 156,
+  "unchanged_formal_blocks": 25,
+  "preserved_displayed_math_blocks": 92,
+  "references": 15,
+  "reference_start_page": 29,
+  "embedded_font_entries": 26,
+  "pages": 30,
+  "pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "warnings": []
+}

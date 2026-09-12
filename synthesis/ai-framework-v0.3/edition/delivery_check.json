@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "Delivery integrity and documented presentation coverage only",
+  "pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "pages_with_recorded_visual_inspection": 30,
+  "companion_local_links_checked": 97,
+  "raw_reviews_retained": true,
+  "portable_receipt_current": true
+}

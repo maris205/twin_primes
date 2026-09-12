@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "Standalone source build, not mathematical verification",
+  "archive_sha256": "a1c73088829d00c7995cfc98e4f172e21e76c56fd988e7409a0225a33392a118",
+  "final_pdf_sha256": "916693565d81741756af7fcd6151a9e583b1f96a03cd50d2628149be745e0f41",
+  "rebuilt_pdf_sha256": "858f85c9f851bc4397b09090790463844e35307fdd212c789828d241367ac18f",
+  "identical_extracted_text": true,
+  "warnings": [],
+  "scratch": "/tmp/tpc-ai-portable-source-8i_st1zt"
+}

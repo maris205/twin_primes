@@ -178,6 +178,8 @@ table.data tr:last-child td { border-bottom: 0; }
 const DATA = {
   updated: "2026-10-29",
   paper: { version: "v1.3", doi: "10.5281/zenodo.23736249", url: "https://zenodo.org/records/23736249" },
+  paper2: { version: "v1.0", doi: "10.5281/zenodo.23766118", url: "https://zenodo.org/records/23766118" },
+  repo: "https://github.com/maris205/twin_primes/tree/main/research/parity-wall-route",
   start: { title: "起点：条件通路已证明", sub: "GEH + PND_log ⟹ TPC；奇偶只有一个参数 δ（定理 B、C）" },
   goal:  { title: "终点：孪生素数猜想（TPC）", sub: "无穷多对素数 p, p+2" },
   verdicts: {
@@ -399,6 +401,12 @@ const chip = (v) => { const c = el("span", "chip v-" + v, DATA.verdicts[v].label
   const a = el("a", null, "论文 " + DATA.paper.version + " · DOI " + DATA.paper.doi);
   a.href = DATA.paper.url; a.target = "_blank"; a.rel = "noopener";
   m.append(a);
+  const a2 = el("a", null, "论文二 " + DATA.paper2.version + " · DOI " + DATA.paper2.doi);
+  a2.href = DATA.paper2.url; a2.target = "_blank"; a2.rel = "noopener";
+  m.append(a2);
+  const g = el("a", null, "GitHub 存档");
+  g.href = DATA.repo; g.target = "_blank"; g.rel = "noopener";
+  m.append(g);
   m.append(el("span", null, DATA.stages.length + " 个阶段 · " + DATA.ledger.length + " 个假设"));
 })();
 

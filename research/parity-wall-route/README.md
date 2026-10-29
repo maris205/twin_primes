@@ -16,7 +16,7 @@
 | `route/` | 各阶段报告 `STAGE*.md`、脚本 `stage*.py`、数值结果 `*.json` / `*.jsonl`、路线图 `roadmap.html` |
 | `route/mrt833/` | 第十二阶段子课题：MRT 8/33 指数与猜想 A |
 | `paper_parity_v1.3/` | 论文 *Parity and the twin prime conjecture* v1.3（第一到十九阶段的成果），DOI [10.5281/zenodo.23736249](https://doi.org/10.5281/zenodo.23736249)，概念 DOI [10.5281/zenodo.23687596](https://doi.org/10.5281/zenodo.23687596) |
-| `paper_wall/` | 第二篇论文：第二十到三十三阶段（墙的完整刻画） |
+| `paper_wall/` | 第二篇论文 *Where the twin-prime parity wall stands: the weakest target, multiplicative rigidity, and the limits of expansion on rough support* v1.0（第二十到三十三阶段），DOI [10.5281/zenodo.23766118](https://doi.org/10.5281/zenodo.23766118) |
 
 ## 主要结论（第 20–33 阶段）
 

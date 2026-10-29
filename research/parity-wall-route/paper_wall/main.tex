@@ -1,0 +1,547 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\EE}{\mathrm E}
+
+\title[Where the twin-prime parity wall stands]{Where the twin-prime parity wall stands:\\ the weakest target, multiplicative rigidity,\\ and the limits of expansion on rough support}
+\author{Liang Wang}
+\address{School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan 430070, P.R. China}
+\email{wangliang.f@gmail.com}
+\date{Version 1.0, 29 October 2026. DOI \href{https://doi.org/10.5281/zenodo.23766118}{10.5281/zenodo.23766118}}
+\raggedbottom
+
+\begin{document}
+\begin{abstract}
+On the generalised Elliott--Halberstam conjecture the twin prime conjecture is a statement about the signs $\lambda(n)\lambda(n+2)$ of the Liouville function on pairs whose entries have no prime factor below $x^\eta$. We locate the obstruction to such statements. The extreme parity configuration $\lambda(n)\lambda(n+2)=-1$ on all rough pairs is realised by a sieve-invisible measure, by periodic colourings and by the completely multiplicative characters $\chi_3,\chi_4$; we show these are one object. Four kinds of result follow.
+(i) \emph{The weakest target.} Exact multiplicative rigidity for rough pairs (a finite computation shows that the only extremal completely multiplicative functions on the core are $\chi_3,\chi_4$) implies, asymptotically, the existence of a \emph{single} rough pair of even parity class, $\EE(\eta)$. A family lemma shows that relations produced by polynomial families, which is what sieve existence arguments supply, always sum to zero.
+(ii) \emph{Position in the literature.} $\EE(\eta)$ is not known, but each natural relaxation is a theorem: a bounded set of gaps (Pintz), averaged gaps (Matom\"aki--Radziwi\l{}\l{}--Tao), or fixed roughness (a consequence of Tao's two-point theorem). Existence gives no leverage, because the counterfeit has zero even mass.
+(iii) \emph{The roughness axis.} Writing $\rho=\log\log z/\log\log x$, the pretentious distance from $\lambda$ to $\chi_4$ on $[z,x]$ is $(1-\rho)\log\log x$, bounded exactly at the twin endpoint $\rho=1$.
+(iv) \emph{Expansion on rough support.} The shift-$2$ dilation identity survives roughness exactly. In the Helfgott--Radziwi\l{}\l{} decomposition, the counterfeit makes the edge form and the mean form both equal to $-1$, so parity enters only through the averaged-shift mean term, while the spectral part pays for sparsity. We give a conditional theorem reaching $\log z\le c\sqrt{\log x}$, matching a known upper limit. For the sparsification step we prove an exact sampling trace identity, show that the trace method loses a logarithm and that this loss is real, give a pruned template in an independent model, and identify deterministic ``twin rectangles'' through which the real rough graph departs from the model.
+Nothing here proves or disproves the twin prime conjecture. The work was carried out with substantial AI assistance; every statement is labelled as a theorem, a conditional statement, a heuristic or a numerical observation.
+\end{abstract}
+\maketitle
+
+\tableofcontents
+
+%======================================================================
+\section{Introduction}
+%======================================================================
+
+\subsection{Background}
+Bombieri's asymptotic sieve \cite{Bom76,FI78} reduces the twin prime conjecture, on the Elliott--Halberstam conjectures, to one scalar parity parameter, and Tao \cite{Tao16notes} described the resulting problem as ``a sort of Chowla conjecture restricted to almost primes''. In \cite{Wan26b} we proved that the expansion mechanism behind the logarithmic two-point Chowla theorem \cite{Tao16,HR21,Pil23} cannot resolve this parity on $x^\eta$-rough integers (Theorem~A there), and that every known parity-breaking input belongs to one of seven classes, none of which applies to twins.
+
+The present paper continues that analysis. We ask what exactly the twin problem requires, what the weakest statement is that still meets the parity barrier, and how far the expansion mechanism can be pushed along the roughness axis before it stops.
+
+\subsection{Setting and notation}
+\begin{itemize}
+\item $\lambda(n)=(-1)^{\Omega(n)}$ is the Liouville function. A positive integer is \emph{$z$-rough} if all its prime factors are at least $z$; $R=R_z$ is the set of $z$-rough integers.
+\item A \emph{rough pair} is a pair $(n,n+2)$ with $n,n+2\in R$. Its \emph{parity class} is \emph{even} if $\lambda(n)\lambda(n+2)=+1$ and \emph{odd} otherwise.
+\item Twin primes $p,p+2>z$ are even rough pairs, since $\lambda(p)\lambda(p+2)=+1$.
+\item We mostly take $z=x^\eta$ with fixed $\eta\in(0,1)$. The roughness coordinate is $\rho=\log\log z/\log\log x$: fixed $z$ gives $\rho=0$, $z=\exp((\log x)^c)$ gives $\rho=c$, and $z=x^\eta$ gives $\rho\to1$.
+\item $\chi_3$ and $\chi_4$ denote the non-principal characters modulo $3$ and $4$, and $\chi_{12}=\chi_3\chi_4$.
+\end{itemize}
+
+\subsection{The extreme counterfeit}
+The configuration that would kill twin primes is
+\[
+\lambda(n)\lambda(n+2)=-1\qquad\text{for all rough pairs }(n,n+2).
+\]
+It appears in three guises.
+\begin{enumerate}
+\item \emph{A measure.} The weight $\nu\omega$ with $\omega(n)=1-\lambda(n)\lambda(n+2)$ satisfies the sieve axioms and gives zero mass to the even class \cite[\S8]{Polymath8b}.
+\item \emph{Periodic colourings.} $\chi_4(n)\chi_4(n+2)=-1$ for all odd $n$, and $\chi_3(n)\chi_3(n+2)=-1$ whenever $3\nmid n(n+2)$, so both colourings are extremal on every rough pair with $z>3$.
+\item \emph{Completely multiplicative functions.} $\chi_3,\chi_4$ are completely multiplicative. Section~\ref{sec:rigidity} shows that, on a large core of primes, they are the \emph{only} extremal completely multiplicative functions.
+\end{enumerate}
+Since these counterfeits are characters, ``multiplicative structure'' alone cannot separate them from $\lambda$. On $x^\eta$-rough support their pretentious distance to $\lambda$ is bounded (Proposition~\ref{prop:distance}).
+
+\subsection{Main results}
+\begin{enumerate}
+\item \textbf{The weakest target} (Section~\ref{sec:rigidity}). Theorem~\ref{thm:rigidE}: asymptotic exact rigidity implies $\EE(\eta)$, the existence of one even rough pair in $(X/2,X]$. Theorem~\ref{thm:family}: polynomial families produce only the zero relation.
+\item \textbf{Literature position} (Section~\ref{sec:existence}). Every relaxation of $\EE(\eta)$ is a theorem: Pintz \cite{Pin10}, Matom\"aki--Radziwi\l{}\l{}--Tao \cite{MRT19}, and Proposition~\ref{prop:fixedz}. $\EE(\eta)$ itself appears to be open.
+\item \textbf{Roughness axis} (Section~\ref{sec:rough}). The pretentious distance formula (Proposition~\ref{prop:distance}), a slowly-growing-roughness version of $\EE$ (Proposition~\ref{prop:slow}), and numerics showing that the true correlation on rough pairs is \emph{positive}.
+\item \textbf{Expansion on rough support} (Sections~\ref{sec:expansion}--\ref{sec:sampling}). Theorem~\ref{thm:dilation}, Proposition~\ref{prop:counterfeit}, conditional Theorem~\ref{thm:conditional}, Lemma~\ref{lem:sampling}, Theorem~\ref{thm:trace}, Proposition~\ref{prop:stars}, Theorem~\ref{thm:pruned} and Proposition~\ref{prop:rectangles}.
+\item \textbf{The wall} (Section~\ref{sec:wall}). A ladder of targets and six necessary conditions that any input able to reach $\EE(\eta)$ must satisfy simultaneously.
+\end{enumerate}
+
+\subsection{Status of the claims}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{ll}
+\toprule
+status & statements\\
+\midrule
+theorem (proved here) & Thm.~\ref{thm:rigidE}, \ref{thm:family}, \ref{thm:dilation}, \ref{thm:trace}; Prop.~\ref{prop:distance}, \ref{prop:counterfeit}, \ref{prop:stars}, \ref{prop:rectangles}; Lemma~\ref{lem:sampling}\\
+theorem (given a cited theorem) & Prop.~\ref{prop:fixedz}, \ref{prop:slow} (Tao \cite{Tao16}); Thm.~\ref{thm:pruned} (Le--Levina--Vershynin \cite{LLV17})\\
+conditional & Thm.~\ref{thm:conditional} (Hypotheses (S), (M))\\
+heuristic (Polymath \S8 sense) & ``sieve methods cannot prove $\EE(\eta)$'' (Remark~\ref{rem:sieveE}, Prop.~\ref{prop:noleverage})\\
+analysis (orders of magnitude) & reach exponents $1/2$, $1/3$ in Remark~\ref{rem:balance}\\
+finite computation & core rank deficiency $1$ (Table~\ref{tab:rank})\\
+numerical & Tables~\ref{tab:pivots}, \ref{tab:corr}, \ref{tab:hr}, \ref{tab:spec}, \ref{tab:cycles}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%======================================================================
+\section{Exact rigidity and the weakest target}\label{sec:rigidity}
+%======================================================================
+
+\subsection{The parity system}
+Let $f$ be completely multiplicative with $f(p)\in\{\pm1\}$ and write $f(p)=(-1)^{x_p}$. For a rough pair $(n,n+2)$ the condition $f(n)f(n+2)=-1$ is the linear equation
+\[
+\sum_{p^a\,\|\,n(n+2),\ a\ \mathrm{odd}}x_p\equiv1\pmod2
+\]
+over $\mathbb F_2$. The system is consistent, since $\chi_3$ and $\chi_4$ solve it. The homogeneous system is solved by $0$ and by $\chi_{12}$.
+
+\subsection{A finite computation}
+We solve the system by peeling (repeatedly removing a variable that occurs in a single remaining equation, together with that equation) and then by Gaussian elimination on the remaining $2$-core.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$X$ & $\eta$ & rough pairs & primes & core equations & core variables & core nullity\\
+\midrule
+$2\cdot10^5$ & $0.2$ & 11{,}688 & 10{,}840 & 3{,}961 & 1{,}092 & $1$\\
+$10^6$ & $0.2$ & 49{,}447 & 43{,}131 & 17{,}973 & 3{,}859 & $1$\\
+$10^6$ & $0.25$ & 31{,}047 & 33{,}453 & 7{,}508 & 1{,}933 & $1$\\
+$10^6$, $n\in(X/2,X]$ & $0.2$ & 24{,}723 & 24{,}424 & -- & 2{,}729 & $1$\\
+$10^6$, $n\in(X/2,X]$ & $0.25$ & 15{,}526 & 17{,}697 & -- & 1{,}560 & $1$\\
+\bottomrule
+\end{tabular}
+\caption{The core of the parity system has nullity exactly $1$. These are exact finite computations over $\mathbb F_2$.}\label{tab:rank}
+\end{table}
+
+So, at these parameters, the extremal completely multiplicative functions coincide on the core with $\chi_3$ or $\chi_4$. This is a twin analogue of the rigidity mechanism in Meng's recent theorem on Liouville sign patterns in binary additive problems \cite{Men26}. The core spans primes with $\log p/\log X$ between about $0.2$ and $0.79$.
+
+\subsection{Rigidity implies the weakest target}
+\begin{definition}
+$\EE(\eta)$ is the statement: for all sufficiently large $X$ there is $n\in(X/2,X]$ with $n,n+2$ both $X^\eta$-rough and $\lambda(n)\lambda(n+2)=+1$.
+\end{definition}
+
+\begin{theorem}\label{thm:rigidE}
+Let $X,\eta$ be such that every solution of the parity system for $n\in(X/2,X]$ agrees on the core with $\chi_3$ or $\chi_4$. Suppose the core contains a prime $\equiv1\pmod3$ and a prime $\equiv1\pmod4$. Then there is $n\in(X/2,X]$ with $n,n+2$ both $X^\eta$-rough and $\lambda(n)\lambda(n+2)=+1$. Consequently, if this rigidity holds for all large $X$, then $\EE(\eta)$ holds.
+\end{theorem}
+\begin{proof}
+The function $\lambda$ is $-1$ on every prime. On the core it differs from $\chi_3$ at a prime $\equiv1\pmod3$ and from $\chi_4$ at a prime $\equiv1\pmod 4$. So $\lambda$ is not a solution and violates some equation. Since $\lambda(n)$ is the product of $\lambda(p)$ over the primes $p$ that divide $n$ to an odd power, the violated equation is a rough pair with $\lambda(n)\lambda(n+2)=+1$.
+\end{proof}
+
+\begin{remark}[Sieve methods and $\EE(\eta)$]\label{rem:sieveE}
+The weight $\nu\omega$ satisfies the sieve axioms and gives zero mass to even pairs. In the heuristic sense of \cite[\S8]{Polymath8b}, no argument using only sieve information proves $\EE(\eta)$, and hence none proves asymptotic exact rigidity.
+\end{remark}
+
+\begin{remark}[A correction]
+In a finite experiment with fixed $z$ and $n$ ranging from $3$, small twin primes such as $(17,19)$ are rough pairs and exclude $\lambda$ trivially. In the asymptotic setting $z=X^\eta$, $n\sim X$, excluding $\lambda$ is exactly $\EE(\eta)$. Exact rigidity is therefore not ``useless for twins''. Its asymptotic form is as hard as breaking parity at the level of existence.
+\end{remark}
+
+\subsection{Seeds of a rank argument}
+A rank lower bound by triangular pivots (each prime $q$ being the extreme prime of some equation) would prove rigidity without exhibiting explicit relations. Table~\ref{tab:pivots} shows where such an argument must start.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rrrr}
+\toprule
+$\theta=\log q/\log X$ & primes & largest prime of an equation & smallest prime of an equation\\
+\midrule
+$[0.20,0.25)$ & 5 & 0 & 5\\
+$[0.25,0.30)$ & 7 & 0 & 7\\
+$[0.30,0.35)$ & 12 & 1 & 12\\
+$[0.35,0.40)$ & 24 & 23 & 24\\
+$[0.5,0.6)$ & 381 & 379 & 100\\
+$[0.6,0.7)$ & 1{,}298 & 1{,}204 & 0\\
+$[0.7,0.8)$ & 3{,}557 & 2{,}698 & 0\\
+\bottomrule
+\end{tabular}
+\caption{Pivot statistics, $X=10^6$, $n\in(X/2,X]$, $\eta=0.2$ (numerical).}\label{tab:pivots}
+\end{table}
+
+\begin{itemize}
+\item \emph{Bottom-up seeds.} For $q$ near $z$ to be a largest prime, $n(n+2)$ must have all prime factors in $[z,q]$. Then $\Omega(n)$ is nearly determined by the size of $n$, so such pairs are almost all even. For $\eta=0.25$, all $6$ pairs with prime factors in $[z,z^{1.5}]$ are even.
+\item \emph{Top-down seeds.} These are almost-prime twins of Chen type.
+\end{itemize}
+Both seeds are parity-sensitive existence problems, consistently with Theorem~\ref{thm:rigidE}.
+
+\subsection{The family lemma}
+\begin{theorem}\label{thm:family}
+Let $N_1,\dots,N_r\in\Z[v_1,\dots,v_k]$ be non-constant and put $\Pi=\prod_iN_i(N_i+2)$.
+\begin{enumerate}
+\item[(i)] If $\Pi=\kappa F^2$ in $\mathbb Q[v]$, then $\kappa\in\mathbb Q^{\times2}$.
+\item[(ii)] For every non-empty finite set $S$ of primes, the $v\in[1,V]^k\cap\Z^k$ for which the squarefree part of $\Pi(v)$ equals $\prod_{p\in S}p$ number $O(V^{k-1/2}\log V)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) Comparing top-degree homogeneous parts gives $\prod_i(\mathrm{top}\,N_i)^2=\kappa(\mathrm{top}\,F)^2$. So the rational function $\prod_i\mathrm{top}\,N_i/\mathrm{top}\,F$ has constant square $\kappa$. In a unique factorisation domain such a function is a constant, and it is rational, so $\kappa$ is a square.
+
+(ii) By (i), $\Pi/\prod_{p\in S}p$ is not a square in $\mathbb Q(v)$, so $W^2-\Pi/\prod_{p\in S}p$ is irreducible over $\mathbb Q(v)$. By the quantitative Hilbert irreducibility theorem \cite{Coh81}, the integral specialisations at which it acquires a rational root number $O(V^{k-1/2}\log V)$.
+\end{proof}
+
+\begin{remark}
+The sum of the equation vectors of the pairs $(N_i(v),N_i(v)+2)$ is the set of primes dividing $\Pi(v)$ to an odd power. Sieve existence arguments (the fundamental lemma, Bombieri--Vinogradov, Chen's switching) produce a positive-density set of parameters of a polynomial family, and such lower bounds survive the removal of thin sets. So no sieve existence argument produces a non-zero element of the row space. The relations behind the finite rank computation are sporadic coincidences.
+\end{remark}
+
+%======================================================================
+\section{The weakest target in the literature}\label{sec:existence}
+%======================================================================
+
+\subsection{Each relaxation is known}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{4.2cm}p{8.6cm}}
+\toprule
+relaxation of $\EE(\eta)$ & known result\\
+\midrule
+gap in a bounded set & Pintz \cite[Thm.~2]{Pin10}: there are $|d|\le30$, $c>0$ and odd $b$ with $P^-(p+d)>p^c$ and $\Omega(p+d)=b$ for infinitely many primes $p$. Maynard--Tao and Polymath \cite{Polymath8b} give prime pairs with gap $\le246$\\
+averaged gaps & Matom\"aki--Radziwi\l{}\l{}--Tao \cite{MRT19}: Hardy--Littlewood for almost all $h\le X^{8/33+\varepsilon}$\\
+fixed roughness & Proposition~\ref{prop:fixedz}\\
+gap $2$ and $z=x^\eta$ & not known; Pintz notes that even on Elliott--Halberstam no single prescribed gap is reached \cite[p.~3]{Pin10}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Related results: Chen's theorem \cite{Che73} gives rough pairs, but in a parity-neutral combination of $P_1$ and $P_2$. The $E_2$ results of Goldston--Graham--Pintz--Y{\i}ld{\i}r{\i}m \cite{GGPY06} give even pairs at a bounded, unspecified gap.
+
+\begin{proposition}\label{prop:fixedz}
+For every fixed $z$, the integers $n$ with $n,n+2$ both $z$-rough and $\lambda(n)\lambda(n+2)=+1$ have positive logarithmic density, equal to half that of the $z$-rough pairs.
+\end{proposition}
+\begin{proof}[Proof (given \cite{Tao16})]
+Put $q=\prod_{p<z}p$. The condition that $n,n+2$ are $z$-rough depends only on $n\bmod q$. Expanding the indicator of each admissible residue class in Dirichlet characters modulo $q$ reduces the claim to $\sum_{n\le x}\lambda\chi_1(n)\lambda\chi_2(n+2)/n=o(\log x)$ for characters $\chi_1,\chi_2$ modulo $q$. This holds by Tao's two-point theorem \cite{Tao16}, since $\lambda\chi_1$ does not pretend to be $\psi(n)n^{it}$ for any Dirichlet character $\psi$.
+\end{proof}
+
+\begin{proposition}[Existence gives no leverage]\label{prop:noleverage}
+The counterfeit $\nu\omega$ gives \emph{zero} mass to even pairs. Hence any argument valid for every weight satisfying the sieve axioms proves neither a positive proportion of even pairs nor a single even pair. (Heuristic, in the sense of \cite[\S8]{Polymath8b}.)
+\end{proposition}
+
+\subsection{Class by class}
+Table~\ref{tab:classes} goes through the classes of parity sources from \cite{Wan26b} and asks whether ``one pair'' is easier than ``a positive proportion''.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{3.4cm}p{9.4cm}}
+\toprule
+class & can it give one even pair?\\
+\midrule
+small-prime multiplicativity & no: the arguments are statistical, and rough numbers have no small primes; yes for fixed $z$ (Prop.~\ref{prop:fixedz})\\
+rigidity (Meng type) & circular: it is exact rigidity, whose seeds require $\EE(\eta)$\\
+algebraic structure & no: polynomial families control factor shapes, not $\Omega$ of factor values (Thm.~\ref{thm:family})\\
+extra variable & no: $n,n+2,n+4$ are never simultaneously rough when $z>3$\\
+averaging over shifts & no: the exceptional set of shifts may contain $2$\\
+disjunction & closest: it yields existence, but cannot pin the gap $2$ (gap-$2$ edges form a matching)\\
+analytic second factor & no: $n+2$ is arithmetic\\
+exceptional characters & conditional: a Siegel zero gives twin primes \cite{HB83}\\
+\bottomrule
+\end{tabular}
+\caption{Classes of parity sources and the existence target.}\label{tab:classes}
+\end{table}
+
+%======================================================================
+\section{The roughness axis}\label{sec:rough}
+%======================================================================
+
+\begin{proposition}\label{prop:distance}
+For $\chi\in\{\chi_3,\chi_4\}$ and $z\to\infty$ with $z\le x$,
+\[
+\D(\lambda,\chi;[z,x])^2:=\sum_{z\le p\le x}\frac{1-\lambda(p)\chi(p)}{p}=\log\frac{\log x}{\log z}+o(1)=(1-\rho)\log\log x+o(1).
+\]
+\end{proposition}
+\begin{proof}
+The sum equals $\sum_{z\le p\le x}(1+\chi(p))/p$. Mertens' theorem gives
+\[\textstyle\sum_{z\le p\le x}1/p=\log(\log x/\log z)+o(1),\]
+and the prime number theorem in arithmetic progressions gives $\sum_{z\le p\le x}\chi(p)/p=o(1)$ as $z\to\infty$.
+\end{proof}
+
+\begin{remark}
+So the distance diverges for every $\rho<1$ and is bounded, equal to $\log(1/\eta)$, at $z=x^\eta$. Structure theorems of Elliott or Tao type conclude that $\D\le C(\varepsilon)$. On $x^\eta$-rough support that conclusion is vacuous, because $\D^2\le2\log(1/\eta)$ holds automatically for every character.
+\end{remark}
+
+\begin{proposition}\label{prop:slow}
+There is $z(x)\to\infty$ such that, for all large $x$, the even $z(x)$-rough pairs below $x$ carry a proportion $\tfrac12+o(1)$ of the logarithmic mass of all $z(x)$-rough pairs.
+\end{proposition}
+\begin{proof}
+This follows from Proposition~\ref{prop:fixedz} by a diagonal argument.
+\end{proof}
+
+\begin{remark}
+The theorems of Helfgott--Radziwi\l{}\l{} \cite{HR21} and Pilatte \cite{Pil23} are stated for shift $1$, for $\lambda$ itself, and without uniformity in the coefficients of linear forms. Used as black boxes they give no explicit rate in Proposition~\ref{prop:slow}.
+\end{remark}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$z$ & $\rho$ & pairs & $\overline{\lambda\lambda}$ & $m(z)$ & $m(z)^2$ & $z$-score\\
+\midrule
+5 & 0.17 & 3{,}333{,}333 & $-0.0003$ & $-0.001$ & $0.0000$ & $-0.6$\\
+12 & 0.32 & 1{,}168{,}831 & $0.0002$ & $-0.005$ & $0.0000$ & $0.2$\\
+30 & 0.43 & 663{,}726 & $0.0014$ & $-0.019$ & $0.0004$ & $1.1$\\
+60 & 0.50 & 474{,}032 & $0.0046$ & $-0.051$ & $0.0026$ & $3.1$\\
+100 & 0.54 & 382{,}792 & $0.0139$ & $-0.099$ & $0.0097$ & $8.6$\\
+\bottomrule
+\end{tabular}
+\caption{Correlation of $\lambda$ on rough pairs up to $x=2\cdot10^7$, with $m(z)$ the one-point mean of $\lambda$ on $z$-rough integers (numerical).}\label{tab:corr}
+\end{table}
+
+\begin{remark}
+When $u=\log x/\log z$ is bounded, the one-point mean $m(u)$ of $\lambda$ on rough integers is non-zero; for example, $m=-1$ when $u<2$, since all rough numbers are then prime. The independence prediction for the pair correlation is therefore $m(u)^2\ge0$, not $0$. The data agree with it, so the true $\lambda$ lies on the even-rich side, opposite to the counterfeit.
+\end{remark}
+
+%======================================================================
+\section{Expansion on rough support}\label{sec:expansion}
+%======================================================================
+
+\subsection{The dilation identity}
+Put $f=\lambda\one_R$.
+
+\begin{theorem}\label{thm:dilation}
+For every $z$-rough integer $d$,
+\[
+\sum_{m\le x}\frac{f(m)f(m+2)}m=d\sum_{\substack{n\le dx\\ d\mid n}}\frac{f(n)f(n+2d)}n .
+\]
+\end{theorem}
+\begin{proof}
+Put $n=dm$. Since $d$ is rough, $dm\in R$ if and only if $m\in R$, and $d(m+2)\in R$ if and only if $m+2\in R$. Moreover $\lambda(dm)\lambda(d(m+2))=\lambda(m)\lambda(m+2)$, and $1/m=d/n$.
+\end{proof}
+
+Averaging over a set $\cD$ of rough dilators turns the left-hand side into the quadratic form $\langle f,Af\rangle$ of the divisibility operator
+\[
+(Af)(n)=\sum_{d\in\cD,\,d\mid n}\bigl(f(n+2d)+f(n-2d)\bigr),
+\]
+up to boundary terms $O(\log\max\cD)$ relative to the density. Following \cite{HR21}, put $(Mf)(n)=\sum_{d\in\cD}(f(n+2d)+f(n-2d))/d$ and split $\langle f,Af\rangle=\langle f,(A-M)f\rangle+\langle f,Mf\rangle$.
+
+\subsection{The counterfeit decomposition}
+\begin{proposition}\label{prop:counterfeit}
+Let $g=\chi_4\one_R$ and let $\cD$ consist of odd integers. Then
+\[
+\langle g,Ag\rangle=-\langle|g|,A|g|\rangle,\qquad\langle g,Mg\rangle=-\langle|g|,M|g|\rangle .
+\]
+\end{proposition}
+\begin{proof}
+For odd $d$ and odd $n$ we have $n+2d\equiv n+2\pmod 4$, so $\chi_4(n)\chi_4(n+2d)=-1$ on every pair at gap $2d$, in particular on every edge.
+\end{proof}
+
+So for the counterfeit the edge form and the mean form both take the extreme value $-1$ (after normalisation), and the spectral part is only the difference of two counts. Consequently, a spectral bound alone never excludes the counterfeit. Parity information enters only through the mean term, which is an average of gap-$2d$ correlations: an averaged-shift input. Expansion is a bridge from averaged shifts to the fixed shift $2$.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+$f$ & gap-$2$ correlation & edge form & mean form & spectral part\\
+\midrule
+$\lambda\one_R$ & $+0.0085$ & $-0.0064$ & $+0.00002$ & $-0.0064$\\
+$\chi_4\one_R$ & $-1$ & $-1$ & $-1$ & $+0.0001$\\
+\bottomrule
+\end{tabular}
+\caption{The decomposition with $N=10^6$, $n\in(N,2N]$, $z=11$, and $\cD$ the $75$ primes in $[11,401]$ (numerical).}\label{tab:hr}
+\end{table}
+
+\subsection{The price of sparsity}
+\begin{remark}[Orders of magnitude]\label{rem:balance}
+\begin{itemize}
+\item On rough support, a vertex has weighted degree about $V(\cD)/\log z$, where $V(\cD)=\sum_{d\in\cD}1/d\lesssim\log D/\log z$ and $D=\max\cD$ (Mertens for rough numbers).
+\item A certificate's resolution is its spectral norm divided by this degree. Theorem~A of \cite{Wan26b} (one edge already) forces $\log D\gtrsim(\log z)^2$, hence $\rho<1/2$, since $D\le x$.
+\item A spectral bound at the sparse scale $\sqrt{V/\log z}$ would meet this limit.
+\item A bound at the full-graph scale $\sqrt V$, which is the form in which \cite{HR21,Pil23} are stated, needs $\log D\gtrsim(\log z)^3$, hence $\rho<1/3$.
+\item Prime dilators alone ($V=L\le\log\log x$) reach only $z\le\exp(c\sqrt{\log\log x})$.
+\end{itemize}
+These are analyses of orders of magnitude, not theorems.
+\end{remark}
+
+\subsection{A conditional theorem}
+\begin{hypothesis}[S]
+There is $\mathcal X\subset R\cap(N,2N]$ with $|R\cap(N,2N]\setminus\mathcal X|\le\varepsilon|R\cap(N,2N]|/\log z$ such that $\|\one_{\mathcal X}(A-M)\one_{\mathcal X}\|\le\beta$.
+\end{hypothesis}
+
+\begin{hypothesis}[M]
+For characters $\psi$ of small modulus, the averages of $\lambda\one_R\psi$ over $n+2\cD$ are, for almost all $n$, $o(1)$ relative to the rough density, apart from the one-point main term.
+\end{hypothesis}
+
+\begin{theorem}\label{thm:conditional}
+Assume (S) and (M) at dilator scale $D$ with $\log D=o(\log x)$ and resolution $\beta\log z/V(\cD)<1-\varepsilon$. Then the logarithmic correlation of $\lambda$ on $z$-rough pairs exceeds $-1+\varepsilon/2$. In particular even $z$-rough pairs below $x$ exist for all large $x$.
+\end{theorem}
+\begin{proof}
+By Theorem~\ref{thm:dilation} the correlation equals the edge form up to a negligible boundary term. By (M) the mean term is $\ge-o(1)$ times the capacity. By (S) the spectral part is at most the resolution times the capacity, and the exceptional set contributes at most $\varepsilon$ times the capacity.
+\end{proof}
+
+\begin{remark}[Status of the hypotheses]
+\begin{itemize}
+\item \emph{(M).} Matom\"aki--Radziwi\l{}\l{} \cite[Thm.~1.9]{MR16} has the needed relative error for sparse prime support, but it assumes a sieve lower bound for $\sum|f(p)|/p$ on \emph{every} range, which fails for $\lambda\one_R$ below $z$. Mangerel's extension \cite{Man21} does not cover $z\to\infty$ either.
+\item \emph{(S).} The spectral bounds of \cite{HR21,Pil23} hold for arbitrary functions, but after removing an exceptional set whose density is measured against all integers.
+\end{itemize}
+In the sparse form of (S), Theorem~\ref{thm:conditional} reaches $\log z\le c\sqrt{\log x}$, matching Theorem~A of \cite{Wan26b} up to the constant.
+\end{remark}
+
+\subsection{Numerics for (S)}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$z$ & $D$ & $V$ & $d_R$ (rough / full) & $\|B\|$ (rough / full) & resolution (rough / full) & $\alpha$\\
+\midrule
+5 & $10^4$ & 2.68 & 1.49 / 3.26 & 4.15 / 5.72 & 2.78 / 1.76 & 0.59\\
+11 & $10^4$ & 1.69 & 0.82 / 2.42 & 3.37 / 5.00 & 4.12 / 2.06 & 0.64\\
+11 & $5\cdot10^4$ & 2.06 & 0.99 / 3.42 & 4.05 / 6.77 & 4.08 / 1.98 & 0.58\\
+31 & $5\cdot10^4$ & 1.28 & 0.38 / 2.08 & 2.12 / 3.96 & 5.62 / 1.90 & 0.64\\
+\bottomrule
+\end{tabular}
+\caption{Spectral norm of $B=\one_{\mathcal X}(A-M)\one_{\mathcal X}$ for rough dilators, with vertices whose full degree exceeds three times its mean removed. Here $N=10^6$, and $\alpha$ is defined by $\mathrm{res}_{\rm rough}/\mathrm{res}_{\rm full}=(d_R^{\rm full}/d_R^{\rm rough})^\alpha$ (numerical).}\label{tab:spec}
+\end{table}
+
+Across all $18$ parameter sets, $\|B\|\approx3.45\,d_R^{0.43}$ on rough graphs and $\|B\|\approx3.10\,d_R^{0.49}$ on full graphs: nearly one universal curve. The median of $\alpha$ is $0.60$; the sparse scale corresponds to $\alpha=1/2$ and the full-graph scale to $\alpha=1$. The removed vertices form a similar proportion of rough and of all integers. All this is far from the asymptotic regime ($d_R\le4$, whereas resolution below $1$ needs $d_R\gtrsim10$).
+
+%======================================================================
+\section{Sparsification: trace identity, pruning and twin rectangles}\label{sec:sampling}
+%======================================================================
+
+Let $W$ be a real symmetric matrix with zero diagonal on $n$ vertices, let $\xi_v$ be independent Bernoulli($\pi$) variables, and put $\Xi=\mathrm{diag}(\xi)$. For a closed walk $\gamma$ let $s(\gamma)$ be the number of distinct vertices it visits and $w(\gamma)$ the product of the entries of $W$ along it. Define the stratified traces $T_s(m)=\sum_{s(\gamma)=s}w(\gamma)$, the sum running over closed walks of length $m$.
+
+\begin{lemma}\label{lem:sampling}
+$\E\tr(\Xi W\Xi)^m=\sum_s\pi^sT_s(m)$.
+\end{lemma}
+\begin{proof}
+Each vertex of a walk contributes $\xi_v^2=\xi_v$, and $\E\prod_{v\in\gamma}\xi_v=\pi^{s(\gamma)}$.
+\end{proof}
+
+So vertex sampling produces no cancellation of its own. The input needed from the full graph is the family of stratified traces, not its norm.
+
+\begin{theorem}\label{thm:trace}
+Let $|W_{ij}|\le1$, let each row have at most $\Delta$ non-zero entries, and put $d=\pi\Delta$. Suppose that
+\[
+\textstyle\sum_{s\ge k+2}\pi^{s-k-1}|T_s(2k)|\le n(K^2\Delta)^k .
+\]
+Then with probability at least $1-\delta$,
+\[
+\|\Xi W\Xi\|\le\sqrt e\,\bigl(K\sqrt d+2\sqrt{(k+1)\max(d,k+1)}\bigr),\qquad k=\lceil\log(n\pi/\delta)\rceil,
+\]
+which is $O(\sqrt{d\log(n\pi)}+\log(n\pi))$.
+\end{theorem}
+\begin{proof}
+A closed walk of length $2k$ with $s$ distinct vertices is determined by its starting vertex, the positions of the $s-1$ steps to new vertices, the choice of each new vertex, and the choice among at most $s$ visited vertices at every other step. Hence $|T_s(2k)|\le n\binom{2k}{s-1}\Delta^{s-1}s^{2k-s+1}$. Lemma~\ref{lem:sampling} and the hypothesis give
+\[
+\E\tr(\Xi W\Xi)^{2k}\le n\pi\Bigl[\sum_{j\le k}\binom{2k}j d^j(j+1)^{2k-j}+(K^2d)^k\Bigr]\le n\pi\bigl[4^k(k+1)^k\max(d,k+1)^k+(K^2d)^k\bigr].
+\]
+Markov's inequality applied to $\tr(\Xi W\Xi)^{2k}\ge\|\Xi W\Xi\|^{2k}$, together with $(a+b)^{2k}\ge a^{2k}+b^{2k}$ and $(n\pi/\delta)^{1/2k}\le\sqrt e$, gives the claim.
+\end{proof}
+
+\begin{proposition}\label{prop:stars}
+The logarithmic loss is real. Let $W$ be the adjacency matrix of disjoint stars $K_{1,\Delta}$ (a forest, so the hypothesis of Theorem~\ref{thm:trace} holds for every $K$), and let $d=\pi\Delta$ be fixed. Then $\|\Xi W\Xi\|\ge c\sqrt{\log n/\log\log n}$ with high probability.
+\end{proposition}
+\begin{proof}
+Each retained centre has $\mathrm{Bin}(\Delta,\pi)$ retained leaves, independently over the roughly $\pi n/(\Delta+1)$ retained centres. For $t=c\log n/\log\log n$ we have $\mathbb P(\mathrm{Bin}\ge t)\ge(d/(et))^te^{-d}$, which exceeds $n^{-1/2}$ for small $c$. So some retained star has at least $t$ leaves, and $\|K_{1,t}\|=\sqrt t$.
+\end{proof}
+
+So pruning of high-degree vertices is necessary, and the trace method does not prune. In our application $d_R<\log D$, so a bound of the form $O(\sqrt{d_R\log D}+\log D)$, which is what localisation to blocks of size $D^{O(1)}$ would give, never yields resolution below $1$.
+
+\begin{theorem}[Pruned template]\label{thm:pruned}
+Let $G$ have independent edges with $\mathbb P(ij\in G)\le\Delta/n$, and let $X$ be an independent $\pi$-sample of the vertices. Put $d'=|X|\Delta/n$, so that $d'=(1+o(1))\pi\Delta$. Delete the edges at vertices of $G[X]$ of degree $>2d'$, and let $A'$ be the resulting adjacency matrix. Then
+\begin{itemize}
+\item $\|A'-\E A_X\|\le C\sqrt{d'}$ with probability at least $0.88-O(1/|X|)$;
+\item the expected number of affected vertices is at most $|X|e^{-d'/3}$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Given $X$, the graph $G[X]$ is an inhomogeneous Erd\H{o}s--R\'enyi graph on $X$ with edge probabilities $\le d'/|X|$. Chernoff's bound gives at most $|X|e^{-d'/3}$ high-degree vertices in expectation. By Markov's inequality there are at most $10|X|/d'$ of them with probability at least $1-d'e^{-d'/3}/10\ge0.88$. Theorem~2.1 of Le--Levina--Vershynin \cite{LLV17} with $r=1$ gives $\|A'-\E A_X\|\le C(\sqrt{d'}+\sqrt{2d'})$ with probability $1-|X|^{-1}$.
+\end{proof}
+
+This is the template for (S): the sparse scale holds, and the exceptional set is small \emph{relative to the sample}. The expectation $\E A$ plays the role of Helfgott--Radziwi\l{}\l{}'s comparison operator $M$. The tool is regularisation as in \cite{LLV17,FO05}, not the trace method.
+
+\begin{proposition}[Twin rectangles]\label{prop:rectangles}
+If $a,a+2,b,b+2$ are $z$-rough dilators, then
+\[
+ab\to a(b+2)\to(a+2)(b+2)\to(a+2)b\to ab
+\]
+is a $4$-cycle of the divisibility graph with steps $2a$, $2(b+2)$, $-2(a+2)$, $-2b$, and all four of its vertices are $z$-rough. For every completely multiplicative $f$ the product of $f(u)f(v)$ over its edges equals $1$.
+\end{proposition}
+\begin{proof}
+Each step $\pm2e$ starts at a multiple of $e$, and products of rough numbers are rough. The product of $f(u)f(v)$ over the four edges is $\bigl(f(a)f(a+2)f(b)f(b+2)\bigr)^2=1$.
+\end{proof}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rrrrrr}
+\toprule
+$z$ & $\pi$ & rough / pred.\ ($\pi$) & rough / pred.\ (edges) & random / pred.\ ($\pi$) & rough $c_4/d_R^2$\\
+\midrule
+5 & 0.333 & 8.8 & 2.6 & 0.93 & 0.26\\
+11 & 0.229 & 44 & 19 & 0.88 & 0.24\\
+31 & 0.158 & 879 & 288 & -- & 0.45\\
+\bottomrule
+\end{tabular}
+\caption{Four-cycles per vertex, $N=2\cdot10^5$, $\cD$ the $z$-rough integers in $[z,5000]$ (numerical).}\label{tab:cycles}
+\end{table}
+
+At $z=31$, $54\%$ of the $4$-cycles of the full graph have all four vertices rough, against $0.06\%$ predicted by independent sampling, and every sampled $4$-cycle was a twin rectangle (for example $107\cdot1871$, $107\cdot1873$, $109\cdot1873$, $109\cdot1871$). So the rough graph is not an independent sample: twin rectangles, and their higher-dimensional analogues, survive deterministically. Relative to the rough degree, however, cycle densities stay bounded ($c_4/d_R^2\le0.45$), consistently with Table~\ref{tab:spec}. By Proposition~\ref{prop:rectangles} these cycles are parity-neutral. What remains for (S) is an upper-bound count of closed walks through such product boxes, which does not involve parity.
+
+%======================================================================
+\section{The wall}\label{sec:wall}
+%======================================================================
+
+\subsection{A ladder of targets}
+From weakest to strongest:
+\begin{gather*}
+\EE(\eta)\ \Leftarrow\ \text{asymptotic exact rigidity},\\
+\EE(\eta)\ \Leftarrow\ \text{twin non-extremality }(\delta<1)\ \Leftarrow\ \text{robust rigidity}\ \Leftarrow\ \text{weak Type II}.
+\end{gather*}
+Twin non-extremality is all that the twin prime conjecture needs on GEH \cite{Wan26b}.
+
+\subsection{Six necessary conditions}
+Any new input that proves $\EE(\eta)$ must simultaneously:
+\begin{enumerate}
+\item not be a sieve axiom (the counterfeit satisfies them);
+\item not be existence along a polynomial family (Theorem~\ref{thm:family});
+\item not consist of absolute values or of dilation-invariant data (otherwise it would have to prove weak Type II \cite{Wan26b});
+\item not rely on small primes or on dilation (rough support has no small primes, and on the twin endpoint the dilation mechanism stops at $\rho<1/2$);
+\item pin the single gap $2$, rather than a disjunction or an average;
+\item separate $\lambda$ from the multiplicative counterfeits $\chi_3,\chi_4$ while their pretentious distance is bounded (Proposition~\ref{prop:distance}).
+\end{enumerate}
+Each known class of parity sources violates at least one of these conditions; the exceptional-character class gives only conditional results.
+
+\subsection{Conclusion}
+The wall is not an accumulation of technical difficulties but one counterfeit seen along several coordinates. Every tool we know works once at least one of three conditions is dropped (fixed gap, $x^\eta$-roughness, parity of $\Omega$). The twin problem asks for all three at once. The weakest target that remains is a single even rough twin pair.
+
+\appendix
+%======================================================================
+\section{AI-assisted workflow and verification}\label{app:ai}
+%======================================================================
+
+This paper was produced with substantial assistance from an AI system (Claude, Anthropic) working in a code-executing environment under the direction of the author. The author chose the questions and the direction, and is responsible for every statement. The AI system drafted proofs, wrote and ran the experiments, searched the literature, and wrote the stage reports from which this paper was assembled.
+
+\subsection{Sources}
+The material comes from stages 20--33 of a stage-by-stage exploration. The stage reports, scripts and numerical results are in the repository \url{https://github.com/maris205/twin_primes}, directory \texttt{research/parity-wall-route/}. A web road map is at \url{https://claude.ai/artifact/R4YKS4ABCmSkbRC1ZMFQSJ}.
+
+\subsection{Scripts}
+\begin{itemize}
+\item \texttt{stage26\_rigidity.py}: $\mathbb F_2$ system, peeling and elimination (Table~\ref{tab:rank}).
+\item \texttt{stage27\_pivots.py}: pivot statistics (Table~\ref{tab:pivots}).
+\item \texttt{stage29\_reach.py}: correlations and one-point means (Table~\ref{tab:corr}).
+\item \texttt{stage31\_rough\_hr.py}: Helfgott--Radziwi\l{}\l{} decomposition (Table~\ref{tab:hr}).
+\item \texttt{stage32\_sparse\_spectrum.py}: spectral norms by power iteration (Table~\ref{tab:spec}).
+\item \texttt{stage33\_cycles.py}: cycle counts (Table~\ref{tab:cycles}).
+\end{itemize}
+
+\subsection{Corrections made along the way}
+\begin{itemize}
+\item A claim that bounded pretentious distance means that $\lambda$ correlates with a character was replaced by the statement that Elliott-type conclusions become vacuous.
+\item A claim that exact rigidity is useless for twins was replaced by Theorem~\ref{thm:rigidE}.
+\item A claim that the expansion mechanism reaches $\rho<1/2$ was downgraded: $\rho<1/2$ is an upper limit, reached only under (S) and (M).
+\end{itemize}
+
+\bibliographystyle{amsplain}
+\bibliography{refs}
+\end{document}

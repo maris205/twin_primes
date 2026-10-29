@@ -1,0 +1,47 @@
+{
+ "translation": {
+  "3": {
+   "residues": 3,
+   "translation_invariant_at": 1
+  },
+  "5": {
+   "residues": 5,
+   "translation_invariant_at": 1
+  },
+  "7": {
+   "residues": 7,
+   "translation_invariant_at": 1
+  },
+  "11": {
+   "residues": 11,
+   "translation_invariant_at": 3
+  },
+  "13": {
+   "residues": 13,
+   "translation_invariant_at": 1
+  },
+  "101": {
+   "residues": 101,
+   "translation_invariant_at": 1
+  }
+ },
+ "periodicity": {
+  "p=3,k=1": true,
+  "p=3,k=2": true,
+  "p=5,k=1": true,
+  "p=5,k=2": true,
+  "p=7,k=1": true,
+  "p=7,k=2": true
+ },
+ "pellet_analogue": {
+  "squarefree_odd": 405286,
+  "reciprocity_identity_holds": 405286
+ },
+ "rough_pairs": {
+  "z": 30,
+  "pairs": 32686,
+  "s_with_lambda": -0.2792632931530319,
+  "s_twin": 0.43009239429725266,
+  "lambda_twin": 0.005017438658752983
+ }
+}

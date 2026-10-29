@@ -1,0 +1,380 @@
+<title>孪生素数动力学路线图</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a single reading column; the overview is a vertical route from the fixed start to TPC,
+   with the wall's four coordinates beside it. Tabs switch views; data lives in DATA below. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --ink: #18231f;
+  --muted: #5d6b65;
+  --line: #d7ddd8;
+  --accent: #1f5f8b;
+  --ok: #1d7a4c;      --ok-bg: #e3f2e9;
+  --no: #b3362d;      --no-bg: #f8e4e1;
+  --part: #a86500;    --part-bg: #f8ecd6;
+  --diag: #5b4a9e;    --diag-bg: #ebe7f7;
+  --goal: #8a6d00;    --goal-bg: #fbf3d3;
+  --f-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --f-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121916; --surface: #1a2420; --ink: #e5ece8; --muted: #9aaba3; --line: #2e3c36; --accent: #7db7e0;
+  --ok: #6fd19c; --ok-bg: #173627; --no: #f08a80; --no-bg: #3c1e1b; --part: #f0b45a; --part-bg: #3a2c12;
+  --diag: #b6a6f2; --diag-bg: #2a2445; --goal: #e8cf6a; --goal-bg: #352e10; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121916; --surface: #1a2420; --ink: #e5ece8; --muted: #9aaba3; --line: #2e3c36; --accent: #7db7e0;
+  --ok: #6fd19c; --ok-bg: #173627; --no: #f08a80; --no-bg: #3c1e1b; --part: #f0b45a; --part-bg: #3a2c12;
+  --diag: #b6a6f2; --diag-bg: #2a2445; --goal: #e8cf6a; --goal-bg: #352e10; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.65; }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+header h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0; text-wrap: balance; letter-spacing: .02em; }
+header p { color: var(--muted); margin: .4rem 0 0; max-width: 62ch; }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
+.meta a { color: var(--accent); }
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: flex; gap: .25rem; margin: 1.4rem 0 1.2rem; border-bottom: 1px solid var(--line); overflow-x: auto; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.tabs button { font: inherit; font-weight: 500; color: var(--muted); background: none; border: 0; border-bottom: 3px solid transparent; padding: .6rem .9rem; cursor: pointer; white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+nav.tabs button:focus-visible, .filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: 1.25rem; margin: 0 0 .6rem; }
+.lede { color: var(--muted); margin: 0 0 1rem; max-width: 70ch; }
+
+/* chips */
+.chip { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-weight: 700; padding: .1rem .55rem; border-radius: 999px; white-space: nowrap; }
+.v-done { color: var(--ok); background: var(--ok-bg); }
+.v-dead { color: var(--no); background: var(--no-bg); }
+.v-partial { color: var(--part); background: var(--part-bg); }
+.v-diag { color: var(--diag); background: var(--diag-bg); }
+
+/* overview */
+.ov { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.6rem; align-items: start; }
+@media (max-width: 760px) { .ov { grid-template-columns: 1fr; } }
+.route { position: relative; display: grid; gap: .55rem; }
+.node { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .7rem; align-items: start; }
+.dot { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-mono); font-weight: 600; font-size: .9rem; border: 2px solid currentColor; background: var(--surface); position: relative; }
+.node:not(:last-child) .dot::after { content: ""; position: absolute; top: 100%; left: 50%; width: 2px; height: .55rem; background: var(--line); transform: translateX(-50%); }
+.node .body { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .5rem .75rem; min-width: 0; }
+.node .t { display: flex; flex-wrap: wrap; gap: .3rem .6rem; align-items: center; font-weight: 700; }
+.node .s { color: var(--muted); font-size: .88rem; margin-top: .1rem; }
+.node.start .dot { color: var(--ok); } .node.start .body { border-color: var(--ok); }
+.node.goal .dot { color: var(--goal); background: var(--goal-bg); } .node.goal .body { background: var(--goal-bg); border-color: var(--goal); }
+.node.done .dot { color: var(--ok); } .node.dead .dot { color: var(--no); } .node.partial .dot { color: var(--part); } .node.diag .dot { color: var(--diag); }
+.node button.link { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+.panel + .panel { margin-top: 1rem; }
+.coords { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.coords th, .coords td { text-align: left; padding: .45rem .4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.coords th { color: var(--muted); font-weight: 500; font-size: .8rem; letter-spacing: .04em; }
+.coords td.have { color: var(--part); font-family: var(--f-mono); font-size: .85rem; }
+.coords td.need { color: var(--goal); font-family: var(--f-mono); font-size: .85rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.wallnote { font-size: .9rem; margin: .6rem 0 0; }
+.wallnote.muted { color: var(--muted); font-size: .82rem; }
+h3.minor { font-size: .85rem; color: var(--muted); font-weight: 500; letter-spacing: .04em; margin: .9rem 0 .3rem; }
+.ladder { margin: 0; padding-left: 1.3rem; font-size: .9rem; }
+.ladder li { margin: .2rem 0; }
+.ladder b { font-weight: 700; }
+
+/* stages */
+.filters { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.filters button { font: inherit; font-size: .85rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: .25rem .8rem; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.stages { display: grid; gap: .9rem; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-left-width: 5px; border-radius: 10px; padding: .85rem 1rem; min-width: 0; }
+.stage.done { border-left-color: var(--ok); } .stage.dead { border-left-color: var(--no); } .stage.partial { border-left-color: var(--part); } .stage.diag { border-left-color: var(--diag); }
+.stage h3 { margin: 0; font-size: 1.05rem; display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; }
+.stage .num { font-family: var(--f-mono); color: var(--muted); font-size: .85rem; }
+.stage .q { color: var(--muted); margin: .35rem 0 .4rem; font-size: .92rem; }
+.stage ul { margin: .2rem 0 .3rem; padding-left: 1.2rem; }
+.stage li { margin: .15rem 0; }
+.stage .out { font-size: .82rem; color: var(--muted); font-family: var(--f-mono); overflow-wrap: anywhere; }
+
+/* tables */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+table.data th, table.data td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.data th { font-size: .8rem; color: var(--muted); font-weight: 500; letter-spacing: .04em; background: var(--bg); }
+table.data td.id { font-family: var(--f-mono); font-weight: 600; white-space: nowrap; }
+table.data tr:last-child td { border-bottom: 0; }
+.foot { margin-top: 2rem; color: var(--muted); font-size: .82rem; }
+@media (prefers-reduced-motion: no-preference) { .stage, .node .body { transition: border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>孪生素数 · 动力学路线图</h1>
+    <p>奇偶墙路线（33 个阶段）定位了墙在哪里。这条新路线换到物理和动力学一侧：从素数与符号动力学的起点工作出发，寻找一座双向精确的桥，使对岸的定理能区分 Liouville 函数与乘性赝品。所有结论都由 AI 辅助得出，并逐条标明是定理、分析还是数值。</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="路线图视图">
+    <button role="tab" id="tab-overview" aria-controls="view-overview" data-view="overview">总览</button>
+    <button role="tab" id="tab-stages" aria-controls="view-stages" data-view="stages">各阶段</button>
+    <button role="tab" id="tab-ledger" aria-controls="view-ledger" data-view="ledger">H 系列账本</button>
+    <button role="tab" id="tab-parity" aria-controls="view-parity" data-view="parity">候选通道</button>
+  </nav>
+
+  <section id="view-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="ov">
+      <div>
+        <h2>一条路：从动力学起点到 TPC</h2>
+        <p class="lede">每个圆点是一个阶段，颜色是这一阶段对"通向 TPC"给出的结论。点击阶段名看详情。</p>
+        <div class="route" id="route"></div>
+      </div>
+      <div>
+        <div class="panel" id="wallpanel">
+          <h2>入场检验：上一条路线留下的墙</h2>
+          <p class="wallnote" id="wall-one"></p>
+          <h3 class="minor">要搬过桥的最弱目标</h3>
+          <ol class="ladder" id="wall-ladder"></ol>
+          <h3 class="minor">任何新输入必须同时做到（六条必要条件）</h3>
+          <ol class="ladder" id="wall-need"></ol>
+          <p class="wallnote muted" id="wall-src"></p>
+        </div>
+        <div class="panel">
+          <h2>桥的五个检验坐标</h2>
+          <table class="coords" id="coords"></table>
+          <p class="wallnote">每条通道都要在这五个坐标上说明自己站在哪里。只换语言、不换信息的桥，在第一个坐标上就失败。</p>
+        </div>
+        <div class="panel">
+          <h2>现在的状态</h2>
+          <div id="status"></div>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-stages" role="tabpanel" aria-labelledby="tab-stages" hidden>
+    <h2>各阶段记录</h2>
+    <p class="lede">每个阶段一条：问了什么、结论、主要产出。新阶段直接追加在后面。</p>
+    <div class="filters" id="filters" role="group" aria-label="按结论筛选"></div>
+    <div class="stages" id="stages"></div>
+  </section>
+
+  <section id="view-ledger" role="tabpanel" aria-labelledby="tab-ledger" hidden>
+    <h2>H 系列账本：大胆假设与判决</h2>
+    <p class="lede">每个假设配一个便宜的证伪测试。判死的不删，写明死因，因为死因常常就是下一条定理。</p>
+    <div class="tablewrap"><table class="data" id="ledger"></table></div>
+  </section>
+
+  <section id="view-parity" role="tabpanel" aria-labelledby="tab-parity" hidden>
+    <h2>候选通道：动力学与物理对象</h2>
+    <p class="lede">每条通道写明对象、与素数的已知桥、入场风险（对照六条必要条件）和第一测试。新通道直接追加。</p>
+    <div class="tablewrap"><table class="data" id="parity"></table></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+/* DATA: the single source of truth. To add a stage, append one object to DATA.stages. */
+const DATA = {
+  updated: "2026-10-29",
+  paper: { version: "v1.3", doi: "10.5281/zenodo.23736249", url: "https://zenodo.org/records/23736249" },
+  paper2: { version: "v1.0", doi: "10.5281/zenodo.23766118", url: "https://zenodo.org/records/23766118" },
+  repo: "https://github.com/maris205/twin_primes/tree/main/research/dynamics-route",
+  oldmap: "https://claude.ai/artifact/R4YKS4ABCmSkbRC1ZMFQSJ",
+  start: { title: "起点：素数与符号动力学", sub: "五篇原稿：有限筛写成 Logistic 映射的 kneading 序列、Hénon 映射与零点模型；外加奇偶墙路线 33 个阶段的定位结果" },
+  goal:  { title: "终点：孪生素数猜想（TPC）", sub: "无穷多对素数 p, p+2；最弱的中间目标是 E(η)：一对偶类粗糙孪生" },
+  verdicts: {
+    done:    { label: "✓ 成果", tip: "得到可用的定理或已完成的结果" },
+    partial: { label: "◐ 部分", tip: "化简已完成，仍有开放的一步" },
+    diag:    { label: "◎ 定位", tip: "方向或障碍被更精确地刻画" },
+    dead:    { label: "✗ 不通", tip: "已证明或已诊断走不到终点" }
+  },
+  wall: {
+    one: "上一条路线的结论：孪生只卡在一个点上，即间隙固定为 2、两端都是 x^η-粗糙数、问 λ(n)λ(n+2) 的符号。在这里，极端赝品（可取为完全乘性的 χ₃、χ₄）满足全部筛法公理，与 λ 的伪装距离又有界。换成动力学或物理语言，并不会让它消失：墙是关于信息的，不是关于语言的（命题 0.1）。",
+    ladder: [
+      ["E(η)", "存在一对偶类粗糙孪生，是最弱的目标"],
+      ["孪生非极端 δ < 1", "GEH 下 TPC 所需的全部"],
+      ["桥的要求", "把粗糙对上 λ(n)λ(n+2) 的信息完整搬过去，并且对岸有能区分 λ 与 χ₃、χ₄ 的定理"]
+    ],
+    need: [
+      "不是筛法公理（命题 0.1：只读筛编码的模型是奇偶盲的）",
+      "不是多项式族的存在性",
+      "不是绝对值数据或伸缩不变的数据",
+      "不依赖小素数或伸缩",
+      "钉住单个间隙 2，而不是对间隙平均（谱统计在这里最危险）",
+      "在伪装距离有界时仍能区分 λ 与乘性赝品 χ₃、χ₄"
+    ],
+    src: "上一条路线的一页纸：research/parity-wall-route/route/WALL.md；第零阶段：research/dynamics-route/STAGE0_START.md。"
+  },
+  coords: [
+    { name: "读入的算术信息", have: "旧模型只读筛编码 Q_k（n mod P_k）", need: "读入 λ 本身或等价的乘性结构" },
+    { name: "移位", have: "谱统计只看对 h 平均", need: "固定 h = 2" },
+    { name: "粗糙度", have: "已知方法 ρ < 1/2", need: "ρ = 1（z = x^η）" },
+    { name: "加法与乘法", have: "物理模型多只编码其中一种", need: "n ↦ n+2 与 n ↦ pn 同时出现" },
+    { name: "对岸的定理", have: "混合、谱隙、动力学 ζ、结构定理", need: "能区分 λ 与 χ₃、χ₄ 的那一条" }
+  ],
+  stages: [
+    { n: 0, title: "起点、入场检验与候选通道", verdict: "diag",
+      q: "从素数与符号动力学的起点工作出发，换到物理和动力学一侧，第一步该怎么走？“同构后因数分解消失，奇偶障碍自然消失”对不对？",
+      result: ["命题 0.1（严格）：只读筛编码 Q_k（只依赖 n mod P_k）的动力学模型是奇偶盲的，用 λ 和用赝品跑出的观测量完全相同。所以换语言不会让墙消失，墙是关于信息的", "对“量子混沌还是符号动力学”的判断：谱统计对应对间隙平均的孪生数据，撞上第 5 条；λ 的 Furstenberg 系统是固定移位的陈述，更有希望。真正的难点是加法与乘法的耦合", "列出 7 条候选通道（D1–D7），每条配入场风险和第一测试。建议先做 D1 加 D3 快速清场，或直接进 D2"],
+      out: "STAGE0_START.md" }
+  ],
+  ledger: [
+    { id: "Y1", hyp: "把素数同构到动力学或物理后，因数分解消失，奇偶障碍随之消失", verdict: "dead", basis: "证明", why: "命题 0.1：只读筛编码的模型是奇偶盲的；墙是关于信息的，换语言不换信息就不起作用" },
+    { id: "Y2", hyp: "零点的 GUE 型谱统计能推出孪生素数", verdict: "partial", basis: "文献", why: "方向反了：Hardy–Littlewood ⟹ 零点关联（Bogomolny–Keating）；即使假设 GUE，也没有 δ 的非平凡界。待 D3 核实" }
+  ],
+  parity: [
+    { cls: "D1 筛编码的符号动力学", src: "Logistic 或单峰映射的 kneading 序列（起点工作）", ex: "Q_k(n) = 1 当且仅当 gcd(n, P_k) = 1，是有限筛", fails: "第 1 条：只读筛信息，命题 0.1", ours: "推广命题 0.1，正式关闭旧路线；检查能否读入 λ 而不预先知道 Ω" },
+    { cls: "D2 λ 的 Furstenberg 系统", src: "λ 沿粗糙对生成的移位不变测度、joining", ex: "两点 Chowla ⟺ Furstenberg 系统的性质（Tao、Frantzikinakis–Host）", fails: "第 4 条：现有结构定理依赖小素数伸缩", ours: "把孪生极值写成 joining 语言；检验对数 Sarnak 等不相交性结果能否排除“成对常值”型赝品" },
+    { cls: "D3 谱与量子混沌", src: "零点的 n 点关联、迹公式、Berry–Keating 算子", ex: "Bogomolny–Keating：Hardy–Littlewood ⟹ 零点关联", fails: "第 5 条：只看平均间隙", ours: "精确写出“零点统计 ⟺ 对 h 平均的孪生数据”，确认判死还是留缝" },
+    { cls: "D4 函数域的几何与动力学", src: "F_q[t] 上的 Frobenius、单值群", ex: "Sawin–Shusterman：F_q[t] 中的孪生素数（q 大）", fails: "ℤ 上没有导数（论文 v1.3）", ours: "拆解证明，标出用 q → ∞ 和用导数的步骤，寻找 ℤ 上的动力学替代" },
+    { cls: "D5 双曲动力学的素轨道", src: "素测地线、Ruelle 与 Selberg ζ、Gauss 映射转移算子", ex: "Pollicott–Sharp：闭测地线长度对的关联", fails: "长度是 log ε_d 而不是 log p，没有到整数孪生的桥", ours: "核查 Pollicott–Sharp 的机制，寻找素轨道长度恰为 log p 且承载加法移位的系统" },
+    { cls: "D6 加法与乘法耦合的动力系统", src: "ax+b 半群作用、阿代尔类空间、整除图", ex: "奇偶墙第 31–33 阶段的扩张机制就是这个结构", fails: "第 3、4 条", ours: "用遍历论而非谱界重新提问：这个作用下是否有不变量能区分赝品" },
+    { cls: "D7 素数气体与超对称", src: "费米子素数气体，(−1)^F 对应 μ 或 λ", ex: "Spector：Möbius 函数与超对称；Bost–Connes 系统", fails: "只承载乘法，没有 n ↦ n+2", ours: "寻找能加入素数气体且保持可解性的平移算符；若没有，记录为结构性障碍" }
+  ]
+};
+
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const chip = (v) => { const c = el("span", "chip v-" + v, DATA.verdicts[v].label); c.title = DATA.verdicts[v].tip; return c; };
+
+/* header meta */
+(function () {
+  const m = $("#meta");
+  m.append(el("span", null, "更新于 " + DATA.updated));
+  const a = el("a", null, "奇偶墙论文一 " + DATA.paper.version + " · DOI " + DATA.paper.doi);
+  a.href = DATA.paper.url; a.target = "_blank"; a.rel = "noopener";
+  m.append(a);
+  const a2 = el("a", null, "奇偶墙论文二 " + DATA.paper2.version + " · DOI " + DATA.paper2.doi);
+  a2.href = DATA.paper2.url; a2.target = "_blank"; a2.rel = "noopener";
+  m.append(a2);
+  const g = el("a", null, "GitHub 存档");
+  const old = el("a", null, "上一条路线图（奇偶墙）"); old.href = DATA.oldmap; old.target = "_blank"; old.rel = "noopener";
+  g.href = DATA.repo; g.target = "_blank"; g.rel = "noopener";
+  m.append(g);
+  m.append(old);
+  m.append(el("span", null, DATA.stages.length + " 个阶段 · " + DATA.ledger.length + " 个假设"));
+})();
+
+/* overview route */
+(function () {
+  const r = $("#route");
+  const mk = (cls, label, title, sub, onClick) => {
+    const n = el("div", "node " + cls);
+    n.append(el("div", "dot", label));
+    const b = el("div", "body");
+    const t = el("div", "t");
+    if (onClick) { const btn = el("button", "link", title); btn.type = "button"; btn.addEventListener("click", onClick); t.append(btn); }
+    else t.append(el("span", null, title));
+    b.append(t);
+    if (sub) b.append(el("div", "s", sub));
+    n.append(b);
+    return { n, t };
+  };
+  r.append(mk("start", "起", DATA.start.title, DATA.start.sub).n);
+  DATA.stages.forEach((s) => {
+    const { n, t } = mk(s.verdict, String(s.n), s.title, s.result[0], () => { show("stages"); const c = document.getElementById("stage-" + s.n); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    t.append(chip(s.verdict));
+    r.append(n);
+  });
+  r.append(mk("goal", "终", DATA.goal.title, DATA.goal.sub).n);
+})();
+
+/* wall characterization */
+(function () {
+  $("#wall-one").textContent = DATA.wall.one;
+  DATA.wall.ladder.forEach(([k, v]) => { const li = el("li"); li.append(el("b", null, k), document.createTextNode("：" + v)); $("#wall-ladder").append(li); });
+  DATA.wall.need.forEach((v) => $("#wall-need").append(el("li", null, v)));
+  $("#wall-src").textContent = DATA.wall.src;
+})();
+
+/* coordinates */
+(function () {
+  const t = $("#coords");
+  const h = el("tr"); ["坐标", "已知最好", "孪生需要"].forEach((x) => h.append(el("th", null, x)));
+  t.append(h);
+  DATA.coords.forEach((c) => {
+    const tr = el("tr");
+    tr.append(el("td", null, c.name), el("td", "have", c.have), el("td", "need", c.need));
+    t.append(tr);
+  });
+})();
+
+/* status + legend */
+(function () {
+  const counts = {}; DATA.stages.forEach((s) => counts[s.verdict] = (counts[s.verdict] || 0) + 1);
+  const p = el("p", null);
+  p.textContent = "已走 " + DATA.stages.length + " 个阶段：" +
+    Object.keys(DATA.verdicts).filter((k) => counts[k]).map((k) => DATA.verdicts[k].label.replace(/^\S+\s/, "") + " " + counts[k]).join("，") +
+    "。上一条路线的结论：墙是同一个赝品在多个坐标上的投影，最弱的目标是 E(η)。这条路线要找的，是能把 E(η) 搬到动力学一侧、且对岸有定理能区分 λ 与 χ₃、χ₄ 的桥。";
+  $("#status").append(p);
+  const lg = $("#legend");
+  Object.keys(DATA.verdicts).forEach((k) => { const c = chip(k); c.textContent = DATA.verdicts[k].label + "：" + DATA.verdicts[k].tip; lg.append(c); });
+})();
+
+/* stages with filter */
+let filter = "all";
+function renderStages() {
+  const box = $("#stages"); box.replaceChildren();
+  DATA.stages.filter((s) => filter === "all" || s.verdict === filter).forEach((s) => {
+    const c = el("article", "stage " + s.verdict); c.id = "stage-" + s.n;
+    const h = el("h3"); h.append(el("span", "num", "第 " + s.n + " 阶段"), el("span", null, s.title), chip(s.verdict));
+    c.append(h, el("p", "q", "问题：" + s.q));
+    const ul = el("ul"); s.result.forEach((x) => ul.append(el("li", null, x))); c.append(ul);
+    if (s.out) c.append(el("div", "out", "产出：" + s.out));
+    box.append(c);
+  });
+}
+(function () {
+  const f = $("#filters");
+  const opts = [["all", "全部"]].concat(Object.keys(DATA.verdicts).map((k) => [k, DATA.verdicts[k].label]));
+  opts.forEach(([k, label]) => {
+    const b = el("button", null, label); b.type = "button"; b.setAttribute("aria-pressed", k === filter ? "true" : "false");
+    b.addEventListener("click", () => { filter = k; f.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); renderStages(); });
+    f.append(b);
+  });
+  renderStages();
+})();
+
+/* ledger */
+(function () {
+  const t = $("#ledger");
+  const h = el("tr"); ["编号", "假设", "判决", "依据", "死因 / 理由"].forEach((x) => h.append(el("th", null, x))); t.append(h);
+  DATA.ledger.forEach((r) => {
+    const tr = el("tr"); const v = el("td"); v.append(chip(r.verdict));
+    tr.append(el("td", "id", r.id), el("td", null, r.hyp), v, el("td", null, r.basis), el("td", null, r.why));
+    t.append(tr);
+  });
+})();
+
+/* parity sources */
+(function () {
+  const t = $("#parity");
+  const h = el("tr"); ["通道", "对象", "已知桥", "入场风险", "第一测试"].forEach((x) => h.append(el("th", null, x))); t.append(h);
+  DATA.parity.forEach((r) => {
+    const tr = el("tr");
+    tr.append(el("td", "id", r.cls), el("td", null, r.src), el("td", null, r.ex), el("td", null, r.fails), el("td", null, r.ours));
+    t.append(tr);
+  });
+})();
+
+$("#foot").textContent = "所有结论均由 AI 辅助得出，尚未经人类专家逐条核对。阶段报告见 GitHub 存档 research/dynamics-route/。";
+
+/* tabs with #hash */
+const VIEWS = ["overview", "stages", "ledger", "parity"];
+function show(v) {
+  if (!VIEWS.includes(v)) v = "overview";
+  VIEWS.forEach((x) => {
+    $("#view-" + x).hidden = x !== v;
+    $("#tab-" + x).setAttribute("aria-selected", x === v ? "true" : "false");
+  });
+  try { localStorage.setItem("tpc-dyn-roadmap-tab", v); } catch (e) {}
+  if (location.hash !== "#" + v) { try { history.replaceState(null, "", "#" + v); } catch (e) {} }
+}
+document.querySelectorAll("nav.tabs button").forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+(function () {
+  let v = (location.hash || "").slice(1);
+  if (!VIEWS.includes(v)) { try { v = localStorage.getItem("tpc-dyn-roadmap-tab") || "overview"; } catch (e) { v = "overview"; } }
+  show(v);
+})();
+</script>

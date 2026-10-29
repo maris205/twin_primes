@@ -1,0 +1,59 @@
+{
+ "p": 3,
+ "nmax": 6,
+ "pellet": {
+  "2": {
+   "squarefree": 6,
+   "identity_holds": 6
+  },
+  "3": {
+   "squarefree": 18,
+   "identity_holds": 18
+  },
+  "4": {
+   "squarefree": 54,
+   "identity_holds": 54
+  },
+  "5": {
+   "squarefree": 162,
+   "identity_holds": 162
+  },
+  "6": {
+   "squarefree": 486,
+   "identity_holds": 486
+  }
+ },
+ "twin_subspace": {
+  "2": {
+   "pairs": 3,
+   "identity_holds": 3
+  },
+  "3": {
+   "pairs": 12,
+   "identity_holds": 12
+  },
+  "4": {
+   "pairs": 33,
+   "identity_holds": 33
+  },
+  "5": {
+   "pairs": 108,
+   "identity_holds": 108
+  },
+  "6": {
+   "pairs": 306,
+   "identity_holds": 306
+  }
+ },
+ "characters": {
+  "X": 1000000,
+  "H": 40,
+  "Q": 400,
+  "windows": 30,
+  "discriminants": 242,
+  "lambda_best_mean": 0.531239265509456,
+  "lambda_best_max": 0.7037037037037037,
+  "random_best_mean": 0.5318483282403953,
+  "random_best_max": 0.7391304347826086
+ }
+}

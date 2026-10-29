@@ -1,0 +1,29 @@
+{
+ "X": 1000000,
+ "eta": 0.25,
+ "seed": 1,
+ "rough_pairs": 31047,
+ "primes_in_equations": 33453,
+ "peeled": 23539,
+ "free_primes": 9914,
+ "peeling_complete": false,
+ "core": {
+  "core_equations": 7508,
+  "core_vars": 1933,
+  "core_rank": 1932,
+  "core_free": 1
+ },
+ "fraction_pairs_extremal": 1.0,
+ "agreement": {
+  "lam": 0.008708652811247778,
+  "chi3": -0.004422165473783565,
+  "chi4": 0.7979900291026898
+ },
+ "D2": {
+  "lam": 1.3101216353639902,
+  "chi3": 1.3274757353206172,
+  "chi4": 0.26698269301186855
+ },
+ "D2_scale_log1_eta": 1.3862943611198906,
+ "lambda_pairs_mean": 0.009115212419879537
+}

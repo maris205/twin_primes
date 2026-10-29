@@ -1,0 +1,526 @@
+<title>孪生素数奇偶墙路线图</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a single reading column; the overview is a vertical route from the fixed start to TPC,
+   with the wall's four coordinates beside it. Tabs switch views; data lives in DATA below. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --ink: #18231f;
+  --muted: #5d6b65;
+  --line: #d7ddd8;
+  --accent: #1f5f8b;
+  --ok: #1d7a4c;      --ok-bg: #e3f2e9;
+  --no: #b3362d;      --no-bg: #f8e4e1;
+  --part: #a86500;    --part-bg: #f8ecd6;
+  --diag: #5b4a9e;    --diag-bg: #ebe7f7;
+  --goal: #8a6d00;    --goal-bg: #fbf3d3;
+  --f-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --f-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121916; --surface: #1a2420; --ink: #e5ece8; --muted: #9aaba3; --line: #2e3c36; --accent: #7db7e0;
+  --ok: #6fd19c; --ok-bg: #173627; --no: #f08a80; --no-bg: #3c1e1b; --part: #f0b45a; --part-bg: #3a2c12;
+  --diag: #b6a6f2; --diag-bg: #2a2445; --goal: #e8cf6a; --goal-bg: #352e10; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121916; --surface: #1a2420; --ink: #e5ece8; --muted: #9aaba3; --line: #2e3c36; --accent: #7db7e0;
+  --ok: #6fd19c; --ok-bg: #173627; --no: #f08a80; --no-bg: #3c1e1b; --part: #f0b45a; --part-bg: #3a2c12;
+  --diag: #b6a6f2; --diag-bg: #2a2445; --goal: #e8cf6a; --goal-bg: #352e10; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.65; }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+header h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0; text-wrap: balance; letter-spacing: .02em; }
+header p { color: var(--muted); margin: .4rem 0 0; max-width: 62ch; }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
+.meta a { color: var(--accent); }
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: flex; gap: .25rem; margin: 1.4rem 0 1.2rem; border-bottom: 1px solid var(--line); overflow-x: auto; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.tabs button { font: inherit; font-weight: 500; color: var(--muted); background: none; border: 0; border-bottom: 3px solid transparent; padding: .6rem .9rem; cursor: pointer; white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+nav.tabs button:focus-visible, .filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: 1.25rem; margin: 0 0 .6rem; }
+.lede { color: var(--muted); margin: 0 0 1rem; max-width: 70ch; }
+
+/* chips */
+.chip { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-weight: 700; padding: .1rem .55rem; border-radius: 999px; white-space: nowrap; }
+.v-done { color: var(--ok); background: var(--ok-bg); }
+.v-dead { color: var(--no); background: var(--no-bg); }
+.v-partial { color: var(--part); background: var(--part-bg); }
+.v-diag { color: var(--diag); background: var(--diag-bg); }
+
+/* overview */
+.ov { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.6rem; align-items: start; }
+@media (max-width: 760px) { .ov { grid-template-columns: 1fr; } }
+.route { position: relative; display: grid; gap: .55rem; }
+.node { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .7rem; align-items: start; }
+.dot { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-mono); font-weight: 600; font-size: .9rem; border: 2px solid currentColor; background: var(--surface); position: relative; }
+.node:not(:last-child) .dot::after { content: ""; position: absolute; top: 100%; left: 50%; width: 2px; height: .55rem; background: var(--line); transform: translateX(-50%); }
+.node .body { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .5rem .75rem; min-width: 0; }
+.node .t { display: flex; flex-wrap: wrap; gap: .3rem .6rem; align-items: center; font-weight: 700; }
+.node .s { color: var(--muted); font-size: .88rem; margin-top: .1rem; }
+.node.start .dot { color: var(--ok); } .node.start .body { border-color: var(--ok); }
+.node.goal .dot { color: var(--goal); background: var(--goal-bg); } .node.goal .body { background: var(--goal-bg); border-color: var(--goal); }
+.node.done .dot { color: var(--ok); } .node.dead .dot { color: var(--no); } .node.partial .dot { color: var(--part); } .node.diag .dot { color: var(--diag); }
+.node button.link { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+.panel + .panel { margin-top: 1rem; }
+.coords { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.coords th, .coords td { text-align: left; padding: .45rem .4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.coords th { color: var(--muted); font-weight: 500; font-size: .8rem; letter-spacing: .04em; }
+.coords td.have { color: var(--part); font-family: var(--f-mono); font-size: .85rem; }
+.coords td.need { color: var(--goal); font-family: var(--f-mono); font-size: .85rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.wallnote { font-size: .9rem; margin: .6rem 0 0; }
+.wallnote.muted { color: var(--muted); font-size: .82rem; }
+h3.minor { font-size: .85rem; color: var(--muted); font-weight: 500; letter-spacing: .04em; margin: .9rem 0 .3rem; }
+.ladder { margin: 0; padding-left: 1.3rem; font-size: .9rem; }
+.ladder li { margin: .2rem 0; }
+.ladder b { font-weight: 700; }
+
+/* stages */
+.filters { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.filters button { font: inherit; font-size: .85rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: .25rem .8rem; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.stages { display: grid; gap: .9rem; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-left-width: 5px; border-radius: 10px; padding: .85rem 1rem; min-width: 0; }
+.stage.done { border-left-color: var(--ok); } .stage.dead { border-left-color: var(--no); } .stage.partial { border-left-color: var(--part); } .stage.diag { border-left-color: var(--diag); }
+.stage h3 { margin: 0; font-size: 1.05rem; display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; }
+.stage .num { font-family: var(--f-mono); color: var(--muted); font-size: .85rem; }
+.stage .q { color: var(--muted); margin: .35rem 0 .4rem; font-size: .92rem; }
+.stage ul { margin: .2rem 0 .3rem; padding-left: 1.2rem; }
+.stage li { margin: .15rem 0; }
+.stage .out { font-size: .82rem; color: var(--muted); font-family: var(--f-mono); overflow-wrap: anywhere; }
+
+/* tables */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+table.data th, table.data td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.data th { font-size: .8rem; color: var(--muted); font-weight: 500; letter-spacing: .04em; background: var(--bg); }
+table.data td.id { font-family: var(--f-mono); font-weight: 600; white-space: nowrap; }
+table.data tr:last-child td { border-bottom: 0; }
+.foot { margin-top: 2rem; color: var(--muted); font-size: .82rem; }
+@media (prefers-reduced-motion: no-preference) { .stage, .node .body { transition: border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>孪生素数 · 奇偶墙路线图</h1>
+    <p>从一个已证明的条件通路出发，一阶段一阶段地试探通往孪生素数猜想（TPC）的路：哪些不通、为什么不通、墙到底在哪里。所有结论都由 AI 辅助得出，并逐条标明是定理、分析还是数值。</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="路线图视图">
+    <button role="tab" id="tab-overview" aria-controls="view-overview" data-view="overview">总览</button>
+    <button role="tab" id="tab-stages" aria-controls="view-stages" data-view="stages">各阶段</button>
+    <button role="tab" id="tab-ledger" aria-controls="view-ledger" data-view="ledger">H 系列账本</button>
+    <button role="tab" id="tab-parity" aria-controls="view-parity" data-view="parity">奇偶来源分类</button>
+  </nav>
+
+  <section id="view-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="ov">
+      <div>
+        <h2>一条路：从起点到 TPC</h2>
+        <p class="lede">每个圆点是一个阶段，颜色是这一阶段对"通向 TPC"给出的结论。点击阶段名看详情。</p>
+        <div class="route" id="route"></div>
+      </div>
+      <div>
+        <div class="panel" id="wallpanel">
+          <h2>墙的完整刻画</h2>
+          <p class="wallnote" id="wall-one"></p>
+          <h3 class="minor">目标的强弱阶梯（从弱到强）</h3>
+          <ol class="ladder" id="wall-ladder"></ol>
+          <h3 class="minor">突破必须同时做到</h3>
+          <ol class="ladder" id="wall-need"></ol>
+          <p class="wallnote muted" id="wall-src"></p>
+        </div>
+        <div class="panel">
+          <h2>墙在哪里：五个坐标</h2>
+          <table class="coords" id="coords"></table>
+          <p class="wallnote">五个坐标里，已知方法都停在远离孪生需要的位置，而孪生要求每一个坐标都到达极端值。放宽任何一个条件（间隙改为析取或平均、粗糙度改为固定 z）都是已知定理。</p>
+        </div>
+        <div class="panel">
+          <h2>现在的状态</h2>
+          <div id="status"></div>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-stages" role="tabpanel" aria-labelledby="tab-stages" hidden>
+    <h2>各阶段记录</h2>
+    <p class="lede">每个阶段一条：问了什么、结论、主要产出。新阶段直接追加在后面。</p>
+    <div class="filters" id="filters" role="group" aria-label="按结论筛选"></div>
+    <div class="stages" id="stages"></div>
+  </section>
+
+  <section id="view-ledger" role="tabpanel" aria-labelledby="tab-ledger" hidden>
+    <h2>H 系列账本：大胆假设与判决</h2>
+    <p class="lede">每个假设配一个便宜的证伪测试。判死的不删，写明死因，因为死因常常就是下一条定理。</p>
+    <div class="tablewrap"><table class="data" id="ledger"></table></div>
+  </section>
+
+  <section id="view-parity" role="tabpanel" aria-labelledby="tab-parity" hidden>
+    <h2>奇偶信息从哪里来：已知机制分类</h2>
+    <p class="lede">所有已知能绕开奇偶障碍的机制，按"奇偶信息的来源"分类：第九阶段的五类，加上第十三阶段补充的两类边缘机制（⓪、⑥）。孪生问题（固定间隙 2、二元、两端都是 x<sup>η</sup>-粗糙数）不满足其中任何一类的无条件前提。统一判据：每类最后都化为双线性和 Σ aₘbₙ c(mn)，并要求 c 有结构；孪生的 c 是 λ(·+2)，也就是待证对象本身。</p>
+    <div class="tablewrap"><table class="data" id="parity"></table></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+/* DATA: the single source of truth. To add a stage, append one object to DATA.stages. */
+const DATA = {
+  updated: "2026-10-29",
+  paper: { version: "v1.3", doi: "10.5281/zenodo.23736249", url: "https://zenodo.org/records/23736249" },
+  start: { title: "起点：条件通路已证明", sub: "GEH + PND_log ⟹ TPC；奇偶只有一个参数 δ（定理 B、C）" },
+  goal:  { title: "终点：孪生素数猜想（TPC）", sub: "无穷多对素数 p, p+2" },
+  verdicts: {
+    done:    { label: "✓ 成果", tip: "得到可用的定理或已完成的结果" },
+    partial: { label: "◐ 部分", tip: "化简已完成，仍有开放的一步" },
+    diag:    { label: "◎ 定位", tip: "墙的位置被更精确地刻画" },
+    dead:    { label: "✗ 不通", tip: "已证明或已诊断走不到终点" }
+  },
+  wall: {
+    one: "孪生只卡在一个点上：间隙固定为 2、两端都是 x^η-粗糙数、问 λ(n)λ(n+2) 的符号。在这个点上，极端赝品（所有粗糙对上 λλ = −1，可以取成完全乘性的 χ₃ 或 χ₄）满足全部筛法公理，与 λ 的伪装距离又有界，没有任何已知输入能把它和 λ 区分开。",
+    ladder: [
+      ["E(η)", "存在一对偶类粗糙孪生。未知，是最弱的目标（第 27、28 阶段）"],
+      ["渐近精确刚性", "推出 E(η)（定理 27.1）"],
+      ["孪生非极端 δ < 1", "GEH 下 TPC 所需的全部（定理 4.15、第 20 阶段）；没有更弱的组合输入（命题 24.1）"],
+      ["稳健刚性、同号三元组", "都比孪生强（第 24、26 阶段）"],
+      ["弱 Type II（割范数）", "绝对值和伸缩平均路线需要它（命题 20.1、21.1）"]
+    ],
+    need: [
+      "不是筛法公理（赝品满足全部筛法公理）",
+      "不是多项式族的存在性（族只给零关系，定理 27.2）",
+      "不是绝对值或伸缩不变的数据（否则要先证弱 Type II）",
+      "不依赖小素数或伸缩（粗糙度在 ρ = 1 处是结构性的墙，第 29 阶段）",
+      "钉住单个间隙 2（不能是析取或平均）",
+      "在伪装距离有界时仍能区分 λ 与乘性特征赝品"
+    ],
+    src: "一页纸全文：route/WALL.md。只要一对和要求正比例同样难，因为赝品的偶类质量恰好为零（命题 28.2）。"
+  },
+  coords: [
+    { name: "粗糙度 z（ρ = log log z / log log x）", have: "定理：z → ∞ 足够慢；扩张机制的上限为 ρ < 1/2（定理 A），数值倾向于能达到这个上限（第 32 阶段）", need: "z = x^η，即 ρ = 1：伪装距离有界，是结构性的墙" },
+    { name: "衰减参数 t", have: "|t| > 0.676", need: "t = 0" },
+    { name: "移位范围", have: "密度 1/6（GEH，锐）；h ≤ X^{8/33}，d₃ 极限 3/13", need: "固定 h = 2" },
+    { name: "析取规模", have: "3 个移位 {2,4,6}", need: "1 个移位" },
+    { name: "上界常数", have: "3.23（偶类）；EH 下为 2", need: "奇类 ≤ 2 − Cη" }
+  ],
+  stages: [
+    { n: 1, title: "审计七岛路线", verdict: "dead",
+      q: "原有的两座桥（算子桥、动力学桥）能否推出孪生素数？",
+      result: ["两座桥都等价于孪生 Hardy–Littlewood 本身", "奇偶问题全部集中在一个比特上"],
+      out: "phase1/ 审计脚本" },
+    { n: 2, title: "新论文：条件通路与方法限制", verdict: "done",
+      q: "能否把 Bombieri–Tao 判据写成显式、可检验的形式，并说明扩张方法为何到不了孪生？",
+      result: ["定理 B：GEH + PND_log ⟹ TPC（每块砖都有证明）", "定理 C：粗糙对上奇偶只由一个参数 δ 控制", "定理 A：膨胀–谱证书的分辨率 ≫ η log x"],
+      out: "Zenodo v0.5–v0.6" },
+    { n: 3, title: "换机制攻奇偶桥（方向 ①②③）", verdict: "diag",
+      q: "熵递减、双线性结构（Friedlander–Iwaniec）、新对称性，哪个能到达 x^η-粗糙数？",
+      result: ["定理 E：熵递减证书只到达 z ≤ (log x)^{O(ε⁴)}", "Lü–Wang–Wu 机制到达 exp((log x)^c)，c < 1/5", "FI 双线性假设 (B) 对孪生是奇偶完备的"],
+      out: "论文 §6.3 粗糙度天花板；Zenodo v0.7" },
+    { n: 4, title: "论文巩固与函数域桥；大胆假设 H1–H7", verdict: "dead",
+      q: "绕开开放问题的捷径：Jacobi 符号、多模式线性规划、进位制 Pellet 类比……",
+      result: ["H1–H6 全部判死，H7 低优先", "H3：多模式加正性也逼不出 δ > 0（独立延拓）"],
+      out: "BOLD_HYPOTHESES.md；arXiv 包；Zenodo v0.8" },
+    { n: 5, title: "三条通道：Teräväinen、函数域、削弱 PND", verdict: "partial",
+      q: "从固定起点出发，哪条通道离 TPC 最近？",
+      result: ["① 不通：扩张法在 t-族上的天花板（命题 6.19、6.21）", "② 不通：函数域靠特征 p 的不可分性，整数上没有对应物", "③ 部分：任意一个粗糙类就够（推论 4.7）；量化门槛最低约 x/log³x（命题 4.9）"],
+      out: "论文 v0.9（Zenodo）" },
+    { n: 6, title: "第五阶段的遗留问题", verdict: "partial",
+      q: "三点相干与移位比较能否把条件通路缩短？整数上能找到\"导数线\"吗？",
+      result: ["GEH + SC_ν ⟹ TPC（定理 4.15），离 Polymath8b 只差一个比较不等式", "三点相干超出 GEH", "H9：ℤ 上没有非零导数，函数域机制搬不过来"],
+      out: "论文 v1.0（Zenodo 10.5281/zenodo.23723965）" },
+    { n: 7, title: "扫描 2026 年 AI 数论结果", verdict: "diag",
+      q: "OpenAI 的普通两点 Chowla、μ(p−1)=1、准 RH 等，有没有新的奇偶来源？",
+      result: ["奇偶敏感的结论都从小素数取符号，墙未动", "命题 T′：t-天花板对任意权重成立，并从 0.586 升到 0.676"],
+      out: "STAGE7_LITERATURE.md" },
+    { n: 8, title: "批量抽卡 H10–H16", verdict: "dead",
+      q: "2026 年论文里的技术能否提供奇偶信息？",
+      result: ["七张卡全部判死；数值卡在 10⁸ 上为零结果（正对照 z≈565–811）", "新判别法：粗糙对上 λ 在类内为常数，奇偶只能来自对 p₁p₂+2=q₁q₂ 的计数"],
+      out: "STAGE8_CARDS.md；stage8_cards.py" },
+    { n: 9, title: "四变量方程 p₁p₂+2=q₁q₂", verdict: "dead",
+      q: "Kloosterman、谱方法、ab−cd=h 的计数技术能否给出奇偶信息？",
+      result: ["公认未解（Nevo–Sarnak 注 1.5(2)）", "奇偶来源分成五类，孪生不满足任何一类的前提"],
+      out: "STAGE9_DETERMINANT.md" },
+    { n: 10, title: "移位范围坐标", verdict: "diag",
+      q: "在 GEH 下，\"几乎所有 h ≤ H\" 最小能取多大的 H？",
+      result: ["定理：GEH ⟹ de Polignac 数密度 ≥ 1/6", "模 3 赝品使 1/6 为锐；\"几乎所有 h ≤ H\" 对任何 H 都不可用筛法证明"],
+      out: "STAGE10_SHIFTS.md；shift_density.py" },
+    { n: 11, title: "准 RH 能否改进 MRT 的 8/33", verdict: "dead",
+      q: "Re s > 11/12 的无零点区域能否压低平均 Hardy–Littlewood 的移位范围？",
+      result: ["不能：8/33 卡在临界线上的 d₃ 矩估计，不在零点", "Guth–Maynard 只把方法下限从 1/6 降到 2/15"],
+      out: "STAGE11_QUASIRH.md" },
+    { n: 12, title: "Guth–Maynard 能否推动 MRT 的 d₃ 步骤", verdict: "dead",
+      q: "Guth–Maynard 的大值估计能否把 8/33 往下推？",
+      result: ["不能：Jutila 那一半已经最优（Hölder 下界）；损失在指数和的间距步骤，处在 V≈N^{1/2}，GM 只在 N^{0.7}<V<N^{0.8} 起作用", "天花板：只改进 d₃ 最多到 3/13≈0.231（被 d₄ 卡住）；恢复 20% 的损失就够，可作独立分析课题"],
+      out: "STAGE12_GM_D3.md；stage12_exponents.py" },
+    { n: 13, title: "寻找第六类奇偶来源", verdict: "diag",
+      q: "已知的破奇偶结果里，有没有五类之外、能用于孪生的机制？",
+      result: ["普查约 20 个结果，没有无条件的第六类；新增两类边缘机制：⓪ 解析的第二因子（伪孪生素数）、⑥ 伪装结构（Siegel 零点 ⟹ 孪生，条件）", "统一判据：都化为双线性和 Σ aₘbₙ c(mn) 且要求 c 有结构；孪生的 c = λ(·+2) 正是待证对象"],
+      out: "STAGE13_SIXTH_SOURCE.md" },
+    { n: 14, title: "λ(mn+2) 双线性结构抽卡 H17–H23", verdict: "dead",
+      q: "能否给 Σ aₘbₙ λ(mn+2)（m, n 为素数）提供可证明的结构，得到 Type II 估计？",
+      result: ["七张卡全部判死：谱与随机 ±1 矩阵相同；分散法化回移位素数上的 Chowla；p ∤ pn+2，乘性用不上；正对照全部检出", "新观察：m, n 取遍整数时是 Type I（BV 可证），奇偶难度只在素数系数时出现；移位 +2 只在 Mellin 频率 t≍x 处可见"],
+      out: "STAGE14_BILINEAR_CARDS.md；stage14_cards.py" },
+    { n: 15, title: "刚过平方根的大值区域", verdict: "diag",
+      q: "在 V = N^{1/2+δ} 处，有没有已知结果能对有结构的 Dirichlet 多项式超越均值定理？",
+      result: ["没有：均值定理是最好的已知界；Guth 的几乎反例说明 Halász–Montgomery 和 decoupling 在 σ ≤ 3/4 无效", "可用的只有 log n 的两个特征：尖峰 log(p/q) 和无生日悖论。数值上尖峰质量 0.204（整数）→ 0（素数），所以孪生需要一个只靠无生日悖论的大值定理，未找到先例"],
+      out: "STAGE15_SQRT_LARGE_VALUES.md；stage15_spikes.py（结论由第十六阶段修正）" },
+    { n: 16, title: "乘法 Sidon 与 Mellin 绝对值障碍", verdict: "diag",
+      q: "只靠无尖峰（乘法 Sidon）的大值结果真的没有先例吗？它能帮孪生吗？",
+      result: ["有先例：经典的素数多项式矩引理（T ≥ N^k 时为 Λ(2k) 型界，常数 k!）；数值上 mean|A|⁴/(2k²−k) = 1.00，以此修正第十五阶段", "但帮不了孪生：只用绝对值的 Mellin 界恒为平凡界的约 0.62 倍（P = 300 到 3000），真实值从 0.038 降到 0.0019。孪生的 Type II 是相位问题，任何大值或矩方法都不够"],
+      out: "STAGE16_SIDON_MELLIN.md；stage16_mellin_barrier.py" },
+    { n: 17, title: "绝对值障碍的严格证明", verdict: "done",
+      q: "能否把\"绝对值 Mellin 方法到不了 Type II\"证成定理？",
+      result: ["能：命题 7.8 证明，对任意单位模的 a、b、c，都有 M|A·B·C| ≥ κ·平凡界。证明用 Kronecker–Weyl 约化到 Steinhaus 变量，再用唯一分解计数矩、Berry–Esseen 反集中和反向 Hölder", "对抗搜索最低只到 0.53·平凡界（k ≤ 48）；目前只对 Bohr 均值和素数支撑证明。已写入论文 v1.2"],
+      out: "STAGE17_ABS_BARRIER.md；stage17_adversary.py；论文 v1.2（Zenodo）" },
+    { n: 18, title: "绝对值障碍推广到有限窗口", verdict: "partial",
+      q: "实际论证用的是 T ≍ x 的有限窗口，障碍在那里还成立吗？",
+      result: ["已证明 T ≳ x⁴ 的情形（推论 7.9：在 Fejér 权下，8 次以内的单项式精确正交）；数值上从 T = x/4 到 10⁴x，λ(·+2) 都在 0.63–0.65，对抗搜索最低 0.52", "T ≍ x 的证明需要长多项式在短窗口上的八阶矩，正落在刚过平方根的大值区域：障碍本身也撞上了同一面墙"],
+      out: "STAGE18_FINITE_T.md；stage18_finite_T.py；论文 v1.3（Zenodo）。子课题：猜想 A ⟹ MRT 8/33 → 7/30（条件结果，route/mrt833/）" },
+    { n: 19, title: "相位抽卡 H24–H29", verdict: "dead",
+      q: "能否给 λ(pq+2) 找到有结构的相位族，作为 Type II 所缺的相位信息？",
+      result: ["六张卡全部判死：双线性 Legendre、自守谱、大模特征、加性/二次相位、混合特征 χ(r)r^{−iτ}，在 P=1500 时都低于阈值（粗糙版本同样）", "两个假阳性都已排除：(2|p)(2|q) 的信号不随规模增长；两平方和子族的偏差是 λ 的一点效应。方法教训：有序对重复计数会虚增 z；必须与一点基线比较"],
+      out: "STAGE19_PHASE_CARDS.md；stage19_phase_cards.py；stage19_mod8.py" },
+    { n: 20, title: "SC_ν 的分类：非极端性，不是 Type II", verdict: "diag",
+      q: "SC_ν 的比较不等式是绝对值条件还是相位条件？命题 7.8 会不会排除它？",
+      result: ["两者都不是：SC_ν 和孪生本身都只需要非极端性（δ 离开 0）。命题 20.1（严格）：|Σy| ≤ k‖y‖_{S₂ₘ}，其中 S₄ 范数是矩形四点相关，属于绝对值数据。所以命题 7.8 只排除 Type II，不排除孪生", "数值：真实 λ 的 β 为 0.755 和 0.651（随 P 下降），赝品为 1.21。新目标：粗糙对上伸缩两点相关的平均非极端性（赝品使它取极值）"],
+      out: "STAGE20_SC_CLASSIFY.md；stage20_box.py" },
+    { n: 21, title: "伸缩平均不提供奇偶信息", verdict: "dead",
+      q: "对伸缩对 (p₁,p₂) 求平均，能否像 MRT 对移位平均那样给出奇偶信息？是否存在使矩形相关取极值的筛法赝品？",
+      result: ["不能：命题 21.1（严格）说明绝对值数据在 D_u·y·D_v 下不变，所以证孪生非极端就必须证弱 Type II（割范数 ≤ (1−ε)N），这比孪生更强。MRT 能成，是因为加性平均对角化了加性移位；伸缩平均对角化不了", "赝品存在，而且是一整族：ω = 1 + u_p·v_q·λ(pq+2)，使割范数恰为 N。数值：真实 λ 的割范数比值为 0.26 → 0.14，按 k^{−1/2} 下降"],
+      out: "STAGE21_DILATION_AVERAGE.md；stage21_cutnorm.py" },
+    { n: 22, title: "筛法上界常数与奇偶障碍", verdict: "diag",
+      q: "筛法上界常数对奇类能压到多少？压到 2 以下需要什么？",
+      result: ["所有改进（Chen 转换、BFI 双线性、Lichtman 2023 的 3.23）都在提高有效分布水平 θ，常数约为 2/θ，EH 下恰为 2；而且 3.23 是偶类 (1,1) 的上界，对孪生无用", "推论 4.7：奇类上界须 < 2，定量上须 ≤ 2 − Cη。Chen 定理是对 δ 中性的组合，所以能被证明；孪生需要对 δ 敏感的组合"],
+      out: "STAGE22_UPPER_CONSTANT.md；stage22_classes.py" },
+    { n: 23, title: "筛法组合的几何与最小缺口", verdict: "diag",
+      q: "已知筛法组合中，有没有对 δ 敏感、只差一个非筛法输入的组合？",
+      result: ["奇环判据（模型内严格）：符号一致性能逼出一组间隙，当且仅当它的间隙图含奇环。间隙 2 的边在可容许元组中构成匹配，所以孪生永远逼不出来；{0,2,6} 是三角形，所以 Polymath 能逼出析取；1/6 是锐的", "赝品面是线段 c₂ = −1、c₄ = −c₆。能推出孪生的线性输入必须让孪生边的权重占优。对称候选：同号三元组的正比例 ⇒ c₂ ≥ −1 + 2ε（真实世界为 0.25，赝品为 0）"],
+      out: "STAGE23_MINIMAL_GAP.md；stage23_polytope.py" },
+    { n: 24, title: "同号三元组：没有放宽", verdict: "dead",
+      q: "对元组或间隙求平均能否证明同号三元组占正比例？是否存在对称且同号比例为 0 的赝品？",
+      result: ["周期染色枚举（模 60 时有 59,050 种同号-free 染色）铺满了整个面 c₂+c₄+c₆ = −1；对称点在周期 36 时实现，但不杀孪生，所以同号输入比孪生更强。新发现模 4 赝品 λ ≈ ±χ₄", "平移平均被周期赝品挡住，伸缩平均由 Gallai 定理只能给出某个间隙。命题 24.1：孪生非极端本身就是最弱的输入，元组框架没有放宽"],
+      out: "STAGE24_MONO_TRIPLES.md；stage24_mono.py" },
+    { n: 25, title: "2026 普查：没有第八类，但有统一解释", verdict: "diag",
+      q: "2026 年（尤其 AI 产出的）对奇偶敏感的新结果中，有没有第八类非筛法输入？",
+      result: ["没有：所有奇偶敏感结果都属 ① 类。Meng 2026（有 Lean 形式化）对每个 N ≥ 11 证明了 λ 的四种符号模式都出现，是第一个逐点成立的二元非极端性定理，机制是刚性加互反律，依赖伸缩 2、3、5", "命题 25.1：极端赝品 χ₃、χ₄ 是完全乘性的，在 x^η-粗糙数上与 λ 的伪装距离平方只有 log(1/η)，是有界的；在 exp((log x)^c)-粗糙数上则发散。这说明 Elliott 型结构定理在粗糙支撑上的结论是空的（第二十六阶段的修正说法）"],
+      out: "STAGE25_CENSUS2026.md（结论由第二十六阶段修正）" },
+    { n: 26, title: "孪生版刚性：精确成立，稳健版本对奇偶敏感", verdict: "partial",
+      q: "粗糙孪生的 δ 接近 0 时，λ 是否必须伪装成 χ₃ 或 χ₄？伪装距离能否推出矛盾？",
+      result: ["精确刚性（GF(2) 秩计算）：核心秩亏恰为 1，在所有粗糙对上取极值的乘性函数在核心上只能是 χ₃ 或 χ₄。这是孪生版的 Meng 刚性（第二十七阶段修正：它的渐近版本本身对奇偶敏感，并非“对孪生无用”）", "稳健刚性（码的可靠性）在数值上成立，常数约 0.6，但在赝品测度下失效，所以对奇偶敏感。层级：孪生 ⊂ 稳健刚性 ⊂ 弱 Type II"],
+      out: "STAGE26_RIGIDITY.md（结论由第二十七阶段修正）；stage26_rigidity.py；stage26_robust.py" },
+    { n: 27, title: "精确刚性证不出来：它本身对奇偶敏感", verdict: "dead",
+      q: "能否把精确刚性（核心秩亏 1，解只有 χ₃、χ₄）证成定理，并用筛法给出所需粗糙对的存在性？",
+      result: ["定理 27.1（严格）：渐近精确刚性 ⟹ E(η)，即 (X/2, X] 中存在一对偶类 X^η-粗糙孪生（λ(n)λ(n+2) = +1）。赝品 νω 在偶类上质量为零，所以筛法证不出。E(η) 只要求一对，可能是迄今最弱的奇偶敏感命题", "定理 27.2（严格，族引理）：多项式族给出的关系向量之和恒为零（最高次项比较 + Hilbert 不可约性），所以筛法构造不出任何非零行空间向量", "秩论证的主元统计（X = 10⁶）：自下而上卡在底层 θ < 0.35（种子是 E_k 孪生，窗口 [z, z^1.5] 中 6 对全为偶类），自上而下卡在顶层（种子是几乎素数孪生）"],
+      out: "STAGE27_EXACT_RIGIDITY.md；stage27_pivots.py" },
+    { n: 28, title: "E(η)：每种放宽都已是定理，交点仍是墙", verdict: "diag",
+      q: "文献中有没有“存在一对偶类粗糙孪生”或更弱的变体？①–⑥ 类输入能否给出“一对”而不是“正比例”？",
+      result: ["文献中没有 E(η)。但放宽任何一个参数都是已知定理：间隙放宽为 ≤ 30 的析取（Pintz 2010：P⁻(p+d) > p^c 且 Ω(p+d) 为奇数），间隙对 h 平均（MRT 2019），粗糙度放宽为固定 z（命题 28.1，由 Tao 2016 推出）。Pintz 指出即使在 EH 下也不能指定单个间隙", "命题 28.2：赝品在偶类上的质量恰好为零，所以“只要一对”对任何一类输入都没有杠杆。⑤ 类最接近（天然产出存在性，但钉不住间隙 2），⑥ 类只给条件结论，①ʳ 刚性是循环论证"],
+      out: "STAGE28_EXISTENCE.md" },
+    { n: 29, title: "粗糙度轴：墙在 ρ = 1，是结构性的", verdict: "partial",
+      q: "用 Helfgott–Radziwiłł、Pilatte 的定量两点对数 Chowla，命题 28.1 能推到多大的 z？与伪装距离转折点对照如何？",
+      result: ["用 ρ = log log z / log log x 度量粗糙度。黑箱推法（命题 29.1）：只能到 z → ∞ 足够慢，因为 HR、Pilatte 没有对线性型系数的一致性。打开黑箱：伸缩素数取在 [z, H] 中时，伸缩保持粗糙性，HR 的范围 log H ≤ (log x)^{1/2} 给出 ρ < 1/2，与定理 A、LWW 天花板一致（第三十一阶段修正：这是上限，现有谱界估计只到 ρ < 1/3）", "伪装距离 D² = (1 − ρ) log log x：ρ < 1 时发散，没有结构性障碍；在 ρ = 1（z = x^η）处有界，赝品不可区分。孪生恰好落在转折点上，最后一步是相变，不是参数推进", "数值（x = 2·10⁷）：粗糙孪生上 λλ 的相关为正（z = 100 时为 0.014，z 分数 8.6），约等于单点均值的平方。真实世界偏向偶类，与赝品在相反的两端"],
+      out: "STAGE29_ROUGHNESS_REACH.md；stage29_reach.py" },
+    { n: 30, title: "墙的完整刻画（第 20–29 阶段汇总）", verdict: "diag",
+      q: "把第二十到二十九阶段的结果整理成一页纸：墙到底是什么、目标有多强、突破必须满足什么？",
+      result: ["墙是同一个赝品在多个坐标上的投影：测度 νω、周期染色 χ₃/χ₄、精确极值乘性函数，三者是同一个东西。放宽任何一个条件都是已知定理，孪生恰好要求三个条件同时成立", "目标阶梯（从弱到强）：E(η) ⊂ 渐近精确刚性 ⊂ 孪生非极端 ⊂ 稳健刚性、同号三元组 ⊂ 弱 Type II。突破必须同时满足六条必要条件，① 到 ⑤ 和 ⓪ 类都至少违反一条，⑥ 类只给条件结论"],
+      out: "WALL.md（一页纸）" },
+    { n: 31, title: "粗糙版 HR：归约到两个输入，赝品只在均值项里", verdict: "partial",
+      q: "在粗糙权重下重做 Helfgott–Radziwiłł 的扩张论证，能否严格证明 z ≤ exp((log x)^c) 时偶类粗糙孪生存在？",
+      result: ["定理 31.1（严格）：粗糙伸缩恒等式是精确的，伸缩把间隙 2 送到间隙 2d，粗糙性不受损。命题 31.2（严格）：对赝品 χ₄·1_R，边形式和均值项都恰为 −1，谱部分只是两者之差。所以扩张机制中奇偶只从 ④ 类的均值项进来，谱部分只付稀疏性的代价", "定理 31.3（条件）：假设 (S) 稀疏稳健谱界和 (M) 粗糙版 MR 定理，E 对 log z ≤ c√log x 成立，与定理 A 条件锐。两个输入在文献中都只有“差一步”的版本：MR 定理 1.9 的筛法条件排除了粗糙函数，HR 的例外集合是绝对密度。用现有谱界估计只到 ρ < 1/3；只用素数伸缩时 z ≤ exp(c√log log x)", "数值（N = 10⁶，z = 11）：赝品的 E = M = −1，谱部分约 10⁻⁴；λ 的三项都在 10⁻² 以内。粗糙平均度数 0.55 < 1，分辨率 4.3 > 1，证书失败，稀疏性直接可见"],
+      out: "STAGE31_ROUGH_HR.md；stage31_rough_hr.py" },
+    { n: 32, title: "输入 (S)：谱范数跟着粗糙图自己的度数走", verdict: "partial",
+      q: "粗糙诱导子图上的谱范数是按稀疏尺度 √(V/log z) 增长（可达 ρ < 1/2），还是按全图尺度 √V 增长（只到 ρ < 1/3）？",
+      result: ["数值（N = 10⁶，z = 5、11、31，粗糙伸缩 D ≤ 5·10⁴，HR 式例外集合）：粗糙图 ‖B‖ ≈ 3.45·d_R^0.43，全图 ‖B‖ ≈ 3.10·d_R^0.49，几乎是同一条普适曲线。分辨率比的指数 α 中位数为 0.60（稀疏尺度 0.5，全图尺度 1），换算可达指数 ρ ≈ 0.40–0.49", "例外集合在粗糙数中的比例与在全体整数中相当，(S) 中“相对例外集合”的担心在数值上不成立。但 d_R ≤ 4，而分辨率 < 1 需要 d_R ≳ 10，到不了渐近区，只是倾向，不是证明"],
+      out: "STAGE32_SPARSE_SPECTRUM.md；stage32_sparse_spectrum.py" },
+    { n: 33, title: "(S2) 的模板：剪枝能证，迹方法不够；真实图里有孪生矩形", verdict: "partial",
+      q: "在随机粗糙集模型上，能否用迹方法严格证明诱导子图的谱范数是 O(√d_R)？",
+      result: ["引理 33.1（严格）：顶点抽样的迹恒等于分层迹的加权和，抽样不产生相消。定理 33.2 与命题 33.3（严格）：迹方法只给 O(√(d log n) + log n)，星形森林说明这个损失是真实的，必须剪掉高度数顶点。定理 33.4（严格，基于 Le–Levina–Vershynin 2017）：独立模型剪枝后谱范数为 O(√d)，例外集合的相对比例为 e^{−d/3}，这就是 (S) 的模板", "命题 33.5（严格）：真实粗糙图里的 4 圈几乎全是孪生矩形 ab → a(b+2) → (a+2)(b+2) → (a+2)b，四个顶点自动粗糙，不会被抽样压低（z = 31 时 54% 的 4 圈全粗糙，独立预测仅 0.06%）。但它们对任何完全乘性函数都是奇偶中性的，且相对 d_R 的圈密度有界（4 圈 / d_R² ≤ 0.45）", "结论：扩张机制在粗糙支撑上的剩余问题（粗糙版 MR、乘积盒子的上界计数、LLV 型剪枝的改写）都不涉及奇偶，全部解决也只到 ρ < 1/2。这条线可以收尾"],
+      out: "STAGE33_TRACE_TEMPLATE.md；stage33_cycles.py" }
+  ],
+  ledger: [
+    { id: "H1", hyp: "算术导数 n′ 的 Jacobi 符号能检测 (−1)^{ω(n)}", verdict: "dead", basis: "证明", why: "(n′/n) = (−1)^{k(k−1)/2}，只看 ≡3 mod 4 的素因子个数" },
+    { id: "H2", hyp: "换一个奇偶检测函数更好控制", verdict: "dead", basis: "分析", why: "奇偶结构是一维的（定理 4.1），换函数不产生新自由度" },
+    { id: "H3", hyp: "多模式加正性能逼出 δ > 0", verdict: "dead", basis: "模型内定理", why: "任何二点赝品都能独立延拓到更大的模式" },
+    { id: "H5", hyp: "λ 在粗糙数上复杂度很低", verdict: "dead", basis: "数值", why: "符号熵约每个粗糙位置 1 bit" },
+    { id: "H6", hyp: "进位制数字多项式的 Pellet 类比", verdict: "dead", basis: "数值", why: "12 项检验全在噪声内；进位破坏乘法" },
+    { id: "H7", hyp: "粗糙尺度上的 Heath-Brown 型二分法", verdict: "partial", basis: "低优先", why: "第二分支就是粗糙数上的 Chowla" },
+    { id: "H8", hyp: "ℓ^p 或加权 ℓ² 证书越过 t-天花板", verdict: "dead", basis: "证明 + 数值", why: "ℓ^p 被 ℓ² 支配；加权只改善常数" },
+    { id: "H9", hyp: "整数上存在 λ 为特征的正密度线族", verdict: "dead", basis: "证明 + 数值", why: "ℤ 无非零导数；局部替代品只给周期函数" },
+    { id: "H10", hyp: "有界独立性：奇偶可由小素数剩余预测", verdict: "dead", basis: "数值", why: "测试集 z = −0.43 / −0.13；对照 z ≈ 565" },
+    { id: "H11", hyp: "长槽素数的带奇偶 Type II", verdict: "dead", basis: "分析", why: "粗糙类上 λ 为常数，奇偶权退化为计数" },
+    { id: "H12", hyp: "强零点区域推动 δ 的界", verdict: "dead", basis: "分析", why: "即使 GRH 也没有 0 ≤ δ ≤ 2 以外的界" },
+    { id: "H13", hyp: "排除 Siegel 零点有助于孪生", verdict: "dead", basis: "分析", why: "反而移除了 Siegel 零点 ⟹ 孪生 这条路线" },
+    { id: "H14", hyp: "非等权膨胀子越过 t-天花板", verdict: "dead", basis: "定理", why: "命题 T′ 对任意非负权成立" },
+    { id: "H15", hyp: "μ(p+2) 的抵消转移到粗糙 p+2", verdict: "dead", basis: "分析 + 数值", why: "粗糙部分权重趋于 0，其余类参数未知" },
+    { id: "H16", hyp: "字典搜索：某个简单特征与奇偶相关", verdict: "dead", basis: "数值", why: "553 个特征最大 |z| = 2.94 < 4.67；对照 z ≈ 811" },
+    { id: "H17", hyp: "分散法：对 m 用 Cauchy–Schwarz 后可证抵消", verdict: "dead", basis: "分析 + 数值", why: "化回移位素数上的 Chowla；数值 z = −1.13（对照 1102）" },
+    { id: "H18", hyp: "矩阵 λ(mn+2) 有低秩或谱结构", verdict: "dead", basis: "数值", why: "σ₁ = 0.1056，与随机 ±1 矩阵相同（对照 0.17–1.0）" },
+    { id: "H19", hyp: "把 mn+2 写成范数形式（新的 ② 类实例）", verdict: "dead", basis: "分析", why: "齐次化后是三元迷向形式，只有 Type I 信息" },
+    { id: "H20", hyp: "在素数变量上做熵递减", verdict: "dead", basis: "证明", why: "p ∤ pn+2，乘性作用不上" },
+    { id: "H21", hyp: "λ(mn+2) 局部伪装成小模特征", verdict: "dead", basis: "数值", why: "406 个特征最大相关 0.0078，低于阈值 0.0109（对照 0.50）" },
+    { id: "H22", hyp: "剩余类强制 d | mn+2", verdict: "dead", basis: "分析", why: "移位变成依赖于 m 的量" },
+    { id: "H23", hyp: "Mellin 化：乘法 Hankel 矩阵的大值", verdict: "dead", basis: "分析 + 数值", why: "移位只在 t≍x 处可见，正好是均值定理的平凡阈值" },
+    { id: "H24", hyp: "双线性 Legendre 相位 (p|q) 等", verdict: "dead", basis: "数值", why: "P=1500 时最大 |z| = 1.59 < 3.72；(2|p)(2|q) 的信号不随规模增长" },
+    { id: "H25", hyp: "自守或谱方法（移位卷积）", verdict: "dead", basis: "分析", why: "λ 不是自守系数：ζ(2s)/ζ(s) 不是自守 L-函数" },
+    { id: "H26", hyp: "大模特征 χ(pq+2)，Q ≤ 400", verdict: "dead", basis: "数值", why: "13,731 个特征，最大 |z| = 3.18 < 3.76" },
+    { id: "H27", hyp: "Gauss 整数子族（pq+2 为两平方和）", verdict: "dead", basis: "数值", why: "偏差 −0.114 与一点基线 −0.132 吻合，不是孪生信息" },
+    { id: "H28", hyp: "加性与二次相位 e(αr)、e(αr²)", verdict: "dead", basis: "数值", why: "最大 |z| 为 2.78 和 2.47，阈值 3.69" },
+    { id: "H29", hyp: "混合特征 χ(r)r^{−iτ}（局部伪装）", verdict: "dead", basis: "数值", why: "最大 |z| = 3.61 < 4.09" }
+  ],
+  parity: [
+    { cls: "① 小素数处的乘性", src: "λ(pn) = −λ(n)，或抽出小素因子", ex: "Tao、Helfgott–Radziwiłł、Pilatte、OpenAI 2026、Lü–Wang–Wu", fails: "粗糙数没有小素因子", ours: "定理 A、E，命题 T′" },
+    { cls: "② 代数结构", src: "范数形式、导数（Frobenius）", ex: "Friedlander–Iwaniec x²+y⁴、Heath-Brown x³+2y³、Sawin–Shusterman", fails: "ℤ 上没有导数；n(n+2) 是分裂代数", ours: "命题 6.24、通道 ②" },
+    { cls: "③ 多一个变量", src: "三元圆法", ex: "Vinogradov 三素数；Nevo–Sarnak 的 n ≥ 3", fails: "孪生是二元问题", ours: "第九阶段" },
+    { cls: "④ 对移位求平均", src: "对 h 平均后用圆法", ex: "Mikawa、Matomäki–Radziwiłł–Tao（H ≥ X^{8/33}）", fails: "孪生只要固定的 h = 2", ours: "第十、十一阶段" },
+    { cls: "⑤ 析取（鸽笼）", src: "加权素数期望个数 > 1", ex: "GPY、Maynard–Tao、Polymath8b、GGPY、Pintz 2010（间隙 ≤ 30 的偶类粗糙对）", fails: "只能保证\"三者之一\"", ours: "命题 4.14、定理 4.15" },
+    { cls: "⓪ 解析的第二因子", src: "第二个集合由光滑相位定义，化为 Σ Λ(n)e(f(n))", ex: "Piatetski-Shapiro ⌊n^c⌋、Kontorovich 伪孪生素数", fails: "孪生的第二因子 n+2 是算术的", ours: "第十三阶段" },
+    { cls: "①ʳ 刚性（① 的子类）", src: "缺失模式迫使 λ 等于某个特征，再与互反律矛盾；依赖伸缩 2、3、5", ex: "Meng 2026（Liouville 四种模式，Lean）、匿名仓库（偶数的 (−1,−1)）", fails: "孪生方程在伸缩下会改变间隙；赝品 χ₄ 本身是乘性的；在粗糙数上伪装距离 = log(1/η)，有界", ours: "第二十五阶段，命题 25.1" },
+    { cls: "⑥ 伪装结构（条件）", src: "λ 伪装成例外实特征 χ，两点相关变成周期函数", ex: "Heath-Brown 1983、Tao–Teräväinen、Matomäki–Merikoski", fails: "需要 Siegel 零点存在", ours: "H13、第十三阶段" }
+  ]
+};
+
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const chip = (v) => { const c = el("span", "chip v-" + v, DATA.verdicts[v].label); c.title = DATA.verdicts[v].tip; return c; };
+
+/* header meta */
+(function () {
+  const m = $("#meta");
+  m.append(el("span", null, "更新于 " + DATA.updated));
+  const a = el("a", null, "论文 " + DATA.paper.version + " · DOI " + DATA.paper.doi);
+  a.href = DATA.paper.url; a.target = "_blank"; a.rel = "noopener";
+  m.append(a);
+  m.append(el("span", null, DATA.stages.length + " 个阶段 · " + DATA.ledger.length + " 个假设"));
+})();
+
+/* overview route */
+(function () {
+  const r = $("#route");
+  const mk = (cls, label, title, sub, onClick) => {
+    const n = el("div", "node " + cls);
+    n.append(el("div", "dot", label));
+    const b = el("div", "body");
+    const t = el("div", "t");
+    if (onClick) { const btn = el("button", "link", title); btn.type = "button"; btn.addEventListener("click", onClick); t.append(btn); }
+    else t.append(el("span", null, title));
+    b.append(t);
+    if (sub) b.append(el("div", "s", sub));
+    n.append(b);
+    return { n, t };
+  };
+  r.append(mk("start", "起", DATA.start.title, DATA.start.sub).n);
+  DATA.stages.forEach((s) => {
+    const { n, t } = mk(s.verdict, String(s.n), s.title, s.result[0], () => { show("stages"); const c = document.getElementById("stage-" + s.n); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    t.append(chip(s.verdict));
+    r.append(n);
+  });
+  r.append(mk("goal", "终", DATA.goal.title, DATA.goal.sub).n);
+})();
+
+/* wall characterization */
+(function () {
+  $("#wall-one").textContent = DATA.wall.one;
+  DATA.wall.ladder.forEach(([k, v]) => { const li = el("li"); li.append(el("b", null, k), document.createTextNode("：" + v)); $("#wall-ladder").append(li); });
+  DATA.wall.need.forEach((v) => $("#wall-need").append(el("li", null, v)));
+  $("#wall-src").textContent = DATA.wall.src;
+})();
+
+/* coordinates */
+(function () {
+  const t = $("#coords");
+  const h = el("tr"); ["坐标", "已知最好", "孪生需要"].forEach((x) => h.append(el("th", null, x)));
+  t.append(h);
+  DATA.coords.forEach((c) => {
+    const tr = el("tr");
+    tr.append(el("td", null, c.name), el("td", "have", c.have), el("td", "need", c.need));
+    t.append(tr);
+  });
+})();
+
+/* status + legend */
+(function () {
+  const counts = {}; DATA.stages.forEach((s) => counts[s.verdict] = (counts[s.verdict] || 0) + 1);
+  const p = el("p", null);
+  p.textContent = "已走 " + DATA.stages.length + " 个阶段：" +
+    Object.keys(DATA.verdicts).filter((k) => counts[k]).map((k) => DATA.verdicts[k].label.replace(/^\S+\s/, "") + " " + counts[k]).join("，") +
+    "。最近的条件结果是 GEH + SC_ν ⟹ TPC；剩下的那一步正是奇偶障碍本身，最弱的形式是 E(η)：只要一对偶类粗糙孪生。";
+  $("#status").append(p);
+  const lg = $("#legend");
+  Object.keys(DATA.verdicts).forEach((k) => { const c = chip(k); c.textContent = DATA.verdicts[k].label + "：" + DATA.verdicts[k].tip; lg.append(c); });
+})();
+
+/* stages with filter */
+let filter = "all";
+function renderStages() {
+  const box = $("#stages"); box.replaceChildren();
+  DATA.stages.filter((s) => filter === "all" || s.verdict === filter).forEach((s) => {
+    const c = el("article", "stage " + s.verdict); c.id = "stage-" + s.n;
+    const h = el("h3"); h.append(el("span", "num", "第 " + s.n + " 阶段"), el("span", null, s.title), chip(s.verdict));
+    c.append(h, el("p", "q", "问题：" + s.q));
+    const ul = el("ul"); s.result.forEach((x) => ul.append(el("li", null, x))); c.append(ul);
+    if (s.out) c.append(el("div", "out", "产出：" + s.out));
+    box.append(c);
+  });
+}
+(function () {
+  const f = $("#filters");
+  const opts = [["all", "全部"]].concat(Object.keys(DATA.verdicts).map((k) => [k, DATA.verdicts[k].label]));
+  opts.forEach(([k, label]) => {
+    const b = el("button", null, label); b.type = "button"; b.setAttribute("aria-pressed", k === filter ? "true" : "false");
+    b.addEventListener("click", () => { filter = k; f.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); renderStages(); });
+    f.append(b);
+  });
+  renderStages();
+})();
+
+/* ledger */
+(function () {
+  const t = $("#ledger");
+  const h = el("tr"); ["编号", "假设", "判决", "依据", "死因 / 理由"].forEach((x) => h.append(el("th", null, x))); t.append(h);
+  DATA.ledger.forEach((r) => {
+    const tr = el("tr"); const v = el("td"); v.append(chip(r.verdict));
+    tr.append(el("td", "id", r.id), el("td", null, r.hyp), v, el("td", null, r.basis), el("td", null, r.why));
+    t.append(tr);
+  });
+})();
+
+/* parity sources */
+(function () {
+  const t = $("#parity");
+  const h = el("tr"); ["类别", "奇偶信息来源", "代表结果", "孪生为何不满足", "我们的对应结果"].forEach((x) => h.append(el("th", null, x))); t.append(h);
+  DATA.parity.forEach((r) => {
+    const tr = el("tr");
+    tr.append(el("td", "id", r.cls), el("td", null, r.src), el("td", null, r.ex), el("td", null, r.fails), el("td", null, r.ours));
+    t.append(tr);
+  });
+})();
+
+$("#foot").textContent = "所有结论均由 AI 辅助得出，尚未经人类专家逐条核对。阶段与假设的完整报告见项目 route/ 目录。";
+
+/* tabs with #hash */
+const VIEWS = ["overview", "stages", "ledger", "parity"];
+function show(v) {
+  if (!VIEWS.includes(v)) v = "overview";
+  VIEWS.forEach((x) => {
+    $("#view-" + x).hidden = x !== v;
+    $("#tab-" + x).setAttribute("aria-selected", x === v ? "true" : "false");
+  });
+  try { localStorage.setItem("tpc-roadmap-tab", v); } catch (e) {}
+  if (location.hash !== "#" + v) { try { history.replaceState(null, "", "#" + v); } catch (e) {} }
+}
+document.querySelectorAll("nav.tabs button").forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+(function () {
+  let v = (location.hash || "").slice(1);
+  if (!VIEWS.includes(v)) { try { v = localStorage.getItem("tpc-roadmap-tab") || "overview"; } catch (e) { v = "overview"; } }
+  show(v);
+})();
+</script>

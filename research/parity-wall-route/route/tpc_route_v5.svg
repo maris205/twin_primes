@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1300" width="1200" height="1300" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="1300" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="600" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#222">孪生素数 · 第五阶段路线图：从固定起点找通道</text>
+  <text x="600" y="72" text-anchor="middle" font-size="14" fill="#777">2026-10-28 · 起点：Zenodo v0.9（DOI 10.5281/zenodo.23722939）· 第五阶段三条通道均已走完 · 下一步见底部</text>
+
+  <!-- ============ START ============ -->
+  <rect x="60" y="95" width="1080" height="205" rx="14" fill="#eafaf1" stroke="#27ae60" stroke-width="2.5"/>
+  <text x="85" y="127" font-size="19" font-weight="bold" fill="#1e8449">起点（已固定，每块砖都有证明；v0.9 新增推论 4.7、命题 4.9、6.19、6.21）</text>
+  <rect x="85" y="145" width="335" height="135" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="252" y="172" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 B · 条件通路</text>
+  <text x="252" y="202" text-anchor="middle" font-size="15" fill="#222">GEH + PND_log ⟹ 孪生素数</text>
+  <text x="252" y="230" text-anchor="middle" font-size="13" fill="#555">PND_log：limsup ρ(X) &gt; −1</text>
+  <text x="252" y="252" text-anchor="middle" font-size="13" fill="#555">即粗糙对上 λ 不完全反相关</text>
+  <rect x="432" y="145" width="335" height="135" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="600" y="172" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 4.1 + 定理 C</text>
+  <text x="600" y="202" text-anchor="middle" font-size="15" fill="#222">奇偶只有一个参数 δ ∈ [0,2]</text>
+  <text x="600" y="230" text-anchor="middle" font-size="13" fill="#555">由 x^η-粗糙对统一携带</text>
+  <text x="600" y="252" text-anchor="middle" font-size="13" fill="#555">→ 目标是一个数，不是一族</text>
+  <rect x="780" y="145" width="335" height="135" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="947" y="172" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">墙的位置（定理 A、E）</text>
+  <text x="947" y="202" text-anchor="middle" font-size="15" fill="#222">已知机制到达 z ≤ exp(O(√log x))</text>
+  <text x="947" y="230" text-anchor="middle" font-size="13" fill="#555">需要 z = x^η</text>
+  <text x="947" y="252" text-anchor="middle" font-size="13" fill="#555">→ 知道哪些工具注定过不去</text>
+
+  <!-- arrows start -> channels -->
+  <line x1="252" y1="300" x2="220" y2="352" stroke="#2471a3" stroke-width="3" marker-end="url(#arB)"/>
+  <line x1="600" y1="300" x2="600" y2="352" stroke="#555" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar)"/>
+  <line x1="947" y1="300" x2="980" y2="352" stroke="#555" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar)"/>
+
+  <!-- ============ CHANNELS ============ -->
+  <text x="620" y="335" text-anchor="start" font-size="15" font-weight="bold" fill="#666">第五阶段：三条通道的结论</text>
+
+  <!-- channel 1 -->
+  <rect x="60" y="358" width="345" height="300" rx="12" fill="#fdf2f1" stroke="#c0392b" stroke-width="2"/>
+  <text x="232" y="390" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a5276">通道 ① Teräväinen</text>
+  <text x="232" y="414" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">✗ 不通 · 方法天花板已证明（命题 6.19、6.21）</text>
+  <text x="80" y="446" font-size="14" fill="#222">无条件已知（Ter18，对数密度）：</text>
+  <text x="80" y="470" font-size="14" fill="#222">n 与 n+1 的大素因子个数独立</text>
+  <text x="80" y="502" font-size="14" fill="#222">要走到：</text>
+  <text x="80" y="526" font-size="14" fill="#222">n 与 n+2、x^η-粗糙、奇偶 λ</text>
+  <text x="80" y="558" font-size="14" font-weight="bold" fill="#1a5276">① 结论：唯一本质差距 = t 从 ±1 推到 0</text>
+  <text x="80" y="582" font-size="14" font-weight="bold" fill="#1a5276">①′ 结论：扩张法天花板 |t| &gt; 2−√2 ≈ 0.586</text>
+  <text x="80" y="606" font-size="14" fill="#222">（ℓ² 代价超过 √次数 增益；数值吻合）</text>
+  <text x="80" y="638" font-size="13" fill="#555">H8 ✗：ℓ^p 被 ℓ² 支配；加权只改常数</text>
+
+  <!-- channel 2 -->
+  <rect x="427" y="358" width="345" height="300" rx="12" fill="#fdfefe" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="600" y="390" text-anchor="middle" font-size="18" font-weight="bold" fill="#424949">通道 ② 函数域 δ_q</text>
+  <text x="600" y="414" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">✗ 不通 · 机制在整数上没有对应物</text>
+  <text x="447" y="446" font-size="14" fill="#222">数值：q = 3–13，δ_q ≈ 1（噪声内）</text>
+  <text x="447" y="470" font-size="14" fill="#222">线上抵消为平方根量级（小 q 也成立）</text>
+  <text x="447" y="502" font-size="14" font-weight="bold" fill="#424949">机制：特征 p 的不可分性</text>
+  <text x="447" y="526" font-size="14" fill="#222">导数相同的"线"上 μ 是 Dirichlet 特征</text>
+  <text x="447" y="558" font-size="14" fill="#222">"q 大"只用于证明短特征和抵消</text>
+  <text x="447" y="582" font-size="14" fill="#222">整数缺：λ 为特征的正密度"线"族</text>
+  <text x="447" y="638" font-size="13" fill="#555">旁支：q=3 孪生比 HL 少约 15%</text>
+
+  <!-- channel 3 -->
+  <rect x="794" y="358" width="345" height="300" rx="12" fill="#fdfefe" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="966" y="390" text-anchor="middle" font-size="18" font-weight="bold" fill="#424949">通道 ③ 削弱 PND_log</text>
+  <text x="966" y="414" text-anchor="middle" font-size="13" font-weight="bold" fill="#d68910">◐ 部分 · 4a 已完成，4b 仍开放 → 候选 A</text>
+  <text x="814" y="446" font-size="14" fill="#222">任意一个粗糙类 ⟺ 孪生正比例：</text>
+  <text x="814" y="470" font-size="14" fill="#222">偶类下界 或 奇类上界 &lt; 2</text>
+  <text x="814" y="502" font-size="14" fill="#222">例：粗糙 P₂ 孪生；Chen 上界破 2</text>
+  <text x="814" y="526" font-size="14" fill="#222">数值 10⁸：δ = 1.000 ± 0.001</text>
+  <text x="814" y="558" font-size="14" font-weight="bold" fill="#424949">真正可削弱：4a 量化（无穷多）</text>
+  <text x="814" y="582" font-size="14" font-weight="bold" fill="#424949">4b 移位比较 SC + Polymath H≤6</text>
+  <text x="814" y="638" font-size="13" fill="#555">4a ✓：门槛 = ε_B，最低 x/log³x（命题 Q）</text>
+
+  <!-- arrows channels -> end -->
+  <line x1="232" y1="658" x2="420" y2="745" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,6"/>
+  <line x1="600" y1="658" x2="600" y2="745" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,6"/>
+  <line x1="966" y1="658" x2="780" y2="745" stroke="#d68910" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#ar)"/>
+  <text x="300" y="714" font-size="26" font-weight="bold" fill="#c0392b">✗</text>
+  <text x="612" y="714" font-size="26" font-weight="bold" fill="#c0392b">✗</text>
+  <text x="880" y="714" font-size="24" font-weight="bold" fill="#d68910">◐</text>
+
+
+  <rect x="300" y="676" width="600" height="0" fill="none"/>
+  <text x="600" y="829" text-anchor="middle" font-size="13" fill="#555">图例：<tspan fill="#c0392b" font-weight="bold">✗ 不通</tspan>（已证明或已诊断走不到终点）　<tspan fill="#d68910" font-weight="bold">◐ 部分</tspan>（化简已完成，仍有开放的一步）</text>
+  <!-- ============ END ============ -->
+  <rect x="300" y="750" width="600" height="62" rx="14" fill="#fef9e7" stroke="#b7950b" stroke-width="2.5"/>
+  <text x="600" y="790" text-anchor="middle" font-size="20" font-weight="bold" fill="#7d6608">终点：孪生素数猜想（无穷多个 p, p+2）</text>
+
+  <!-- ============ COMPARISON ============ -->
+  <rect x="60" y="835" width="1080" height="200" rx="12" fill="#fbfcfc" stroke="#aab7b8" stroke-width="1.5"/>
+  <text x="85" y="864" font-size="17" font-weight="bold" fill="#333">起点与终点对比：还差什么</text>
+  <line x1="85" y1="876" x2="1115" y2="876" stroke="#d5d8dc" stroke-width="1"/>
+  <text x="85" y="902" font-size="14" font-weight="bold" fill="#555">项目</text>
+  <text x="330" y="902" font-size="14" font-weight="bold" fill="#1e8449">起点（已有）</text>
+  <text x="730" y="902" font-size="14" font-weight="bold" fill="#7d6608">终点（需要）</text>
+  <text x="85" y="930" font-size="14" fill="#333">奇偶输入</text>
+  <text x="330" y="930" font-size="14" fill="#333">PND_log 是猜想，只有数值支撑</text>
+  <text x="730" y="930" font-size="14" fill="#333">PND_log 成为定理 ← 通道 ①②③ 的目标</text>
+  <text x="85" y="958" font-size="14" fill="#333">分布输入</text>
+  <text x="330" y="958" font-size="14" fill="#333">GEH 是假设</text>
+  <text x="730" y="958" font-size="14" fill="#333">仍需 GEH，或其足够弱的版本（本阶段不处理）</text>
+  <text x="85" y="986" font-size="14" fill="#333">粗糙度</text>
+  <text x="330" y="986" font-size="14" fill="#333">z ≤ exp(O(√log x))；t-族：|t| &gt; 0.586</text>
+  <text x="730" y="986" font-size="14" fill="#333">z = x^η，即 t = 0（无条件起点：Ter18，t = 1）</text>
+  <text x="85" y="1014" font-size="14" fill="#333">性质</text>
+  <text x="330" y="1014" font-size="14" fill="#333">条件定理 + 方法限制定理</text>
+  <text x="730" y="1014" font-size="14" fill="#333">无条件定理</text>
+
+  <!-- ============ NEXT STAGE ============ -->
+  <rect x="60" y="1055" width="1080" height="225" rx="12" fill="#f5eef8" stroke="#7d3c98" stroke-width="2"/>
+  <text x="85" y="1085" font-size="18" font-weight="bold" fill="#5b2c6f">下一步候选（第六阶段）</text>
+  <rect x="85" y="1100" width="330" height="165" rx="10" fill="#ebdef0" stroke="#7d3c98" stroke-width="2.5"/>
+  <text x="250" y="1126" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a235a">★ A · 三点相干 + 移位比较</text>
+  <text x="100" y="1154" font-size="13" fill="#222">定理 C 推广到 (n, n+2, n+6)；</text>
+  <text x="100" y="1176" font-size="13" fill="#222">把 Polymath8b（GEH ⟹ H≤6）</text>
+  <text x="100" y="1198" font-size="13" fill="#222">翻译成 δ(2)、δ(4)、δ(6) 的语言；</text>
+  <text x="100" y="1220" font-size="13" fill="#222">目标：GEH + SC ⟹ 孪生素数</text>
+  <text x="100" y="1250" font-size="12" fill="#6c3483">离已知定理只差一步（推荐）</text>
+  <rect x="432" y="1100" width="330" height="165" rx="10" fill="#fdfefe" stroke="#a569bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="597" y="1126" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a235a">B · 量化 Bombieri 误差</text>
+  <text x="447" y="1154" font-size="13" fill="#222">核对 Bombieri / FI 证明中</text>
+  <text x="447" y="1176" font-size="13" fill="#222">误差对水平 θ 的依赖，</text>
+  <text x="447" y="1198" font-size="13" fill="#222">把命题 4.9 的门槛变成定理</text>
+  <text x="447" y="1220" font-size="13" fill="#222">（最好情形约 x/log³x）</text>
+  <text x="447" y="1250" font-size="12" fill="#6c3483">需要精读原文献</text>
+  <rect x="779" y="1100" width="346" height="165" rx="10" fill="#fdfefe" stroke="#a569bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="952" y="1126" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a235a">C · 小题与旁支</text>
+  <text x="794" y="1154" font-size="13" fill="#222">命题 6.19 推广到一般权重；</text>
+  <text x="794" y="1176" font-size="13" fill="#222">q=3 孪生比 HL 少约 15% 的原因；</text>
+  <text x="794" y="1198" font-size="13" fill="#222">新的大胆假设（H9+）：找整数上</text>
+  <text x="794" y="1220" font-size="13" fill="#222">"λ 为特征的正密度线族"</text>
+  <text x="794" y="1250" font-size="12" fill="#6c3483">便宜，可并行</text>
+</svg>

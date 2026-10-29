@@ -1,0 +1,60 @@
+% Road map of the paper (Figure 1). Included from main.tex.
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={rounded corners=2pt,align=center,inner sep=4pt,text width=4.6cm,minimum height=1.2cm},
+  known/.style={box,draw=black!45,fill=black!6},
+  new/.style={box,draw=blue!70!black,very thick,fill=blue!6},
+  open/.style={box,draw=black!70,dashed},
+  goal/.style={box,draw=black,very thick,fill=yellow!15},
+  arr/.style={-{Stealth[length=2.6mm]},thick},
+  darr/.style={-{Stealth[length=2.6mm]},thick,dashed,black!60},
+  lab/.style={font=\scriptsize,align=center,fill=white,inner sep=1pt}
+]
+% column headers
+\node[font=\bfseries] at (0,1.4) {Conditional route};
+\node[font=\bfseries] at (7.6,1.4) {This paper};
+\node[font=\bfseries] at (15.2,1.4) {Methods};
+
+% ---------------- left column: the conditional route ----------------
+\node[known] (geh)  at (0,0)    {\textbf{EH, GEH}\\ level of distribution $x^{1-\varepsilon}$};
+\node[known] (bomb) at (0,-2.4) {\textbf{Bombieri's asymptotic sieve}\\ $\sum a_n\Lambda_{\vec k}(n)$ determined\\ for $\vec k\ne(1,\dots,1)$};
+\node[new]   (thmB) at (0,-4.9) {\textbf{Theorem B} (explicit form)\\ $\sum_{n\le X}\frac{\Lambda(n)\Lambda(n+2)}{n}$\\ $=2\Pi_2\log X\,(1+\rho(X))+o(\log X)$};
+\node[open]  (pnd)  at (0,-7.5) {\textbf{PND$_{\log}$} (open)\\ $\limsup_{X\to\infty}\rho(X)>-1$};
+\node[goal]  (tpc)  at (0,-9.9) {\textbf{Twin prime conjecture}};
+
+\draw[arr] (geh) -- (bomb);
+\draw[arr] (bomb) -- (thmB);
+\draw[arr,black!50] (thmB) -- node[lab]{single remaining parity input} (pnd);
+\draw[arr] (pnd) -- node[lab]{Theorem B, on GEH} (tpc);
+
+% ---------------- middle column: results of this paper ----------------
+\node[new]  (thmC) at (7.6,-4.9) {\textbf{Theorem C} (coherence)\\ on rough pairs\\ $u(s,r')=(\delta_x-1)(-1)^{s+r'}$};
+\node[new]  (thmA) at (7.6,-7.5) {\textbf{Theorem A} (main result)\\ every dilation--spectral certificate:\\ $\mathrm{res}_R\gg c_0\,\eta\min(1,\eta/\kappa)\log x$};
+\node[open] (entr) at (7.6,-9.9) {\textbf{Entropy decrement} (Tao)\\ not an operator-norm certificate:\\ not covered, open};
+
+\draw[arr] (bomb.south east) -- node[lab,sloped,above]{applied on both sides} (thmC.north west);
+\draw[arr,black!50] (thmC) -- node[lab]{identifies the $R$-pairs} (thmA);
+
+% barrier
+\draw[arr,red!75!black,very thick] (thmA.west) -- node[lab,above,text=red!75!black]{\textbf{blocked}} node[lab,below]{$1/\log x^\eta$ lost\\ per edge} (pnd.east);
+\draw[darr] (entr.west) -- node[lab,below]{?} (pnd.south east);
+
+% ---------------- right column: the methods ----------------
+\node[known] (chow) at (15.2,0)    {\textbf{Log two-point Chowla} \checkmark\\ $\sum_{n\le x}\frac{\lambda(n)\lambda(n+1)}{n}=o(\log x)$};
+\node[known] (mech) at (15.2,-2.4) {\textbf{Dilation identity + spectral bound}\\ $\lambda(pn)=-\lambda(n)$, $\ \|A|_X\|\ll\text{degree}^{1/2}$\\ Tao; Helfgott--Radziwi\l{}\l{}; Pilatte};
+\node[new]   (dyn)  at (15.2,-7.5) {\textbf{Symbolic dynamics} (\S\ref{sec:dynamics})\\ odometer $\hat{\mathbb Z}$ (zero entropy)\\ $\times$ parity bit $\lambda$ (positive entropy);\\ twin cylinder mass $2\Pi_2(e^{-\gamma}/c)^2/\log^2n$};
+
+\draw[arr] (mech) -- (chow);
+\draw[arr] (mech.south west) -- node[lab,sloped,above]{adapted to shift 2} (thmA.north east);
+
+% ---------------- legend ----------------
+\node[draw=black!45,fill=black!6,rounded corners=2pt,font=\scriptsize,minimum width=1.6cm] (l1) at (13.4,-9.9) {known};
+\node[draw=blue!70!black,very thick,fill=blue!6,rounded corners=2pt,font=\scriptsize,minimum width=1.6cm,right=2mm of l1] (l2) {this paper};
+\node[draw=black!70,dashed,rounded corners=2pt,font=\scriptsize,minimum width=1.6cm,right=2mm of l2] {open};
+\end{tikzpicture}}
+\caption{Road map. Left: the conditional route. On GEH, Bombieri's sieve and Theorem~B reduce the twin prime conjecture to the single parity input PND$_{\log}$, and Theorem~C shows that on rough pairs this input is the only parity parameter. Right: the dilation--spectral mechanism that proved logarithmic Chowla. Theorem~A shows that, adapted to twin primes, it cannot resolve this parity input, because two-sided roughness costs a factor $1/\log x^\eta$ on every edge. Entropy decrement is the one successful mechanism not covered. Bottom right: the symbolic-dynamics picture behind the paper (Proposition~\ref{prop:coupling}).}
+\label{fig:roadmap}
+\end{figure}

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1080" width="1200" height="1080" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="1080" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="600" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#222">孪生素数 · 奇偶桥路线图</text>
+  <text x="600" y="72" text-anchor="middle" font-size="14" fill="#777">2026-10-27 · ① ② 已关闭 · ③ 筛查完成 · 下一步：论文巩固 + 函数域桥</text>
+
+  <!-- ============ Stage 1 ============ -->
+  <rect x="60" y="95" width="1080" height="80" rx="12" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="85" y="125" font-size="18" font-weight="bold" fill="#1e8449">✓ 第一阶段：七岛路线审计</text>
+  <text x="85" y="155" font-size="15" fill="#333">两座桥（算子桥、动力学桥）都等价于孪生 HL 本身 → 奇偶问题全部集中在一个比特上</text>
+
+  <line x1="600" y1="175" x2="600" y2="205" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ============ Stage 2 ============ -->
+  <rect x="60" y="210" width="1080" height="250" rx="12" fill="#f4fbf6" stroke="#27ae60" stroke-width="2"/>
+  <text x="85" y="240" font-size="18" font-weight="bold" fill="#1e8449">✓ 第二阶段：新论文（已发布 Zenodo v0.7 · DOI 10.5281/zenodo.23687596）</text>
+
+  <!-- Thm B -->
+  <rect x="85" y="258" width="250" height="185" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="210" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 B · 条件通路</text>
+  <text x="210" y="315" text-anchor="middle" font-size="14" fill="#222">GEH + PND_log</text>
+  <text x="210" y="338" text-anchor="middle" font-size="14" fill="#222">⟹ 孪生素数猜想</text>
+  <text x="210" y="368" text-anchor="middle" font-size="13" fill="#555">每块砖都有证明</text>
+  <text x="210" y="390" text-anchor="middle" font-size="13" fill="#555">（Bombieri–Tao 判据的</text>
+  <text x="210" y="410" text-anchor="middle" font-size="13" fill="#555">显式、可计算形式）</text>
+
+  <!-- Thm C -->
+  <rect x="350" y="258" width="250" height="185" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="475" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 C · 两边相干</text>
+  <text x="475" y="315" text-anchor="middle" font-size="14" fill="#222">粗糙数对上只有</text>
+  <text x="475" y="338" text-anchor="middle" font-size="14" fill="#222">一个奇偶参数 δ</text>
+  <text x="475" y="368" text-anchor="middle" font-size="13" fill="#555">u(s,r′) = (δ−1)(−1)^(s+r′)</text>
+  <text x="475" y="390" text-anchor="middle" font-size="13" fill="#555">只依赖 GEH</text>
+
+  <!-- Thm A -->
+  <rect x="615" y="258" width="250" height="185" rx="10" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text x="740" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#922b21">定理 A + E · 方法天花板</text>
+  <text x="740" y="313" text-anchor="middle" font-size="13" fill="#222">膨胀+谱法（Tao/HR/Pilatte）</text>
+  <text x="740" y="333" text-anchor="middle" font-size="13" fill="#222">只到 z ≤ exp(O(√log x))</text>
+  <text x="740" y="358" text-anchor="middle" font-size="13" fill="#222">熵递减（定理 E，v0.7 新增）</text>
+  <text x="740" y="378" text-anchor="middle" font-size="13" fill="#222">只到 z ≤ (log x)^O(ε⁴)</text>
+  <text x="740" y="408" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">✗ 孪生需要 z = x^η</text>
+
+  <!-- Prop 5.2 -->
+  <rect x="880" y="258" width="235" height="185" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="997" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">命题 5.2 · 耦合律</text>
+  <text x="997" y="315" text-anchor="middle" font-size="14" fill="#222">odometer 骨架</text>
+  <text x="997" y="338" text-anchor="middle" font-size="14" fill="#222">取消拟合常数 k≈12.73</text>
+  <text x="997" y="368" text-anchor="middle" font-size="13" fill="#555">质量 = 2Π₂(e^−γ/c)²</text>
+  <text x="997" y="390" text-anchor="middle" font-size="13" fill="#555">Pólya 截断给出 HL</text>
+
+  <line x1="600" y1="460" x2="600" y2="490" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ============ Stage 3 ============ -->
+  <rect x="60" y="495" width="1080" height="215" rx="12" fill="#fffaf2" stroke="#e67e22" stroke-width="2"/>
+  <text x="85" y="525" font-size="18" font-weight="bold" fill="#ca6f1e">▶ 第三阶段：换机制，继续攻奇偶桥</text>
+
+  <!-- 2a current -->
+  <rect x="85" y="545" width="330" height="145" rx="10" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <rect x="300" y="533" width="105" height="26" rx="13" fill="#c0392b"/>
+  <text x="352" y="551" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">已关闭</text>
+  <text x="250" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#922b21">① Tao 熵递减 ✗</text>
+  <text x="250" y="607" text-anchor="middle" font-size="14" fill="#222">证伪测试（x 到 10⁸）+ 读 Tao 迭代</text>
+  <text x="250" y="634" text-anchor="middle" font-size="14" fill="#222">每步递减按 1/log H 衰减</text>
+  <text x="250" y="658" text-anchor="middle" font-size="13" fill="#555">所需尺度对预算是双指数的</text>
+  <text x="250" y="680" text-anchor="middle" font-size="13" fill="#555">只够到 z ≤ (log x)^o(1)，需要 x^η</text>
+
+  <!-- 2b -->
+  <rect x="435" y="545" width="300" height="145" rx="10" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <rect x="615" y="533" width="105" height="26" rx="13" fill="#c0392b"/>
+  <text x="667" y="551" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">已关闭</text>
+  <text x="585" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#922b21">② 双线性结构 ✗</text>
+  <text x="585" y="607" text-anchor="middle" font-size="14" fill="#222">FI 假设 (B) 对孪生是"奇偶完备"的</text>
+  <text x="585" y="632" text-anchor="middle" font-size="13" fill="#555">归约总落在 μ×μ 行列式和</text>
+  <text x="585" y="654" text-anchor="middle" font-size="13" fill="#555">或 Λ×Λ 二元相关（√x 障碍）</text>
+  <text x="585" y="678" text-anchor="middle" font-size="12" fill="#777">含 LWW 新预印本：只到 z ≤ e^((log x)^(1/5))</text>
+
+  <!-- 2c -->
+  <rect x="755" y="545" width="360" height="145" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="2"/>
+  <rect x="1000" y="533" width="105" height="26" rx="13" fill="#e67e22"/>
+  <text x="1052" y="551" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">筛查完成</text>
+  <text x="935" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#873600">③ 全新的对称性</text>
+  <text x="935" y="605" text-anchor="middle" font-size="13" fill="#222">9 类候选只有 1 个通过判据：</text>
+  <text x="935" y="628" text-anchor="middle" font-size="13" fill="#222">函数域 Pellet 公式 μ(f)=(−1)^deg·χ(disc f)</text>
+  <text x="935" y="652" text-anchor="middle" font-size="12" fill="#777">（Sawin–Shusterman 由此证得 F_q[T] 孪生素数）</text>
+  <text x="935" y="676" text-anchor="middle" font-size="12" fill="#c0392b">整数上 μ 不是"坐标多项式的特征" → 开放问题</text>
+
+  <!-- arrows to goal -->
+  <line x1="250" y1="690" x2="440" y2="765" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,4"/>
+  <text x="320" y="737" font-size="16" font-weight="bold" fill="#c0392b">✗</text>
+  <line x1="585" y1="690" x2="590" y2="762" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,4"/>
+  <text x="600" y="735" font-size="16" font-weight="bold" fill="#c0392b">✗</text>
+  <line x1="935" y1="690" x2="720" y2="765" stroke="#e67e22" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#arO)"/>
+  <text x="845" y="735" font-size="16" font-weight="bold" fill="#e67e22">?</text>
+
+  <!-- blocked arrow from Thm A -->
+  <path d="M 740 443 C 740 470 1150 470 1150 600 C 1150 760 900 790 860 792" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,4"/>
+  <text x="1158" y="620" font-size="13" fill="#c0392b" writing-mode="tb">已堵死</text>
+
+  <!-- ============ Goal ============ -->
+  <rect x="330" y="768" width="540" height="62" rx="12" fill="#fef9e7" stroke="#b7950b" stroke-width="2.5"/>
+  <text x="600" y="795" text-anchor="middle" font-size="17" font-weight="bold" fill="#7d6608">目标：PND_log（limsup ρ &gt; −1）</text>
+  <text x="600" y="818" text-anchor="middle" font-size="14" fill="#7d6608">由定理 B，在 GEH 下 ⟹ 孪生素数猜想</text>
+
+  <!-- ============ Stage 4 ============ -->
+  <rect x="60" y="850" width="1080" height="170" rx="12" fill="#f4f8fb" stroke="#2e86c1" stroke-width="2"/>
+  <text x="85" y="880" font-size="18" font-weight="bold" fill="#1f618d">▶ 第四阶段（下一步）</text>
+
+  <rect x="85" y="895" width="510" height="110" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="3.5"/>
+  <rect x="480" y="883" width="105" height="26" rx="13" fill="#e67e22"/>
+  <text x="532" y="901" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">优先</text>
+  <text x="340" y="925" text-anchor="middle" font-size="16" font-weight="bold" fill="#873600">④a 论文巩固</text>
+  <text x="340" y="950" text-anchor="middle" font-size="13" fill="#222">请数论专家审读：定理 4.1 条件 (U)、引理 B.1、</text>
+  <text x="340" y="970" text-anchor="middle" font-size="13" fill="#222">定理 A/E 的方法类定义</text>
+  <text x="340" y="993" text-anchor="middle" font-size="13" fill="#555">然后挂 arXiv（math.NT）</text>
+
+  <rect x="615" y="895" width="500" height="110" rx="10" fill="#f8f9f9" stroke="#999" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="865" y="925" text-anchor="middle" font-size="16" font-weight="bold" fill="#555">④b 固定 q 的函数域桥（探索）</text>
+  <text x="865" y="950" text-anchor="middle" font-size="13" fill="#444">Sawin–Shusterman 需要 q &gt; 685090p²；q 固定时仍开放</text>
+  <text x="865" y="970" text-anchor="middle" font-size="13" fill="#444">q 固定、次数增长时 Pellet/Weil 机制能走多远？</text>
+  <text x="865" y="993" text-anchor="middle" font-size="13" fill="#777">目标：函数域版的"天花板"，与整数情形对照</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#333">
+    <rect x="70" y="1042" width="22" height="16" rx="4" fill="#d5f5e3" stroke="#27ae60"/><text x="100" y="1055">已完成</text>
+    <rect x="170" y="1042" width="22" height="16" rx="4" fill="#fdebd0" stroke="#e67e22" stroke-width="2.5"/><text x="200" y="1055">当前在做 / 优先</text>
+    <rect x="320" y="1042" width="22" height="16" rx="4" fill="#f8f9f9" stroke="#999" stroke-dasharray="4,3"/><text x="350" y="1055">待做</text>
+    <rect x="405" y="1042" width="22" height="16" rx="4" fill="#fdedec" stroke="#c0392b"/><text x="435" y="1055">已证明走不通</text>
+    <rect x="545" y="1042" width="22" height="16" rx="4" fill="#fef9e7" stroke="#b7950b"/><text x="575" y="1055">最终目标</text>
+  </g>
+</svg>

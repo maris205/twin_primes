@@ -1,0 +1,29 @@
+{
+ "P": 4000,
+ "z": 30.0,
+ "k": 457,
+ "N": 43960,
+ "restarts": 100,
+ "worlds": {
+  "real lambda(pq+2)": {
+   "sum_over_N": -0.001637852593266606,
+   "cut_over_N": 0.14349408553230208,
+   "sigma1_k_over_N": 0.2013874191148149
+  },
+  "delta=0 counterfeit": {
+   "sum_over_N": -1.0,
+   "cut_over_N": 1.0,
+   "sigma1_k_over_N": 1.002038730885345
+  },
+  "rank-one signs": {
+   "sum_over_N": -0.004731574158325751,
+   "cut_over_N": 1.0,
+   "sigma1_k_over_N": 1.002038730885345
+  },
+  "random signs": {
+   "sum_over_N": 0.004094631483166515,
+   "cut_over_N": 0.14508644222020017,
+   "sigma1_k_over_N": 0.2057178479294873
+  }
+ }
+}

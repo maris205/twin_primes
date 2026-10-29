@@ -1,0 +1,121 @@
+{
+ "q": 3,
+ "dmax": 7,
+ "rows": [
+  {
+   "deg": 1,
+   "min_factor_degree": 1,
+   "matches": 3,
+   "total": 3
+  },
+  {
+   "deg": 2,
+   "min_factor_degree": 1,
+   "matches": 3,
+   "total": 3
+  },
+  {
+   "deg": 2,
+   "min_factor_degree": 2,
+   "matches": 3,
+   "total": 3
+  },
+  {
+   "deg": 3,
+   "min_factor_degree": 1,
+   "matches": 10,
+   "total": 10
+  },
+  {
+   "deg": 3,
+   "min_factor_degree": 3,
+   "matches": 8,
+   "total": 8
+  },
+  {
+   "deg": 4,
+   "min_factor_degree": 1,
+   "matches": 33,
+   "total": 33
+  },
+  {
+   "deg": 4,
+   "min_factor_degree": 2,
+   "matches": 3,
+   "total": 3
+  },
+  {
+   "deg": 4,
+   "min_factor_degree": 4,
+   "matches": 18,
+   "total": 18
+  },
+  {
+   "deg": 5,
+   "min_factor_degree": 1,
+   "matches": 90,
+   "total": 90
+  },
+  {
+   "deg": 5,
+   "min_factor_degree": 2,
+   "matches": 24,
+   "total": 24
+  },
+  {
+   "deg": 5,
+   "min_factor_degree": 5,
+   "matches": 48,
+   "total": 48
+  },
+  {
+   "deg": 6,
+   "min_factor_degree": 1,
+   "matches": 287,
+   "total": 287
+  },
+  {
+   "deg": 6,
+   "min_factor_degree": 2,
+   "matches": 55,
+   "total": 55
+  },
+  {
+   "deg": 6,
+   "min_factor_degree": 3,
+   "matches": 28,
+   "total": 28
+  },
+  {
+   "deg": 6,
+   "min_factor_degree": 6,
+   "matches": 116,
+   "total": 116
+  },
+  {
+   "deg": 7,
+   "min_factor_degree": 1,
+   "matches": 834,
+   "total": 834
+  },
+  {
+   "deg": 7,
+   "min_factor_degree": 2,
+   "matches": 168,
+   "total": 168
+  },
+  {
+   "deg": 7,
+   "min_factor_degree": 3,
+   "matches": 144,
+   "total": 144
+  },
+  {
+   "deg": 7,
+   "min_factor_degree": 7,
+   "matches": 312,
+   "total": 312
+  }
+ ],
+ "all_match": true
+}

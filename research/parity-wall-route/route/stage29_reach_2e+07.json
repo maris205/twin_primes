@@ -1,0 +1,113 @@
+{
+ "X": 20000000,
+ "rows": [
+  {
+   "z": 5,
+   "rho": 0.169,
+   "pairs": 3333333,
+   "corr": -0.00032,
+   "mean1": -0.0012,
+   "mean1_sq": 0.0,
+   "zscore": -0.58,
+   "even": 1666141,
+   "D2_chi4": 2.249,
+   "log_logx_over_logz": 2.346
+  },
+  {
+   "z": 8,
+   "rho": 0.259,
+   "pairs": 1428572,
+   "corr": 5e-05,
+   "mean1": -0.0036,
+   "mean1_sq": 1e-05,
+   "zscore": 0.06,
+   "even": 714324,
+   "D2_chi4": 1.849,
+   "log_logx_over_logz": 2.09
+  },
+  {
+   "z": 11,
+   "rho": 0.31,
+   "pairs": 1428572,
+   "corr": 5e-05,
+   "mean1": -0.0036,
+   "mean1_sq": 1e-05,
+   "zscore": 0.06,
+   "even": 714324,
+   "D2_chi4": 1.849,
+   "log_logx_over_logz": 1.947
+  },
+  {
+   "z": 12,
+   "rho": 0.323,
+   "pairs": 1168831,
+   "corr": 0.00016,
+   "mean1": -0.0051,
+   "mean1_sq": 3e-05,
+   "zscore": 0.17,
+   "even": 584510,
+   "D2_chi4": 1.849,
+   "log_logx_over_logz": 1.912
+  },
+  {
+   "z": 29,
+   "rho": 0.43,
+   "pairs": 712897,
+   "corr": 0.00112,
+   "mean1": -0.0153,
+   "mean1_sq": 0.00023,
+   "zscore": 0.95,
+   "even": 356848,
+   "D2_chi4": 1.577,
+   "log_logx_over_logz": 1.608
+  },
+  {
+   "z": 30,
+   "rho": 0.434,
+   "pairs": 663726,
+   "corr": 0.00139,
+   "mean1": -0.0187,
+   "mean1_sq": 0.00035,
+   "zscore": 1.13,
+   "even": 332324,
+   "D2_chi4": 1.508,
+   "log_logx_over_logz": 1.598
+  },
+  {
+   "z": 60,
+   "rho": 0.499,
+   "pairs": 474032,
+   "corr": 0.00455,
+   "mean1": -0.0513,
+   "mean1_sq": 0.00264,
+   "zscore": 3.13,
+   "even": 238094,
+   "D2_chi4": 1.368,
+   "log_logx_over_logz": 1.412
+  },
+  {
+   "z": 67,
+   "rho": 0.509,
+   "pairs": 458424,
+   "corr": 0.00534,
+   "mean1": -0.0569,
+   "mean1_sq": 0.00324,
+   "zscore": 3.62,
+   "even": 230437,
+   "D2_chi4": 1.335,
+   "log_logx_over_logz": 1.386
+  },
+  {
+   "z": 100,
+   "rho": 0.541,
+   "pairs": 382792,
+   "corr": 0.0139,
+   "mean1": -0.0985,
+   "mean1_sq": 0.0097,
+   "zscore": 8.6,
+   "even": 194057,
+   "D2_chi4": 1.264,
+   "log_logx_over_logz": 1.295
+  }
+ ]
+}

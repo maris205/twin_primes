@@ -1,0 +1,33 @@
+{
+ "P": 3000,
+ "k": 353,
+ "samples": 30000,
+ "lambda(r+2), a=b=1": {
+  "B_true": 239.0,
+  "trivial": 124609.0,
+  "ratio_true": 0.0019179995024436436,
+  "abs_mellin": 77432.960860709,
+  "ratio_abs_mellin": 0.6214074493873557,
+  "parseval_check": -443.606287846988,
+  "A4_over_2k2": 0.9976606153932852
+ },
+ "lambda(r+2), random signs": {
+  "B_true": -105.0,
+  "trivial": 124609.0,
+  "ratio_true": 0.0008426357646718937,
+  "abs_mellin": 61713.495582150295,
+  "ratio_abs_mellin": 0.49525712895657853,
+  "parseval_check": -387.78012046738087,
+  "A4_over_2k2": 1.002496844134783
+ },
+ "random c, a=b=1": {
+  "B_true": 283.0,
+  "trivial": 124609.0,
+  "ratio_true": 0.0022711040133537707,
+  "abs_mellin": 78134.74816166988,
+  "ratio_abs_mellin": 0.6270393644252813,
+  "parseval_check": -70.04790384312732,
+  "A4_over_2k2": 1.0112960916779183
+ },
+ "integers mean|D|^4 / (2n^2-n)": 1.7760111275034791
+}

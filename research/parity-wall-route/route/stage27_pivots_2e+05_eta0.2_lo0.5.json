@@ -1,0 +1,278 @@
+{
+ "X": 200000,
+ "eta": 0.2,
+ "lo": 0.5,
+ "z": 11.486983549970352,
+ "rough_pairs": 5842,
+ "primes": 6289,
+ "rank": 5052,
+ "nullity": 1237,
+ "core_vars": 704,
+ "core_nullity": 1,
+ "orphans": 1236,
+ "max_pivot_bound": 4962,
+ "min_pivot_bound": 1056,
+ "core_theta_range": [
+  0.21,
+  0.768
+ ],
+ "smallest_non_max_pivots": [
+  13,
+  17,
+  19,
+  23,
+  29,
+  37,
+  41,
+  43,
+  47,
+  53,
+  59,
+  61
+ ],
+ "non_max_pivot_count": 1327,
+ "largest_non_min_pivots": [
+  199813,
+  199819,
+  199877,
+  199889,
+  199909,
+  199921,
+  199933,
+  199961
+ ],
+ "non_min_pivot_count": 5233,
+ "layers": [
+  {
+   "theta": [
+    0.2,
+    0.25
+   ],
+   "primes": 3,
+   "max_pivots": 0,
+   "min_pivots": 3
+  },
+  {
+   "theta": [
+    0.25,
+    0.3
+   ],
+   "primes": 4,
+   "max_pivots": 1,
+   "min_pivots": 4
+  },
+  {
+   "theta": [
+    0.3,
+    0.35
+   ],
+   "primes": 8,
+   "max_pivots": 0,
+   "min_pivots": 8
+  },
+  {
+   "theta": [
+    0.35,
+    0.4
+   ],
+   "primes": 12,
+   "max_pivots": 5,
+   "min_pivots": 12
+  },
+  {
+   "theta": [
+    0.4,
+    0.45
+   ],
+   "primes": 21,
+   "max_pivots": 13,
+   "min_pivots": 21
+  },
+  {
+   "theta": [
+    0.45,
+    0.5
+   ],
+   "primes": 33,
+   "max_pivots": 24,
+   "min_pivots": 31
+  },
+  {
+   "theta": [
+    0.5,
+    0.6
+   ],
+   "primes": 154,
+   "max_pivots": 146,
+   "min_pivots": 35
+  },
+  {
+   "theta": [
+    0.6,
+    0.7
+   ],
+   "primes": 445,
+   "max_pivots": 379,
+   "min_pivots": 0
+  },
+  {
+   "theta": [
+    0.7,
+    0.8
+   ],
+   "primes": 892,
+   "max_pivots": 613,
+   "min_pivots": 0
+  },
+  {
+   "theta": [
+    0.9,
+    1.0
+   ],
+   "primes": 4717,
+   "max_pivots": 3781,
+   "min_pivots": 942
+  }
+ ],
+ "bottom": {
+  "[z, z^1.25]": {
+   "pairs": 0
+  },
+  "[z, z^1.5]": {
+   "pairs": 0
+  },
+  "[z, z^2.0]": {
+   "pairs": 10,
+   "even_class_fraction": 1.0,
+   "examples": [
+    [
+     105821,
+     105823
+    ],
+    [
+     107909,
+     107911
+    ],
+    [
+     117077,
+     117079
+    ],
+    [
+     124319,
+     124321
+    ],
+    [
+     134537,
+     134539
+    ]
+   ]
+  }
+ },
+ "top": {
+  "all primes >= X^0.3": {
+   "pairs": 2927,
+   "even_class_fraction": 0.5128117526477622,
+   "examples": [
+    [
+     100031,
+     100033
+    ],
+    [
+     100127,
+     100129
+    ],
+    [
+     100151,
+     100153
+    ],
+    [
+     100169,
+     100171
+    ],
+    [
+     100229,
+     100231
+    ]
+   ]
+  },
+  "all primes >= X^0.35": {
+   "pairs": 2202,
+   "even_class_fraction": 0.5499545867393278,
+   "examples": [
+    [
+     100127,
+     100129
+    ],
+    [
+     100151,
+     100153
+    ],
+    [
+     100169,
+     100171
+    ],
+    [
+     100229,
+     100231
+    ],
+    [
+     100271,
+     100273
+    ]
+   ]
+  },
+  "all primes >= X^0.4": {
+   "pairs": 1672,
+   "even_class_fraction": 0.6285885167464115,
+   "examples": [
+    [
+     100127,
+     100129
+    ],
+    [
+     100151,
+     100153
+    ],
+    [
+     100271,
+     100273
+    ],
+    [
+     100277,
+     100279
+    ],
+    [
+     100361,
+     100363
+    ]
+   ]
+  },
+  "all primes >= X^0.45": {
+   "pairs": 1202,
+   "even_class_fraction": 0.7945091514143094,
+   "examples": [
+    [
+     100151,
+     100153
+    ],
+    [
+     100361,
+     100363
+    ],
+    [
+     100391,
+     100393
+    ],
+    [
+     100517,
+     100519
+    ],
+    [
+     100547,
+     100549
+    ]
+   ]
+  }
+ },
+ "even_class_fraction_all": 0.501369394043136
+}

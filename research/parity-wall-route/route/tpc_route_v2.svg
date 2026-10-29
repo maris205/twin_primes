@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe8f6"/>
+      <stop offset="1" stop-color="#9fcbe6"/>
+    </linearGradient>
+    <radialGradient id="land" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f3ecd2"/>
+      <stop offset="1" stop-color="#cdbf8f"/>
+    </radialGradient>
+    <radialGradient id="landGrey" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#e6e6e6"/>
+      <stop offset="1" stop-color="#b5b5b5"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff6c2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#fff6c2" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker>
+    <marker id="arrY" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c79100"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#sea)"/>
+  <g stroke="#ffffff" stroke-opacity="0.35" fill="none" stroke-width="1.5">
+    <path d="M40 120 q30 -10 60 0 t60 0"/><path d="M1180 700 q30 -10 60 0 t60 0"/>
+    <path d="M330 760 q30 -10 60 0 t60 0"/><path d="M760 110 q30 -10 60 0 t60 0"/>
+    <path d="M1000 600 q30 -10 60 0 t60 0"/>
+  </g>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" font-size="32" font-weight="700" fill="#14325c">TPC 岛屿地图 v2：零熵骨架 × 正熵奇偶</text>
+  <text x="700" y="84" text-anchor="middle" font-size="17" fill="#14325c">一条可能联通的路 —— 只剩一座桥，而且只有一个自由度 δ</text>
+
+  <!-- ===== Bridges (drawn first, under islands) ===== -->
+  <!-- A -> B -->
+  <path d="M245 300 C 320 235, 370 215, 418 218" stroke="#2e7d32" stroke-width="7" fill="none" marker-end="url(#arrG)"/>
+  <text x="268" y="215" font-size="13" fill="#1b5e20">Q_k = 柱集指示</text>
+  <!-- A -> C -->
+  <path d="M245 360 C 320 450, 380 540, 430 560" stroke="#2e7d32" stroke-width="7" fill="none" marker-end="url(#arrG)"/>
+  <text x="95" y="470" font-size="13" fill="#1b5e20">Logistic u=2 ≅ Bernoulli</text>
+  <text x="95" y="488" font-size="13" fill="#1b5e20">（混沌只描述奇偶位）</text>
+
+  <!-- B -> hub : distribution bridge S (standard conjecture) -->
+  <path d="M780 245 C 830 280, 860 320, 885 365" stroke="#c79100" stroke-width="9" fill="none" stroke-dasharray="2 0" marker-end="url(#arrY)"/>
+  <rect x="800" y="190" width="190" height="52" rx="8" fill="#fff8e1" stroke="#c79100" stroke-width="2"/>
+  <text x="895" y="212" text-anchor="middle" font-size="15" font-weight="700" fill="#8a6100">分布桥 S：GEH</text>
+  <text x="895" y="232" text-anchor="middle" font-size="12" fill="#8a6100">标准猜想 · BV 已到 ½</text>
+
+  <!-- C -> hub : parity bridge P (new conjecture) -->
+  <path d="M725 565 C 800 540, 855 480, 885 435" stroke="#e65100" stroke-width="9" fill="none" stroke-dasharray="14 7" marker-end="url(#arrO)"/>
+  <rect x="728" y="545" width="214" height="70" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+  <text x="835" y="567" text-anchor="middle" font-size="15" font-weight="700" fill="#bf360c">奇偶桥 P（新猜想）</text>
+  <text x="835" y="587" text-anchor="middle" font-size="12" fill="#bf360c">PND ⇐ FCP ⇐ RB</text>
+  <text x="835" y="605" text-anchor="middle" font-size="12" fill="#bf360c">膨胀–谱法：两类壁垒均封闭</text>
+
+  <!-- hub -> TPC -->
+  <path d="M955 400 L 1115 400" stroke="#2e7d32" stroke-width="10" fill="none" marker-end="url(#arrG)"/>
+  <text x="1035" y="385" text-anchor="middle" font-size="13" fill="#1b5e20">Theorem R（已知）</text>
+  <text x="1035" y="425" text-anchor="middle" font-size="12" fill="#1b5e20">GEH ∧ PND ⇒ TPC</text>
+  <text x="1035" y="442" text-anchor="middle" font-size="12" fill="#1b5e20">GEH ∧ FCP ⇔ HL</text>
+
+  <!-- ===== Island A: encoding ===== -->
+  <path d="M95 330 C 80 260, 150 225, 210 240 C 270 250, 290 300, 280 345 C 270 400, 200 420, 150 405 C 110 395, 100 370, 95 330 z" fill="url(#land)" stroke="#8d7b4a" stroke-width="2"/>
+  <circle cx="132" cy="260" r="6" fill="#2e7d32"/>
+  <text x="188" y="290" text-anchor="middle" font-size="19" font-weight="700" fill="#2b2b2b">A 编码岛</text>
+  <text x="188" y="314" text-anchor="middle" font-size="12" fill="#333">早期符号动力学</text>
+  <text x="188" y="332" text-anchor="middle" font-size="12" fill="#333">S_p = R L^(p−1) 的 AND</text>
+  <text x="188" y="350" text-anchor="middle" font-size="12" fill="#333">种子 0 精确编码孪生对</text>
+  <text x="188" y="375" text-anchor="middle" font-size="13" fill="#2e7d32" font-weight="700">✓ 已证</text>
+  <text x="70" y="215" font-size="15" font-weight="700" fill="#14325c">我们的起点</text>
+
+  <!-- ===== Island B: skeleton (zero entropy) ===== -->
+  <path d="M425 215 C 430 125, 570 105, 670 120 C 770 135, 800 200, 778 262 C 755 322, 630 340, 530 326 C 455 315, 420 270, 425 215 z" fill="url(#land)" stroke="#8d7b4a" stroke-width="2"/>
+  <text x="605" y="160" text-anchor="middle" font-size="19" font-weight="700" fill="#2b2b2b">B 骨架岛（零熵）</text>
+  <text x="605" y="182" text-anchor="middle" font-size="13" fill="#333">profinite odometer Ẑ，T(ω)=ω+1</text>
+  <text x="458" y="210" font-size="12" fill="#2e7d32">✓ Haar 质量 · 区间方差 ≤ (5/6)|I|+2</text>
+  <text x="458" y="230" font-size="12" fill="#2e7d32">✓ 几乎处处强大数律 S_N/A_N → 1</text>
+  <text x="458" y="250" font-size="12" fill="#2e7d32">✓ Pólya 截断 n^(e^−γ)：Haar 均值 = HL 主项</text>
+  <text x="458" y="270" font-size="12" fill="#2e7d32">   （取代原论文手调常数 k≈12.73）</text>
+  <text x="458" y="292" font-size="12" fill="#555">种子 0 的“典型性”依赖截断 → 不作为目标</text>
+
+  <!-- ===== Island C: parity (positive entropy) ===== -->
+  <path d="M440 560 C 445 485, 545 465, 630 478 C 715 492, 745 545, 725 600 C 705 660, 600 680, 520 665 C 460 652, 436 610, 440 560 z" fill="url(#land)" stroke="#8d7b4a" stroke-width="2"/>
+  <text x="585" y="508" text-anchor="middle" font-size="19" font-weight="700" fill="#2b2b2b">C 奇偶岛（正熵）</text>
+  <text x="585" y="530" text-anchor="middle" font-size="13" fill="#333">混沌位 λ(n) = (−1)^Ω(n)</text>
+  <text x="470" y="557" font-size="12" fill="#2e7d32">✓ Tao 2016 对数平均两点 Chowla</text>
+  <text x="470" y="577" font-size="12" fill="#2e7d32">✓ Tao–Teräväinen 奇数阶</text>
+  <text x="470" y="597" font-size="12" fill="#2e7d32">✓ Pilatte 幂次节省 · MRT 平均移位 HL</text>
+  <text x="470" y="620" font-size="12" fill="#bf360c">✗ 粗糙数上无小素数乘性 = 真正的新难点</text>
+  <text x="470" y="642" font-size="12" fill="#333">数值：FCP 四花样 → ¼（差 ≈ 1.66/log x）</text>
+
+  <!-- ===== Hub ===== -->
+  <circle cx="915" cy="400" r="42" fill="#ffffff" stroke="#14325c" stroke-width="3"/>
+  <text x="915" y="395" text-anchor="middle" font-size="26" font-weight="700" fill="#14325c">⊕</text>
+  <text x="915" y="418" text-anchor="middle" font-size="11" fill="#14325c">Bombieri</text>
+  <text x="945" y="472" font-size="12" fill="#14325c">渐近筛枢纽：只剩 δ ∈ [0,2]</text>
+
+  <!-- ===== Destination ===== -->
+  <circle cx="1240" cy="395" r="140" fill="url(#glow)"/>
+  <path d="M1130 420 C 1120 340, 1200 300, 1260 310 C 1330 320, 1360 370, 1345 430 C 1330 490, 1250 505, 1190 495 C 1150 488, 1135 460, 1130 420 z" fill="url(#land)" stroke="#8d7b4a" stroke-width="2"/>
+  <rect x="1228" y="318" width="20" height="46" fill="#f5f5f5" stroke="#555"/>
+  <polygon points="1238,300 1222,320 1254,320" fill="#c62828"/>
+  <text x="1238" y="296" text-anchor="middle" font-size="18" fill="#f9a825">★</text>
+  <text x="1240" y="395" text-anchor="middle" font-size="21" font-weight="700" fill="#2b2b2b">D 终点</text>
+  <text x="1240" y="420" text-anchor="middle" font-size="14" fill="#333">无穷多孪生素数</text>
+  <text x="1240" y="442" text-anchor="middle" font-size="12" fill="#333">（PND 即够；FCP ⇒ HL 渐近）</text>
+
+  <!-- ===== Closed / side islands ===== -->
+  <g opacity="0.9">
+    <path d="M120 690 C 120 655, 175 645, 215 652 C 255 660, 262 690, 250 712 C 238 735, 180 742, 150 735 C 128 728, 120 712, 120 690 z" fill="url(#landGrey)" stroke="#888" stroke-width="1.5"/>
+    <text x="190" y="690" text-anchor="middle" font-size="13" font-weight="700" fill="#555">旧 Bridge A ✗</text>
+    <text x="190" y="710" text-anchor="middle" font-size="11" fill="#666">Gate A = 终点换写</text>
+
+    <path d="M310 760 C 310 725, 365 715, 405 722 C 445 730, 452 760, 440 782 C 428 805, 370 812, 340 805 C 318 798, 310 782, 310 760 z" fill="url(#landGrey)" stroke="#888" stroke-width="1.5"/>
+    <text x="380" y="760" text-anchor="middle" font-size="13" font-weight="700" fill="#555">种子典型性 ✗</text>
+    <text x="380" y="780" text-anchor="middle" font-size="11" fill="#666">依赖截断（Mertens paradox）</text>
+
+    <path d="M120 790 C 120 765, 160 758, 190 763 C 220 768, 226 790, 218 806 C 208 822, 165 826, 145 821 C 128 816, 120 805, 120 790 z" fill="url(#landGrey)" stroke="#888" stroke-width="1.5"/>
+    <text x="172" y="796" text-anchor="middle" font-size="12" font-weight="700" fill="#555">Hénon ✗</text>
+
+    <path d="M880 720 C 880 685, 940 675, 985 683 C 1030 690, 1038 720, 1025 745 C 1012 770, 950 776, 918 768 C 893 761, 880 745, 880 720 z" fill="url(#land)" stroke="#8d7b4a" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="958" y="720" text-anchor="middle" font-size="13" font-weight="700" fill="#2b2b2b">支线：Gate B</text>
+    <text x="958" y="740" text-anchor="middle" font-size="11" fill="#444">平均移位 HL · 对奇偶不敏感</text>
+    <path d="M880 700 C 820 670, 760 650, 720 640" stroke="#5c6bc0" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  </g>
+
+  <!-- ===== Legend ===== -->
+  <rect x="1080" y="640" width="290" height="190" rx="10" fill="#fffdf6" stroke="#8d7b4a" stroke-width="1.5"/>
+  <text x="1225" y="668" text-anchor="middle" font-size="16" font-weight="700" fill="#14325c">图例</text>
+  <line x1="1100" y1="692" x2="1150" y2="692" stroke="#2e7d32" stroke-width="7"/><text x="1162" y="697" font-size="13" fill="#333">已证 / 已知定理</text>
+  <line x1="1100" y1="722" x2="1150" y2="722" stroke="#c79100" stroke-width="7"/><text x="1162" y="727" font-size="13" fill="#333">标准猜想（大概率对）</text>
+  <line x1="1100" y1="752" x2="1150" y2="752" stroke="#e65100" stroke-width="7" stroke-dasharray="14 7"/><text x="1162" y="757" font-size="13" fill="#333">新猜想（数值支持）</text>
+  <rect x="1100" y="772" width="50" height="18" rx="6" fill="url(#landGrey)" stroke="#888"/><text x="1162" y="786" font-size="13" fill="#333">已关闭的旧路线</text>
+  <line x1="1100" y1="812" x2="1150" y2="812" stroke="#5c6bc0" stroke-width="3" stroke-dasharray="6 5"/><text x="1162" y="817" font-size="13" fill="#333">支线</text>
+
+  <!-- ===== Bottom banner ===== -->
+  <rect x="60" y="845" width="1000" height="40" rx="8" fill="#14325c"/>
+  <text x="80" y="871" font-size="16" fill="#ffffff">一句话：素数 = 零熵筛骨架 × 正熵奇偶位。骨架已清楚，GEH 送到枢纽；剩下的唯一红桥是奇偶桥（一个自由度 δ）。</text>
+</svg>

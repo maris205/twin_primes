@@ -1,0 +1,29 @@
+{
+ "P": 2000,
+ "z": 1.0,
+ "k": 247,
+ "N": 61009,
+ "support_fraction": 1.0,
+ "worlds": {
+  "real lambda(pq+2)": {
+   "sum_over_N": 0.0036224163647986364,
+   "beta": 0.2991022131545717,
+   "sigma1_over_N_over_k": 0.12465256121002542
+  },
+  "delta=0 counterfeit (-1)": {
+   "sum_over_N": -1.0,
+   "beta": 1.0,
+   "sigma1_over_N_over_k": 1.0
+  },
+  "rank-one signs u_p u_q": {
+   "sum_over_N": 0.003687980461899064,
+   "beta": 1.0,
+   "sigma1_over_N_over_k": 1.0
+  },
+  "random signs": {
+   "sum_over_N": -0.0007048140438295989,
+   "beta": 0.29979261033592447,
+   "sigma1_over_N_over_k": 0.12635730571728046
+  }
+ }
+}

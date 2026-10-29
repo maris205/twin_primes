@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1422" width="1200" height="1422" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e8449"/>
+    </marker>
+    <marker id="arO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d68910"/>
+    </marker>
+    <marker id="arP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7d3c98"/>
+    </marker>
+    <marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="1422" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="600" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#222">孪生素数 · 第五至十一阶段路线图</text>
+  <text x="600" y="72" text-anchor="middle" font-size="14" fill="#777">2026-10-28 · 起点：Zenodo v1.0（DOI 10.5281/zenodo.23723965）· 第五阶段的结论 → 第六阶段的候选（全部来自第五阶段留下的问题）→ 终点 TPC</text>
+
+  <!-- ============ START ============ -->
+  <rect x="60" y="92" width="1080" height="178" rx="14" fill="#eafaf1" stroke="#27ae60" stroke-width="2.5"/>
+  <text x="85" y="121" font-size="18" font-weight="bold" fill="#1e8449">起点（已固定，每块砖都有证明；v0.9 新增推论 4.7、命题 4.9、6.19、6.21）</text>
+  <rect x="85" y="136" width="335" height="118" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="252" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 B · 条件通路</text>
+  <text x="252" y="190" text-anchor="middle" font-size="15" fill="#222">GEH + PND_log ⟹ 孪生素数</text>
+  <text x="252" y="218" text-anchor="middle" font-size="13" fill="#555">PND_log：粗糙对上 λ 不完全反相关</text>
+  <text x="252" y="240" text-anchor="middle" font-size="13" fill="#555">（limsup ρ(X) &gt; −1）</text>
+  <rect x="432" y="136" width="335" height="118" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="600" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">定理 4.1 + 定理 C</text>
+  <text x="600" y="190" text-anchor="middle" font-size="15" fill="#222">奇偶只有一个参数 δ ∈ [0,2]</text>
+  <text x="600" y="218" text-anchor="middle" font-size="13" fill="#555">由 x^η-粗糙对统一携带</text>
+  <text x="600" y="240" text-anchor="middle" font-size="13" fill="#555">→ 目标是一个数，不是一族</text>
+  <rect x="780" y="136" width="335" height="118" rx="10" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="947" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#145a32">墙的位置（定理 A、E）</text>
+  <text x="947" y="190" text-anchor="middle" font-size="15" fill="#222">已知机制到达 z ≤ exp(O(√log x))</text>
+  <text x="947" y="218" text-anchor="middle" font-size="13" fill="#555">需要 z = x^η</text>
+  <text x="947" y="240" text-anchor="middle" font-size="13" fill="#555">→ 知道哪些工具注定过不去</text>
+
+  <!-- start -> channels -->
+  <line x1="232" y1="270" x2="232" y2="318" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="600" y1="270" x2="600" y2="318" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="966" y1="270" x2="966" y2="318" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="250" y="300" font-size="14" font-weight="bold" fill="#666">第五阶段：三条通道（已走完）</text>
+
+  <!-- ============ STAGE 5 ============ -->
+  <!-- channel 1 -->
+  <rect x="60" y="322" width="345" height="250" rx="12" fill="#fdf2f1" stroke="#c0392b" stroke-width="2"/>
+  <text x="232" y="350" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a5276">通道 ① Teräväinen</text>
+  <text x="232" y="373" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">✗ 不通 · 方法天花板已证明</text>
+  <text x="78" y="402" font-size="13" fill="#222">唯一本质差距：t-族从 t = ±1 推到 0</text>
+  <text x="78" y="426" font-size="13" fill="#222">扩张法只到 |t| &gt; 0.676（命题 T′，任意权重）</text>
+  <text x="78" y="450" font-size="13" fill="#222">（命题 6.19；ℓ² 代价超过 √次数 增益）</text>
+  <text x="78" y="474" font-size="13" fill="#222">ℓ^p 不比 ℓ² 好（命题 6.21）</text>
+  <text x="78" y="498" font-size="13" fill="#222">H8 ✗：加权 ℓ² 只改善常数</text>
+  <text x="78" y="530" font-size="12" fill="#555">留下：一般权重的情形没有证明</text>
+  <text x="78" y="552" font-size="12" fill="#555">→ 第六阶段 C</text>
+
+  <!-- channel 2 -->
+  <rect x="427" y="322" width="345" height="250" rx="12" fill="#fdf2f1" stroke="#c0392b" stroke-width="2"/>
+  <text x="600" y="350" text-anchor="middle" font-size="17" font-weight="bold" fill="#424949">通道 ② 函数域 δ_q</text>
+  <text x="600" y="373" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">✗ 不通 · 机制在整数上没有对应物</text>
+  <text x="445" y="402" font-size="13" fill="#222">数值：q = 3–13，δ_q ≈ 1（噪声内）</text>
+  <text x="445" y="426" font-size="13" fill="#222">机制：特征 p 的不可分性，</text>
+  <text x="445" y="450" font-size="13" fill="#222">导数相同的"线"上 μ 是 Dirichlet 特征</text>
+  <text x="445" y="474" font-size="13" fill="#222">"q 大"只用于证明短特征和抵消</text>
+  <text x="445" y="498" font-size="13" fill="#222">整数缺：λ 为特征的正密度"线"族</text>
+  <text x="445" y="530" font-size="12" fill="#555">留下：q=3 孪生比 HL 少约 15%；</text>
+  <text x="445" y="552" font-size="12" fill="#555">整数上找"线"族 → 第六阶段 C</text>
+
+  <!-- channel 3 -->
+  <rect x="794" y="322" width="346" height="250" rx="12" fill="#fef5e7" stroke="#d68910" stroke-width="2"/>
+  <text x="966" y="350" text-anchor="middle" font-size="17" font-weight="bold" fill="#424949">通道 ③ 削弱 PND_log</text>
+  <text x="966" y="373" text-anchor="middle" font-size="13" font-weight="bold" fill="#d68910">◐ 部分 · 化简已完成，仍有开放的一步</text>
+  <text x="812" y="402" font-size="13" fill="#222">任意一个粗糙类 ⟺ 孪生正比例</text>
+  <text x="812" y="426" font-size="13" fill="#222">（推论 4.7；数值 δ = 1.000 ± 0.001）</text>
+  <text x="812" y="450" font-size="13" fill="#222">4a ✓ 量化：门槛 = ε_B，</text>
+  <text x="812" y="474" font-size="13" fill="#222">最低约 x/log³x（命题 4.9）</text>
+  <text x="812" y="498" font-size="13" fill="#222">4b 开放：移位比较 SC + Polymath</text>
+  <text x="812" y="530" font-size="12" fill="#555">留下：4b → 第六阶段 A；</text>
+  <text x="812" y="552" font-size="12" fill="#555">ε_B 对水平的依赖 → 第六阶段 B</text>
+
+  <!-- ============ STAGE 6 ============ -->
+  <rect x="40" y="636" width="1120" height="262" rx="14" fill="#faf5fc" stroke="#a569bd" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="245" y="652" font-size="13" font-weight="bold" fill="#5b2c6f">第六阶段</text>
+
+  <!-- stage 5 -> stage 6 links -->
+  <line x1="232" y1="572" x2="232" y2="658" stroke="#7d3c98" stroke-width="2.5" marker-end="url(#arP)"/>
+  <line x1="600" y1="572" x2="440" y2="658" stroke="#7d3c98" stroke-width="2.5" marker-end="url(#arP)"/>
+  <line x1="900" y1="572" x2="700" y2="658" stroke="#d68910" stroke-width="3" marker-end="url(#arO)"/>
+  <line x1="1040" y1="572" x2="1010" y2="658" stroke="#7d3c98" stroke-width="2.5" marker-end="url(#arP)"/>
+  <text x="125" y="620" font-size="12" fill="#7d3c98">一般权重</text>
+  <text x="548" y="606" font-size="12" fill="#7d3c98">q=3 旁支、H9+</text>
+  <text x="770" y="604" font-size="12" font-weight="bold" fill="#d68910">4b</text>
+  <text x="1035" y="620" font-size="12" fill="#7d3c98">4a 的 ε_B</text>
+
+  <!-- C -->
+  <rect x="60" y="660" width="460" height="222" rx="12" fill="#fdfefe" stroke="#a569bd" stroke-width="1.8"/>
+  <text x="290" y="688" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a235a">C · 小题与旁支（来自 ①、②）</text>
+  <text x="78" y="716" font-size="13" fill="#222">C1 ✓ 一般权重：命题 T′，天花板升到 0.676 ← ①</text>
+  <text x="78" y="740" font-size="13" fill="#222">C2 查 q=3 孪生亏缺约 15% 的原因 ← ②</text>
+  <text x="78" y="758" font-size="11" fill="#777">（补完型：让第五阶段的结果更完整，不碰奇偶墙）</text>
+  <rect x="72" y="770" width="436" height="100" rx="8" fill="#f4ecf7" stroke="#7d3c98" stroke-width="1.5"/>
+  <text x="84" y="794" font-size="13" font-weight="bold" fill="#c0392b">C3 新大胆假设 H9+ ← ②　✗ 已判死</text>
+  <text x="84" y="818" font-size="13" fill="#222">ℤ 没有非零导数；局部替代品只给周期函数</text>
+  <text x="84" y="842" font-size="13" fill="#222">H9d 数值：12 项检验全在噪声内（对照 z≈800）</text>
+  <text x="84" y="862" font-size="11" fill="#777">（函数域机制按"导数"这条路搬不到整数）</text>
+
+  <!-- A -->
+  <rect x="540" y="660" width="300" height="222" rx="12" fill="#fef5e7" stroke="#d68910" stroke-width="3"/>
+  <text x="690" y="688" text-anchor="middle" font-size="16" font-weight="bold" fill="#7e5109">★ A · 三点相干 + SC（← ③ 4b）</text>
+  <text x="556" y="716" font-size="13" fill="#222">定理 C 推广到 (n, n+2, n+6)</text>
+  <text x="556" y="740" font-size="13" fill="#222">Polymath8b：GEH ⟹ 间隙 ≤ 6，</text>
+  <text x="556" y="764" font-size="13" fill="#222">翻译成 δ(2)、δ(4)、δ(6)</text>
+  <text x="556" y="788" font-size="13" fill="#222">目标：GEH + SC ⟹ TPC</text>
+  <text x="556" y="818" font-size="12" font-weight="bold" fill="#1e8449">✓ 已完成：GEH + SC_ν ⟹ TPC（A4）</text>
+  <text x="556" y="840" font-size="11" fill="#777">三点相干超出 GEH；SC 只能用加权形式；</text>
+  <text x="556" y="858" font-size="11" fill="#777">数值：C₂:C₄:C₆ = 1:1:1，真实世界 SC 成立</text>
+
+  <!-- B -->
+  <rect x="860" y="660" width="280" height="222" rx="12" fill="#fdfefe" stroke="#a569bd" stroke-width="1.8"/>
+  <text x="1000" y="688" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a235a">B · 量化 ε_B（← ③ 4a）</text>
+  <text x="876" y="716" font-size="13" fill="#222">核对 Bombieri / FI 证明中</text>
+  <text x="876" y="740" font-size="13" fill="#222">误差对水平 θ 的依赖</text>
+  <text x="876" y="764" font-size="13" fill="#222">把命题 4.9 的门槛变成定理</text>
+  <text x="876" y="788" font-size="13" fill="#222">（最好约 x/log³x 个 P₂ 孪生）</text>
+  <text x="876" y="818" font-size="12" fill="#4a235a">补完型，需要精读原文献</text>
+  <text x="876" y="840" font-size="11" fill="#777">只把门槛缩小约 log x 倍，</text>
+  <text x="876" y="858" font-size="11" fill="#777">不绕过奇偶墙</text>
+
+  <!-- stage 6 -> TPC -->
+  <line x1="290" y1="870" x2="470" y2="960" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,6"/>
+  <text x="215" y="930" font-size="13" font-weight="bold" fill="#c0392b">✗ H9 不通</text>
+  <line x1="690" y1="882" x2="640" y2="960" stroke="#d68910" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#arO)"/>
+  <text x="672" y="930" font-size="13" font-weight="bold" fill="#d68910">已证：GEH + SC_ν ⟹ TPC</text>
+  <line x1="1000" y1="882" x2="790" y2="960" stroke="#999" stroke-width="2" stroke-dasharray="3,5" marker-end="url(#ar)"/>
+  <text x="935" y="930" font-size="12" fill="#777">缩小门槛</text>
+
+  <!-- ============ END ============ -->
+  <rect x="330" y="964" width="540" height="58" rx="14" fill="#fef9e7" stroke="#b7950b" stroke-width="2.5"/>
+  <text x="600" y="1001" text-anchor="middle" font-size="20" font-weight="bold" fill="#7d6608">终点：孪生素数猜想（TPC）</text>
+  <text x="600" y="1046" text-anchor="middle" font-size="13" fill="#555">图例：<tspan fill="#c0392b" font-weight="bold">✗ 不通</tspan>（已证明或已诊断走不到终点）　<tspan fill="#d68910" font-weight="bold">◐ 部分</tspan>（化简已完成，仍有开放的一步）　<tspan fill="#7d3c98" font-weight="bold">紫色箭头</tspan>：第五阶段留下的问题 → 第六阶段</text>
+
+  <!-- ============ COMPARISON ============ -->
+  <rect x="60" y="1064" width="1080" height="236" rx="12" fill="#fbfcfc" stroke="#aab7b8" stroke-width="1.5"/>
+  <text x="85" y="1093" font-size="17" font-weight="bold" fill="#333">起点与终点对比：还差什么</text>
+  <line x1="85" y1="1105" x2="1115" y2="1105" stroke="#d5d8dc" stroke-width="1"/>
+  <text x="85" y="1131" font-size="14" font-weight="bold" fill="#555">项目</text>
+  <text x="300" y="1131" font-size="14" font-weight="bold" fill="#1e8449">起点（已有）</text>
+  <text x="730" y="1131" font-size="14" font-weight="bold" fill="#7d6608">终点（需要）</text>
+  <text x="85" y="1161" font-size="14" fill="#333">奇偶输入</text>
+  <text x="300" y="1161" font-size="14" fill="#333">PND_log 是猜想；任意一个粗糙类等价</text>
+  <text x="730" y="1161" font-size="14" fill="#333">某一个粗糙类的命题成为定理</text>
+  <text x="85" y="1191" font-size="14" fill="#333">分布输入</text>
+  <text x="300" y="1191" font-size="14" fill="#333">GEH 是假设</text>
+  <text x="730" y="1191" font-size="14" fill="#333">仍需 GEH，或其足够弱的版本</text>
+  <text x="85" y="1221" font-size="14" fill="#333">粗糙度</text>
+  <text x="300" y="1221" font-size="14" fill="#333">z ≤ exp(O(√log x))；t-族：|t| &gt; 0.676</text>
+  <text x="730" y="1221" font-size="14" fill="#333">z = x^η，即 t = 0</text>
+  <text x="85" y="1251" font-size="14" fill="#333">机制</text>
+  <text x="300" y="1251" font-size="14" fill="#333">都靠小素数处的乘性</text>
+  <text x="730" y="1251" font-size="14" fill="#333">在 ≤ 1/η 个大素因子的数上抵消</text>
+  <text x="85" y="1281" font-size="14" fill="#333">性质</text>
+  <text x="300" y="1281" font-size="14" fill="#333">条件定理 + 方法限制定理</text>
+  <text x="730" y="1281" font-size="14" fill="#333">无条件定理</text>
+  <text x="600" y="1322" text-anchor="middle" font-size="13" fill="#555">第七阶段：扫描 2026 年 AI 数论结果（OpenAI 普通两点 Chowla、μ(p−1)=1、准 RH）——符号都来自小素数，墙未动；顺带得到命题 T′</text>
+  <text x="600" y="1342" text-anchor="middle" font-size="13" fill="#555">第八阶段：H10–H16 七张卡全部判死；新判别法：粗糙对上 λ 在类内为常数，奇偶只能来自"数" p₁p₂+2=q₁q₂ 的解</text>
+  <text x="600" y="1362" text-anchor="middle" font-size="13" fill="#555">第九阶段：该四变量方程公认未解（Nevo–Sarnak）；奇偶来源五类（小素数、代数、三元、移位平均、析取）孪生全不满足</text>
+  <text x="600" y="1382" text-anchor="middle" font-size="13" fill="#555">第十阶段：GEH 下移位坐标饱和——de Polignac 数密度 ≥ 1/6（定理），模 3 赝品使 1/6 为锐；"几乎所有 h≤H"任何 H 都不可证</text>
+  <text x="600" y="1402" text-anchor="middle" font-size="13" fill="#555">第十一阶段：准 RH 不能改进 MRT 的 8/33——瓶颈在临界线上的 d₃ 矩，不在零点；Guth–Maynard 只把下限从 1/6 降到 2/15</text>
+</svg>

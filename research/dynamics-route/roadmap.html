@@ -221,16 +221,22 @@ const DATA = {
     { n: 1, title: "D1 加 D3 清场：筛编码动力学与谱统计都关闭", verdict: "dead",
       q: "推广命题 0.1，正式关闭筛编码动力学；精确写出零点谱统计与对间隙平均的孪生数据的对应，判死还是留缝？",
       result: ["命题 1.1（三分法）：筛编码模型若记忆有限，则奇偶盲（严格）；若完整记忆并精确求值，就是埃拉托斯特尼筛，属于循环论证（严格）；若完整记忆但用测度近似，仍然奇偶盲（Polymath 意义下）", "命题 1.2（严格）：独立柱集近似预测 8C₂e^{−2γ}x/log²x，比 Hardy–Littlewood 高 4e^{−2γ} ≈ 1.26 倍；数值上 π₂/E 从 1.07（10⁴）降到 0.90（10⁸），朝 0.793 收敛。起点论文的外部定标恰好吸收了这个因子", "D3：零点对关联在领头阶等价于长度 H ≥ x^δ 的短区间方差（Goldston–Montgomery），也就是间隙相关的 Fejér 平均；间隙 2 的权重 ≤ x^{−δ}（引理 1.3，数值上相对改变约 2.6/H）。能单独看见间隙 2 的，只有相对阶 1/log x 的非普适修正（由 Hardy–Littlewood 推出）和完整零点集合（显式公式），都只是翻译"],
-      out: "STAGE1_CLEAR.md；stage1_clear.py" }
+      out: "STAGE1_CLEAR.md；stage1_clear.py" },
+    { n: 2, title: "D2 Furstenberg 系统：加法层退化，乘法层只排除一半", verdict: "dead",
+      q: "把孪生极值写成 λ 在粗糙对上的 Furstenberg 系统和 joining 的语言，已知的不相交性结果能否排除赝品？",
+      result: ["定理 2.1（严格）：z → ∞ 时 λ·1_R 的 Furstenberg 系统塌缩成零序列上的点质量；沿粗糙对取 Palm 测度，粗糙对是孤立的（窗口内其他粗糙数的个数按 1/log z 衰减，数值上从 2.13 降到 0.69），移位动力学平凡，只剩偶类比例这一个参数", "命题 2.2（严格）：成对随机赝品 χ₄ε 在所有粗糙对上取极值，同时几乎必然与每个零熵系统不相交。不相交性是一点的性质，排除不了两点的极值", "命题 2.3（严格）：伸缩一致性（强平稳性的粗糙版）排除所有非乘性赝品（数值上随机赝品一致率 50%），但 λ 和 χ₄ 都是 100%。剩下的赝品只有乘性特征，要排除它们还得靠伪装距离，而它在 ρ = 1 处有界"],
+      out: "STAGE2_FURSTENBERG.md；stage2_furstenberg.py" }
   ],
   ledger: [
     { id: "Y1", hyp: "把素数同构到动力学或物理后，因数分解消失，奇偶障碍随之消失", verdict: "dead", basis: "证明", why: "命题 0.1：只读筛编码的模型是奇偶盲的；墙是关于信息的，换语言不换信息就不起作用" },
     { id: "Y2", hyp: "零点的 GUE 型谱统计能推出孪生素数", verdict: "dead", basis: "文献 + 证明", why: "普适统计等价于间隙相关的 Fejér 平均（H ≥ x^δ），间隙 2 的权重 ≤ x^{−δ}；能看见间隙 2 的只有由 Hardy–Littlewood 推出的 1/log 阶修正和显式公式本身（第一阶段）" },
-    { id: "Y3", hyp: "Logistic 骨架的筛编码能由动力学推出孪生常数", verdict: "dead", basis: "证明 + 数值", why: "独立柱集近似偏差 4e^{−2γ} ≈ 1.26（命题 1.2），外部定标 k = 2C₂/μ 恰好吸收了它；完整编码精确求值则是埃拉托斯特尼筛本身" }
+    { id: "Y3", hyp: "Logistic 骨架的筛编码能由动力学推出孪生常数", verdict: "dead", basis: "证明 + 数值", why: "独立柱集近似偏差 4e^{−2γ} ≈ 1.26（命题 1.2），外部定标 k = 2C₂/μ 恰好吸收了它；完整编码精确求值则是埃拉托斯特尼筛本身" },
+    { id: "Y4", hyp: "λ 与零熵系统不相交（Sarnak 型）能推出孪生非极端", verdict: "dead", basis: "证明", why: "成对随机赝品同样不相交，却在所有粗糙对上取极值（命题 2.2）" },
+    { id: "Y5", hyp: "强平稳性（伸缩不变）能排除孪生赝品", verdict: "partial", basis: "证明 + 数值", why: "排除所有非乘性赝品，但 χ₃、χ₄ 本身是乘性的；再往下要靠伪装距离，在 ρ = 1 处有界（命题 2.3）" }
   ],
   parity: [
     { cls: "D1 筛编码的符号动力学（已关闭）", src: "Logistic 或单峰映射的 kneading 序列（起点工作）", ex: "Q_k(n) = 1 当且仅当 gcd(n, P_k) = 1，是有限筛", fails: "第 1 条：只读筛信息，命题 0.1", ours: "推广命题 0.1，正式关闭旧路线；检查能否读入 λ 而不预先知道 Ω" },
-    { cls: "D2 λ 的 Furstenberg 系统", src: "λ 沿粗糙对生成的移位不变测度、joining", ex: "两点 Chowla ⟺ Furstenberg 系统的性质（Tao、Frantzikinakis–Host）", fails: "第 4 条：现有结构定理依赖小素数伸缩", ours: "把孪生极值写成 joining 语言；检验对数 Sarnak 等不相交性结果能否排除“成对常值”型赝品" },
+    { cls: "D2 λ 的 Furstenberg 系统（已关闭）", src: "λ 沿粗糙对生成的移位不变测度、joining", ex: "两点 Chowla ⟺ Furstenberg 系统的性质（Tao、Frantzikinakis–Host）", fails: "第 4 条：现有结构定理依赖小素数伸缩", ours: "把孪生极值写成 joining 语言；检验对数 Sarnak 等不相交性结果能否排除“成对常值”型赝品" },
     { cls: "D3 谱与量子混沌（已关闭）", src: "零点的 n 点关联、迹公式、Berry–Keating 算子", ex: "Bogomolny–Keating：Hardy–Littlewood ⟹ 零点关联", fails: "第 5 条：只看平均间隙", ours: "精确写出“零点统计 ⟺ 对 h 平均的孪生数据”，确认判死还是留缝" },
     { cls: "D4 函数域的几何与动力学", src: "F_q[t] 上的 Frobenius、单值群", ex: "Sawin–Shusterman：F_q[t] 中的孪生素数（q 大）", fails: "ℤ 上没有导数（论文 v1.3）", ours: "拆解证明，标出用 q → ∞ 和用导数的步骤，寻找 ℤ 上的动力学替代" },
     { cls: "D5 双曲动力学的素轨道", src: "素测地线、Ruelle 与 Selberg ζ、Gauss 映射转移算子", ex: "Pollicott–Sharp：闭测地线长度对的关联", fails: "长度是 log ε_d 而不是 log p，没有到整数孪生的桥", ours: "核查 Pollicott–Sharp 的机制，寻找素轨道长度恰为 log p 且承载加法移位的系统" },

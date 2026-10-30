@@ -129,11 +129,11 @@ table.data tr:last-child td { border-bottom: 0; }
       </div>
       <div>
         <div class="panel" id="wallpanel">
-          <h2>入场检验：上一条路线留下的墙</h2>
+          <h2>动力学路线的结论</h2>
           <p class="wallnote" id="wall-one"></p>
-          <h3 class="minor">要搬过桥的最弱目标</h3>
+          <h3 class="minor">墙在动力学语言下的分层</h3>
           <ol class="ladder" id="wall-ladder"></ol>
-          <h3 class="minor">任何新输入必须同时做到（六条必要条件）</h3>
+          <h3 class="minor">入场检验：六条必要条件（来自奇偶墙路线）</h3>
           <ol class="ladder" id="wall-need"></ol>
           <p class="wallnote muted" id="wall-src"></p>
         </div>
@@ -176,7 +176,7 @@ table.data tr:last-child td { border-bottom: 0; }
 <script>
 /* DATA: the single source of truth. To add a stage, append one object to DATA.stages. */
 const DATA = {
-  updated: "2026-10-29",
+  updated: "2026-10-30",
   paper: { version: "v1.3", doi: "10.5281/zenodo.23736249", url: "https://zenodo.org/records/23736249" },
   paper2: { version: "v1.0", doi: "10.5281/zenodo.23766118", url: "https://zenodo.org/records/23766118" },
   repo: "https://github.com/maris205/twin_primes/tree/main/research/dynamics-route",
@@ -190,11 +190,12 @@ const DATA = {
     dead:    { label: "✗ 不通", tip: "已证明或已诊断走不到终点" }
   },
   wall: {
-    one: "上一条路线的结论：孪生只卡在一个点上，即间隙固定为 2、两端都是 x^η-粗糙数、问 λ(n)λ(n+2) 的符号。在这里，极端赝品（可取为完全乘性的 χ₃、χ₄）满足全部筛法公理，与 λ 的伪装距离又有界。换成动力学或物理语言，并不会让它消失：墙是关于信息的，不是关于语言的（命题 0.1）。",
+    one: "七条通道全部关闭：换到动力学或物理语言，墙不会消失，因为墙是关于信息的，不是关于语言的。唯一真正绕开它的机制在函数域里：与平移交换的导子让 μ 在平移子空间上成为大模数特征（Pellet 公式），把两点相关直接变成单特征和。ℤ 上缺的正是这个对象，即对所有素数共用一个变量的导子。",
     ladder: [
-      ["E(η)", "存在一对偶类粗糙孪生，是最弱的目标"],
-      ["孪生非极端 δ < 1", "GEH 下 TPC 所需的全部"],
-      ["桥的要求", "把粗糙对上 λ(n)λ(n+2) 的信息完整搬过去，并且对岸有能区分 λ 与 χ₃、χ₄ 的定理"]
+      ["加法层", "Furstenberg / Palm 系统退化，只剩偶类比例；不相交性排除不了成对随机赝品"],
+      ["乘法层", "伸缩只做原始约化，排除非乘性赝品，排除不了 χ₃、χ₄"],
+      ["伪装层", "平均统计是单点均值的函数，排除 χ₃、χ₄，却认不出成对随机赝品"],
+      ["连接层", "稳健刚性：缺失，和孪生一样难；函数域用导子绕开，ℤ 上没有替代"]
     ],
     need: [
       "不是筛法公理（命题 0.1：只读筛编码的模型是奇偶盲的）",
@@ -204,7 +205,7 @@ const DATA = {
       "钉住单个间隙 2，而不是对间隙平均（谱统计在这里最危险）",
       "在伪装距离有界时仍能区分 λ 与乘性赝品 χ₃、χ₄"
     ],
-    src: "上一条路线的一页纸：research/parity-wall-route/route/WALL.md；第零阶段：research/dynamics-route/STAGE0_START.md。"
+    src: "一页纸：research/dynamics-route/DYN_WALL.md；上一条路线的一页纸：research/parity-wall-route/route/WALL.md。"
   },
   coords: [
     { name: "读入的算术信息", have: "旧模型只读筛编码 Q_k（n mod P_k）", need: "读入 λ 本身或等价的乘性结构" },
@@ -237,7 +238,11 @@ const DATA = {
     { n: 5, title: "Buium 的 p 进导数：缝合上，Pellet 类比坍缩成二次互反律", verdict: "dead",
       q: "Buium 的 p 进算术导数 δ(x) = (x − x^p)/p 能否在 ℤ 上充当与平移交换的导子，给出 λ 的局部大模数特征结构？",
       result: ["命题 5.1（严格）：δ_p(x+c) − δ_p(x) 是 x 的 p−1 次多项式，模 p 非零，所以 δ_p 不与平移交换；数值上 δ_p(x+2) ≡ δ_p(x) 在 p 个剩余类中最多只在 3 个上成立。命题 5.2（严格）：δ_p(n) mod p^k 只依赖 n mod p^{k+1}，是周期的，属于筛法层面的信息", "命题 5.3（严格）：最自然的 Pellet 类比 ∏(δ_{p_i}(n)/p_i) = (−1)^{C(k₃,2)}，k₃ 是 ≡ 3 mod 4 的素因子个数（二次互反律，405,286 个数逐一成立）。它对 ≡ 1 mod 4 的素因子完全盲，落在 χ₄ 数据生成的代数里，即赝品族中", "深层原因：函数域的 d/dT 是对所有素多项式共用的变量求导；Buium 的 δ_p 是对每个素数各自求导，没有共用变量，“n 的判别式”无从定义（Spec ℤ 不是域上的曲线）"],
-      out: "STAGE5_BUIUM.md；stage5_buium.py" }
+      out: "STAGE5_BUIUM.md；stage5_buium.py" },
+    { n: 6, title: "D5、D7 快速检查与收尾：七条通道全部关闭", verdict: "dead",
+      q: "素测地线（D5）与素数气体、Bost–Connes（D7）有没有共用变量的导子，或能承载整数平移、又读得到乘法结构的对象？",
+      result: ["D5：素测地线以本原性而非有理素数为下标，范数是 ε_d²；Pollicott–Sharp 的长度对相关控制窗口平均，而整数孪生对应宽度约 2e^{−ℓ} 的指数收缩窗口；Riemann ζ 在模曲面上只通过散射行列式出现，属于单点谱数据", "命题 6.2（严格）：素数气体中，孪生相关等于平移算符 S:|n⟩ → |n+2⟩ 的热平均，而 S 不在气体可解的对角代数里。命题 6.3（严格）：Bost–Connes 是 ax+b 群的 Hecke 代数，但整数平移落在被商掉的子群 P_ℤ⁺ 里，加法只剩 ℚ/ℤ 相位，在整数上是周期函数", "收尾：七条通道 D1–D7 全部关闭。ℤ 上缺少的对象是对所有素数共用一个变量的导子，这是“Spec ℤ 不是域上的曲线”在孪生问题上的精确形式。一页纸见 DYN_WALL.md"],
+      out: "STAGE6_D5_D7.md；DYN_WALL.md" }
   ],
   ledger: [
     { id: "Y1", hyp: "把素数同构到动力学或物理后，因数分解消失，奇偶障碍随之消失", verdict: "dead", basis: "证明", why: "命题 0.1：只读筛编码的模型是奇偶盲的；墙是关于信息的，换语言不换信息就不起作用" },
@@ -247,16 +252,18 @@ const DATA = {
     { id: "Y5", hyp: "强平稳性（伸缩不变）能排除孪生赝品", verdict: "partial", basis: "证明 + 数值", why: "排除所有非乘性赝品，但 χ₃、χ₄ 本身是乘性的；再往下要靠伪装距离，在 ρ = 1 处有界（命题 2.3）" },
     { id: "Y6", hyp: "ax+b 半群作用下存在不依赖伪装距离、能区分 λ 与 χ₄ 的二次不变量", verdict: "dead", basis: "证明 + 分析 + 数值", why: "不变量只有固定间隙相关（目标本身）和平均统计（伪装数据的函数）两种；缺的连接环节是稳健刚性（定理 3.2、3.4）" },
     { id: "Y7", hyp: "函数域孪生素数的证明可以移植到 ℤ", verdict: "dead", basis: "证明 + 数值", why: "关键是与平移交换的导子，它让 μ 在平移子空间上成为大模数特征；ℤ 上没有非零导子，统一的多项式置换符号只能是 Legendre 符号（命题 4.2）" },
-    { id: "Y8", hyp: "Buium 的 p 进算术导数可以充当 ℤ 上与平移交换的导子", verdict: "dead", basis: "证明 + 数值", why: "不与平移交换、模 p^k 周期，Pellet 类比坍缩成二次互反律 (−1)^{C(k₃,2)}，只看 ≡ 3 mod 4 的素因子（命题 5.1–5.3）" }
+    { id: "Y8", hyp: "Buium 的 p 进算术导数可以充当 ℤ 上与平移交换的导子", verdict: "dead", basis: "证明 + 数值", why: "不与平移交换、模 p^k 周期，Pellet 类比坍缩成二次互反律 (−1)^{C(k₃,2)}，只看 ≡ 3 mod 4 的素因子（命题 5.1–5.3）" },
+    { id: "Y9", hyp: "素测地线的对相关（Pollicott–Sharp）可以搬到整数孪生", verdict: "dead", basis: "文献 + 分析", why: "轨道不以有理素数为下标；整数孪生需要指数收缩的窗口和精确的算术相等（第六阶段）" },
+    { id: "Y10", hyp: "素数气体或 Bost–Connes 系统给出孪生相关的工具", verdict: "dead", basis: "证明", why: "气体只有乘法，平移算符不在可解代数中（命题 6.2）；Bost–Connes 把整数平移商掉了（命题 6.3）" }
   ],
   parity: [
     { cls: "D1 筛编码的符号动力学（已关闭）", src: "Logistic 或单峰映射的 kneading 序列（起点工作）", ex: "Q_k(n) = 1 当且仅当 gcd(n, P_k) = 1，是有限筛", fails: "第 1 条：只读筛信息，命题 0.1", ours: "推广命题 0.1，正式关闭旧路线；检查能否读入 λ 而不预先知道 Ω" },
     { cls: "D2 λ 的 Furstenberg 系统（已关闭）", src: "λ 沿粗糙对生成的移位不变测度、joining", ex: "两点 Chowla ⟺ Furstenberg 系统的性质（Tao、Frantzikinakis–Host）", fails: "第 4 条：现有结构定理依赖小素数伸缩", ours: "把孪生极值写成 joining 语言；检验对数 Sarnak 等不相交性结果能否排除“成对常值”型赝品" },
     { cls: "D3 谱与量子混沌（已关闭）", src: "零点的 n 点关联、迹公式、Berry–Keating 算子", ex: "Bogomolny–Keating：Hardy–Littlewood ⟹ 零点关联", fails: "第 5 条：只看平均间隙", ours: "精确写出“零点统计 ⟺ 对 h 平均的孪生数据”，确认判死还是留缝" },
     { cls: "D4 函数域的几何与动力学（已关闭；p 进导数之缝在第 5 阶段合上）", src: "F_q[t] 上的 Frobenius、单值群", ex: "Sawin–Shusterman：F_q[t] 中的孪生素数（q 大）", fails: "ℤ 上没有导数（论文 v1.3）", ours: "拆解证明，标出用 q → ∞ 和用导数的步骤，寻找 ℤ 上的动力学替代" },
-    { cls: "D5 双曲动力学的素轨道", src: "素测地线、Ruelle 与 Selberg ζ、Gauss 映射转移算子", ex: "Pollicott–Sharp：闭测地线长度对的关联", fails: "长度是 log ε_d 而不是 log p，没有到整数孪生的桥", ours: "核查 Pollicott–Sharp 的机制，寻找素轨道长度恰为 log p 且承载加法移位的系统" },
+    { cls: "D5 双曲动力学的素轨道（已关闭）", src: "素测地线、Ruelle 与 Selberg ζ、Gauss 映射转移算子", ex: "Pollicott–Sharp：闭测地线长度对的关联", fails: "长度是 log ε_d 而不是 log p，没有到整数孪生的桥", ours: "核查 Pollicott–Sharp 的机制，寻找素轨道长度恰为 log p 且承载加法移位的系统" },
     { cls: "D6 加法与乘法耦合的动力系统（已关闭）", src: "ax+b 半群作用、阿代尔类空间、整除图", ex: "奇偶墙第 31–33 阶段的扩张机制就是这个结构", fails: "第 3、4 条", ours: "用遍历论而非谱界重新提问：这个作用下是否有不变量能区分赝品" },
-    { cls: "D7 素数气体与超对称", src: "费米子素数气体，(−1)^F 对应 μ 或 λ", ex: "Spector：Möbius 函数与超对称；Bost–Connes 系统", fails: "只承载乘法，没有 n ↦ n+2", ours: "寻找能加入素数气体且保持可解性的平移算符；若没有，记录为结构性障碍" }
+    { cls: "D7 素数气体与超对称（已关闭）", src: "费米子素数气体，(−1)^F 对应 μ 或 λ", ex: "Spector：Möbius 函数与超对称；Bost–Connes 系统", fails: "只承载乘法，没有 n ↦ n+2", ours: "寻找能加入素数气体且保持可解性的平移算符；若没有，记录为结构性障碍" }
   ]
 };
 
@@ -332,7 +339,7 @@ const chip = (v) => { const c = el("span", "chip v-" + v, DATA.verdicts[v].label
   const p = el("p", null);
   p.textContent = "已走 " + DATA.stages.length + " 个阶段：" +
     Object.keys(DATA.verdicts).filter((k) => counts[k]).map((k) => DATA.verdicts[k].label.replace(/^\S+\s/, "") + " " + counts[k]).join("，") +
-    "。上一条路线的结论：墙是同一个赝品在多个坐标上的投影，最弱的目标是 E(η)。这条路线要找的，是能把 E(η) 搬到动力学一侧、且对岸有定理能区分 λ 与 χ₃、χ₄ 的桥。";
+    "。七条通道全部关闭；ℤ 上缺的对象是对所有素数共用一个变量的导子（见总览左侧第 4–6 阶段与一页纸 DYN_WALL.md）。";
   $("#status").append(p);
   const lg = $("#legend");
   Object.keys(DATA.verdicts).forEach((k) => { const c = chip(k); c.textContent = DATA.verdicts[k].label + "：" + DATA.verdicts[k].tip; lg.append(c); });

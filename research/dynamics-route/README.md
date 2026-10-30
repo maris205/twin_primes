@@ -6,6 +6,8 @@
 - **上一条路线：** [`../parity-wall-route/`](../parity-wall-route/) 的 33 个阶段，它给出了墙的完整刻画。
 - **目标：** 寻找一座双向精确的桥，把粗糙对上 $\lambda(n)\lambda(n+2)$ 的信息完整地搬到动力学一侧，并且对岸有能区分 Liouville 函数与乘性赝品 $\chi_3,\chi_4$ 的定理。
 
+**一页纸总结：** [`DYN_WALL.md`](DYN_WALL.md)。七条通道全部关闭；$\mathbb Z$ 上缺少的对象是对所有素数共用一个变量的导子。
+
 **链接：**
 - **在线路线图：** https://claude.ai/artifact/5UXWduxFAcN7sM3fxXjjQK
   - 本地副本：[`roadmap.html`](roadmap.html)
@@ -26,6 +28,7 @@
 | 3 | [D6 ax+b 不变量](STAGE3_AXB.md)：原始约化（引理 3.1）；二次不变量只有目标本身与伪装数据两种（定理 3.2）；缺的一环是稳健刚性（定理 3.4） | ✗ |
 | 4 | [D4 函数域拆解](STAGE4_FUNCTION_FIELD.md)：Pellet 公式加上与平移交换的导子，让 μ 局部成为大模数特征；ℤ 上置换符号只能是 Legendre 符号（命题 4.2） | ✗ |
 | 5 | [Buium 的 p 进导数](STAGE5_BUIUM.md)：不与平移交换、周期（命题 5.1、5.2）；Pellet 类比坍缩成二次互反律（命题 5.3） | ✗ |
+| 6 | [D5、D7 与收尾](STAGE6_D5_D7.md)：素测地线、素数气体（命题 6.2）、Bost–Connes（命题 6.3）都关闭；七条通道全部关闭 | ✗ |
 
 ## 入场检验
 

@@ -1,0 +1,554 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\EE}{\mathrm E}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\DOI}{10.5281/zenodo.23804621}
+
+\title[A dynamical anatomy of the twin-prime parity wall]{Changing the language does not move the parity wall:\\ a dynamical anatomy of the twin-prime obstruction\\ and the function-field bypass}
+\author{Liang Wang}
+\address{School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan 430070, P.R. China}
+\email{wangliang.f@gmail.com}
+\date{Version 1.0, 30 October 2026. DOI \href{https://doi.org/\DOI}{\DOI}}
+\raggedbottom
+\emergencystretch=2em
+
+\begin{document}
+\begin{abstract}
+It is sometimes suggested that the parity barrier for twin primes might disappear once the problem is translated into the language of dynamical systems or physics, where factorisation plays no visible role. We test this suggestion channel by channel. On the generalised Elliott--Halberstam conjecture the twin prime conjecture is a statement about the signs $\lambda(n)\lambda(n+2)$ of the Liouville function on rough pairs, and the obstruction is a family of counterfeits, among them the characters $\chi_3,\chi_4$, which agree with every sieve statistic and are extremal on all rough pairs. We examine seven channels: symbolic dynamics of sieve encodings, spectral statistics of zeta zeros, Furstenberg systems and disjointness, the $ax+b$ semigroup, the function-field proof of Sawin and Shusterman, hyperbolic prime geodesics, and the primon gas and the Bost--Connes system.
+None of them moves the wall, and the reasons organise into layers. The additive layer degenerates: along rough pairs the Furstenberg system collapses and its Palm system keeps one parameter (Theorem~\ref{thm:collapse}); pairwise-random counterfeits satisfy every Sarnak-type disjointness. The multiplicative layer (dilation consistency) excludes every non-multiplicative counterfeit but not $\chi_3,\chi_4$. Averaged statistics separate $\lambda$ from $\chi_3,\chi_4$ but are functions of one-point (pretentious) data. The link from two-point extremality to one-point pretentiousness is robust rigidity, which implies twin non-extremality (Theorem~\ref{thm:RR}).
+The function-field proof avoids this link by an algebraic identity: Pellet's formula together with a derivative that commutes with translation turns the Möbius function, on each translation subspace, into a Dirichlet character of large varying modulus. We show that the natural substitutes over $\Z$ produce only characters of fixed modulus, which is to say the counterfeits themselves: uniform permutation signs are Legendre symbols (via Fried's theorem), Buium's $p$-derivation does not commute with translation and its Pellet analogue collapses to quadratic reciprocity, the primon gas has the shift outside its solvable algebra, and the Bost--Connes system quotients out integer translations.
+The missing object over $\Z$ is a derivation in a variable common to all primes. Nothing here proves or disproves the twin prime conjecture. The work was carried out with substantial AI assistance; every statement is labelled as a theorem, a heuristic, an analysis or a numerical observation.
+\end{abstract}
+\maketitle
+
+\tableofcontents
+
+%======================================================================
+\section{Introduction}
+%======================================================================
+
+\subsection{Background}
+In two earlier papers \cite{Wan26b,Wan26c} we analysed the parity obstruction to twin primes inside analytic number theory. On the generalised Elliott--Halberstam conjecture the twin prime conjecture reduces to a statement about $\lambda(n)\lambda(n+2)$ on pairs of $x^\eta$-rough integers, and the obstruction is a single counterfeit seen in several guises: the sieve-invisible measure $\nu\omega$ of \cite[\S8]{Polymath8b}, periodic colourings, and the completely multiplicative characters $\chi_3,\chi_4$. We found six conditions that any input able to reach even the weakest target (one even rough pair) must satisfy simultaneously \cite[\S8]{Wan26c}; in particular it must pin the single gap $2$ and separate $\lambda$ from $\chi_3,\chi_4$ while their pretentious distance is bounded.
+
+This paper asks whether a change of language helps. The author's earliest work on primes encoded the finite sieve as kneading sequences of the logistic map and built Hénon-type models for the zeros of $\zeta$. A recurring suggestion, in that work and elsewhere, is that in a dynamical or physical picture ``factorisation disappears, so the parity barrier disappears''. We test this suggestion systematically.
+
+\subsection{Notation}
+\begin{itemize}
+\item $\lambda(n)=(-1)^{\Omega(n)}$; $R=R_z$ is the set of $z$-rough integers (all prime factors $\ge z$); a \emph{rough pair} is $(n,n+2)$ with $n,n+2\in R$, \emph{even} if $\lambda(n)\lambda(n+2)=+1$.
+\item $\rho=\log\log z/\log\log x$ is the roughness coordinate; twins need $z=x^\eta$, i.e.\ $\rho\to1$. The pretentious distance from $\lambda$ to $\chi_4$ on $[z,x]$ is $(1-\rho)\log\log x+O(1)$ \cite{Wan26c}.
+\item $\chi_3,\chi_4$ are the non-principal characters modulo $3$ and $4$. For odd $n$, $\chi_4(n)\chi_4(n+2)=-1$; for $3\nmid n(n+2)$, $\chi_3(n)\chi_3(n+2)=-1$. So both are extremal on every rough pair when $z>3$.
+\item A completely multiplicative $f$ is \emph{extremal} on a set of rough pairs if $f(n)f(n+2)=-1$ on all of them.
+\end{itemize}
+
+\subsection{The seven channels}
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+channel & object & section\\
+\midrule
+D1 & symbolic dynamics of sieve encodings (logistic kneading) & \ref{sec:sieve}\\
+D2 & Furstenberg systems of $\lambda$ along rough pairs; disjointness & \ref{sec:ergodic}\\
+D3 & spectral statistics of zeros; quantum chaos & \ref{sec:sieve}\\
+D4 & the function-field proof (Sawin--Shusterman) & \ref{sec:ff}\\
+D5 & prime geodesics of hyperbolic surfaces & \ref{sec:physics}\\
+D6 & the $ax+b$ semigroup on rough integers & \ref{sec:axb}\\
+D7 & primon gas and the Bost--Connes system & \ref{sec:physics}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Main results}
+\begin{enumerate}
+\item \textbf{Sieve encodings and spectra} (Section~\ref{sec:sieve}). Every model whose arithmetic input is a sieve encoding is parity-blind, circular, or wrong already in the constant, the last by the Mertens factor $e^{2\gamma}/4$ (Propositions~\ref{prop:trichotomy}, \ref{prop:mertens}). Pair correlation of zeros sees the gap $2$ with weight $\le x^{-\delta}$ (Lemma~\ref{lem:fejer}).
+\item \textbf{The additive and multiplicative layers} (Sections~\ref{sec:ergodic}--\ref{sec:axb}). Theorem~\ref{thm:collapse}, Propositions~\ref{prop:disjoint}, \ref{prop:dilation}, Lemma~\ref{lem:primitive}, the dichotomy~\ref{thm:dichotomy}, Proposition~\ref{prop:avg} and the reduction Theorem~\ref{thm:RR}.
+\item \textbf{The bypass} (Section~\ref{sec:ff}). In $\F_q[T]$ the two-point correlation of $\mu$ on a translation subspace is a single character sum of large modulus (Proposition~\ref{prop:pellet}).
+\item \textbf{No substitute over $\Z$} (Sections~\ref{sec:Z}--\ref{sec:physics}). Propositions~\ref{prop:fried}, \ref{prop:buium-shift}, \ref{prop:buium-period}, \ref{prop:buium-recip}, \ref{prop:primon}, \ref{prop:bc}.
+\item \textbf{The layered wall} (Section~\ref{sec:wall}) and the missing object.
+\end{enumerate}
+
+\subsection{Status of the claims}
+\begin{center}\small
+\begin{tabular}{p{0.3\textwidth}p{0.62\textwidth}}
+\toprule
+status & statements\\
+\midrule
+theorem (proved here) & Prop.~\ref{prop:trichotomy}(a)(b), \ref{prop:mertens}, \ref{prop:disjoint}, \ref{prop:dilation}, \ref{prop:avg}, \ref{prop:buium-shift}--\ref{prop:buium-recip}, \ref{prop:primon}, \ref{prop:bc};\\
+& Lemma~\ref{lem:fejer}, \ref{lem:primitive}; Thm.~\ref{thm:collapse}, \ref{thm:RR}\\
+theorem (given a cited theorem) & Prop.~\ref{prop:fried} (Fried \cite{Fri70}); Prop.~\ref{prop:pellet} (Pellet--Stickelberger--Swan \cite{Swa62})\\
+heuristic (Polymath \S8 sense) & Prop.~\ref{prop:trichotomy}(c); Thm.~\ref{thm:dichotomy}(a)\\
+analysis & Thm.~\ref{thm:dichotomy}(b) (decorrelation unproved at $z=x^\eta$); Section~\ref{sec:physics} on Deninger's programme\\
+numerical & Tables~\ref{tab:mertens}--\ref{tab:buium}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Throughout, statements about the literature are based on the cited abstracts and standard expositions; we did not check every cited proof line by line, and say so where it matters.
+
+%======================================================================
+\section{Sieve encodings and spectral statistics}\label{sec:sieve}
+%======================================================================
+
+\subsection{Sieve encodings}
+Let $P_k=p_1\cdots p_k$ and $Q_k(n)=\one_{\gcd(n,P_k)=1}$. A \emph{sieve-encoding model} is any dynamical system or statistic whose arithmetic input is the sequence $(Q_k(n))_n$, with $k$ allowed to grow with $x$. The logistic kneading construction of the author's early work is of this type.
+
+\begin{proposition}[Trichotomy]\label{prop:trichotomy}
+\begin{enumerate}
+\item[(a)] \emph{Finite memory.} If $k$ is fixed, every observable is a function of $n\bmod P_k$, so it takes the same value whether the model is run on $\lambda$, on $\chi_4\one_R$, or on the measure $\nu\omega$.
+\item[(b)] \emph{Full memory, exact evaluation.} If $p_k\le\sqrt x<p_{k+1}$, then for $\sqrt x<n\le x$, $Q_k(n)=1$ if and only if $n$ is prime. Exact evaluation of the model is the sieve of Eratosthenes, and its output equals its input.
+\item[(c)] \emph{Full memory, measure approximation.} Any approximation that uses only the distribution of residues to moduli $\le x^{1-\varepsilon}$ is also satisfied by $\nu\omega$, which has no twins, and therefore cannot imply an asymptotic for twins.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) The observables read only $Q_k$, which has period $P_k$. (b) is the definition of the sieve. (c) is the content of the parity heuristic of \cite[\S8]{Polymath8b}.
+\end{proof}
+
+The most natural measure approximation treats the residue conditions at different primes as independent. It is wrong already in the constant.
+
+\begin{proposition}[Mertens factor]\label{prop:mertens}
+Let $E(x)=\frac x2\prod_{3\le p\le\sqrt x}(1-2/p)$. Then
+\[E(x)\sim \frac{8C_2e^{-2\gamma}x}{\log^2x},\]
+where $C_2=\prod_{p>2}(1-1/(p-1)^2)$. Hence, if the Hardy--Littlewood asymptotic $\pi_2(x)\sim2C_2x/\log^2x$ \cite{HL23} holds, then $\pi_2(x)/E(x)\to e^{2\gamma}/4\approx0.7931$.
+\end{proposition}
+
+\begin{proof}
+$\prod_{3\le p\le y}(1-2/p)=C_2\prod_{3\le p\le y}(1-1/p)^2(1+o(1))=4C_2e^{-2\gamma}(\log y)^{-2}(1+o(1))$ by Mertens' theorem; put $y=\sqrt x$.
+\end{proof}
+
+\begin{table}[h]
+\centering\small
+\caption{Twin counts against the independence prediction $E(x)$ and the Hardy--Littlewood prediction.}\label{tab:mertens}
+\begin{tabular}{rrrrr}
+\toprule
+$x$ & $\pi_2(x)$ & $E(x)$ & $\pi_2/E$ & $\pi_2/(2C_2\,\mathrm{Li}_2)$\\
+\midrule
+$10^4$ & 205 & 191.5 & 1.071 & 0.957\\
+$10^5$ & 1{,}224 & 1{,}230.6 & 0.995 & 0.980\\
+$10^6$ & 8{,}169 & 8{,}656.3 & 0.944 & 0.990\\
+$10^7$ & 58{,}980 & 63{,}963.4 & 0.922 & 1.003\\
+$10^8$ & 440{,}312 & 489{,}441.6 & 0.900 & 0.998\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}
+The ratio $\pi_2/E$ drifts slowly towards $0.793$, while the Hardy--Littlewood prediction is already accurate to $0.2\%$. In the author's early work the twin constant was fixed by an external calibration; that calibration absorbs exactly this factor, so the agreement of constants there was not derived from the dynamics.
+\end{remark}
+
+\subsection{Spectral statistics}
+Let $S(k)=\sum_{n\le x}\Lambda(n)\Lambda(n+k)$. The variance of $\psi$ in intervals of length $H$ is, up to main terms, the Fejér average $\sum_{|k|<H}(1-|k|/H)S(k)$. On the Riemann hypothesis, Montgomery's pair correlation conjecture \cite{Mon73} is equivalent to the asymptotic $\sim H(\log x-\log H)$ for this variance in the range $x^\delta\le H\le x^{1-\delta}$ \cite{GM87}. In the other direction, Bogomolny and Keating \cite{BK96} derived the $n$-level correlations of zeros, including non-universal corrections, from the Hardy--Littlewood conjectures.
+
+\begin{lemma}\label{lem:fejer}
+Let $w\ge0$ with $\sum_kw(k)=1$. Replacing $S(2)$ by $0$ changes $\sum_kw(k)S(k)$ by at most $w(2)S(2)$. For the normalised Fejér kernel of length $H$, $w(2)\le2/(2H-1)$. In particular, in the Goldston--Montgomery range the weight of the gap $2$ is $\le x^{-\delta}$.
+\end{lemma}
+
+\begin{proof}
+Immediate from linearity and the explicit Fejér weights.
+\end{proof}
+
+\begin{table}[h]
+\centering\small
+\caption{Mean Fejér-weighted gap correlation $V(H)$ at $x=10^8$, and its change when the gap $2$ is removed.}\label{tab:fejer}
+\begin{tabular}{rrrrr}
+\toprule
+$H$ & $V(H)$ & without gap $2$ & relative change & weight of gap $2$\\
+\midrule
+10 & 23.75 & 21.64 & 8.9\% & 0.160\\
+100 & 111.40 & 108.82 & 2.3\% & 0.020\\
+1000 & 1008.8 & 1006.2 & 0.26\% & 0.0020\\
+2000 & 2007.9 & 2005.3 & 0.13\% & 0.0010\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Where the gap is]
+Spectral information that sees $S(2)$ individually is of two kinds: corrections of relative order $1/\log x$ at bounded $H$, which in the Bogomolny--Keating framework are computed \emph{from} Hardy--Littlewood; and the full set of zeros, which determines the primes through the explicit formula. Both are translations of the twin problem rather than new sources of theorems. Universal (GUE-type) statistics carry only gap-averaged twin information, which fails the requirement that the single gap $2$ be pinned.
+\end{remark}
+
+%======================================================================
+\section{The additive layer: Furstenberg and Palm systems}\label{sec:ergodic}
+%======================================================================
+
+For a bounded sequence $a$, a Furstenberg system is a weak$^*$ limit, along some $N_k\to\infty$, of the empirical measures $\frac1{N_k}\sum_{n\le N_k}\delta_{(a(n+h))_{h\in\Z}}$, together with the shift. Chowla's conjecture says the Furstenberg system of $\lambda$ is Bernoulli. Frantzikinakis and Host \cite{FH21} showed that Furstenberg systems of bounded multiplicative functions have no irrational spectrum and are built from Bernoulli and infinite-step nilsystems; under logarithmic averaging they are strongly stationary \cite{Fra17}. The twin problem concerns $a_N=\lambda\one_{R_{z(N)}}$ with $z(N)\to\infty$.
+
+\begin{theorem}[Collapse]\label{thm:collapse}
+Let $z(N)\to\infty$ with $z(N)\le N^{1/10}$.
+\begin{enumerate}
+\item[(i)] Every Furstenberg system of $(a_N)$ is the point mass on the zero sequence.
+\item[(ii)] Condition on rough pairs: take the empirical distribution of windows $[n-H,n+2+H]$ over rough pairs $(n,n+2)$ with $n\le N$ (the Palm measure). The probability that the window contains another rough integer is $O(H/\log z)$. Hence every limit is supported on configurations that vanish outside positions $0,2$, and is determined by the joint law of $(\lambda(n),\lambda(n+2))$, i.e.\ by one parameter, the proportion of even pairs.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) The density of $R_z$ is $\sim e^{-\gamma}/\log z\to0$ by Mertens' theorem. (ii) For each fixed $k\notin\{0,2\}$, the upper bound sieve of dimension $3$ gives $\#\{n\le N:n,n+2,n+k\in R_z\}\ll N/(\log z)^3$, while the number of rough pairs is $\asymp N/(\log z)^2$ by the lower bound sieve. Sum over $|k|\le H+2$.
+\end{proof}
+
+\begin{table}[h]
+\centering\small
+\caption{Palm windows ($H=6$, $N=2\cdot10^7$).}\label{tab:palm}
+\begin{tabular}{rrrrrr}
+\toprule
+$z$ & density of $R_z$ & rough pairs & other rough in window & isolated & even proportion\\
+\midrule
+11 & 0.229 & 1{,}428{,}572 & 2.13 & 0.067 & 0.500\\
+30 & 0.158 & 663{,}726 & 1.39 & 0.144 & 0.501\\
+100 & 0.120 & 382{,}792 & 1.05 & 0.264 & 0.507\\
+300 & 0.098 & 253{,}750 & 0.85 & 0.358 & 0.550\\
+1000 & 0.079 & 164{,}909 & 0.69 & 0.452 & 0.695\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The product of the window count with $\log z$ is roughly constant (about $5$). The even proportion rises at large $z$ because the one-point mean of $\lambda$ on rough numbers is not small when $\log N/\log z$ is small \cite{Wan26c}.
+
+So the twin problem lives in a system conditioned on a null set: the ordinary Furstenberg system does not see it, and in the Palm system it has no dynamics. Joinings, disjointness and spectral theory need non-trivial shift dynamics, and here there is none.
+
+\begin{proposition}[Disjointness does not exclude counterfeits]\label{prop:disjoint}
+Let $z$ be fixed. Define $g=\chi_4\varepsilon$ on $R_z$ and $g=0$ off $R_z$, where $\varepsilon$ assigns one independent uniform sign to both members of each rough pair and independent signs elsewhere on $R_z$. (For $z>3$ one of $n,n+2,n+4$ is divisible by $3$, so rough pairs are disjoint.) Then $g(n)g(n+2)=-1$ on every rough pair, and almost surely, for every zero-entropy topological system $(X,T)$, every $x\in X$ and every $f\in C(X)$, $\sum_{n\le N}g(n)f(T^nx)=o(N)$.
+\end{proposition}
+
+\begin{proof}
+On a rough pair the two signs agree and $\chi_4(n)\chi_4(n+2)=-1$. The sum is a sum of $\asymp N$ independent bounded blocks; Hoeffding's inequality bounds the probability of a deviation $\ge\epsilon N$ by $e^{-c\epsilon^2N}$. A zero-entropy system has only $e^{o(N)}$ orbit segments of length $N$ that are $\epsilon$-distinguishable; take a union bound and apply Borel--Cantelli, then let $\epsilon\to0$ along a sequence.
+\end{proof}
+
+Disjointness is a one-point property of a sequence; twin extremality is a two-point property, and it can be realised by a sequence of high entropy. So conclusions of Sarnak type \cite{Sar11} cannot yield twin non-extremality.
+
+\begin{definition}
+$g$ is \emph{dilation consistent} on $R_z$ if $g(pm)g(p(m+2))=g(m)g(m+2)$ for every rough pair $(m,m+2)$ and every prime $p\ge z$.
+\end{definition}
+
+\begin{proposition}[The multiplicative layer]\label{prop:dilation}
+\begin{enumerate}
+\item[(i)] Every completely multiplicative $f$ with values $\pm1$ is dilation consistent; in particular $\lambda$, $\chi_3$, $\chi_4$ are.
+\item[(ii)] For the counterfeit $g$ of Proposition~\ref{prop:disjoint}, each dilation edge is consistent with probability $1/2$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) $f(pm)f(p(m+2))=f(p)^2f(m)f(m+2)$. (ii) $pm$ and $p(m+2)$ differ by $2p>2$, so they lie in different rough pairs or are unpaired, and their signs are independent of each other and of the signs at $m,m+2$.
+\end{proof}
+
+\begin{table}[h]
+\centering\small
+\caption{Dilation consistency ($z=30$, $p\le2000$, $504{,}124$ dilation edges, $N=2\cdot10^7$).}\label{tab:dilation}
+\begin{tabular}{lrr}
+\toprule
+sequence & mean at gap $2$ & consistency rate\\
+\midrule
+$\lambda\one_R$ & $+0.0014$ & $1.000$\\
+$\chi_4\one_R$ & $-1$ & $1.000$\\
+pairwise-random counterfeit $g$ & $-1$ & $0.500$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dilation is where strong stationarity enters the arguments of Tao \cite{Tao16} and Frantzikinakis--Host. It excludes every non-multiplicative counterfeit but not $\chi_3,\chi_4$, which are multiplicative. Excluding them requires strong aperiodicity, i.e.\ growing pretentious distance; on rough support the distance from the primes in $[z,x]$ is $(1-\rho)\log\log x$, bounded at $\rho=1$. Quantitatively, dilation consistency is used through the expansion mechanism of Helfgott--Radziwi\l{}\l{} \cite{HR21}, which stops at $\rho<1/2$ \cite{Wan26c}.
+
+%======================================================================
+\section{The $ax+b$ layer}\label{sec:axb}
+%======================================================================
+
+On $R$ consider the semigroup generated by $n\mapsto n+2$ and $n\mapsto pn$ ($p\ge z$ prime). A quadratic statistic is $Q_w(f)=\sum_{m\ne n}w(m,n)f(m)f(n)$ over $m,n\in R$, with $w$ translation-covariant (depending on the gap $h=n-m$ and on local residues of $m$) and mass-preserving under dilation, $w(pm,pn)=w(m,n)/p$.
+
+\begin{lemma}[Primitive reduction]\label{lem:primitive}
+Let $f$ be completely multiplicative with values $\pm1$, let $m,m+h\in R$ and $d=\gcd(m,h)$, $m=dm'$, $h=dh'$. Then $f(m)f(m+h)=f(m')f(m'+h')$. In particular every rough pair at gap $2$ is primitive, since $m$ is odd.
+\end{lemma}
+
+\begin{proof}
+$d\mid m$ is rough, and $f(m)f(m+h)=f(d)^2f(m')f(m'+h')$.
+\end{proof}
+
+So for completely multiplicative $f$ every quadratic statistic equals $\sum_hW(h)C^{\rm prim}_f(h)$, a weighted sum of primitive correlations at gap $h$, and the orbit of the twin statistic under the $ax+b$ action is the twin statistic itself.
+
+\begin{theorem}[Dichotomy for quadratic invariants]\label{thm:dichotomy}
+Let $f$ be completely multiplicative.
+\begin{enumerate}
+\item[(a)] \emph{Atomic weights.} If $W(h_0)\gg1$ for a fixed $h_0$, then using $Q_w$ to separate $\lambda$ from $\chi_4$ requires knowing $C_\lambda(h_0)$ to positive precision, which is the fixed-gap Chowla problem at gap $h_0$, blocked by the counterfeit weight $1-s(h_0)\lambda(n)\lambda(n+h_0)$ in the Polymath sense. For $h_0=2$ this is the twin problem.
+\item[(b)] \emph{Diffuse weights.} If $\max_hW(h)\to0$ and $n,n+h$ decorrelate on average over $h$ (a Matom\"aki--Radziwi\l{}\l{}--Tao type hypothesis on rough support \cite{MRT15}), then $Q_w(f)=\Phi(\{m_{f\psi}\}_\psi)+o(1)$, where $m_{f\psi}$ is the mean of $f\psi$ over rough integers and $\psi$ runs over characters of small modulus. So $Q_w$ is a function of pretentious data.
+\end{enumerate}
+\end{theorem}
+
+Part (a) is heuristic in the Polymath sense and part (b) is an analysis: the decorrelation hypothesis is supported numerically but not proved at $z=x^\eta$. Table~\ref{tab:avg} tests (b) with $T(f)=$ average over even $h\le200$ of $s(h)C_f(h)$, where $s(h)=+1$ if $4\mid h$ and $-1$ otherwise (the sign pattern of $\chi_4$), on random completely multiplicative $f_t$ with $\Pr[f_t(p)\chi_4(p)=1]=(1+t)/2$.
+
+\begin{table}[h]
+\centering\small
+\caption{Averaged statistic against one-point means ($N=3\cdot10^6$, $z=30$).}\label{tab:avg}
+\begin{tabular}{lrrrrr}
+\toprule
+$f$ & $m_{f\chi_4}$ & $m^2$ & $T(f)$ & gap $2$ & gap $4$\\
+\midrule
+$\chi_4$ & 1 & 1 & 1.000 & $-1$ & $+1$\\
+$f_{0.8}$ & 0.722 & 0.5219 & 0.5212 & $-0.519$ & $+0.523$\\
+$f_{0.5}$ & 0.345 & 0.1189 & 0.1186 & $-0.115$ & $+0.117$\\
+$f_{0.2}$ & 0.124 & 0.0153 & 0.0150 & $-0.018$ & $+0.012$\\
+$f_0$ & 0.003 & 0.0000 & $-0.0002$ & $+0.003$ & $+0.002$\\
+$\lambda$ & 0.0014 & 0.0000 & $-0.0001$ & $+0.0039$ & $+0.0026$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}\label{prop:avg}
+$T(\chi_4\one_R)=1$, while for the pairwise-random counterfeit $g$, $\mathbb E\,T(g)\to0$ as the averaging range grows.
+\end{proposition}
+
+\begin{proof}
+For odd $n$, $\chi_4(n)\chi_4(n+h)=s(h)$. For $g$, the correlation at gap $2$ is $-1$ and at every other gap it has mean $0$, since signs of distinct pairs are independent; gap $2$ has weight $O(1/H)$.
+\end{proof}
+
+So averaged statistics exclude $\chi_4$ but not $g$, and dilation consistency excludes $g$ but not $\chi_4$. What is needed is a statement linking the two.
+
+\begin{definition}[Robust rigidity (RR)]
+There is $c(\varepsilon)>0$ such that every completely multiplicative $f$ with values $\pm1$ that is extremal on a proportion $1-\varepsilon$ of rough pairs satisfies $|m_{f\chi_3}|\ge c(\varepsilon)$ or $|m_{f\chi_4}|\ge c(\varepsilon)$.
+\end{definition}
+
+\begin{theorem}\label{thm:RR}
+RR implies twin non-extremality: for some $\varepsilon>0$ the proportion of even rough pairs is at least $\varepsilon/2$ for all large $x$.
+\end{theorem}
+
+\begin{proof}
+By the prime number theorem in arithmetic progressions, $\lambda\chi_3$ and $\lambda\chi_4$ have mean $o(1)$ on $x^\eta$-rough integers, which are products of at most $1/\eta$ primes. So $\lambda$ violates the conclusion of RR and therefore is not $(1-\varepsilon)$-extremal.
+\end{proof}
+
+RR holds numerically, but it is stronger than twin non-extremality and fails for the counterfeit measure; it is sensitive to parity \cite{Wan26c}. The $ax+b$ dynamics reduces the problem exactly to RR and does not get around it.
+
+%======================================================================
+\section{The function-field bypass}\label{sec:ff}
+%======================================================================
+
+Sawin and Shusterman \cite{SS22} proved Chowla's conjecture and a quantitative twin prime conjecture over $\F_q[T]$ for suitable $q$. Their abstract singles out that on special subspaces the Möbius function is mimicked by a Dirichlet character. The following classical formula explains this.
+
+\begin{proposition}[Pellet, Stickelberger, Swan]\label{prop:pellet}
+Let $q$ be odd and $\chi$ the quadratic character of $\F_q$. For monic squarefree $f\in\F_q[T]$ of degree $n$,
+\[
+\mu(f)=(-1)^n\chi(\disc f),\qquad \disc f=(-1)^{n(n-1)/2}\Res(f,f').
+\]
+Consequently, for $c\in\F_q$ with $f$ and $f+c$ squarefree,
+\[
+\mu(f)\mu(f+c)=\chi\bigl(\Res(f,f')\Res(f+c,f')\bigr),
+\]
+and since $(f+c)'=f'$, both resultants are values at the roots of $f'$; up to a factor depending only on $f'$, $\mu(f+a)$ for $a'=0$ is a quadratic Dirichlet character modulo $f'$ evaluated at $f+a$.
+\end{proposition}
+
+\begin{proof}
+Frobenius permutes the roots of $f$; the sign of this permutation is $(-1)^{n-r}$ where $r$ is the number of irreducible factors, and it equals $\chi(\disc f)$. For the second formula the signs $(-1)^n$ and $(-1)^{n(n-1)/2}$ appear twice and cancel. For the last statement, $\Res(g,f')=\pm\,\mathrm{lc}(f')^{\deg g}\prod_{f'(\theta)=0}g(\theta)$, which for $g=f+a$ depends only on $f+a\bmod f'$.
+\end{proof}
+
+We verified both identities exhaustively in $\F_3[T]$: Pellet's formula for all $726$ monic squarefree polynomials of degree $2$ to $6$, and the two-point identity for all $462$ pairs $(f,f+1)$ with both squarefree.
+
+\begin{remark}[What the identity avoids]
+On $\Z$ the two-point correlation needs RR to reach one-point data. In $\F_q[T]$ an algebraic identity writes it directly as a \emph{single} character $\chi_{f'}$ evaluated at $f(f+c)$. The ``counterfeit'' on each translation subspace is a character, but its modulus $f'$ has degree about $\deg f$ and varies with $f$, so sums over $f$ exhibit cancellation, which geometric methods (an improved Burgess bound resting on Weil and Deligne) supply. On $\Z$ the counterfeits have fixed modulus $3$ or $4$. The key object is a derivation that is additive, commutes with translation, and enters the discriminant: it is compatible with both the additive and the multiplicative layer, and replaces the missing link by an identity.
+\end{remark}
+
+%======================================================================
+\section{Substitutes over $\Z$}\label{sec:Z}
+%======================================================================
+
+\subsection{Uniform permutation signs}
+In $\F_q[T]$, $\mu(f)$ is the sign of Frobenius acting on the roots. The closest analogue over $\Z$ is a polynomial that permutes $\F_p$ uniformly in $p$.
+
+\begin{proposition}\label{prop:fried}
+Let $P\in\Z[x]$ induce a permutation of $\F_p$ for all sufficiently large primes $p$. Then $P(x)=ax+b$, and the sign of the permutation is the Legendre symbol $(a/p)$.
+\end{proposition}
+
+\begin{proof}
+By Fried's theorem \cite{Fri70} (Schur's conjecture), a polynomial that permutes $\F_p$ for infinitely many $p$ is a composition of linear polynomials, power maps $x^k$ and Dickson polynomials $D_k(x,\alpha)$. A composition permutes a finite set if and only if each factor does. The map $x^k$ permutes $\F_p$ only if $\gcd(k,p-1)=1$, and $D_k(x,\alpha)$ with $\alpha\ne0$ only if $\gcd(k,p^2-1)=1$. If $k>1$, pick a prime $\ell\mid k$; there are infinitely many $p\equiv1\pmod\ell$ (and $p^2-1$ is always even), so these factors fail for infinitely many $p$. Hence every non-linear factor has $k=1$ and $P$ is linear. Translation is a $p$-cycle, an even permutation, and multiplication by $a$ has sign $(a/p)$ by Zolotarev's lemma.
+\end{proof}
+
+So uniform ``Frobenius signs'' over $\Z$ produce only fixed quadratic characters, the class to which $\chi_3,\chi_4$ belong.
+
+\subsection{Derivations and Frobenius lifts}
+There is no non-zero additive derivation on $\Z$: $D(1)=0$ and additivity give $D(n)=0$ \cite{Wan26b}. The arithmetic derivative satisfies Leibniz's rule but is not additive, and its Jacobi symbol counts prime factors $\equiv3\pmod4$ only \cite{Wan26b}. The Adams operations on $\Z$ are trivial, so there is no non-trivial Frobenius lift to use.
+
+\subsection{Buium's $p$-derivation}
+Buium \cite{Bui97,Bui05} proposed $\delta_p(x)=(x-x^p)/p$ as the arithmetic analogue of $d/dT$, with $p$ in the role of the variable. It satisfies
+\[
+\delta_p(x+y)=\delta_p(x)+\delta_p(y)+C_p(x,y),\quad C_p(x,y)=\frac{x^p+y^p-(x+y)^p}{p},
+\]
+\[
+\delta_p(xy)=x^p\delta_p(y)+y^p\delta_p(x)+p\,\delta_p(x)\delta_p(y),
+\]
+and if $n=pm$ then $\delta_p(n)\equiv m\pmod p$, so $p^2\mid n$ if and only if $p\mid n$ and $p\mid\delta_p(n)$, the analogue of detecting a repeated factor by $f'$.
+
+\begin{proposition}[No translation invariance]\label{prop:buium-shift}
+For $c\not\equiv0\pmod p$, $\delta_p(x+c)\equiv\delta_p(x)\pmod p$ holds for at most $p-1$ residue classes of $x$.
+\end{proposition}
+
+\begin{proof}
+$\delta_p(x+c)-\delta_p(x)=\delta_p(c)+C_p(x,c)$, and modulo $p$ this is a polynomial in $x$ of degree $p-1$ with leading coefficient $-\frac1p\binom p{p-1}c=-c\not\equiv0$.
+\end{proof}
+
+Numerically, for $c=2$ the number of translation-invariant classes is $1,1,1,3,1,1$ for $p=3,5,7,11,13,101$.
+
+\begin{proposition}[Periodicity]\label{prop:buium-period}
+$\delta_p(n)\bmod p^k$ depends only on $n\bmod p^{k+1}$. Hence every encoding built from finitely many $\delta_p$ is periodic, and parity-blind by Proposition~\ref{prop:trichotomy}(a).
+\end{proposition}
+
+\begin{proof}
+$n^p\bmod p^{k+1}$ depends only on $n\bmod p^k$, so $n-n^p\bmod p^{k+1}$ depends only on $n\bmod p^{k+1}$.
+\end{proof}
+
+\begin{proposition}[The Pellet analogue is reciprocity]\label{prop:buium-recip}
+For odd squarefree $n=p_1\cdots p_k$ put $s(n)=\prod_i\bigl(\delta_{p_i}(n)/p_i\bigr)$. Then $s(n)=(-1)^{\binom{k_3}2}$, where $k_3$ is the number of $p_i\equiv3\pmod4$.
+\end{proposition}
+
+\begin{proof}
+$\delta_{p_i}(n)\equiv n/p_i\pmod{p_i}$, so $s(n)=\prod_{i\ne j}(p_j/p_i)=\prod_{i<j}(p_i/p_j)(p_j/p_i)$, and each factor is $-1$ exactly when $p_i\equiv p_j\equiv3\pmod4$, by quadratic reciprocity.
+\end{proof}
+
+We checked the identity for all $405{,}286$ odd squarefree $n\le10^6$. Since $\chi_4(n)=(-1)^{k_3}$, $s$ lies in the algebra generated by the $\chi_4$-data of the prime factors. Replacing one prime factor $\equiv1\pmod4$ by two such factors flips $\lambda$ and fixes $s$ and $\chi_4$, so nothing built from $s$ and $\chi_4$ determines $\lambda$. Higher power-residue symbols reduce in the same way, by the general reciprocity laws, to Hilbert symbols depending on classes modulo a fixed modulus (analysis).
+
+\begin{table}[h]
+\centering\small
+\caption{The Buium sign on rough pairs ($z=30$, $n\le10^6$, $32{,}686$ pairs) and local character fits.}\label{tab:buium}
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+correlation of $s$ with $\lambda$ & $-0.28$\\
+mean of $s(n)s(n+2)$ on rough pairs & $+0.43$\\
+mean of $\lambda(n)\lambda(n+2)$ on rough pairs & $+0.005$\\
+best fit of $\lambda$ by a real character, $40$ odd numbers near $10^6$ (mean/max) & $0.531/0.704$\\
+the same for random signs (mean/max) & $0.532/0.739$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The correlation $-0.28$ is a bias from primes in the sample ($s(p)=+1$, $\lambda(p)=-1$), not a reading of parity. The last two rows use $242$ real characters $(d/\cdot)$ with fundamental $|d|\le400$, allowing a global sign: locally $\lambda$ fits characters no better than random signs do.
+
+\begin{remark}
+In $\F_q[T]$ the derivative $d/dT$ differentiates in the variable $T$ common to all prime polynomials, so $\Res(f,f')$ sees all prime factors at once. Buium's $\delta_p$ differentiates ``with respect to $p$'', one prime at a time, and there is no common variable. The ``discriminant of $n$'' is then undefined, and what can be assembled pairwise is reciprocity symbols.
+\end{remark}
+
+%======================================================================
+\section{Physical and hyperbolic models}\label{sec:physics}
+%======================================================================
+
+\subsection{Prime geodesics}
+On $\mathrm{PSL}_2(\Z)\backslash\mathbb H$, primitive closed geodesics correspond to primitive hyperbolic conjugacy classes, with norms $\varepsilon_d^2$ for fundamental units of real quadratic orders; the prime geodesic theorem relates them to class numbers \cite{Sar82}, and the Selberg zeta function is a Fredholm determinant of the Gauss-map transfer operator \cite{May91}. The Riemann zeta function enters only through the scattering determinant $\xi(2s-1)/\xi(2s)$, which is one-point spectral data of the kind treated in Section~\ref{sec:sieve}. Pollicott and Sharp \cite{PS06} proved asymptotics for pairs of closed geodesics whose length difference lies in a (possibly shrinking) family of intervals, one of the few genuine ``twin-type'' theorems in dynamics. We see three obstructions to reaching integer twins:
+\begin{enumerate}
+\item no known flow has primitive orbits indexed by rational primes with lengths $\log p$; Deninger \cite{Den98} envisaged such a foliated system, but it has not been constructed;
+\item $N'=N+2$ corresponds to a length difference $\log(1+2/N)\approx2e^{-\ell}$, an exponentially shrinking window, plus an exact arithmetic equality, whereas the pair-correlation theorem controls averaged counts in windows (we did not check how fast the windows of \cite{PS06} may shrink);
+\item even in Deninger's picture, orbit lengths $\log p$ carry only multiplicative structure; $p\mapsto p+2$ has no counterpart on the flow.
+\end{enumerate}
+
+\subsection{The primon gas}
+Let the Fock space have basis $|n\rangle$, $n\ge1$, with number operators $N_p|n\rangle=v_p(n)|n\rangle$ and Hamiltonian $H=\sum_p\log p\,N_p$, so $\Tr e^{-\beta H}=\zeta(\beta)$ \cite{Jul90}. The bosonic parity $(-1)^F$, $F=\sum_pN_p$, is $\lambda$, and the fermionic Witten index corresponds to $\mu$ \cite{Spe90}.
+
+\begin{proposition}\label{prop:primon}
+Let $S|n\rangle=|n+2\rangle$. For $\beta>1$,
+\[
+\frac{\Tr\bigl(e^{-\beta H}(-1)^FS^*(-1)^FS\bigr)}{\Tr e^{-\beta H}}=\frac1{\zeta(\beta)}\sum_{n\ge1}\frac{\lambda(n)\lambda(n+2)}{n^\beta}.
+\]
+The operator $S$ does not belong to the commutative algebra generated by the $N_p$, and does not commute with $H$.
+\end{proposition}
+
+\begin{proof}
+$(-1)^FS^*(-1)^FS$ is diagonal with entry $\lambda(n+2)\lambda(n)$ at $|n\rangle$. Since $H|n\rangle=\log n\,|n\rangle$, we have $[H,S]|n\rangle=\log\frac{n+2}{n}\,|n+2\rangle\ne0$, and $S$ is not diagonal.
+\end{proof}
+
+The solvable part of the gas is the diagonal algebra, where partition function, parity and Witten index live. Twin correlations are a thermal average of an operator outside it, and adding $S$ to the Hamiltonian destroys the factorisation over prime modes. Proposition~\ref{prop:primon} is an exact rewriting, not a tool.
+
+\subsection{The Bost--Connes system}
+The Bost--Connes system \cite{BC95} is the Hecke algebra of the $ax+b$ group $P_\Q^+=\{\left(\begin{smallmatrix}1&b\\0&a\end{smallmatrix}\right):a\in\Q_{>0},b\in\Q\}$ relative to the subgroup $P_\Z^+$ ($a=1$, $b\in\Z$); equivalently it is generated by $e(r)$, $r\in\Q/\Z$, and isometries $\mu_n$, $n\in\N^\times$, as a semigroup crossed product $C(\hat\Z)\rtimes\N^\times$. Its time evolution has partition function $\zeta(\beta)$, symmetry group $\hat\Z^*$, and a phase transition at $\beta=1$. It contains both addition and multiplication.
+
+\begin{proposition}\label{prop:bc}
+In the Bost--Connes system integer translations act trivially, so $n\mapsto n+2$ is not represented. The remaining additive information consists of the phases $e(r)$, $r\in\Q/\Z$, whose values $e(na/b)$ on integers are periodic in $n$. Functions on $\Z$ built from these phases and the $\mu_n$ carry only residue information and dilations, and are parity-blind by Proposition~\ref{prop:trichotomy}(a).
+\end{proposition}
+
+\begin{proof}
+The Hecke algebra is built on double cosets of $P_\Z^+$, which contains the integer translations. The second statement is the periodicity of $e(na/b)$ in $n$ with period $b$.
+\end{proof}
+
+\begin{remark}
+Bost--Connes and the $ax+b$ action of Section~\ref{sec:axb} are complementary. The latter sees integer translation but its quadratic invariants are the target itself and pretentious data; the former has full multiplication but quotients out integer translation.
+\end{remark}
+
+%======================================================================
+\section{The layered wall}\label{sec:wall}
+%======================================================================
+
+\begin{center}\footnotesize
+\begin{tabular}{llll}
+\toprule
+layer & object & excludes & result\\
+\midrule
+additive & Furstenberg, Palm & nothing & collapse to one parameter (Thm.~\ref{thm:collapse})\\
+ & disjointness & low-complexity counterfeits & pairwise-random $g$ survives (Prop.~\ref{prop:disjoint})\\
+multiplicative & dilation consistency & non-multiplicative counterfeits & $\chi_3,\chi_4$ survive (Prop.~\ref{prop:dilation})\\
+pretentious & averaged statistics & $\chi_3,\chi_4$ & $g$ survives (Thm.~\ref{thm:dichotomy}, Prop.~\ref{prop:avg})\\
+link & robust rigidity & --- & missing; as hard as twins (Thm.~\ref{thm:RR})\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\footnotesize
+\begin{tabular}{lll}
+\toprule
+channel & section & reason for failure\\
+\midrule
+D1 sieve encodings & \ref{sec:sieve} & parity-blind, circular, or wrong by $e^{2\gamma}/4$\\
+D2 Furstenberg & \ref{sec:ergodic} & additive layer degenerate; disjointness misses $g$\\
+D3 spectra & \ref{sec:sieve} & gap-averaged data only; the gap is the explicit formula\\
+D4 function field & \ref{sec:ff}, \ref{sec:Z} & the translation-invariant derivation has no analogue on $\Z$\\
+D5 prime geodesics & \ref{sec:physics} & no orbits indexed by rational primes; exponentially small windows\\
+D6 $ax+b$ & \ref{sec:axb} & invariants are the target or pretentious data; RR missing\\
+D7 primon gas, Bost--Connes & \ref{sec:physics} & multiplication only, or integer translation quotiented out\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The missing object}
+Over $\Z$ one would need an operation that is additive, commutes with translation, and reads multiplicative structure: a derivation in a variable common to all primes. With it one could attach to each $n$ a large modulus $q(n)$, varying with $n$, such that $\lambda$ restricted to translates near $n$ is a character modulo $q(n)$, and the two-point problem would become a single character sum as in Proposition~\ref{prop:pellet}. Every candidate we examined (uniform permutation signs, the arithmetic derivative, Frobenius lifts, Buium's $\delta_p$, prime geodesics, the primon gas, Bost--Connes) produces only characters of fixed modulus, that is, the counterfeit family itself. This is the twin-prime form of the statement that $\operatorname{Spec}\Z$ is not a curve over a field (the $\F_1$ problem).
+
+\subsection{Conclusion}
+The parity wall concerns information, not language: a translation into dynamics or physics that reads only sieve data, gap-averaged data, or multiplicative data inherits the wall. What the dynamical viewpoint adds is a layered description of the wall and an exact identification of how the function-field proof avoids it. A dynamical or geometric construction over $\Z$ that genuinely provides a translation-invariant derivation (for instance from $\F_1$-geometry or a Deninger-type flow) would be a meaningful isomorphism for the twin problem; none of the existing ones does.
+
+\appendix
+%======================================================================
+\section{AI-assisted workflow and verification}\label{app:ai}
+%======================================================================
+
+This paper was produced with substantial assistance from an AI system (Claude, Anthropic) working in a code-executing environment under the direction of the author. The author chose the questions and the direction, and is responsible for every statement. The AI system drafted proofs, wrote and ran the experiments, searched the literature, and wrote the stage reports from which this paper was assembled.
+
+\subsection{Sources}
+The material comes from stages 0--6 of the dynamics route. The stage reports, scripts and numerical results are in the repository \url{https://github.com/maris205/twin_primes}, directory \texttt{research/dynamics-route/}. A web road map is at \url{https://claude.ai/artifact/5UXWduxFAcN7sM3fxXjjQK}.
+
+\subsection{Scripts}
+\begin{itemize}
+\item \texttt{stage1\_clear.py}: twin counts and Fejér weights (Tables~\ref{tab:mertens}, \ref{tab:fejer}).
+\item \texttt{stage2\_furstenberg.py}: Palm windows and dilation consistency (Tables~\ref{tab:palm}, \ref{tab:dilation}).
+\item \texttt{stage3\_axb.py}: primitive reduction and averaged statistics (Table~\ref{tab:avg}).
+\item \texttt{stage4\_function\_field.py}: exhaustive checks in $\F_3[T]$ and local character fits.
+\item \texttt{stage5\_buium.py}: Buium's $\delta_p$ (Propositions~\ref{prop:buium-shift}--\ref{prop:buium-recip}, Table~\ref{tab:buium}).
+\end{itemize}
+
+\subsection{Corrections made along the way}
+\begin{itemize}
+\item A first version of the proof of Proposition~\ref{prop:fried} contained an inaccurate step and was corrected.
+\item Several scripts had indexing errors (for example an empty sample because a range started at an even number); these were fixed before the numbers above were recorded.
+\end{itemize}
+
+\bibliographystyle{amsplain}
+\bibliography{refs}
+\end{document}

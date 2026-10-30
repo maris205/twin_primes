@@ -179,6 +179,7 @@ const DATA = {
   updated: "2026-10-30",
   paper: { version: "v1.3", doi: "10.5281/zenodo.23736249", url: "https://zenodo.org/records/23736249" },
   paper2: { version: "v1.0", doi: "10.5281/zenodo.23766118", url: "https://zenodo.org/records/23766118" },
+  paper3: { version: "v1.0", doi: "10.5281/zenodo.23804621", url: "https://zenodo.org/records/23804621" },
   repo: "https://github.com/maris205/twin_primes/tree/main/research/dynamics-route",
   oldmap: "https://claude.ai/artifact/R4YKS4ABCmSkbRC1ZMFQSJ",
   start: { title: "起点：素数与符号动力学", sub: "五篇原稿：有限筛写成 Logistic 映射的 kneading 序列、Hénon 映射与零点模型；外加奇偶墙路线 33 个阶段的定位结果" },
@@ -281,7 +282,10 @@ const chip = (v) => { const c = el("span", "chip v-" + v, DATA.verdicts[v].label
   const a2 = el("a", null, "奇偶墙论文二 " + DATA.paper2.version + " · DOI " + DATA.paper2.doi);
   a2.href = DATA.paper2.url; a2.target = "_blank"; a2.rel = "noopener";
   m.append(a2);
-  const g = el("a", null, "GitHub 存档");
+  const a3 = el("a", null, "动力学论文三 " + DATA.paper3.version + " · DOI " + DATA.paper3.doi);
+  a3.href = DATA.paper3.url; a3.target = "_blank"; a3.rel = "noopener";
+  m.append(a3);
+  const g =el("a", null, "GitHub 存档");
   const old = el("a", null, "上一条路线图（奇偶墙）"); old.href = DATA.oldmap; old.target = "_blank"; old.rel = "noopener";
   g.href = DATA.repo; g.target = "_blank"; g.rel = "noopener";
   m.append(g);

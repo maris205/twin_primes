@@ -8,6 +8,8 @@
 
 **一页纸总结：** [`DYN_WALL.md`](DYN_WALL.md)。七条通道全部关闭；$\mathbb Z$ 上缺少的对象是对所有素数共用一个变量的导子。
 
+**本路线的论文（论文三）：** *Changing the language does not move the parity wall: a dynamical anatomy of the twin-prime obstruction and the function-field bypass*，v1.0，[10.5281/zenodo.23804621](https://doi.org/10.5281/zenodo.23804621)。源文件见 [`paper_dyn/`](paper_dyn/)。
+
 **链接：**
 - **在线路线图：** https://claude.ai/artifact/5UXWduxFAcN7sM3fxXjjQK
   - 本地副本：[`roadmap.html`](roadmap.html)

@@ -1,0 +1,102 @@
+[
+ {
+  "k": 2,
+  "p_k": 3,
+  "P_k": 6,
+  "phi": 2,
+  "max_gap": 4,
+  "smallest_missing_even": 6,
+  "distinct_even_gaps": 2,
+  "even_values_up_to_max": 2,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 1
+ },
+ {
+  "k": 3,
+  "p_k": 5,
+  "P_k": 30,
+  "phi": 8,
+  "max_gap": 6,
+  "smallest_missing_even": 8,
+  "distinct_even_gaps": 3,
+  "even_values_up_to_max": 3,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 4,
+  "p_k": 7,
+  "P_k": 210,
+  "phi": 48,
+  "max_gap": 10,
+  "smallest_missing_even": 12,
+  "distinct_even_gaps": 5,
+  "even_values_up_to_max": 5,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 5,
+  "p_k": 11,
+  "P_k": 2310,
+  "phi": 480,
+  "max_gap": 14,
+  "smallest_missing_even": 16,
+  "distinct_even_gaps": 7,
+  "even_values_up_to_max": 7,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 6,
+  "p_k": 13,
+  "P_k": 30030,
+  "phi": 5760,
+  "max_gap": 22,
+  "smallest_missing_even": 20,
+  "distinct_even_gaps": 10,
+  "even_values_up_to_max": 11,
+  "missing_even_up_to_max": [
+   20
+  ],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 7,
+  "p_k": 17,
+  "P_k": 510510,
+  "phi": 92160,
+  "max_gap": 26,
+  "smallest_missing_even": 28,
+  "distinct_even_gaps": 13,
+  "even_values_up_to_max": 13,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 8,
+  "p_k": 19,
+  "P_k": 9699690,
+  "phi": 1658880,
+  "max_gap": 34,
+  "smallest_missing_even": 32,
+  "distinct_even_gaps": 16,
+  "even_values_up_to_max": 17,
+  "missing_even_up_to_max": [
+   32
+  ],
+  "count_of_max_gap": 2
+ },
+ {
+  "k": 9,
+  "p_k": 23,
+  "P_k": 223092870,
+  "phi": 36495360,
+  "max_gap": 40,
+  "smallest_missing_even": 42,
+  "distinct_even_gaps": 20,
+  "even_values_up_to_max": 20,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 12
+ }
+]

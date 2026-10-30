@@ -1,0 +1,291 @@
+<title>Erdős 题库路线图</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: a problem ledger. Header, selection funnel, candidate board in two tiers, one gap-spectrum chart, stage log. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #17202b;
+  --muted: #5b6878;
+  --line: #d9dfe6;
+  --accent: #1f5f8b;
+  --accent-soft: #e2edf5;
+  --open: #9a5b00;
+  --open-soft: #fbefd9;
+  --miss: #b3261e;
+  --cell: #1f5f8b;
+  --font-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10161d; --surface: #17202a; --ink: #e6ebf1; --muted: #9aa8b8; --line: #2a3644;
+    --accent: #7db6e0; --accent-soft: #1d3245; --open: #f0b75a; --open-soft: #3a2c13; --miss: #ff8a80; --cell: #7db6e0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10161d; --surface: #17202a; --ink: #e6ebf1; --muted: #9aa8b8; --line: #2a3644;
+  --accent: #7db6e0; --accent-soft: #1d3245; --open: #f0b75a; --open-soft: #3a2c13; --miss: #ff8a80; --cell: #7db6e0;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+.wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 40px; }
+h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.25; }
+h2 { font-size: 21px; }
+p { margin: 0; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lede { color: var(--muted); max-width: 68ch; margin-top: 10px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13.5px; }
+.meta span { color: var(--muted); }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 14px; }
+
+.funnel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.funnel div { padding: 14px 16px; border-left: 1px solid var(--line); display: grid; gap: 2px; }
+.funnel div:first-child { border-left: 0; }
+.funnel b { font-family: var(--font-mono); font-size: 26px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.funnel small { color: var(--muted); font-size: 13px; }
+@media (max-width: 640px) { .funnel { grid-template-columns: repeat(2, minmax(0, 1fr)); } .funnel div:nth-child(3) { border-left: 0; } .funnel div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+.tier { display: grid; gap: 10px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card.a { border-color: var(--accent); }
+.ids { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--font-mono); font-size: 12.5px; }
+.chip { padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.chip.open { background: var(--open-soft); color: var(--open); }
+.card h3 { margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.5; }
+.card p { color: var(--muted); font-size: 14px; }
+.rows { display: grid; gap: 6px; }
+.row { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.row .ids { align-content: start; }
+.row p { color: var(--muted); }
+.row strong { color: var(--ink); font-weight: 500; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr; gap: 4px; } }
+
+.chartbox { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 10px; }
+.chartscroll { overflow-x: auto; }
+svg text { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 11px; height: 11px; margin-right: 6px; vertical-align: -1px; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; }
+td.miss { color: var(--miss); font-weight: 600; }
+
+.stages { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.stage { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) auto; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.stage .n { font-family: var(--font-mono); color: var(--muted); }
+.stage p { color: var(--muted); font-size: 14px; }
+.verdict { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.note { border-left: 3px solid var(--open); padding: 4px 0 4px 14px; color: var(--muted); font-size: 14px; max-width: 75ch; }
+footer { color: var(--muted); font-size: 13px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="label">孪生素数研究 · 第三条路线</div>
+    <h1>公开题库路线：用筛与符号序列做 Erdős 问题</h1>
+    <p class="lede">前两条路线把孪生素数的奇偶墙测清楚了。这条路线换一个打法：从 Justin Sun Prize 题库里挑出与我们工具契合、有机会做出完整或实质结果的中等难度问题。所有结论由 AI 辅助得出，并标明是定理、分析还是数值。</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section>
+    <h2>选题漏斗</h2>
+    <div class="funnel" id="funnel"></div>
+  </section>
+
+  <section>
+    <h2>候选题</h2>
+    <div class="tier">
+      <div class="label">A 档 · 推荐做</div>
+      <div class="cards" id="tierA"></div>
+    </div>
+    <div class="tier">
+      <div class="label">B 档 · 只做定位或数值</div>
+      <div class="rows" id="tierB"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>#854 初算：素数阶乘既约剩余系的间隙谱</h2>
+    <p class="lede">每一列是一个 k。格子表示不超过最大间隙的偶数 t：实心表示 t 作为相邻间隙出现，红框表示缺失。Erdős 最初猜测没有缺失；k = 6 时缺 20，与 Lacampagne–Selfridge 的计算一致。</p>
+    <div class="chartbox">
+      <div class="chartscroll"><svg id="spectrum" role="img" aria-label="k 从 2 到 10 时出现与缺失的偶数间隙"></svg></div>
+      <div class="legend"><span><i style="background:var(--cell)"></i>出现的偶数间隙</span><span><i style="border:2px solid var(--miss)"></i>缺失（不超过最大间隙）</span></div>
+      <div class="tablewrap"><table id="gaptable"></table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>阶段</h2>
+    <div class="stages" id="stages"></div>
+  </section>
+
+  <section>
+    <h2>规则提醒</h2>
+    <p class="note">题库只收对原问题的完整解答，并且需要 Lean 证明；部分结果不进入奖金流程。我们的部分结果会写成论文，或发到 erdosproblems.com 的讨论区。</p>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = {
+  updated: "2026-10-30",
+  repo: "https://github.com/maris205/twin_primes/tree/main/research/prize-problems",
+  prize: "https://github.com/TheJustinSunPrize/awards",
+  papers: [
+    { name: "论文一 v1.3", doi: "10.5281/zenodo.23736249" },
+    { name: "论文二 v1.0", doi: "10.5281/zenodo.23766118" },
+    { name: "论文三 v1.0", doi: "10.5281/zenodo.23804621" }
+  ],
+  maps: [
+    { name: "奇偶墙路线图", url: "https://claude.ai/artifact/R4YKS4ABCmSkbRC1ZMFQSJ" },
+    { name: "动力学路线图", url: "https://claude.ai/artifact/5UXWduxFAcN7sM3fxXjjQK" }
+  ],
+  funnel: [
+    { n: "1,072", t: "题库全部题目" },
+    { n: "676", t: "仍开放" },
+    { n: "82", t: "与筛、粗糙数、乘性函数相关" },
+    { n: "2", t: "A 档推荐" }
+  ],
+  tierA: [
+    { jsp: "JSP-000707", erdos: 854, title: "素数阶乘既约剩余系中出现哪些间隙",
+      stmt: "设 1 = a₁ < a₂ < … 是与第 k 个素数阶乘互素的整数。估计不是相邻间隙的最小偶数；出现的偶数间隙是否有 ≫ 最大间隙那么多个？",
+      why: "对象正是起点工作里的筛编码序列 Q_k。可以精确计算，并有希望用中国剩余定理的覆盖构造证出严格下界。" },
+    { jsp: "JSP-000944", erdos: 1139, title: "至多两个素因子的整数的大间隙",
+      stmt: "设 u₁ < u₂ < … 是至多有两个素因子的整数。是否有 limsup (u_{k+1} − u_k) / log k = ∞？",
+      why: "素数的对应结论是 Westzynthius 定理。这里需要二重覆盖版的 Erdős–Rankin 构造：朴素构造只给出有界比值，关键是 Rankin 型增益。" }
+  ],
+  tierB: [
+    { jsp: "JSP-000742", erdos: [891], title: "长度为素数阶乘的区间中，是否必有不同素因子多于 k 个的整数", why: "k = 2（长度 6）都未知；Dickson 猜想推出长度减 1 时答案为否。完整解答很可能需要素数模式，撞上奇偶墙。" },
+    { jsp: "JSP-000804", erdos: [970, 687], title: "Jacobsthal 函数 h(k) ≪ k²", why: "经典难题；erdosproblems.com 记载下界的最新改进来自 GPT 5.6 Pro，竞争激烈。" },
+    { jsp: "JSP-000200", erdos: [218], title: "相邻素数间隙的增减与相等模式", why: "无穷多次相等间隙需要三个相邻素数成等差，属于素数模式问题，在奇偶墙后面。" },
+    { jsp: "JSP-000949 · 000416", erdos: [1144, 520], title: "随机乘性函数部分和的涨落", why: "概率论问题，与我们的随机乘性函数只是表面相关。" },
+    { jsp: "JSP-000552 · 000553", erdos: [680, 681], title: "大 n 附近最小素因子大于 k² 的 n + k", why: "本质是增长的 Jacobsthal 覆盖，难度与 #970 同级。" }
+  ],
+  gaps: [
+    { k: 2, p: 3, max: 4, missing: [], countMax: 1 },
+    { k: 3, p: 5, max: 6, missing: [], countMax: 2 },
+    { k: 4, p: 7, max: 10, missing: [], countMax: 2 },
+    { k: 5, p: 11, max: 14, missing: [], countMax: 2 },
+    { k: 6, p: 13, max: 22, missing: [20], countMax: 2 },
+    { k: 7, p: 17, max: 26, missing: [], countMax: 2 },
+    { k: 8, p: 19, max: 34, missing: [32], countMax: 2 },
+    { k: 9, p: 23, max: 40, missing: [], countMax: 12 },
+    { k: 10, p: 29, max: 46, missing: [], countMax: 2 }
+  ],
+  stages: [
+    { n: "0", title: "选题", body: "解析题库与 erdosproblems.com 原文，筛出相关开放题；首选 #854，次选 #1139；#854 数值算到 k = 10。", verdict: "◎ 已定位" },
+    { n: "1", title: "#854：文献核查与严格下界（待开始）", body: "核查 Lacampagne–Selfridge、OEIS A048670 等已有结果；用覆盖构造证明所有不超过 f(k) 的偶数都是间隙；数值推到 k = 12、13。", verdict: "待做" }
+  ]
+};
+
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const link = (text, href) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; return a; };
+const erdosLink = (n) => link("Erdős #" + n, "https://www.erdosproblems.com/" + n);
+
+(function header() {
+  const m = document.getElementById("meta");
+  m.append(el("span", null, "更新于 " + DATA.updated));
+  m.append(link("GitHub 目录", DATA.repo));
+  m.append(link("Justin Sun Prize 题库", DATA.prize));
+  DATA.maps.forEach(x => m.append(link(x.name, x.url)));
+  DATA.papers.forEach(x => m.append(link(x.name, "https://doi.org/" + x.doi)));
+})();
+
+(function funnel() {
+  const f = document.getElementById("funnel");
+  DATA.funnel.forEach(x => { const d = el("div"); d.append(el("b", null, x.n), el("small", null, x.t)); f.append(d); });
+})();
+
+(function tiers() {
+  const a = document.getElementById("tierA");
+  DATA.tierA.forEach(x => {
+    const c = el("article", "card a");
+    const ids = el("div", "ids");
+    ids.append(el("span", "chip", x.jsp), erdosLink(x.erdos), el("span", "chip open", "开放"));
+    c.append(ids, el("h3", null, x.title), el("p", null, x.stmt));
+    const w = el("p"); w.append(el("strong", null, "为什么选它："), document.createTextNode(x.why));
+    c.append(w);
+    a.append(c);
+  });
+  const b = document.getElementById("tierB");
+  DATA.tierB.forEach(x => {
+    const r = el("div", "row");
+    const ids = el("div", "ids");
+    ids.append(el("span", "chip", x.jsp));
+    x.erdos.forEach(n => ids.append(erdosLink(n)));
+    const body = el("div");
+    const p = el("p"); p.append(el("strong", null, x.title + "。"), document.createTextNode(x.why));
+    body.append(p);
+    r.append(ids, body);
+    b.append(r);
+  });
+})();
+
+(function spectrum() {
+  const svg = document.getElementById("spectrum");
+  const NS = "http://www.w3.org/2000/svg";
+  const ymax = 48, cell = 9, colW = 54, left = 40, top = 14, bottom = 34;
+  const H = top + (ymax / 2) * (cell + 2) + bottom;
+  const W = left + DATA.gaps.length * colW + 10;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("width", W);
+  svg.setAttribute("height", H);
+  const y = t => top + (ymax - t) / 2 * (cell + 2);
+  const add = (name, attrs, text) => { const n = document.createElementNS(NS, name); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; svg.append(n); return n; };
+  for (let t = 0; t <= ymax; t += 8) {
+    add("text", { x: left - 8, y: y(t) + cell / 2 + 4, "text-anchor": "end" }, t);
+    add("line", { x1: left - 4, x2: W - 6, y1: y(t) + cell + 1, y2: y(t) + cell + 1, stroke: "var(--line)", "stroke-width": 1 });
+  }
+  DATA.gaps.forEach((g, i) => {
+    const cx = left + i * colW + colW / 2;
+    for (let t = 2; t <= g.max; t += 2) {
+      const miss = g.missing.includes(t);
+      add("rect", { x: cx - 9, y: y(t), width: 18, height: cell, rx: 1.5,
+        fill: miss ? "none" : "var(--cell)", stroke: miss ? "var(--miss)" : "none", "stroke-width": miss ? 2 : 0 });
+    }
+    add("text", { x: cx, y: H - 14, "text-anchor": "middle" }, "k=" + g.k);
+  });
+  add("text", { x: 4, y: 10 }, "间隙 t");
+
+  const tb = document.getElementById("gaptable");
+  const head = el("tr");
+  ["k", "p_k", "最大间隙", "最小缺失偶数", "缺失（≤ 最大）", "最大间隙出现次数"].forEach(h => head.append(el("th", null, h)));
+  tb.append(head);
+  DATA.gaps.forEach(g => {
+    const tr = el("tr");
+    const smallest = g.missing.length ? g.missing[0] : g.max + 2;
+    [g.k, g.p, g.max, smallest].forEach(v => tr.append(el("td", null, v)));
+    tr.append(el("td", g.missing.length ? "miss" : null, g.missing.length ? g.missing.join(", ") : "—"));
+    tr.append(el("td", null, g.countMax));
+    tb.append(tr);
+  });
+})();
+
+(function stages() {
+  const s = document.getElementById("stages");
+  DATA.stages.forEach(x => {
+    const r = el("div", "stage");
+    const body = el("div");
+    body.append(el("strong", null, x.title), el("p", null, x.body));
+    r.append(el("span", "n", x.n), body, el("span", "verdict", x.verdict));
+    s.append(r);
+  });
+  document.getElementById("foot").textContent = "数值来自 stage0_primorial_gaps.py（k ≤ 9）与 stage0_primorial_gaps_big.py（k = 10）。由 Claude（Anthropic）辅助完成。";
+})();
+</script>

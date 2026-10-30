@@ -1,0 +1,14 @@
+[
+ {
+  "k": 10,
+  "p_k": 29,
+  "P_k": 6469693230,
+  "phi": 1021870080,
+  "max_gap": 46,
+  "smallest_missing_even": 48,
+  "distinct_even_gaps": 23,
+  "even_values_up_to_max": 23,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
+ }
+]

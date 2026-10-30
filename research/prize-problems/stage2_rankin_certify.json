@@ -1,0 +1,58 @@
+[
+ {
+  "k": 10,
+  "p_k": 29,
+  "certified_T": 36,
+  "first_uncertified": 38,
+  "T_over_pk": 1.241
+ },
+ {
+  "k": 14,
+  "p_k": 43,
+  "certified_T": 70,
+  "first_uncertified": 72,
+  "T_over_pk": 1.628
+ },
+ {
+  "k": 20,
+  "p_k": 71,
+  "certified_T": 118,
+  "first_uncertified": 120,
+  "T_over_pk": 1.662
+ },
+ {
+  "k": 26,
+  "p_k": 101,
+  "certified_T": 192,
+  "first_uncertified": 194,
+  "T_over_pk": 1.901
+ },
+ {
+  "k": 50,
+  "p_k": 229,
+  "certified_T": 520,
+  "first_uncertified": 522,
+  "T_over_pk": 2.271
+ },
+ {
+  "k": 100,
+  "p_k": 541,
+  "certified_T": 1232,
+  "first_uncertified": 1234,
+  "T_over_pk": 2.277
+ },
+ {
+  "k": 200,
+  "p_k": 1223,
+  "certified_T": 2428,
+  "first_uncertified": 2430,
+  "T_over_pk": 1.985
+ },
+ {
+  "k": 400,
+  "p_k": 2741,
+  "certified_T": 4860,
+  "first_uncertified": 4862,
+  "T_over_pk": 1.773
+ }
+]

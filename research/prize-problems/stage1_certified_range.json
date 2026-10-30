@@ -1,0 +1,68 @@
+[
+ {
+  "k": 6,
+  "p_k": 13,
+  "certified_T": 10,
+  "ratio_T_over_pk": 0.7692
+ },
+ {
+  "k": 8,
+  "p_k": 19,
+  "certified_T": 14,
+  "ratio_T_over_pk": 0.7368
+ },
+ {
+  "k": 10,
+  "p_k": 29,
+  "certified_T": 18,
+  "ratio_T_over_pk": 0.6207
+ },
+ {
+  "k": 12,
+  "p_k": 37,
+  "certified_T": 22,
+  "ratio_T_over_pk": 0.5946
+ },
+ {
+  "k": 15,
+  "p_k": 47,
+  "certified_T": 30,
+  "ratio_T_over_pk": 0.6383
+ },
+ {
+  "k": 20,
+  "p_k": 71,
+  "certified_T": 46,
+  "ratio_T_over_pk": 0.6479
+ },
+ {
+  "k": 30,
+  "p_k": 113,
+  "certified_T": 78,
+  "ratio_T_over_pk": 0.6903
+ },
+ {
+  "k": 50,
+  "p_k": 229,
+  "certified_T": 148,
+  "ratio_T_over_pk": 0.6463
+ },
+ {
+  "k": 100,
+  "p_k": 541,
+  "certified_T": 340,
+  "ratio_T_over_pk": 0.6285
+ },
+ {
+  "k": 200,
+  "p_k": 1223,
+  "certified_T": 770,
+  "ratio_T_over_pk": 0.6296
+ },
+ {
+  "k": 300,
+  "p_k": 1987,
+  "certified_T": 1246,
+  "ratio_T_over_pk": 0.6271
+ }
+]

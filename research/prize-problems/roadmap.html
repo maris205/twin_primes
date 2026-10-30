@@ -123,7 +123,7 @@ footer { color: var(--muted); font-size: 13px; }
     <h2>#854 初算：素数阶乘既约剩余系的间隙谱</h2>
     <p class="lede">每一列是一个 k。格子表示不超过最大间隙的偶数 t：实心表示 t 作为相邻间隙出现，红框表示缺失。Erdős 最初猜测没有缺失；k = 6 时缺 20，与 Lacampagne–Selfridge 的计算一致。</p>
     <div class="chartbox">
-      <div class="chartscroll"><svg id="spectrum" role="img" aria-label="k 从 2 到 10 时出现与缺失的偶数间隙"></svg></div>
+      <div class="chartscroll"><svg id="spectrum" role="img" aria-label="k 从 2 到 11 时出现与缺失的偶数间隙"></svg></div>
       <div class="legend"><span><i style="background:var(--cell)"></i>出现的偶数间隙</span><span><i style="border:2px solid var(--miss)"></i>缺失（不超过最大间隙）</span></div>
       <div class="tablewrap"><table id="gaptable"></table></div>
     </div>
@@ -186,10 +186,11 @@ const DATA = {
     { k: 7, p: 17, max: 26, missing: [], countMax: 2 },
     { k: 8, p: 19, max: 34, missing: [32], countMax: 2 },
     { k: 9, p: 23, max: 40, missing: [], countMax: 12 },
-    { k: 10, p: 29, max: 46, missing: [], countMax: 2 }
+    { k: 10, p: 29, max: 46, missing: [], countMax: 2 },
+    { k: 11, p: 31, max: 58, missing: [], countMax: 2 }
   ],
   stages: [
-    { n: "0", title: "选题", body: "解析题库与 erdosproblems.com 原文，筛出相关开放题；首选 #854，次选 #1139；#854 数值算到 k = 10。", verdict: "◎ 已定位" },
+    { n: "0", title: "选题", body: "解析题库与 erdosproblems.com 原文，筛出相关开放题；首选 #854，次选 #1139；#854 数值算到 k = 11。", verdict: "◎ 已定位" },
     { n: "1", title: "#854：文献核查与严格下界（待开始）", body: "核查 Lacampagne–Selfridge、OEIS A048670 等已有结果；用覆盖构造证明所有不超过 f(k) 的偶数都是间隙；数值推到 k = 12、13。", verdict: "待做" }
   ]
 };
@@ -240,7 +241,7 @@ const erdosLink = (n) => link("Erdős #" + n, "https://www.erdosproblems.com/" +
 (function spectrum() {
   const svg = document.getElementById("spectrum");
   const NS = "http://www.w3.org/2000/svg";
-  const ymax = 48, cell = 9, colW = 54, left = 40, top = 14, bottom = 34;
+  const ymax = 64, cell = 9, colW = 54, left = 40, top = 14, bottom = 34;
   const H = top + (ymax / 2) * (cell + 2) + bottom;
   const W = left + DATA.gaps.length * colW + 10;
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
@@ -286,6 +287,6 @@ const erdosLink = (n) => link("Erdős #" + n, "https://www.erdosproblems.com/" +
     r.append(el("span", "n", x.n), body, el("span", "verdict", x.verdict));
     s.append(r);
   });
-  document.getElementById("foot").textContent = "数值来自 stage0_primorial_gaps.py（k ≤ 9）与 stage0_primorial_gaps_big.py（k = 10）。由 Claude（Anthropic）辅助完成。";
+  document.getElementById("foot").textContent = "数值来自 stage0_primorial_gaps.py（k ≤ 9）与 stage0_primorial_gaps_big.py（k = 10、11）。由 Claude（Anthropic）辅助完成。";
 })();
 </script>

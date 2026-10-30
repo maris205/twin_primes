@@ -10,5 +10,17 @@
   "even_values_up_to_max": 23,
   "missing_even_up_to_max": [],
   "count_of_max_gap": 2
+ },
+ {
+  "k": 11,
+  "p_k": 31,
+  "P_k": 200560490130,
+  "phi": 30656102400,
+  "max_gap": 58,
+  "smallest_missing_even": 60,
+  "distinct_even_gaps": 29,
+  "even_values_up_to_max": 29,
+  "missing_even_up_to_max": [],
+  "count_of_max_gap": 2
  }
 ]

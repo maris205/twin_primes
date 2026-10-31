@@ -27,6 +27,7 @@
 | 1 | [#854 的严格下界与精确数据](STAGE1_GAPS.md)：覆盖判定（引理 1.1）；无条件下界 $s(k)\ge(e^\gamma/(1+e^\gamma)-o(1))p_k\approx0.640\,p_k$（定理 1.3）；0-1 整数规划精确算到 $k=26$，得到 OEIS A389839 的 14 个新项；缺失全部落在最大间隙下方 8 以内。第二问仍开放 | ◎ 部分结果 |
 | 2 | [把构造推到 $t>p_k$](STAGE2_RANKIN.md)：Erdős–Rankin 型三段式构造（两端点保持不被覆盖），证明 $s(k)\ge(\frac1{6e^\gamma}-o(1))\,p_k\log p_k/(\log\log p_k)^4$，故 $s(k)/p_k\to\infty$；可核验的数值版在 $k\le400$ 上保证到 $1.2$–$2.3\,p_k$。第二问仍开放 | ◎ 部分结果 |
 | 3 | [去掉对数损失](STAGE3_LOGLOSS.md)：端点权重在移位素数上平均（Brun–Titchmarsh），光滑数参数用 Canfield–Erdős–Pomerance 估计；证明 $s(k)\ge(\frac{e^\gamma}{8C_f}-\varepsilon)\,p_k\log p_k\log\log\log p_k/(\log\log p_k)^2$（$C_f\approx8.44$），达到 Rankin 量级，与 $J(k)$ 已知最好的下界只差一个 $\log\log p_k$。第二问仍开放 | ◎ 部分结果 |
+| 4 | [达到 FGKMT 量级](STAGE4_FGKMT.md)：把 FGKMT 的筛素数定理当黑箱，端点取为粗糙数对（筛法基本引理），与大素数类的冲突靠平均避开；证明 $s(k)\gg p_k\log p_k\log\log\log p_k/\log\log p_k$，与 $J(k)$ 已知最好的下界同阶。第二问仍开放 | ◎ 部分结果 |
 
 ## 候选题
 

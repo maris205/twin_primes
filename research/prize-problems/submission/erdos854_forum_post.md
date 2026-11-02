@@ -22,7 +22,7 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 76, 86, 98, 108, 120, 134, 146, 166, 182, 194, 218, 230, 254, 266 (k = 13, …, 26).
 
 - For every even $t\le J(k)$, a gap comes with an explicit witness $n$.
-- A non-gap was found infeasible by HiGHS. For $k\le21$, CP-SAT confirmed every non-gap independently. For $k=22,24,25$, CP-SAT timed out after one hour per case, so those three values rest on a single solver.
+- A non-gap was found infeasible by HiGHS. For $k\le22$, CP-SAT confirmed every non-gap independently. For $k=24,25$, CP-SAT timed out even after six hours per case, so those two values rest on a single solver.
 - For $k\le26$, all missing even numbers lie in $[J(k)-8,\,J(k)-2]$. This suggests that $J(k)-s(k)$ may be small compared with $J(k)$, which would answer the second question positively. This is only a numerical observation.
 
 **Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on the black-box transfer in part 3.

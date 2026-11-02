@@ -39,8 +39,8 @@ a(13)-a(26) from Liang Wang, Oct 31 2026
 Method: for each n and each even t <= A048670(n), the covering problem "t is a gap" was
 decided by a 0-1 integer program. Every gap comes with an explicit witness N
 (gcd(N, prime(n)#) = gcd(N+t, prime(n)#) = 1 and gcd(N+j, prime(n)#) > 1 for 0<j<t);
-every non-gap was found infeasible by HiGHS, and for n <= 21 also by OR-Tools CP-SAT
-(for n = 22, 24, 25 CP-SAT hit a one-hour limit, so a(22), a(24), a(25) rest on HiGHS alone).
+every non-gap was found infeasible by HiGHS, and for n <= 22 also by OR-Tools CP-SAT
+(for n = 24, 25 CP-SAT hit a six-hour limit, so a(24), a(25) rest on HiGHS alone).
 If no even t <= A048670(n) is missing, a(n) = A048670(n) + 2. The witnesses and a
 standard-library Python checker are in the repository linked above. Terms a(2)..a(12)
 agree with the existing data. Computations were done with AI assistance (Claude, Anthropic).

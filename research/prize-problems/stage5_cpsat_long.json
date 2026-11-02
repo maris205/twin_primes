@@ -1,0 +1,30 @@
+[
+ {
+  "k": 22,
+  "t": 194,
+  "time_limit": 21600.0,
+  "cpsat": "infeasible",
+  "seconds": 18193.8
+ },
+ {
+  "k": 24,
+  "t": 230,
+  "time_limit": 21600.0,
+  "cpsat": "timeout",
+  "seconds": 21603.8
+ },
+ {
+  "k": 25,
+  "t": 254,
+  "time_limit": 21600.0,
+  "cpsat": "timeout",
+  "seconds": 21604.2
+ },
+ {
+  "k": 25,
+  "t": 256,
+  "time_limit": 21600.0,
+  "cpsat": "timeout",
+  "seconds": 21604.0
+ }
+]

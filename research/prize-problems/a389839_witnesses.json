@@ -1023,7 +1023,8 @@
   "nongap_checks": {
    "194": {
     "highs": "infeasible",
-    "cpsat": "timeout"
+    "cpsat": "infeasible",
+    "cpsat_note": "1 h run timed out; 6 h run of stage5_cpsat_long.py proved infeasible (18194 s)"
    }
   },
   "witness_n": {
@@ -1259,7 +1260,8 @@
   "nongap_checks": {
    "230": {
     "highs": "infeasible",
-    "cpsat": "timeout"
+    "cpsat": "timeout",
+    "cpsat_note": "timed out at 1 h and again at 6 h (stage5_cpsat_long.py)"
    }
   },
   "witness_n": {
@@ -1394,11 +1396,13 @@
   "nongap_checks": {
    "254": {
     "highs": "infeasible",
-    "cpsat": "timeout"
+    "cpsat": "timeout",
+    "cpsat_note": "timed out at 1 h and again at 6 h (stage5_cpsat_long.py)"
    },
    "256": {
     "highs": "infeasible",
-    "cpsat": "timeout"
+    "cpsat": "timeout",
+    "cpsat_note": "timed out at 1 h and again at 6 h (stage5_cpsat_long.py)"
    }
   },
   "witness_n": {

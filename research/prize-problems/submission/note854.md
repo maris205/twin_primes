@@ -133,8 +133,8 @@ $$s(k)>\frac y2\sim\frac c{2C}\cdot\frac{p_k\log p_k\,L_3}{L_2}.\qquad ∎$$
 - For each $k$ and each even $t\le J(k)$, decide the 0-1 covering program of §1. For $t\le J(k)$ we use the values of $J(k)$ from A048670.
 - If $t$ is a gap, record an explicit witness $N$: $\gcd(N,P_k)=\gcd(N+t,P_k)=1$, and $\gcd(N+j,P_k)>1$ for $0<j<t$.
 - If $t$ is not a gap, the program was found infeasible by HiGHS (via SciPy). We re-ran every such case with CP-SAT (OR-Tools) under a one-hour limit per case.
-  - For $k\le21$, CP-SAT also found every non-gap infeasible.
-  - For $k=22,24,25$ (the non-gaps $t=194$; $230$; $254,256$), CP-SAT reached its time limit. So $s(22)$, $s(24)$ and $s(25)$ currently rest on HiGHS alone.
+  - For $k\le22$, CP-SAT also found every non-gap infeasible. For $k=22$ this needed a six-hour run (`stage5_cpsat_long.py`, which adds a mirror-symmetry break and a redundant counting constraint, both sound).
+  - For $k=24,25$ (the non-gaps $t=230$; $254,256$), CP-SAT reached its time limit both at one hour and at six hours. So $s(24)$ and $s(25)$ currently rest on HiGHS alone.
   - Neither solver produces a machine-checkable certificate of infeasibility.
 - When no even $t\le J(k)$ is missing, $s(k)=J(k)+2$, because $J(k)$ is the largest gap.
 - The witnesses, and a checker that uses only the Python standard library, are in the repository (§7).

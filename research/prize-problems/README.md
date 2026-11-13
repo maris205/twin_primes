@@ -29,6 +29,7 @@
 | 3 | [去掉对数损失](STAGE3_LOGLOSS.md)：端点权重在移位素数上平均（Brun–Titchmarsh），光滑数参数用 Canfield–Erdős–Pomerance 估计；证明 $s(k)\ge(\frac{e^\gamma}{8C_f}-\varepsilon)\,p_k\log p_k\log\log\log p_k/(\log\log p_k)^2$（$C_f\approx8.44$），达到 Rankin 量级，与 $J(k)$ 已知最好的下界只差一个 $\log\log p_k$。第二问仍开放 | ◎ 部分结果 |
 | 4 | [达到 FGKMT 量级](STAGE4_FGKMT.md)：把 FGKMT 的筛素数定理当黑箱，端点取为粗糙数对（筛法基本引理），与大素数类的冲突靠平均避开；证明 $s(k)\gg p_k\log p_k\log\log\log p_k/\log\log p_k$，与 $J(k)$ 已知最好的下界同阶。第二问仍开放 | ◎ 部分结果 |
 | 5 | [可提交材料](submission/README.md)：英文成果说明（定理 A、B、C 与数据）、OEIS A389839 修改草稿与 b-file、erdosproblems.com 论坛帖草稿；$k\le26$ 的数据重新核验，每个间隙附见证数，每个非间隙由 HiGHS 判定，$k\le22$ 另由 CP-SAT 独立复核（$k=24,25$ 的 CP-SAT 六小时仍超时）（`stage5_verify_oeis.py`、`stage5_cpsat_long.py`、`verify_a389839.py`）。均待作者本人提交 | ◎ 已备齐 |
+| 6 | [第二问的地图](STAGE6_MAP.md)：三条初等引理（间隙集合单调；删除引理：一个覆盖直接产出一批更短的间隙；最大间隙里每个大素数都有本质点）；对"缺失值贴着 $J(k)$"的机制解释；把第二问归结为两座未建成的桥（极值覆盖幸存集的差集 $\gg J(k)$；露出的点可由闲置大素数补上），另有一条独立归约（$s(k)>J(k-1)$ 加 $J(k)\ll J(k-1)$）。$k\le26$ 的数值：单个覆盖不做修补即得约六成间隙，幸存集差集约占八成 | △ 未打通，已定位 |
 
 ## 候选题
 

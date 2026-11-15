@@ -6,7 +6,7 @@
 
 | 文件 | 用途 | 提交到哪里 |
 |---|---|---|
-| [`note854.md`](note854.md) | 英文成果说明：定理 A、B、C 的完整证明，以及 $k\le26$ 的精确数据 | 作为 OEIS 和论坛帖的链接目标（随 git 推送后公开） |
+| [`note854.md`](note854.md) | 英文成果说明：定理 A、B、C 的完整证明，$k\le26$ 的精确数据，以及关于第二问的注记（§6：三条引理、数值观察、还缺的两个命题；没有解决第二问） | 作为 OEIS 和论坛帖的链接目标（随 git 推送后公开） |
 | [`oeis_A389839_edit.md`](oeis_A389839_edit.md) | OEIS A389839 的修改草稿：新项、注释、链接、扩展署名、给编辑的说明 | https://oeis.org/A389839 → edit |
 | [`b389839.txt`](b389839.txt) | A389839 的 b-file，$n=2..26$ | 随上面的修改一起上传 |
 | [`erdos854_forum_post.md`](erdos854_forum_post.md) | erdosproblems.com 论坛帖草稿（英文） | https://www.erdosproblems.com/forum/thread/854 |

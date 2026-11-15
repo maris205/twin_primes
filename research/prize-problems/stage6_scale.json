@@ -1,0 +1,112 @@
+[
+ {
+  "k": 15,
+  "p_k": 47,
+  "cover_gap": 82,
+  "gap_over_p": 1.74,
+  "level0_fraction": 0.756,
+  "level01_fraction": 0.854,
+  "first_unreached_over_gap": 0.756,
+  "unreached": 6,
+  "singly_covered_fraction": 0.825
+ },
+ {
+  "k": 20,
+  "p_k": 71,
+  "cover_gap": 148,
+  "gap_over_p": 2.08,
+  "level0_fraction": 0.635,
+  "level01_fraction": 0.784,
+  "first_unreached_over_gap": 0.716,
+  "unreached": 16,
+  "singly_covered_fraction": 0.808
+ },
+ {
+  "k": 26,
+  "p_k": 101,
+  "cover_gap": 200,
+  "gap_over_p": 1.98,
+  "level0_fraction": 0.69,
+  "level01_fraction": 0.88,
+  "first_unreached_over_gap": 0.79,
+  "unreached": 12,
+  "singly_covered_fraction": 0.727
+ },
+ {
+  "k": 40,
+  "p_k": 173,
+  "cover_gap": 428,
+  "gap_over_p": 2.47,
+  "level0_fraction": 0.631,
+  "level01_fraction": 0.836,
+  "first_unreached_over_gap": 0.734,
+  "unreached": 35,
+  "singly_covered_fraction": 0.723
+ },
+ {
+  "k": 60,
+  "p_k": 281,
+  "cover_gap": 776,
+  "gap_over_p": 2.76,
+  "level0_fraction": 0.626,
+  "level01_fraction": 0.845,
+  "first_unreached_over_gap": 0.691,
+  "unreached": 60,
+  "singly_covered_fraction": 0.656
+ },
+ {
+  "k": 80,
+  "p_k": 409,
+  "cover_gap": 1242,
+  "gap_over_p": 3.04,
+  "level0_fraction": 0.609,
+  "level01_fraction": 0.829,
+  "first_unreached_over_gap": 0.683,
+  "unreached": 106,
+  "singly_covered_fraction": 0.668
+ },
+ {
+  "k": 100,
+  "p_k": 541,
+  "cover_gap": 1644,
+  "gap_over_p": 3.04,
+  "level0_fraction": 0.658,
+  "level01_fraction": 0.858,
+  "first_unreached_over_gap": 0.665,
+  "unreached": 117,
+  "singly_covered_fraction": 0.627
+ },
+ {
+  "k": 150,
+  "p_k": 863,
+  "cover_gap": 2998,
+  "gap_over_p": 3.47,
+  "level0_fraction": 0.588,
+  "level01_fraction": 0.873,
+  "first_unreached_over_gap": 0.715,
+  "unreached": 191,
+  "singly_covered_fraction": 0.591
+ },
+ {
+  "k": 200,
+  "p_k": 1223,
+  "cover_gap": 4488,
+  "gap_over_p": 3.67,
+  "level0_fraction": 0.594,
+  "level01_fraction": 0.887,
+  "first_unreached_over_gap": 0.561,
+  "unreached": 254,
+  "singly_covered_fraction": 0.575
+ },
+ {
+  "k": 300,
+  "p_k": 1987,
+  "cover_gap": 7852,
+  "gap_over_p": 3.95,
+  "level0_fraction": 0.484,
+  "level01_fraction": 0.848,
+  "first_unreached_over_gap": 0.291,
+  "unreached": 598,
+  "singly_covered_fraction": 0.548
+ }
+]

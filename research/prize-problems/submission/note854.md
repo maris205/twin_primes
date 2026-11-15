@@ -20,7 +20,7 @@ $$s(k)\ge c'\,\frac{p_k\log p_k\,\log_3p_k}{\log_2p_k}.$$
 
 **Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is $\gg$ the best known lower bound for $J(k)$.
 
-**What remains open.** The second question of #854 asks for $\gg J(k)$ itself, and the true order of $J(k)$ is unknown. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec). Our results do not settle that question.
+**What remains open.** The second question of #854 asks for $\gg J(k)$ itself, and the true order of $J(k)$ is unknown. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec). Our results do not settle that question; §6 records three elementary lemmas and numerical observations about it.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -137,7 +137,7 @@ $$s(k)>\frac y2\sim\frac c{2C}\cdot\frac{p_k\log p_k\,L_3}{L_2}.\qquad ∎$$
   - For $k=24,25$ (the non-gaps $t=230$; $254,256$), CP-SAT reached its time limit both at one hour and at six hours. So $s(24)$ and $s(25)$ currently rest on HiGHS alone.
   - Neither solver produces a machine-checkable certificate of infeasibility.
 - When no even $t\le J(k)$ is missing, $s(k)=J(k)+2$, because $J(k)$ is the largest gap.
-- The witnesses, and a checker that uses only the Python standard library, are in the repository (§7).
+- The witnesses, and a checker that uses only the Python standard library, are in the repository (§8).
 
 **Table.**
 
@@ -162,13 +162,48 @@ For $k\le12$ our values agree with the existing terms of A389839. For $k\le26$ e
 
 On this evidence, $J(k)-s(k)$ might be $o(J(k))$, or even bounded. This is unproved. If true, it would answer the second question of #854 affirmatively.
 
-## 6. AI assistance
+## 6. Remarks on the second question
+
+The second question of #854 asks whether $\gg J(k)$ even integers occur as gaps. Raising $s(k)$ cannot answer it without a matching upper bound for $J(k)$. This section records a different approach: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the question.
+
+Use the halved model of §1: a gap $t=2m$ is a choice of classes $c_p$ for the odd primes $p\le p_k$ such that every point of $1,\dots,m-1$ lies in some class, and $0$ and $m$ lie in none. Write $C(i)$ for the set of primes whose class contains $i$, so $C(0)=C(m)=\varnothing$. Let $G_k$ be the set of gaps.
+
+**Lemma 6.1 (monotonicity).** $G_{k-1}\subseteq G_k$ for $k\ge3$.
+
+*Proof.* Keep a cover from level $k-1$ and give $p_k$ a class that avoids both endpoints. ∎
+
+**Lemma 6.2 (deletion).** Let $0\le x<y\le m$. If no $z$ with $x<z<y$ has $C(z)\subseteq C(x)\cup C(y)$, then $2(y-x)\in G_k$.
+
+*Proof.* Give every prime of $Q=C(x)\cup C(y)$ a new class that avoids $x$ and $y$; an odd prime has at least three classes. Then $x$ and $y$ are uncovered. Every $z$ strictly between them has a covering prime outside $Q$, whose class is unchanged. ∎
+
+**Lemma 6.3 (essential points).** In a cover of the maximal gap, $m=J(k)/2$, every odd prime $q\le p_k$ with $q\nmid m$ has a point $z$ with $C(z)=\{q\}$.
+
+*Proof.* Otherwise move $q$ to the class of $m$. Every point of $1,\dots,m-1$ is still covered, $m$ is now covered, and $0$ is still uncovered because $q\nmid m$. The gap would be longer than $J(k)$. ∎
+
+**Self-repair.** Lemma 6.2 has an obvious extension: $2(y-x)\in G_k$ as soon as the primes of $Q$ can be given new classes that avoid $x$ and $y$ and together cover the points $z\in(x,y)$ with $C(z)\subseteq Q$.
+
+**Numerical observations.** Scripts `stage6_deletion.py`, `stage6_repair.py`, `stage6_scale.py`.
+- For $13\le k\le26$, starting from a single cover of the maximal gap $J(k)$:
+  - Lemma 6.2 alone produces between 59% and 68% of the even numbers up to $J(k)$ as gaps;
+  - with self-repair, between 81% and 87% of all gaps are produced.
+- For $k$ up to $300$ we used one long greedy cover per $k$ (not maximal; its length is between $1.7\,p_k$ and $4\,p_k$). With self-repair, between 78% and 89% of the even numbers below the length of the cover are produced as gaps. These are lower bounds, because only 400 positions $x$ were tried for each difference.
+- For $6\le k\le26$, $s(k)>J(k-1)$.
+
+**What is missing.** Let $S$ be the set of points of a maximal cover that lie in no class of a prime $p\le p_k/2$. By Lemma 6.3, $|S|\ge\pi(p_k)-\pi(p_k/2)-\omega(m)$. A positive answer to the second question would follow from two statements that we cannot prove:
+1. the difference set of $S$ has $\gg J(k)$ elements;
+2. for a positive proportion of those differences, self-repair succeeds.
+
+For $15\le k\le26$ the difference set of $S$ contains between 63% and 79% of the integers up to $J(k)/2$. Sieve methods give no lower bound here, because the sifting level $p_k/2$ is close to the length of the interval.
+
+A second, independent reduction: if $s(k)>J(k-1)$ for all large $k$ and $J(k)\ll J(k-1)$, then the number of gaps is $\gg J(k)$.
+
+## 7. AI assistance
 
 This work was produced with substantial assistance from an AI system (Claude, Anthropic), working under the direction of the author. The AI system drafted the proofs, wrote and ran the computations, and searched the literature. The author chose the problem and the direction, and is responsible for the content.
 
 The proofs have not yet been refereed. Independent checking, especially of §4, is welcome.
 
-## 7. References and files
+## 8. References and files
 
 - [FGKMT] K. Ford, B. Green, S. Konyagin, J. Maynard, T. Tao, *Long gaps between primes*, J. Amer. Math. Soc. 31 (2018), 65–105. arXiv:1412.5029.
 - E. R. Canfield, P. Erdős, C. Pomerance, *On a problem of Oppenheim concerning "factorisatio numerorum"*, J. Number Theory 17 (1983).
@@ -176,6 +211,6 @@ The proofs have not yet been refereed. Independent checking, especially of §4, 
 - J. Friedlander, H. Iwaniec, *Opera de Cribro*, AMS 2010, Ch. 6 (fundamental lemma).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

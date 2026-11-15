@@ -4,7 +4,7 @@ Draft comment for https://www.erdosproblems.com/forum/thread/854. To be posted b
 
 **Lower bounds for the smallest missing even gap, and exact values up to k = 26**
 
-Write $s(k)$ for the smallest even number that is not a gap between consecutive totatives of the $k$-th primorial (OEIS A389839). Write $J(k)$ for the largest gap (A048670). We prove three lower bounds for $s(k)$; the full write-up is linked below.
+Write $s(k)$ for the smallest even number that is not a gap between consecutive totatives of the $k$-th primorial (OEIS A389839). Write $J(k)$ for the largest gap (A048670). We prove three lower bounds for $s(k)$ and a transfer theorem; the full write-up is linked below.
 
 1. $s(k)\ge(e^\gamma/(1+e^\gamma)-o(1))\,p_k\approx0.64\,p_k$. This comes from an averaging construction and is elementary.
 2. $s(k)\gg p_k\log p_k\,\log_3p_k/(\log_2p_k)^2$, with the explicit constant $e^\gamma/(8C_f)\approx0.026$. This is an Erdős–Rankin construction in which the two endpoints are kept uncovered. The endpoint weight is controlled on average over shifted primes, using Brun–Titchmarsh.
@@ -13,9 +13,14 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
    - The two endpoints are taken to be a pair of rough numbers at distance $t$, which the fundamental lemma of sieve theory provides. Insisting on prime endpoints would run into the parity problem.
    - Conflicts with the large-prime classes are avoided by averaging over candidate endpoints.
 
-**Consequence for the first question.** At least $s(k)/2-1$ distinct even numbers occur as gaps. This number is therefore $\gg$ the best known lower bound for $J(k)$.
+4. **Transfer.** There is an absolute $\delta_0>0$ such that, for fixed $\varepsilon,\eta>0$ and all large $k$, with $j=\lceil(1-\eta)k\rceil$,
+   $$(1-\varepsilon)\min\bigl(J(j),\,p_k^{1+\delta_0}\bigr)\le s(k)\le J(k)+2.$$
+   - The proof starts from any covered interval at level $j$, picks two endpoints that are covered only by large primes (fundamental lemma), releases those primes, and repairs the few exposed points with the unused primes $p_{j+1},\dots,p_k$.
+   - Item 3 follows from this and the FGKMT lower bound for $J$, without using the structure of their proof.
 
-**The second question remains open.** It asks for $\gg J(k)$ itself, and the true order of $J(k)$ is unknown.
+**Consequence.** At least $s(k)/2-1$ distinct even numbers occur as gaps, so their number is at least $(\frac12-\varepsilon)\min(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0})$.
+
+**The second question is not settled.** By item 4 it holds for every large $k$ with $J(k)\ll J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{1+\delta_0}$. Both are expected, neither is proved.
 
 **Data.** We computed $s(k)$ exactly for $k\le26$:
 
@@ -25,7 +30,7 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 - A non-gap was found infeasible by HiGHS. For $k\le22$, CP-SAT confirmed every non-gap independently. For $k=24,25$, CP-SAT timed out even after six hours per case, so those two values rest on a single solver.
 - For $k\le26$, all missing even numbers lie in $[J(k)-8,\,J(k)-2]$. This suggests that $J(k)-s(k)$ may be small compared with $J(k)$, which would answer the second question positively. This is only a numerical observation.
 
-**Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on the black-box transfer in part 3.
+**Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on part 4 and on the black-box transfer in part 3.
 
 - Write-up: https://github.com/maris205/twin_primes/blob/main/research/prize-problems/submission/note854.md
 - Witnesses and checker: `a389839_witnesses.json` and `verify_a389839.py` in the same directory's parent folder.

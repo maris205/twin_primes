@@ -1,6 +1,6 @@
 # Gaps between totatives of primorials: the smallest missing even gap (Erdős Problem #854)
 
-Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-10-31.
+Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-11-15.
 
 ## Summary
 
@@ -18,9 +18,13 @@ $$s(k)\ge\Bigl(\frac{e^\gamma}{8C_f}-\varepsilon\Bigr)\frac{p_k\log p_k\,\log_3p
 $$s(k)\ge c'\,\frac{p_k\log p_k\,\log_3p_k}{\log_2p_k}.$$
   This is the order of the best known lower bound for $J(k)$, due to Ford, Green, Konyagin, Maynard and Tao [FGKMT].
 
-**Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is $\gg$ the best known lower bound for $J(k)$.
+- **Theorem D (transfer).** There is an absolute constant $\delta_0>0$ such that, for fixed $\varepsilon,\eta\in(0,\frac12)$ and all large $k$, with $j=\lceil(1-\eta)k\rceil$,
+$$(1-\varepsilon)\,\min\bigl(J(j),\,p_k^{1+\delta_0}\bigr)\ \le\ s(k)\ \le\ J(k)+2 .$$
+  So, as long as $J$ is not larger than $p_k$ by a fixed power, $s(k)$ is as large as the Jacobsthal function at a slightly lower level. Theorem C follows from Theorem D and the lower bound of [FGKMT] for $J$.
 
-**What remains open.** The second question of #854 asks for $\gg J(k)$ itself, and the true order of $J(k)$ is unknown. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec). Our results do not settle that question; §6 records three elementary lemmas and numerical observations about it.
+**Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is at least $(\frac12-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)$.
+
+**What remains open.** The second question of #854 asks for $\gg J(k)$ gaps. By Theorem D this holds for every large $k$ with $J(k)\ll J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{1+\delta_0}$. Both conditions are expected to hold for all $k$, but neither is proved; the best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec). So the second question is reduced to the regularity of the Jacobsthal function, and is not settled unconditionally.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -29,6 +33,7 @@ Notation: $\log_2=\log\log$, $\log_3=\log\log\log$, and $\gamma$ is Euler's cons
 **Logical status.**
 - Theorems A and B are self-contained.
 - Theorem C uses Theorem 2 of [FGKMT] as a black box, together with the deduction that follows it in their §3.
+- Theorem D uses only the fundamental lemma of sieve theory. It gives a second proof of Theorem C that needs only the statement of the [FGKMT] lower bound for $J$.
 - The table in §5 is computational. How each entry was certified is described there.
 
 ---
@@ -162,9 +167,66 @@ For $k\le12$ our values agree with the existing terms of A389839. For $k\le26$ e
 
 On this evidence, $J(k)-s(k)$ might be $o(J(k))$, or even bounded. This is unproved. If true, it would answer the second question of #854 affirmatively.
 
-## 6. Remarks on the second question
+## 6. Theorem D and the second question
 
-The second question of #854 asks whether $\gg J(k)$ even integers occur as gaps. Raising $s(k)$ cannot answer it without a matching upper bound for $J(k)$. This section records a different approach: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the question.
+### 6.1 Theorem D
+
+A *covered interval at level $j$* is a choice of classes $c_p \bmod p$, $p\le p_j$, such that every integer of $[1,L]$ lies in some class. The maximal gap gives one with $L=J(j)-1$, and any sub-interval of a covered interval is covered.
+
+**Theorem D.** There is an absolute constant $\delta_0>0$ with the following property. Fix $\varepsilon,\eta\in(0,\frac12)$. For all large $k$, put $j=\lceil(1-\eta)k\rceil$ and $L=\min\bigl(J(j)-1,\,p_k^{1+\delta_0}\bigr)$. Then every even $t\le(1-\varepsilon)L$ is a gap between consecutive totatives of $P_k$.
+
+*Proof.* Take a covered interval $[1,L]$ at level $j$ with classes $c_p$. Call the primes $p_{j+1},\dots,p_k$ *free*; there are $F=k-j\ge\eta k-1$ of them, all larger than $p_j$. Fix an even $t\le(1-\varepsilon)L$ and put $X=L-t\ge\varepsilon L$. We look for $x\in[1,X]$ and new classes such that $x$ and $x+t$ are uncovered and every integer strictly between them is covered; Lemma 1 with $A=x$ then gives the claim.
+
+- **Parameters.** Let $B=K\,L\log p_k/(\eta p_k)$ with $K$ a large absolute constant. Since $J(j)/p_k\to\infty$ (Theorem B), $L\ge p_k/\varepsilon$ and $B\to\infty$. Since $L\le p_k^{1+\delta_0}$, $B\le p_k^{\delta_0+o(1)}$.
+- **Step 1: good starting points.** For $p\le B$ let $\Omega_p=\{c_p,\,c_p-t\}\bmod p$ and $\rho(p)=|\Omega_p|$. Then $\rho(2)=1$ because $t$ is even, and $\rho(p)\le2<p$ for $p\ge3$. Let $\mathcal X$ be the set of $x\in[1,X]$ with $x\bmod p\notin\Omega_p$ for all $p\le B$, and $V=\prod_{p\le B}(1-\rho(p)/p)\gg1/\log^2B$. So $x\in\mathcal X$ means that neither $x$ nor $x+t$ lies in the class of a prime $p\le B$. By the fundamental lemma (dimension 2, arbitrary classes) there is an absolute constant $s_0$ such that:
+  - (S1) if $X\ge B^{s_0}$, then $|\mathcal X|\ge\frac12XV$;
+  - (S2) for a prime $q>B$ and any $a$, if $X/q\ge B^{s_0}$, then $\#\{x\in\mathcal X: x\equiv a\ (\mathrm{mod}\ q)\}\le2(X/q)V$.
+
+  Take $\delta_0=1/(2s_0)$. Then $B^{s_0}\le p_k^{1/2+o(1)}\le X$, so (S1) applies.
+- **Step 2: release the primes that cover the endpoints.** For $x\in\mathcal X$ let $Q(x)$ be the set of primes $q\le p_j$ with $x\in c_q$ or $x+t\in c_q$; all of them exceed $B$. Give each a new class avoiding $x$ and $x+t$. The *exposed* points are the $z\in(x,x+t)$ all of whose covering primes lie in $Q(x)$. They lie in $\bigcup_{q\in Q(x)}c_q$, so their number is at most $\mathrm{cost}(x)=\sum_{q\in Q(x)}(t/q+1)$.
+- **Step 3: the average cost is small.** Let $N_q=\#\{x\in\mathcal X:q\in Q(x)\}$, so $\sum_{x\in\mathcal X}\mathrm{cost}(x)=\sum_{B<q\le p_j}(t/q+1)N_q$.
+  - For $q\le X/B^{s_0}$, (S2) gives $N_q\le4(X/q)V$. These primes contribute at most $4XV\bigl[2t/(B\log B)+2\log\log p_k\bigr]$.
+  - For $X/B^{s_0}<q\le p_j$, trivially $N_q\le4X/q$ (note $q\le p_j\le X$). These primes contribute at most $4X\bigl[2tB^{s_0}/X+1\bigr]\le4X\bigl[2B^{s_0}/\varepsilon+1\bigr]$.
+
+  Dividing by $|\mathcal X|\ge\frac12XV$, the average cost is at most
+  $$\frac{16\,t}{B\log B}+16\log\log p_k+\frac{C_1}{\varepsilon}B^{s_0}\log^2B .$$
+  The first term is at most $16L/B=16\eta p_k/(K\log p_k)\le F/6$ for large $K$. The other two are $o(F)$, because $B^{s_0}\le p_k^{1/2+o(1)}$ and $F\asymp\eta p_k/\log p_k$. So some $x\in\mathcal X$ has at most $F/2$ exposed points. Fix it.
+- **Step 4: repair with the free primes.** Give each exposed $z$ its own free prime $\ell_z$ with the class $z\bmod\ell_z$, where $\ell_z\nmid(z-x)(x+t-z)$, so that $\ell_z$ covers neither endpoint. Both factors are positive integers below $t\le p_k^{1+\delta_0}<p_j^2$, so each has at most one prime factor above $p_j$, and $z$ excludes at most two free primes. As there are at most $F/2\le F-2$ exposed points, a greedy choice works. The unused free primes get any class avoiding $x$ and $x+t$.
+- **Step 5: check.** The primes that covered $x$ or $x+t$ were all re-classed away from them, and the free primes avoid them. Each $z\in(x,x+t)$ was covered originally, because $(x,x+t)\subset[1,L]$: either one of its covering primes is unchanged, or $z$ is exposed and covered by $\ell_z$. ∎
+
+**Corollaries.**
+- $(1-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)\le s(k)\le J(k)+2$. The upper bound holds because $J(k)+2$ exceeds the largest gap.
+- Theorem C: insert the lower bound of [FGKMT] for $J(j)$ and use $p_j\asymp p_k$.
+- **Second question, conditionally.** If $J(k)\le C\,J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{1+\delta_0}$, then the number of even gaps is at least $\frac{1-\varepsilon}{2C}J(k)-1$.
+- **Second question, at most scales.** Suppose $J(k)\le p_k^{1+\delta_0}$ for all large $k$. Let $\rho=1/(1-\eta)$ and $k_i=\lceil\rho^i\rceil$. Since $J(k_n)\le\rho^{2n}$ for large $n$ and $J$ is non-decreasing, at least half of the $i\le n$ satisfy $J(k_{i+1})\le\rho^4J(k_i)$, and for those $k=k_{i+1}$ the previous item applies.
+
+**Remarks.**
+- The lag can be shortened: with $F=\lceil k/\log^Ak\rceil$ free primes and $B$ larger by a factor $\log^Ak$, the same proof works with $j=k-F$. Numerically $s(k)>J(k-1)$ for $6\le k\le26$, which this proof does not reach.
+- The cap $p_k^{1+\delta_0}$ comes from Step 1: the sieve must reach $B\approx(L/p_k)\log p_k$ in an interval of length about $L$.
+
+**Numerical run of the construction.** Script `stage7_transfer.py`. The base is a long greedy cover at level $j$ (not maximal). For each even $t$ the script finds $x$, releases $Q(x)$, repairs by a bipartite matching with the free primes, and then checks the final cover directly. Every success is a proof that $t$ is a gap of $P_k$.
+
+| $k$ | $p_k$ | $j$ | free primes | length of base cover | every even $t$ succeeds up to | that value / $p_k$ |
+|---|---|---|---|---|---|---|
+| 60 | 281 | 30 | 30 | 254 | 254 | 0.9 |
+| 60 | 281 | 45 | 15 | 530 | 494 | 1.76 |
+| 100 | 541 | 50 | 50 | 566 | 566 | 1.05 |
+| 100 | 541 | 75 | 25 | 1088 | 1080 | 2.0 |
+| 100 | 541 | 90 | 10 | 1422 | 1320 | 2.44 |
+| 200 | 1223 | 100 | 100 | 1644 | 1644 | 1.34 |
+| 200 | 1223 | 150 | 50 | 2998 | 2970 | 2.43 |
+| 200 | 1223 | 180 | 20 | 3920 | 3872 | 3.17 |
+| 300 | 1987 | 150 | 150 | 2998 | 2994 | 1.51 |
+| 300 | 1987 | 225 | 75 | 5328 | 5286 | 2.66 |
+| 300 | 1987 | 270 | 30 | 6748 | 6686 | 3.36 |
+| 400 | 2741 | 300 | 100 | 7852 | 7830 | 2.86 |
+| 400 | 2741 | 360 | 40 | 10142 | 10022 | 3.66 |
+
+So, for example, $s(100)\ge1322$, $s(200)\ge3874$, $s(300)\ge6688$ and $s(400)\ge10024$. In every row at least 92% of the length of the base cover is transferred, and at least 98.8% when there are 20 or more free primes.
+
+### 6.2 Producing gaps from a single cover
+
+The rest of this section records an approach that stays at one level: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the second question either, and Theorem D makes it unnecessary for the reduction above; we keep it for the lemmas and the numerical observations.
 
 Use the halved model of §1: a gap $t=2m$ is a choice of classes $c_p$ for the odd primes $p\le p_k$ such that every point of $1,\dots,m-1$ lies in some class, and $0$ and $m$ lie in none. Write $C(i)$ for the set of primes whose class contains $i$, so $C(0)=C(m)=\varnothing$. Let $G_k$ be the set of gaps.
 
@@ -211,6 +273,6 @@ The proofs have not yet been refereed. Independent checking, especially of §4, 
 - J. Friedlander, H. Iwaniec, *Opera de Cribro*, AMS 2010, Ch. 6 (fundamental lemma).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

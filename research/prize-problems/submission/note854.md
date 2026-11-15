@@ -22,9 +22,18 @@ $$s(k)\ge c'\,\frac{p_k\log p_k\,\log_3p_k}{\log_2p_k}.$$
 $$(1-\varepsilon)\,\min\bigl(J(j),\,p_k^{1+\delta_0}\bigr)\ \le\ s(k)\ \le\ J(k)+2 .$$
   So, as long as $J$ is not larger than $p_k$ by a fixed power, $s(k)$ is as large as the Jacobsthal function at a slightly lower level. Theorem C follows from Theorem D and the lower bound of [FGKMT] for $J$.
 
-**Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is at least $(\frac12-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)$.
+- **Theorem E (counting).** For fixed $\varepsilon\in(0,1)$ and $\eta\in(0,\frac12)$ there is $c=c(\varepsilon)>0$ such that, for all large $k$, the number of distinct even gaps is at least
+$$c\,\min\bigl(J(\lceil(1-\eta)k\rceil),\,p_k^{2-\varepsilon}\bigr).$$
+  In particular it is at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$ for all large $k$, unconditionally.
 
-**What remains open.** The second question of #854 asks for $\gg J(k)$ gaps. By Theorem D this holds for every large $k$ with $J(k)\ll J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{1+\delta_0}$. Both conditions are expected to hold for all $k$, but neither is proved; the best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec). So the second question is reduced to the regularity of the Jacobsthal function, and is not settled unconditionally.
+**Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is at least $(\frac12-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)$; Theorem E extends the range to $p_k^{2-\varepsilon}$ with a smaller constant.
+
+**What remains open.** The second question of #854 asks for $\gg J(k)$ gaps. By Theorem E this holds for every large $k$ with
+
+- (R1) $J(k)\ll J(\lceil(1-\eta)k\rceil)$, and
+- (R2) $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$.
+
+Both are expected to hold for all $k$, but neither is proved. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec), so (R2) asks for any power saving over it. (R1) holds unconditionally at a positive proportion of geometric scales (§6.2). So the second question is reduced to the regularity of the Jacobsthal function, and is not settled unconditionally.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -34,6 +43,7 @@ Notation: $\log_2=\log\log$, $\log_3=\log\log\log$, and $\gamma$ is Euler's cons
 - Theorems A and B are self-contained.
 - Theorem C uses Theorem 2 of [FGKMT] as a black box, together with the deduction that follows it in their §3.
 - Theorem D uses only the fundamental lemma of sieve theory. It gives a second proof of Theorem C that needs only the statement of the [FGKMT] lower bound for $J$.
+- Theorem E uses two standard sieve theorems: the Jurkat–Richert lower bound for the linear sieve and a Selberg-type upper bound.
 - The table in §5 is computational. How each entry was certified is described there.
 
 ---
@@ -224,9 +234,50 @@ A *covered interval at level $j$* is a choice of classes $c_p \bmod p$, $p\le p_
 
 So, for example, $s(100)\ge1322$, $s(200)\ge3874$, $s(300)\ge6688$ and $s(400)\ge10024$. In every row at least 92% of the length of the base cover is transferred, and at least 98.8% when there are 20 or more free primes.
 
-### 6.2 Producing gaps from a single cover
+### 6.2 Theorem E
 
-The rest of this section records an approach that stays at one level: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the second question either, and Theorem D makes it unnecessary for the reduction above; we keep it for the lemmas and the numerical observations.
+Theorem D shows that *every* even $t$ in a range is a gap, and needs a lower-bound sieve of dimension 2. The second question only asks for the *number* of gaps. For that a positive proportion of $t$ is enough, and a lower-bound sieve of dimension 1 suffices; its sifting limit is 2, which is why the range extends to $p_k^{2-\varepsilon}$.
+
+**Theorem E.** Fix $\varepsilon\in(0,1)$ and $\eta\in(0,\frac12)$. There is $c=c(\varepsilon)>0$ such that for all large $k$, with $j=\lceil(1-\eta)k\rceil$ and $L=\min\bigl(J(j)-1,\,p_k^{2-\varepsilon}\bigr)$, at least $cL$ even integers $t\le L/2$ are gaps between consecutive totatives of $P_k$.
+
+**Two sieve theorems.** Let $I$ be an interval of $N$ integers, and for each prime $p\le z$ let $\omega(p)$ residue classes be given, with $\omega(2)\le1$ and $\omega(p)\le2$. Both statements use only that the number of integers of $I$ lying in given classes for all $p\mid d$ is $N\omega(d)/d+O(\omega(d))$, so they hold for arbitrary classes.
+
+- **(L)** (Jurkat–Richert; [HR, Theorem 8.4]). If every $\omega(p)=1$ and $N\ge z^{2+\theta}$ with $\theta>0$ fixed and $z$ large, then at least $c_0(\theta)N/\log z$ integers of $I$ avoid all the classes.
+- **(U)** ([HR, Theorem 2.2]). If $2\le z\le N$, then at most $C\,N\prod_{p\le z}(1-\omega(p)/p)$ integers of $I$ avoid all the classes.
+
+*Proof of Theorem E.* Take a covered interval $[1,L]$ at level $j$ with classes $c_p$. There are $F=k-j\ge\eta p_k/(2\log p_k)$ free primes. Let $B=K\,L\log p_k/(\eta p_k)$, with $K=K(\varepsilon)$ large, and $M=L/(2p_k)$.
+
+- **Parameters.** By Theorem B, $M\ge(\log p_k)^{1/2}$, so $B\to\infty$ and $\log B\le3\log M+O(1)$. Since $L\le p_k^{2-\varepsilon}$, we have $\log B\le\bigl(\frac{1-\varepsilon}{2-\varepsilon}+o(1)\bigr)\log L$, so $L\ge B^{2+\varepsilon}$ for large $k$. This is the only place where $L\le p_k^{2-\varepsilon}$ is used.
+- **Step 1: survivors of the small primes.** Let $S$ be the set of $x\in[1,L]$ lying in no class $c_p$ with $p\le B$. All elements of $S$ have the same parity. By (L) with $\theta=\varepsilon/2$, every sub-interval of $[1,L]$ of length at least $L/2-1$ contains at least $c_0L/\log B$ elements of $S$.
+- **Step 2: a positive proportion of differences.** For $1\le t\le L/2$ let $\mathcal X_t=\{x\in S\cap[1,L/2]:x+t\in S\}$ and $r(t)=|\mathcal X_t|$.
+  - $\sum_tr(t)=\sum_{x\in S\cap[1,L/2]}|S\cap(x,x+L/2]|\ge c_0^2L^2/\log^2B$.
+  - For $x\in\mathcal X_t$, $x$ avoids the classes $c_p$ and $c_p-t$ for all $p\le B$; these are one class if $p\mid t$ and two otherwise. By (U), $r(t)\le C_1h(t)L/\log^2B$ with $h(t)=\prod_{p\mid t,\,p\ge3}\frac{p-1}{p-2}$.
+  - $\sum_{t\le T}h(t)^2\le C_2T$, because $h^2$ is multiplicative with $h(p)^2=1+O(1/p)$.
+
+  Let $\mathcal T$ be the set of even $t\le L/2$ with $r(t)\ge c_1L/\log^2B$ and $h(t)\le H$, where $c_1=c_0^2/2$ and $H=2C_1C_2/c_0^2$. The $t$ with $r(t)<c_1L/\log^2B$ contribute at most $c_0^2L^2/(4\log^2B)$ to $\sum_tr(t)$. The $t$ with $h(t)>H$ contribute at most $C_1\frac{L}{\log^2B}\cdot\frac{C_2L}{2H}=c_0^2L^2/(4\log^2B)$. So $\sum_{t\in\mathcal T}r(t)\ge c_0^2L^2/(2\log^2B)$. As $r(t)\le C_1HL/\log^2B$ on $\mathcal T$,
+  $$|\mathcal T|\ \ge\ \frac{c_0^2}{2C_1H}L=\frac{c_0^4}{4C_1^2C_2}\,L=:cL .$$
+- **Step 3: the average cost is small.** Fix $t\in\mathcal T$. For $x\in\mathcal X_t$ define $Q(x)$, the exposed points and $\mathrm{cost}(x)$ as in the proof of Theorem D; all primes of $Q(x)$ exceed $B$. Let $N_q=\#\{x\in\mathcal X_t:q\in Q(x)\}$. Here $x\equiv c_q$ or $c_q-t\pmod q$. Write $x=a+qn$, where $n$ runs over an interval of length $L/(2q)\ge M$, and apply (U) to $n$ with $z=\min(B,M)$. Since $\log z\ge\frac14\log B$,
+  $$N_q\le C_3H\frac{L}{q\log^2B}\qquad(B<q\le p_j).$$
+  Hence
+  $$\sum_{x\in\mathcal X_t}\mathrm{cost}(x)=\sum_{B<q\le p_j}\Bigl(\frac tq+1\Bigr)N_q\le\frac{C_3HL}{\log^2B}\Bigl[\frac{2t}{B\log B}+2\log\log p_k\Bigr].$$
+  Dividing by $|\mathcal X_t|\ge c_1L/\log^2B$, the average cost is at most $C_4[t/(B\log B)+\log\log p_k]$ with $C_4=2C_3H/c_1$. Now $t/(B\log B)\le L/(2B)=\eta p_k/(2K\log p_k)\le F/K$. With $K=4C_4$ the first term is at most $F/4$, and the second is at most $F/4$ for large $k$. So some $x\in\mathcal X_t$ has at most $F/2$ exposed points.
+- **Steps 4 and 5** are those of Theorem D. They only need $t<p_j^2$, which holds because $t\le p_k^{2-\varepsilon}$. ∎
+
+**Corollaries.**
+- **Unconditional.** For fixed $\varepsilon,\eta$ and large $k$, the number of even gaps is at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$. This follows from Theorem E with $\varepsilon/2$ and $J(j)\ll p_j^2\log^2p_j$.
+- **Second question, conditionally.** If $J(k)\le C\,J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$, then the number of even gaps is at least $(c/C)J(k)$.
+- **Unconditional, at most scales.** Let $\rho=1/(1-\eta)$ and $k_i=\lceil\rho^i\rceil$. For large $n$, at least half of the $i\le n$ satisfy $J(k_{i+1})\le\rho^5J(k_i)$, because $J$ is non-decreasing and $J(k_n)\le\rho^{(2+o(1))n}$. For those $i$ and $k=k_{i+1}$, the number of even gaps is at least $c\rho^{-5}\min\bigl(J(k),p_k^{2-\varepsilon}\bigr)$.
+
+So the second question can fail at $k$ only if $J$ jumps by a large factor on $[(1-\eta)k,k]$, or $J(k)>p_k^{2-\varepsilon}$.
+
+**Remarks.**
+- The exponent $2-\varepsilon$ comes from two requirements: the repair budget needs $B\gtrsim L/p_k$, and (L) needs $L\ge B^{2+\theta}$. Iwaniec's bound $J(k)\ll p_k^2\log^2p_k$ rests on the same sifting limit.
+- The argument of Step 3 also applies to Theorem D and removes the third term in its Step 3. The only remaining constraint is the lower-bound sieve of dimension 2, so Theorem D holds for every $\delta_0<1/(\beta_2-1)$, where $\beta_2$ is the sifting limit of that sieve. (Sketch only; with the value $\beta_2\approx4.27$ of the Diamond–Halberstam–Richert sieve this would give $\delta_0<0.306$, but we have not checked that value against the source.)
+- There is no numerical run for Theorem E: it improves on Theorem D only when $J\ge p_k^{1+\delta_0}$, which does not occur for computable $k$.
+
+### 6.3 Producing gaps from a single cover
+
+The rest of this section records an approach that stays at one level: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the second question either, and Theorems D and E make it unnecessary for the reduction above; we keep it for the lemmas and the numerical observations.
 
 Use the halved model of §1: a gap $t=2m$ is a choice of classes $c_p$ for the odd primes $p\le p_k$ such that every point of $1,\dots,m-1$ lies in some class, and $0$ and $m$ lie in none. Write $C(i)$ for the set of primes whose class contains $i$, so $C(0)=C(m)=\varnothing$. Let $G_k$ be the set of gaps.
 
@@ -263,7 +314,7 @@ A second, independent reduction: if $s(k)>J(k-1)$ for all large $k$ and $J(k)\ll
 
 This work was produced with substantial assistance from an AI system (Claude, Anthropic), working under the direction of the author. The AI system drafted the proofs, wrote and ran the computations, and searched the literature. The author chose the problem and the direction, and is responsible for the content.
 
-The proofs have not yet been refereed. Independent checking, especially of §4, is welcome.
+The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.2, is welcome.
 
 ## 8. References and files
 
@@ -271,8 +322,10 @@ The proofs have not yet been refereed. Independent checking, especially of §4, 
 - E. R. Canfield, P. Erdős, C. Pomerance, *On a problem of Oppenheim concerning "factorisatio numerorum"*, J. Number Theory 17 (1983).
 - H. L. Montgomery, R. C. Vaughan, *The large sieve*, Mathematika 20 (1973) (Brun–Titchmarsh).
 - J. Friedlander, H. Iwaniec, *Opera de Cribro*, AMS 2010, Ch. 6 (fundamental lemma).
+- [HR] H. Halberstam, H.-E. Richert, *Sieve Methods*, Academic Press 1974 (Theorems 2.2 and 8.4).
+- H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. 11 (1978).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

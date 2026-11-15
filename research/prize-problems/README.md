@@ -31,6 +31,7 @@
 | 5 | [可提交材料](submission/README.md)：英文成果说明（定理 A、B、C 与数据）、OEIS A389839 修改草稿与 b-file、erdosproblems.com 论坛帖草稿；$k\le26$ 的数据重新核验，每个间隙附见证数，每个非间隙由 HiGHS 判定，$k\le22$ 另由 CP-SAT 独立复核（$k=24,25$ 的 CP-SAT 六小时仍超时）（`stage5_verify_oeis.py`、`stage5_cpsat_long.py`、`verify_a389839.py`）。均待作者本人提交 | ◎ 已备齐 |
 | 6 | [第二问的地图](STAGE6_MAP.md)：三条初等引理（间隙集合单调；删除引理：一个覆盖直接产出一批更短的间隙；最大间隙里每个大素数都有本质点）；对"缺失值贴着 $J(k)$"的机制解释；把第二问归结为两座未建成的桥（极值覆盖幸存集的差集 $\gg J(k)$；露出的点可由闲置大素数补上），另有一条独立归约（$s(k)>J(k-1)$ 加 $J(k)\ll J(k-1)$）。$k\le26$ 的数值：单个覆盖不做修补即得约六成间隙，让被删素数自我修补后得八成以上，幸存集差集约占八成；原先设想的"闲置大素数修补"经检验不起作用。用贪心长覆盖推到 $k=300$，自我修补的比例稳定在 78%–89% | △ 未打通，已定位 |
 | 7 | [转移定理](STAGE7_TRANSFER.md)：对固定的 $\varepsilon,\eta>0$ 和大的 $k$，取 $j=\lceil(1-\eta)k\rceil$，有 $(1-\varepsilon)\min(J(j),p_k^{1+\delta_0})\le s(k)\le J(k)+2$。证明从第 $j$ 层的任一被覆盖区间出发，用筛法选只被大素数盖住的端点，放开这些素数，再用多出来的 $\eta k$ 个素数修补。第一问在此范围内基本回答；定理 4.1 成为推论；第二问归结为 Jacobsthal 函数的正则性（$J(k)\ll J((1-\eta)k)$ 与 $J(k)\le p_k^{1+\delta_0}$），仍未无条件解决。数值：$k\le400$ 上转移了底层覆盖长度的 92% 以上，给出 $s(400)\ge10024$ | ◎ 定理（未审稿） |
+| 8 | [计数版转移定理](STAGE8_COUNT.md)：对固定的 $\varepsilon,\eta$ 和大的 $k$，偶数间隙的个数 $\ge c(\varepsilon)\min(J(\lceil(1-\eta)k\rceil),p_k^{2-\varepsilon})$。只证明正比例的 $t$ 是间隙，于是只需要线性筛下界（筛分极限 2）加二维上界筛和 Cauchy–Schwarz 计数，上限从 $p_k^{1+\delta_0}$ 推到 $p_k^{2-\varepsilon}$。无条件推论：间隙个数 $\ge J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$；在至少一半的几何尺度上 $\ge c'\min(J(k),p_k^{2-\varepsilon})$。第二问现在只依赖 $J(k)\ll J((1-\eta)k)$ 与 $J(k)\le p_k^{2-\varepsilon}$（对 Iwaniec 上界的任何幂次改进），仍未无条件解决。没有新数值 | ◎ 定理（未审稿） |
 
 ## 候选题
 

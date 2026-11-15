@@ -6,6 +6,8 @@ $$(1-\varepsilon)\,\min\bigl(J(j),\,p_k^{1+\delta_0}\bigr)\ \le\ s(k)\ \le\ J(k)
 
 其中 $\delta_0>0$ 是绝对常数。也就是说，只要最大间隙 $J$ 不比 $p_k$ 大出一个幂次，最小缺失间隙 $s(k)$ 就和稍低一层的最大间隙 $J(j)$ 几乎一样大。
 
+> **后续（第八阶段）：** [STAGE8_COUNT.md](STAGE8_COUNT.md) 证明了计数版：间隙个数 $\ge c\min(J(j),p_k^{2-\varepsilon})$。第二问对 $J$ 上界的要求因此从 $p_k^{1+\delta_0}$ 放宽到 $p_k^{2-\varepsilon}$。
+
 **这回答了什么：**
 - **第一问（估计 $s(k)$）：** 在上述范围内，$s(k)$ 的大小就是 $J$ 的大小，只差一个指标上的小平移。今后 $J$ 的任何下界改进都自动转移给 $s(k)$。
 - **第二问（间隙个数是否 $\gg J(k)$）：** 归结为 Jacobsthal 函数的两条正则性：$J(k)\ll J(\lceil(1-\eta)k\rceil)$ 与 $J(k)\le p_k^{1+\delta_0}$。两条都被普遍相信（猜想是 $J(k)\asymp k\log^2k$），但都没有证明。所以**第二问仍未无条件解决**。

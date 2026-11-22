@@ -5,11 +5,13 @@
 $$\#\{\text{偶数间隙}\}=|G_k|\ \ge\ c\cdot\min\bigl(J(j),\ p_k^{2-\varepsilon}\bigr).$$
 
 > **后续（第九阶段）：** [STAGE9_JUMP.md](STAGE9_JUMP.md) 把滞后从 $\eta k$ 缩到 $k^{1-\kappa}$，并证明本定理对几乎所有 $k$ 以 $J(k)$ 本身成立：$|G_k|\ge c\min(J(k),p_k^{2-\varepsilon})$。
+>
+> **第十阶段检查：** [STAGE10_CHECK.md](STAGE10_CHECK.md) 逐步重推了本阶段的证明，没有发现数学错误；Iwaniec 上界的写法和注记 8.5 的数值已改正。
 
 **和第七阶段的区别：**
 - 第七阶段证明**每个**偶数 $t$ 都是间隙，所以需要二维筛法的下界，范围只到 $p_k^{1+\delta_0}$。
 - 第二问只问间隙的**个数**。本阶段只证明**正比例**的 $t$ 是间隙，于是只需要一维筛法的下界（线性筛，筛分极限为 2）加二维筛法的上界，范围到 $p_k^{2-\varepsilon}$。
-- 已知的无条件上界是 $J(k)\ll p_k^2\log^2p_k$（Iwaniec），所以上限和已知上界之间只差 $p_k^{\varepsilon}$。
+- 已知的无条件上界是 $J(k)\ll(k\log k)^2\asymp p_k^2$（Iwaniec），所以上限和已知上界之间只差 $p_k^{\varepsilon}$。
 
 **这回答了什么：**
 - **无条件：** $|G_k|\ge J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$ 对所有充分大的 $k$ 成立（推论 8.2）。
@@ -31,7 +33,7 @@ $$\#\{\text{偶数间隙}\}=|G_k|\ \ge\ c\cdot\min\bigl(J(j),\ p_k^{2-\varepsilo
 
 **推论 8.2（无条件）。** 对固定的 $\varepsilon,\eta$ 和充分大的 $k$，$|G_k|\ge J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$。
 
-*证明.* 由 Iwaniec 的上界，$J(j)\le Cp_j^2\log^2p_j$，所以 $J(j)^{1-\varepsilon}\le p_k^{2-\frac32\varepsilon}$ 对大的 $k$ 成立。于是 $c\min(J(j),p_k^{2-\varepsilon/2})\ge J(j)^{1-\varepsilon}$（对定理 8.1 用 $\varepsilon/2$）。∎
+*证明.* 由 Iwaniec 的上界，$J(j)\le Cp_j^2$，所以 $J(j)^{1-\varepsilon}\le p_k^{2-\frac32\varepsilon}$ 对大的 $k$ 成立。于是 $c\min(J(j),p_k^{2-\varepsilon/2})\ge J(j)^{1-\varepsilon}$（对定理 8.1 用 $\varepsilon/2$）。∎
 
 **推论 8.3（第二问，有条件）。** 若 $J(k)\le C\,J(\lceil(1-\eta)k\rceil)$ 且 $J(k)\le p_k^{2-\varepsilon}$，则 $|G_k|\ge (c/C)\,J(k)$。
 
@@ -118,9 +120,9 @@ $$\sum_{x\in\mathcal X_t}\mathrm{cost}(x)=\sum_{B<q\le p_j}\Bigl(\frac tq+1\Bigr
 **注记 8.5（定理 7.1 的 $\delta_0$ 可以写成显式，证明梗概）。**
 - §2.4 的做法也适用于定理 7.1：对所有 $B<q\le p_j$ 用 (U) 直接得到 $N_q\ll(X/q)V$，原证明第三步的第三项 $\tfrac{C_1}{\varepsilon}B^{s_0}\log^2B$ 就不出现了。
 - 剩下的唯一约束是二维筛法下界 (S1)：$X\ge B^{\beta_2+\theta}$，$\beta_2$ 是二维下界筛的筛分极限。这等价于 $L\le p_k^{1+1/(\beta_2-1)-\theta'}$。
-- 所以定理 7.1 对任意 $\delta_0<1/(\beta_2-1)$ 成立。按文献数值：beta 筛 $\beta_2\approx4.83$，得 $\delta_0<0.26$；Diamond–Halberstam–Richert 筛 $\beta_2\approx4.27$，得 $\delta_0<0.306$。**这两个数值凭记忆引用，写进提交材料前需要对照原文。**
+- 所以定理 7.1 对任意 $\delta_0<1/(\beta_2-1)$ 成立。Diamond–Halberstam–Richert 筛在维数 2 的筛分极限是 $\beta_2=4.266$（第十阶段核对：Franze, arXiv:1012.3809, 表 1，数值出自 Diamond–Halberstam 的专著），得 $\delta_0<0.306$。原先凭记忆写的 beta 筛数值 $4.83$ 没有找到出处，已删去。本注记仍是梗概。
 
-**注记 8.6（为什么停在 $2-\varepsilon$）。** 修补预算要求 $B\gtrsim L/p_k$；线性筛要求 $L\ge B^{2+\theta}$。两者合起来就是 $L\le p_k^{2-\varepsilon}$。Iwaniec 的上界 $J\ll p_k^2\log^2p_k$ 用的是同一个筛分极限，所以这两个界在同一处相遇不是巧合。让 $\varepsilon\to0$ 时 $c(\varepsilon)\to0$（$c_0(\theta)\asymp\theta$），在端点会损失对数因子。
+**注记 8.6（为什么停在 $2-\varepsilon$）。** 修补预算要求 $B\gtrsim L/p_k$；线性筛要求 $L\ge B^{2+\theta}$。两者合起来就是 $L\le p_k^{2-\varepsilon}$。Iwaniec 的上界 $J\ll p_k^2$ 用的是同一个筛分极限，所以这两个界在同一处相遇不是巧合。让 $\varepsilon\to0$ 时 $c(\varepsilon)\to0$（$c_0(\theta)\asymp\theta$），在端点会损失对数因子。
 
 **注记 8.7（滞后）。** 和注记 7.6 一样，$j$ 可以取 $k-\lceil k/\log^Ak\rceil$，证明不变（$B$ 多一个 $\log^Ak$ 因子）。
 
@@ -140,5 +142,5 @@ $$\sum_{x\in\mathcal X_t}\mathrm{cost}(x)=\sum_{B<q\le p_j}\Bigl(\frac tq+1\Bigr
 - **定理 8.1 把第二问的两个障碍之一几乎消掉了：** 对 $J$ 上界的要求从"指数 $1+\delta_0$"降到"指数小于 2"，而已知的是指数 $2+o(1)$。
 - **剩下的障碍：**
   - (R1)，即 $J$ 在相邻尺度间不跳。无条件地只知道它在多数尺度成立。
-  - 端点 $p_k^{2-\varepsilon}\le J\le Cp_k^2\log^2p_k$。这里需要的是 Jacobsthal 函数上界的幂次改进，这是筛法里的公开问题。
+  - 端点 $p_k^{2-\varepsilon}\le J\le Cp_k^2$。这里需要的是 Jacobsthal 函数上界的幂次改进，这是筛法里的公开问题。
 - **需要外部检查的地方：** §2.3 的 Cauchy–Schwarz 型计数，§2.4 中对同余类内部用 (U)，以及 (L)、(U) 对任意剩余类的适用性。

@@ -25,7 +25,7 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 
 6. **Short lag; almost all $k$.** In items 4 and 5 the level $\lceil(1-\eta)k\rceil$ can be replaced by $k-\lceil k^{1-\kappa}\rceil$ for a small $\kappa>0$, by taking the sieve level as large as the lower-bound sieve allows. Since $J$ grows at most polynomially, it can grow by a constant factor across such short windows for only $O(K^{1-\kappa}\log K)$ values $k\le K$. Hence, outside a set of $k$ of density zero, $s(k)\ge(1-\varepsilon)\min(J(k),p_k^{1+\delta_0})$ and the number of even gaps is at least $c(\varepsilon)\min(J(k),p_k^{2-\varepsilon})$.
 
-**The second question is not settled for every $k$.** By item 6 it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from $J(k)\ll J(k-\lceil k^{1-\kappa}\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2\log^2p_k$.
+**The second question is not settled for every $k$.** By item 6 it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from $J(k)\ll J(k-\lceil k^{1-\kappa}\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2$.
 
 **Data.** We computed $s(k)$ exactly for $k\le26$:
 

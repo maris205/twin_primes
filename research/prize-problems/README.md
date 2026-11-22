@@ -33,6 +33,7 @@
 | 7 | [转移定理](STAGE7_TRANSFER.md)：对固定的 $\varepsilon,\eta>0$ 和大的 $k$，取 $j=\lceil(1-\eta)k\rceil$，有 $(1-\varepsilon)\min(J(j),p_k^{1+\delta_0})\le s(k)\le J(k)+2$。证明从第 $j$ 层的任一被覆盖区间出发，用筛法选只被大素数盖住的端点，放开这些素数，再用多出来的 $\eta k$ 个素数修补。第一问在此范围内基本回答；定理 4.1 成为推论；第二问归结为 Jacobsthal 函数的正则性（$J(k)\ll J((1-\eta)k)$ 与 $J(k)\le p_k^{1+\delta_0}$），仍未无条件解决。数值：$k\le400$ 上转移了底层覆盖长度的 92% 以上，给出 $s(400)\ge10024$ | ◎ 定理（未审稿） |
 | 8 | [计数版转移定理](STAGE8_COUNT.md)：对固定的 $\varepsilon,\eta$ 和大的 $k$，偶数间隙的个数 $\ge c(\varepsilon)\min(J(\lceil(1-\eta)k\rceil),p_k^{2-\varepsilon})$。只证明正比例的 $t$ 是间隙，于是只需要线性筛下界（筛分极限 2）加二维上界筛和 Cauchy–Schwarz 计数，上限从 $p_k^{1+\delta_0}$ 推到 $p_k^{2-\varepsilon}$。无条件推论：间隙个数 $\ge J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$；在至少一半的几何尺度上 $\ge c'\min(J(k),p_k^{2-\varepsilon})$。第二问现在只依赖 $J(k)\ll J((1-\eta)k)$ 与 $J(k)\le p_k^{2-\varepsilon}$（对 Iwaniec 上界的任何幂次改进），仍未无条件解决。没有新数值 | ◎ 定理（未审稿） |
 | 9 | [攻跳跃：短滞后与几乎所有 $k$](STAGE9_JUMP.md)：把筛法水平取到下界筛允许的最大值，所需自由素数从 $\eta k$ 降到 $k^{1-\kappa}$，定理 7.1、8.1 的层可以换成 $k-\lceil k^{1-\kappa}\rceil$。$J$ 至多多项式增长，所以在这么短的窗口内放大常数倍的 $k$ 至多 $O(K^{1-\kappa}\log K)$ 个。于是在密度为零的例外集之外：$s(k)\ge(1-\varepsilon)\min(J(k),p_k^{1+\delta_0})$，偶数间隙个数 $\ge c\min(J(k),p_k^{2-\varepsilon})$。第二问对几乎所有 $k$ 只剩 $J\le p_k^{2-\varepsilon}$；对每个 $k$ 还需要 $J(k)\ll J(k-k^{1-\kappa})$，未证明。没有新数值 | ◎ 定理（未审稿） |
+| 10 | [逐步重推定理 D–F](STAGE10_CHECK.md)：没有发现数学错误。改正四处表述："$s(k)\sim J(k)$"只对例外集之外且 $J(k)\le p_k^{1+\delta_0}$ 的 $k$ 成立（后一类 $k$ 有多少未知）；Iwaniec 上界应为 $J\ll p_k^2$；$M$ 下界的说明；$\kappa(\varepsilon)$ 的取法。$\beta_2=4.266$ 已核对。这是同一系统的复查，不等于独立审稿 | ✓ 复查 |
 
 ## 候选题
 

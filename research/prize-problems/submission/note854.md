@@ -36,7 +36,7 @@ $$s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr),\qquad\#\{\text{ev
 - (R1) $J(k)\ll J\bigl(k-\lceil k^{1-\kappa}\rceil\bigr)$, i.e. $J$ does not grow by a large factor across a window of length $k^{1-\kappa}$, and
 - (R2) $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$.
 
-(R1) fails for at most $O(K^{1-\kappa}\log K)$ values $k\le K$ (§6.3), but it is not proved for every $k$. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec), so (R2) asks for any power saving over it. So the second question is reduced to the regularity of the Jacobsthal function, and is not settled for every $k$.
+(R1) fails for at most $O(K^{1-\kappa}\log K)$ values $k\le K$ (§6.3), but it is not proved for every $k$. The best known upper bound is $J(k)\ll(k\log k)^2\asymp p_k^2$ (Iwaniec), so (R2) asks for any power saving over it. So the second question is reduced to the regularity of the Jacobsthal function, and is not settled for every $k$.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -268,15 +268,15 @@ Theorem D shows that *every* even $t$ in a range is a gap, and needs a lower-bou
 - **Steps 4 and 5** are those of Theorem D. They only need $t<p_j^2$, which holds because $t\le p_k^{2-\varepsilon}$. ∎
 
 **Corollaries.**
-- **Unconditional.** For fixed $\varepsilon,\eta$ and large $k$, the number of even gaps is at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$. This follows from Theorem E with $\varepsilon/2$ and $J(j)\ll p_j^2\log^2p_j$.
+- **Unconditional.** For fixed $\varepsilon,\eta$ and large $k$, the number of even gaps is at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$. This follows from Theorem E with $\varepsilon/2$ and $J(j)\ll p_j^2$.
 - **Second question, conditionally.** If $J(k)\le C\,J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$, then the number of even gaps is at least $(c/C)J(k)$.
 - **Unconditional, at most scales.** Let $\rho=1/(1-\eta)$ and $k_i=\lceil\rho^i\rceil$. For large $n$, at least half of the $i\le n$ satisfy $J(k_{i+1})\le\rho^5J(k_i)$, because $J$ is non-decreasing and $J(k_n)\le\rho^{(2+o(1))n}$. For those $i$ and $k=k_{i+1}$, the number of even gaps is at least $c\rho^{-5}\min\bigl(J(k),p_k^{2-\varepsilon}\bigr)$.
 
 So the second question can fail at $k$ only if $J$ jumps by a large factor on $[(1-\eta)k,k]$, or $J(k)>p_k^{2-\varepsilon}$.
 
 **Remarks.**
-- The exponent $2-\varepsilon$ comes from two requirements: the repair budget needs $B\gtrsim L/p_k$, and (L) needs $L\ge B^{2+\theta}$. Iwaniec's bound $J(k)\ll p_k^2\log^2p_k$ rests on the same sifting limit.
-- The argument of Step 3 also applies to Theorem D and removes the third term in its Step 3. The only remaining constraint is the lower-bound sieve of dimension 2, so Theorem D holds for every $\delta_0<1/(\beta_2-1)$, where $\beta_2$ is the sifting limit of that sieve. (Sketch only; with the value $\beta_2\approx4.27$ of the Diamond–Halberstam–Richert sieve this would give $\delta_0<0.306$, but we have not checked that value against the source.)
+- The exponent $2-\varepsilon$ comes from two requirements: the repair budget needs $B\gtrsim L/p_k$, and (L) needs $L\ge B^{2+\theta}$. Iwaniec's bound $J(k)\ll p_k^2$ rests on the same sifting limit.
+- The argument of Step 3 also applies to Theorem D and removes the third term in its Step 3. The only remaining constraint is the lower-bound sieve of dimension 2, so Theorem D holds for every $\delta_0<1/(\beta_2-1)$, where $\beta_2$ is the sifting limit of that sieve. (Sketch only. For the Diamond–Halberstam–Richert sieve $\beta_2=4.266\ldots$ [DH; see Table 1 of Franze], which gives $\delta_0<0.306$.)
 - There is no numerical run for Theorem E: it improves on Theorem D only when $J\ge p_k^{1+\delta_0}$, which does not occur for computable $k$.
 
 ### 6.3 Theorem F: short lag and almost all $k$
@@ -287,7 +287,7 @@ In the proofs of Theorems D and E the sieve level $B$ was taken as small as poss
 - **(a)** There are absolute constants $\delta_0,\kappa_0>0$ such that for fixed $\varepsilon\in(0,\frac12)$ and all large $k$, with $j=k-\lceil k^{1-\kappa_0}\rceil$ and $L=\min\bigl(J(j)-1,p_k^{1+\delta_0}\bigr)$, every even $t\le(1-\varepsilon)L$ is in $G_k$.
 - **(b)** For fixed $\varepsilon\in(0,1)$ there is $c(\varepsilon)>0$ such that for all large $k$, with $j=k-\lceil k^{1-\varepsilon/4}\rceil$ and $L=\min\bigl(J(j)-1,p_k^{2-\varepsilon}\bigr)$, at least $cL$ even $t\le L/2$ are in $G_k$.
 
-*Proof.* Follow the proofs of Theorems D and E with $F=k-j$, $X=L-t$ and $M=\varepsilon L/(2p_k)$; by Theorem B, $\log M\ge\frac12\log\log p_k$ for large $k$. There are two changes.
+*Proof.* Follow the proofs of Theorems D and E with $F=k-j$, $X=L-t$ and $M=\varepsilon L/(2p_k)$; by Theorem B and $J(j)\ge s(j)-2$, $M\ge(\log p_k)^{1/2}$ for large $k$. There are two changes.
 - **Largest sieve level.** In (a) take $B=X^{1/s_0}$, so that (S1) applies. In (b) take $B=(L/4)^{1/(2+\theta)}$ with $\theta=\varepsilon/4$, so that (L) applies on every sub-interval of length at least $L/2-1$; Steps 1 and 2 of Theorem E are unchanged.
 - **Upper-bound sieve for every $q\in(B,p_j]$.** For $x\equiv a\pmod q$ write $x=a+qn$; then $n$ runs over an interval of length at least $M$, and sifting $n$ by the primes $p\le z:=\min(B,M)$ with at most two classes each, (U) gives $N_q\le C\frac Xq V(\log B/\log z)^2$ in (a) and $N_q\le CH\frac L{q\log^2z}$ in (b). In both cases the average cost is at most
   $$C'\Bigl(\frac{\log B}{\log z}\Bigr)^2\Bigl[\frac t{B\log B}+\log\log p_k\Bigr]\le C''\log^2p_k\cdot\frac LB .$$
@@ -299,8 +299,8 @@ $$\#(\mathfrak B_C\cap[K,2K])\le\Bigl(1+\frac{3\log K}{\log C}\Bigr)\bigl(F(2K)+
 
 *Proof.* Let $k_1$ be the largest element of $\mathfrak B_C\cap[K,2K]$, and $k_{i+1}$ the largest element of $\mathfrak B_C\cap[K,k_i-F(k_i))$, for $i<m$. Every element of $\mathfrak B_C\cap[K,2K]$ lies in some $[k_i-F(k_i),k_i]$. Since $J$ is non-decreasing, $J(k_i)>C\,J(k_i-F(k_i))\ge C\,J(k_{i+1})$, so $J(2K)>C^{m-1}J(K)$. Iwaniec's bound gives $J(2K)\le K^3$ for large $K$, so $m\le1+3\log K/\log C$. ∎
 
-**Corollaries.** Fix $\varepsilon$. Outside a set $\mathcal E$ with $\#(\mathcal E\cap[1,K])\ll_\varepsilon K^{1-\kappa}\log K$:
-- $s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr)$ (Theorem F(a) and the lemma with $C=1+\varepsilon/2$). So $s(k)=(1+o(1))J(k)$ for almost all $k$ with $J(k)\le p_k^{1+\delta_0}$.
+**Corollaries.** Fix $\varepsilon$ and put $\kappa=\min(\kappa_0,\varepsilon/8)$. Outside a set $\mathcal E$ with $\#(\mathcal E\cap[1,K])\ll_\varepsilon K^{1-\kappa}\log K$:
+- $s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr)$ (Theorem F(a) and the lemma with $C=1+\varepsilon/2$). Letting $\varepsilon\to0$ slowly gives a set $\mathcal E'$ of density zero such that $s(k)=(1+o(1))J(k)$ as $k\to\infty$ through the $k\notin\mathcal E'$ with $J(k)\le p_k^{1+\delta_0}$. The density is relative to all integers: we do not know how many $k$ satisfy $J(k)\le p_k^{1+\delta_0}$.
 - The number of even gaps is at least $\frac c2\min\bigl(J(k),p_k^{2-\varepsilon}\bigr)$ (Theorem F(b) and $C=2$), and at least $J(k)^{1-\varepsilon}$.
 
 **Remarks.**
@@ -347,7 +347,7 @@ A second, independent reduction: if $s(k)>J(k-1)$ for all large $k$ and $J(k)\ll
 
 This work was produced with substantial assistance from an AI system (Claude, Anthropic), working under the direction of the author. The AI system drafted the proofs, wrote and ran the computations, and searched the literature. The author chose the problem and the direction, and is responsible for the content.
 
-The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.3, is welcome.
+The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.3, is welcome. A line-by-line recheck of §6.1–6.3 by the same AI system (`STAGE10_CHECK.md`) found no mathematical error; it is not a substitute for an independent referee.
 
 ## 8. References and files
 
@@ -356,9 +356,11 @@ The proofs have not yet been refereed. Independent checking, especially of §4 a
 - H. L. Montgomery, R. C. Vaughan, *The large sieve*, Mathematika 20 (1973) (Brun–Titchmarsh).
 - J. Friedlander, H. Iwaniec, *Opera de Cribro*, AMS 2010, Ch. 6 (fundamental lemma).
 - [HR] H. Halberstam, H.-E. Richert, *Sieve Methods*, Academic Press 1974 (Theorems 2.2 and 8.4).
+- [DH] H. G. Diamond, H. Halberstam, *A Higher-Dimensional Sieve Method*, Cambridge Univ. Press 2008.
+- C. S. Franze, *Sifting limits for the $\Lambda^2\Lambda^-$ sieve*, arXiv:1012.3809 (Table 1).
 - H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. 11 (1978).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`, `STAGE9_JUMP.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`, `STAGE9_JUMP.md`, `STAGE10_CHECK.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

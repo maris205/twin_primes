@@ -7,13 +7,15 @@
   例外集在 $[1,K]$ 里至多有 $O(K^{1-\kappa}\log K)$ 个元素。
 
 **这回答了什么：**
-- **第一问：** 对几乎所有 $k$（只要 $J(k)\le p_k^{1+\delta_0}$），$s(k)=(1+o(1))\,J(k)$。下界 $s(k)$ 和上界 $J(k)+2$ 渐近重合，没有指标平移。
-- **第二问：** 对几乎所有 $k$，只要 $J(k)\le p_k^{2-\varepsilon}$，第二问成立。无条件地，对几乎所有 $k$，偶数间隙个数 $\ge J(k)^{1-\varepsilon}$。
+- **第一问：** 存在一个密度为零的集合 $\mathcal E'$，使得 $k$ 跑过 $k\notin\mathcal E'$ 且 $J(k)\le p_k^{1+\delta_0}$ 的值时，$s(k)=(1+o(1))\,J(k)$（由下面的定理对 $\varepsilon\to0$ 做对角线论证）。注意例外集只是相对**全体整数**密度为零；满足 $J(k)\le p_k^{1+\delta_0}$ 的 $k$ 有多少，目前不知道。下界 $s(k)$ 和上界 $J(k)+2$ 渐近重合，没有指标平移。
+- **第二问：** 对例外集之外的每个 $k$，只要 $J(k)\le p_k^{2-\varepsilon}$，第二问成立。无条件地，对几乎所有 $k$，偶数间隙个数 $\ge J(k)^{1-\varepsilon}$。
 - **没有解决的：** 对**每个** $k$ 仍需要
   - (R1′) $J(k)\le C\,J(k-\lceil k^{1-\kappa}\rceil)$，即 $J$ 在长度 $k^{1-\kappa}$ 的窗口内不放大常数倍；
   - (R2′) $J(k)\le p_k^{2-\varepsilon}$。
 
   两条都没有证明。本阶段证明的是：(R1′) 失败的 $k$ 是稀疏的。
+
+> **第十阶段检查：** [STAGE10_CHECK.md](STAGE10_CHECK.md) 逐步重推了本阶段的证明，没有发现数学错误；收紧了"几乎所有 $k$"的一处表述，补写了 $M$ 的下界说明和 $\kappa(\varepsilon)$。
 
 **状态标注：** 定理 9.1、9.2 是**定理**，证明见 §2、§3，只用第七、八阶段的同一组筛法定理，**未经审稿**。注记 8.5 里的去掉第三项的做法在 §2 被完整写出。本阶段**没有新的数值**。本阶段由 AI 辅助完成（Claude，Anthropic）。
 
@@ -35,7 +37,7 @@
 - **(a)** 存在绝对常数 $\delta_0,\kappa_0>0$：对固定的 $\varepsilon\in(0,\tfrac12)$ 和充分大的 $k$，设 $j=k-\lceil k^{1-\kappa_0}\rceil$，$L=\min\bigl(J(j)-1,\,p_k^{1+\delta_0}\bigr)$，则每个偶数 $t\le(1-\varepsilon)L$ 属于 $G_k$。
 - **(b)** 对固定的 $\varepsilon\in(0,1)$，存在 $c(\varepsilon)>0$：对充分大的 $k$，设 $j=k-\lceil k^{1-\varepsilon/4}\rceil$，$L=\min\bigl(J(j)-1,\,p_k^{2-\varepsilon}\bigr)$，则至少 $cL$ 个偶数 $t\le L/2$ 属于 $G_k$。
 
-*证明.* (a) 沿用定理 7.1 的证明，(b) 沿用定理 8.1 的证明，只改两处。记 $F=k-j$，$X=L-t$（(a) 中 $X\ge\varepsilon L$），$M=\varepsilon L/(2p_k)$。由定理 B，$J(j)/p_k\ge(\log p_k)^{1/2}$，所以 $\log M\ge\tfrac12\log\log p_k$ 对大的 $k$ 成立。
+*证明.* (a) 沿用定理 7.1 的证明，(b) 沿用定理 8.1 的证明，只改两处。记 $F=k-j$，$X=L-t$（(a) 中 $X\ge\varepsilon L$），$M=\varepsilon L/(2p_k)$。由定理 B 和 $J(j)\ge s(j)-2$，$J(j)/p_k\gg\log p_k\,\log_3p_k/(\log_2p_k)^2$，所以对大的 $k$ 有 $M\ge(\log p_k)^{1/2}$，即 $\log M\ge\tfrac12\log\log p_k$。
 
 - **改动一：筛法水平取到最大。**
   - (a) 取 $B=X^{1/s_0}$，$s_0$ 是基本引理 (S1) 的常数，于是 (S1) 适用：$|\mathcal X|\ge\tfrac12XV$。
@@ -71,9 +73,9 @@ $$\#\bigl(\mathfrak B_C\cap[K,2K]\bigr)\ \le\ \Bigl(1+\frac{3\log K}{\log C}\Big
 - 贪心地往下取：$k_1$ 是 $\mathfrak B_C\cap[K,2K]$ 的最大元；$k_{i+1}$ 是 $\mathfrak B_C\cap[K,\,k_i-F(k_i))$ 的最大元，直到为空。设一共取了 $m$ 个。
 - 由取法，$\mathfrak B_C\cap[K,2K]\subseteq\bigcup_i[k_i-F(k_i),\,k_i]$，所以个数 $\le m\,(F(2K)+1)$。
 - $J$ 单调不减，且 $k_{i+1}<k_i-F(k_i)$，所以 $J(k_i)>C\,J(k_i-F(k_i))\ge C\,J(k_{i+1})$。于是 $J(2K)\ge J(k_1)>C^{m-1}J(k_m)\ge C^{m-1}J(K)$。
-- 由 Iwaniec 的上界 $J(2K)\ll p_{2K}^2\log^2p_{2K}\le K^{3}$，且 $J(K)\ge2$，得 $m-1\le3\log K/\log C$。∎
+- 由 Iwaniec 的上界 $J(2K)\ll p_{2K}^2\le K^{3}$，且 $J(K)\ge2$，得 $m-1\le3\log K/\log C$。∎
 
-**定理 9.2.** 固定 $\varepsilon$。存在 $\kappa=\kappa(\varepsilon)>0$，使得在一个满足 $\#(\mathcal E\cap[1,K])\ll_\varepsilon K^{1-\kappa}\log K$ 的集合 $\mathcal E$ 之外，
+**定理 9.2.** 固定 $\varepsilon$，取 $\kappa=\min(\kappa_0,\varepsilon/8)$。在一个满足 $\#(\mathcal E\cap[1,K])\ll_\varepsilon K^{1-\kappa}\log K$ 的集合 $\mathcal E$ 之外，
 - (i) $s(k)\ge(1-\varepsilon)\min\bigl(J(k),\,p_k^{1+\delta_0}\bigr)$；
 - (ii) $|G_k|\ge\tfrac12c(\varepsilon)\min\bigl(J(k),\,p_k^{2-\varepsilon}\bigr)$；
 - (iii) $|G_k|\ge J(k)^{1-\varepsilon}$。

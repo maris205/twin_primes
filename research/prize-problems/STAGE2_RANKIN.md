@@ -18,7 +18,7 @@ $$s(k)\ \ge\ \Bigl(\frac1{6e^\gamma}-o(1)\Bigr)\frac{p_k\log p_k}{(\log\log p_k)
 
 **判决：◎（第一问的下界达到对数级增长；第二问仍开放）。**
 - 已知 $J(k)\gg p_k\log p_k\cdot\frac{\log\log\log p_k}{\log\log p_k}$（Ford–Green–Konyagin–Maynard–Tao）。我们对 $s(k)$ 的下界与它只差一个 $(\log\log p_k)^3\log\log\log p_k$ 因子。
-- 但第二问需要与 $J(k)$ 本身比较，而 $J(k)$ 的真实大小未知（上界 $p_k^2\log^2p_k$，Iwaniec），所以第二问仍然开放。
+- 但第二问需要与 $J(k)$ 本身比较，而 $J(k)$ 的真实大小未知（上界 $p_k^2$，Iwaniec），所以第二问仍然开放。
 
 **状态标注：**
 - 定理 2.1 严格，用到素数定理、Mertens 定理、$n/\varphi(n)$ 的 Rosser–Schoenfeld 上界，以及光滑数的标准上界 $\Psi(X,z)\ll Xe^{-u/2}$（见 Tenenbaum《解析与概率数论导引》第 III.5 节）。

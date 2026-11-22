@@ -1,6 +1,6 @@
 # Gaps between totatives of primorials: the smallest missing even gap (Erdős Problem #854)
 
-Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-11-15.
+Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-11-22.
 
 ## Summary
 
@@ -26,14 +26,17 @@ $$(1-\varepsilon)\,\min\bigl(J(j),\,p_k^{1+\delta_0}\bigr)\ \le\ s(k)\ \le\ J(k)
 $$c\,\min\bigl(J(\lceil(1-\eta)k\rceil),\,p_k^{2-\varepsilon}\bigr).$$
   In particular it is at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$ for all large $k$, unconditionally.
 
+- **Theorem F (short lag; almost all $k$).** In Theorems D and E the level $\lceil(1-\eta)k\rceil$ can be replaced by $k-\lceil k^{1-\kappa}\rceil$ for a fixed small $\kappa>0$. Since $J$ grows at most polynomially, it can grow by a constant factor across such short windows only for a sparse set of $k$. Consequently, for every fixed $\varepsilon>0$, outside a set of $k$ of density zero,
+$$s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr),\qquad\#\{\text{even gaps}\}\ge c(\varepsilon)\min\bigl(J(k),p_k^{2-\varepsilon}\bigr).$$
+
 **Consequence.** At least $s(k)/2-1$ distinct even integers occur as gaps. So the number of distinct even gaps is at least $(\frac12-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)$; Theorem E extends the range to $p_k^{2-\varepsilon}$ with a smaller constant.
 
-**What remains open.** The second question of #854 asks for $\gg J(k)$ gaps. By Theorem E this holds for every large $k$ with
+**What remains open.** The second question of #854 asks for $\gg J(k)$ gaps. By Theorem F it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from
 
-- (R1) $J(k)\ll J(\lceil(1-\eta)k\rceil)$, and
+- (R1) $J(k)\ll J\bigl(k-\lceil k^{1-\kappa}\rceil\bigr)$, i.e. $J$ does not grow by a large factor across a window of length $k^{1-\kappa}$, and
 - (R2) $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$.
 
-Both are expected to hold for all $k$, but neither is proved. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec), so (R2) asks for any power saving over it. (R1) holds unconditionally at a positive proportion of geometric scales (§6.2). So the second question is reduced to the regularity of the Jacobsthal function, and is not settled unconditionally.
+(R1) fails for at most $O(K^{1-\kappa}\log K)$ values $k\le K$ (§6.3), but it is not proved for every $k$. The best known upper bound is $J(k)\ll p_k^2\log^2p_k$ (Iwaniec), so (R2) asks for any power saving over it. So the second question is reduced to the regularity of the Jacobsthal function, and is not settled for every $k$.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -44,6 +47,7 @@ Notation: $\log_2=\log\log$, $\log_3=\log\log\log$, and $\gamma$ is Euler's cons
 - Theorem C uses Theorem 2 of [FGKMT] as a black box, together with the deduction that follows it in their §3.
 - Theorem D uses only the fundamental lemma of sieve theory. It gives a second proof of Theorem C that needs only the statement of the [FGKMT] lower bound for $J$.
 - Theorem E uses two standard sieve theorems: the Jurkat–Richert lower bound for the linear sieve and a Selberg-type upper bound.
+- Theorem F uses the same sieve theorems as Theorems D and E, and Iwaniec's upper bound for $J$.
 - The table in §5 is computational. How each entry was certified is described there.
 
 ---
@@ -275,9 +279,38 @@ So the second question can fail at $k$ only if $J$ jumps by a large factor on $[
 - The argument of Step 3 also applies to Theorem D and removes the third term in its Step 3. The only remaining constraint is the lower-bound sieve of dimension 2, so Theorem D holds for every $\delta_0<1/(\beta_2-1)$, where $\beta_2$ is the sifting limit of that sieve. (Sketch only; with the value $\beta_2\approx4.27$ of the Diamond–Halberstam–Richert sieve this would give $\delta_0<0.306$, but we have not checked that value against the source.)
 - There is no numerical run for Theorem E: it improves on Theorem D only when $J\ge p_k^{1+\delta_0}$, which does not occur for computable $k$.
 
-### 6.3 Producing gaps from a single cover
+### 6.3 Theorem F: short lag and almost all $k$
 
-The rest of this section records an approach that stays at one level: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the second question either, and Theorems D and E make it unnecessary for the reduction above; we keep it for the lemmas and the numerical observations.
+In the proofs of Theorems D and E the sieve level $B$ was taken as small as possible, which forces $\asymp\eta k$ free primes. Taking $B$ as large as the lower-bound sieve allows lowers the average repair cost to a power of $L$ below $p_k$, so far fewer free primes are needed.
+
+**Theorem F.**
+- **(a)** There are absolute constants $\delta_0,\kappa_0>0$ such that for fixed $\varepsilon\in(0,\frac12)$ and all large $k$, with $j=k-\lceil k^{1-\kappa_0}\rceil$ and $L=\min\bigl(J(j)-1,p_k^{1+\delta_0}\bigr)$, every even $t\le(1-\varepsilon)L$ is in $G_k$.
+- **(b)** For fixed $\varepsilon\in(0,1)$ there is $c(\varepsilon)>0$ such that for all large $k$, with $j=k-\lceil k^{1-\varepsilon/4}\rceil$ and $L=\min\bigl(J(j)-1,p_k^{2-\varepsilon}\bigr)$, at least $cL$ even $t\le L/2$ are in $G_k$.
+
+*Proof.* Follow the proofs of Theorems D and E with $F=k-j$, $X=L-t$ and $M=\varepsilon L/(2p_k)$; by Theorem B, $\log M\ge\frac12\log\log p_k$ for large $k$. There are two changes.
+- **Largest sieve level.** In (a) take $B=X^{1/s_0}$, so that (S1) applies. In (b) take $B=(L/4)^{1/(2+\theta)}$ with $\theta=\varepsilon/4$, so that (L) applies on every sub-interval of length at least $L/2-1$; Steps 1 and 2 of Theorem E are unchanged.
+- **Upper-bound sieve for every $q\in(B,p_j]$.** For $x\equiv a\pmod q$ write $x=a+qn$; then $n$ runs over an interval of length at least $M$, and sifting $n$ by the primes $p\le z:=\min(B,M)$ with at most two classes each, (U) gives $N_q\le C\frac Xq V(\log B/\log z)^2$ in (a) and $N_q\le CH\frac L{q\log^2z}$ in (b). In both cases the average cost is at most
+  $$C'\Bigl(\frac{\log B}{\log z}\Bigr)^2\Bigl[\frac t{B\log B}+\log\log p_k\Bigr]\le C''\log^2p_k\cdot\frac LB .$$
+- **Exponents.** In (a), $L/B\ll_\varepsilon L^{1-1/s_0}\le p_k^{(1+\delta_0)(1-1/s_0)}\le p_k^{1-1/(2s_0)}$ with $\delta_0=1/(2s_0)$; take $\kappa_0=1/(4s_0)$. In (b), $L/B\ll L^{(1+\theta)/(2+\theta)}\le p_k^{(2-\varepsilon)(4+\varepsilon)/(8+\varepsilon)}\le p_k^{1-\varepsilon/3}$. In both cases the average cost is at most $F/2$ for large $k$.
+- Steps 4 and 5 are unchanged; they use only that there are at most $F/2$ exposed points and that $t<p_j^2$. ∎
+
+**Lemma (jumps are sparse).** Let $C>1$, $F(k)=\lceil k^{1-\kappa}\rceil$ and $\mathfrak B_C=\{k: J(k)>C\,J(k-F(k))\}$. For large $K$,
+$$\#(\mathfrak B_C\cap[K,2K])\le\Bigl(1+\frac{3\log K}{\log C}\Bigr)\bigl(F(2K)+1\bigr).$$
+
+*Proof.* Let $k_1$ be the largest element of $\mathfrak B_C\cap[K,2K]$, and $k_{i+1}$ the largest element of $\mathfrak B_C\cap[K,k_i-F(k_i))$, for $i<m$. Every element of $\mathfrak B_C\cap[K,2K]$ lies in some $[k_i-F(k_i),k_i]$. Since $J$ is non-decreasing, $J(k_i)>C\,J(k_i-F(k_i))\ge C\,J(k_{i+1})$, so $J(2K)>C^{m-1}J(K)$. Iwaniec's bound gives $J(2K)\le K^3$ for large $K$, so $m\le1+3\log K/\log C$. ∎
+
+**Corollaries.** Fix $\varepsilon$. Outside a set $\mathcal E$ with $\#(\mathcal E\cap[1,K])\ll_\varepsilon K^{1-\kappa}\log K$:
+- $s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr)$ (Theorem F(a) and the lemma with $C=1+\varepsilon/2$). So $s(k)=(1+o(1))J(k)$ for almost all $k$ with $J(k)\le p_k^{1+\delta_0}$.
+- The number of even gaps is at least $\frac c2\min\bigl(J(k),p_k^{2-\varepsilon}\bigr)$ (Theorem F(b) and $C=2$), and at least $J(k)^{1-\varepsilon}$.
+
+**Remarks.**
+- Theorems D and E are special cases of Theorem F.
+- The number of free primes needed is about $\log^2p_k\cdot L/B$. If $J(k)=p_k^{1+o(1)}$, as conjectured, a lag of $k^{1/2+o(1)}$ suffices in (b). The method cannot reach a lag $O(1)$, since $L/B\ge L^{1/2}$; numerically $s(k)>J(k-1)$ for $6\le k\le26$.
+- At an exceptional $k$, $J$ must grow by a constant factor within $k^{1-\kappa}$ steps. Whether this ever happens is the remaining question for the second part.
+
+### 6.4 Producing gaps from a single cover
+
+The rest of this section records an approach that stays at one level: produce many shorter gaps directly from one cover of a long gap. It does **not** settle the second question either, and Theorems D–F make it unnecessary for the reduction above; we keep it for the lemmas and the numerical observations.
 
 Use the halved model of §1: a gap $t=2m$ is a choice of classes $c_p$ for the odd primes $p\le p_k$ such that every point of $1,\dots,m-1$ lies in some class, and $0$ and $m$ lie in none. Write $C(i)$ for the set of primes whose class contains $i$, so $C(0)=C(m)=\varnothing$. Let $G_k$ be the set of gaps.
 
@@ -314,7 +347,7 @@ A second, independent reduction: if $s(k)>J(k-1)$ for all large $k$ and $J(k)\ll
 
 This work was produced with substantial assistance from an AI system (Claude, Anthropic), working under the direction of the author. The AI system drafted the proofs, wrote and ran the computations, and searched the literature. The author chose the problem and the direction, and is responsible for the content.
 
-The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.2, is welcome.
+The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.3, is welcome.
 
 ## 8. References and files
 
@@ -326,6 +359,6 @@ The proofs have not yet been refereed. Independent checking, especially of §4 a
 - H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. 11 (1978).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`, `STAGE9_JUMP.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

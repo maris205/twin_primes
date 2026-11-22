@@ -4,7 +4,7 @@ Draft comment for https://www.erdosproblems.com/forum/thread/854. To be posted b
 
 **Lower bounds for the smallest missing even gap, and exact values up to k = 26**
 
-Write $s(k)$ for the smallest even number that is not a gap between consecutive totatives of the $k$-th primorial (OEIS A389839). Write $J(k)$ for the largest gap (A048670). We prove three lower bounds for $s(k)$, a transfer theorem and a counting theorem; the full write-up is linked below.
+Write $s(k)$ for the smallest even number that is not a gap between consecutive totatives of the $k$-th primorial (OEIS A389839). Write $J(k)$ for the largest gap (A048670). We prove three lower bounds for $s(k)$, a transfer theorem, a counting theorem and an almost-all version of both; the full write-up is linked below.
 
 1. $s(k)\ge(e^\gamma/(1+e^\gamma)-o(1))\,p_k\approx0.64\,p_k$. This comes from an averaging construction and is elementary.
 2. $s(k)\gg p_k\log p_k\,\log_3p_k/(\log_2p_k)^2$, with the explicit constant $e^\gamma/(8C_f)\approx0.026$. This is an Erdős–Rankin construction in which the two endpoints are kept uncovered. The endpoint weight is controlled on average over shifted primes, using Brun–Titchmarsh.
@@ -23,7 +23,9 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
    - The proof is that of item 4, but only for a positive proportion of $t$. This needs the linear sieve (sifting limit 2) in place of a lower-bound sieve of dimension 2, plus an upper-bound sieve and a Cauchy–Schwarz count of the differences.
    - Unconditionally, the number of even gaps is therefore at least $J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$ for large $k$.
 
-**The second question is not settled.** By item 5 it holds for every large $k$ with $J(k)\ll J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved. The first holds at a positive proportion of geometric scales; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2\log^2p_k$.
+6. **Short lag; almost all $k$.** In items 4 and 5 the level $\lceil(1-\eta)k\rceil$ can be replaced by $k-\lceil k^{1-\kappa}\rceil$ for a small $\kappa>0$, by taking the sieve level as large as the lower-bound sieve allows. Since $J$ grows at most polynomially, it can grow by a constant factor across such short windows for only $O(K^{1-\kappa}\log K)$ values $k\le K$. Hence, outside a set of $k$ of density zero, $s(k)\ge(1-\varepsilon)\min(J(k),p_k^{1+\delta_0})$ and the number of even gaps is at least $c(\varepsilon)\min(J(k),p_k^{2-\varepsilon})$.
+
+**The second question is not settled for every $k$.** By item 6 it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from $J(k)\ll J(k-\lceil k^{1-\kappa}\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2\log^2p_k$.
 
 **Data.** We computed $s(k)$ exactly for $k\le26$:
 
@@ -33,7 +35,7 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 - A non-gap was found infeasible by HiGHS. For $k\le22$, CP-SAT confirmed every non-gap independently. For $k=24,25$, CP-SAT timed out even after six hours per case, so those two values rest on a single solver.
 - For $k\le26$, all missing even numbers lie in $[J(k)-8,\,J(k)-2]$. This suggests that $J(k)-s(k)$ may be small compared with $J(k)$, which would answer the second question positively. This is only a numerical observation.
 
-**Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on parts 4 and 5 and on the black-box transfer in part 3.
+**Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on parts 4–6 and on the black-box transfer in part 3.
 
 - Write-up: https://github.com/maris205/twin_primes/blob/main/research/prize-problems/submission/note854.md
 - Witnesses and checker: `a389839_witnesses.json` and `verify_a389839.py` in the same directory's parent folder.

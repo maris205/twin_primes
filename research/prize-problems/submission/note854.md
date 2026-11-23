@@ -307,6 +307,8 @@ $$\#(\mathfrak B_C\cap[K,2K])\le\Bigl(1+\frac{3\log K}{\log C}\Bigr)\bigl(F(2K)+
 - Theorems D and E are special cases of Theorem F.
 - The number of free primes needed is about $\log^2p_k\cdot L/B$. If $J(k)=p_k^{1+o(1)}$, as conjectured, a lag of $k^{1/2+o(1)}$ suffices in (b). The method cannot reach a lag $O(1)$, since $L/B\ge L^{1/2}$; numerically $s(k)>J(k-1)$ for $6\le k\le26$.
 - At an exceptional $k$, $J$ must grow by a constant factor within $k^{1-\kappa}$ steps. Whether this ever happens is the remaining question for the second part.
+- (R1) reduces to a single-step condition. Put $\ell(k)=k\log\bigl(J(k)/J(k-1)\bigr)$. Since $\log\frac{J(k)}{J(k-F)}=\sum_{k-F<i\le k}\ell(i)/i$, the bound $\ell(k)\le k^{\kappa/2}$ for all large $k$ gives $J(k)/J(k-\lceil k^{1-\kappa}\rceil)\le\exp(2k^{-\kappa/2})\to1$, so (R1) holds with every $C>1$. Unconditionally, the mean of $\ell$ over $(K,2K]$ is at most $2\log(J(2K)/J(K))\le(2+o(1))\log K$; the lemma above is the same fact. What is missing is a bound for the maximum of $\ell$.
+- Numerically there is no sign of jumps. For all known values ($k\le71$, OEIS A048670) and $30\le k\le71$: $0.95\le J(k)/(k\log^2k)\le1.02$, $J(k)/J(k-1)\le1.073$, $J(k)/J(k-\lceil\sqrt k\,\rceil)\le1.44$, and $0.70\le\ell(k)\le2.35$ (script `stage11_jumps.py`). This range is far too small to test the asymptotic question.
 
 ### 6.4 Producing gaps from a single cover
 

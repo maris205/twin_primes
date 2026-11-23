@@ -34,6 +34,7 @@
 | 8 | [计数版转移定理](STAGE8_COUNT.md)：对固定的 $\varepsilon,\eta$ 和大的 $k$，偶数间隙的个数 $\ge c(\varepsilon)\min(J(\lceil(1-\eta)k\rceil),p_k^{2-\varepsilon})$。只证明正比例的 $t$ 是间隙，于是只需要线性筛下界（筛分极限 2）加二维上界筛和 Cauchy–Schwarz 计数，上限从 $p_k^{1+\delta_0}$ 推到 $p_k^{2-\varepsilon}$。无条件推论：间隙个数 $\ge J(\lceil(1-\eta)k\rceil)^{1-\varepsilon}$；在至少一半的几何尺度上 $\ge c'\min(J(k),p_k^{2-\varepsilon})$。第二问现在只依赖 $J(k)\ll J((1-\eta)k)$ 与 $J(k)\le p_k^{2-\varepsilon}$（对 Iwaniec 上界的任何幂次改进），仍未无条件解决。没有新数值 | ◎ 定理（未审稿） |
 | 9 | [攻跳跃：短滞后与几乎所有 $k$](STAGE9_JUMP.md)：把筛法水平取到下界筛允许的最大值，所需自由素数从 $\eta k$ 降到 $k^{1-\kappa}$，定理 7.1、8.1 的层可以换成 $k-\lceil k^{1-\kappa}\rceil$。$J$ 至多多项式增长，所以在这么短的窗口内放大常数倍的 $k$ 至多 $O(K^{1-\kappa}\log K)$ 个。于是在密度为零的例外集之外：$s(k)\ge(1-\varepsilon)\min(J(k),p_k^{1+\delta_0})$，偶数间隙个数 $\ge c\min(J(k),p_k^{2-\varepsilon})$。第二问对几乎所有 $k$ 只剩 $J\le p_k^{2-\varepsilon}$；对每个 $k$ 还需要 $J(k)\ll J(k-k^{1-\kappa})$，未证明。没有新数值 | ◎ 定理（未审稿） |
 | 10 | [逐步重推定理 D–F](STAGE10_CHECK.md)：没有发现数学错误。改正四处表述："$s(k)\sim J(k)$"只对例外集之外且 $J(k)\le p_k^{1+\delta_0}$ 的 $k$ 成立（后一类 $k$ 有多少未知）；Iwaniec 上界应为 $J\ll p_k^2$；$M$ 下界的说明；$\kappa(\varepsilon)$ 的取法。$\beta_2=4.266$ 已核对。这是同一系统的复查，不等于独立审稿 | ✓ 复查 |
+| 11 | [用已知的 $J$ 数据看跳跃](STAGE11_JUMPDATA.md)：OEIS A048670 的全部已知值（$k\le71$）里没有跳跃。$30\le k\le71$ 时 $J(k)/(k\log^2k)\in[0.95,1.02]$，单步比值 $\le1.073$，$\lceil\sqrt k\,\rceil$ 窗口比值 $\le1.44$；按最大局部指数外推，放大 2 倍要约 $k/2$ 步。初等引理 11.1：若单步对数弹性 $k\log(J(k)/J(k-1))\le k^{\kappa/2}$，则 (R1′) 对任意 $C>1$ 成立；数据中弹性 $\le2.35$。$k\le71$ 太小，只是旁证 | ◇ 数值 + 初等引理 |
 
 ## 候选题
 

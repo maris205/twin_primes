@@ -1,0 +1,77 @@
+{
+ "u_c": 1.5436890126920764,
+ "b": 0.5436890126920764,
+ "samples": 2500000000,
+ "mu_L": 0.220429,
+ "mu_LRL": 0.103677,
+ "k_fit_2C2_over_muLRL": 12.735,
+ "k_PNT_1_over_muL2": 20.5808,
+ "twin_constant_predicted_with_k_PNT": 2.1337,
+ "twin_constant_HL_2C2": 1.3203,
+ "absorbed_factor_2C2_over_prediction": 0.6188,
+ "lags": [
+  {
+   "h": 1,
+   "dyn_corr": 0.0,
+   "S(h)": 0.0,
+   "dyn_ratio_to_h2": 0.0,
+   "S_ratio_to_h2": 0.0
+  },
+  {
+   "h": 2,
+   "dyn_corr": 2.1337,
+   "S(h)": 1.3203,
+   "dyn_ratio_to_h2": 1.0,
+   "S_ratio_to_h2": 1.0
+  },
+  {
+   "h": 3,
+   "dyn_corr": 0.0,
+   "S(h)": 0.0,
+   "dyn_ratio_to_h2": 0.0,
+   "S_ratio_to_h2": 0.0
+  },
+  {
+   "h": 4,
+   "dyn_corr": 2.0028,
+   "S(h)": 1.3203,
+   "dyn_ratio_to_h2": 0.9386,
+   "S_ratio_to_h2": 1.0
+  },
+  {
+   "h": 6,
+   "dyn_corr": 1.998,
+   "S(h)": 2.6406,
+   "dyn_ratio_to_h2": 0.9364,
+   "S_ratio_to_h2": 2.0
+  },
+  {
+   "h": 8,
+   "dyn_corr": 1.9985,
+   "S(h)": 1.3203,
+   "dyn_ratio_to_h2": 0.9366,
+   "S_ratio_to_h2": 1.0
+  },
+  {
+   "h": 10,
+   "dyn_corr": 1.9992,
+   "S(h)": 1.7604,
+   "dyn_ratio_to_h2": 0.9369,
+   "S_ratio_to_h2": 1.3333
+  },
+  {
+   "h": 12,
+   "dyn_corr": 1.9997,
+   "S(h)": 2.6406,
+   "dyn_ratio_to_h2": 0.9372,
+   "S_ratio_to_h2": 2.0
+  },
+  {
+   "h": 30,
+   "dyn_corr": 2.0001,
+   "S(h)": 3.5209,
+   "dyn_ratio_to_h2": 0.9374,
+   "S_ratio_to_h2": 2.6667
+  }
+ ]
+}

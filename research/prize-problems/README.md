@@ -38,6 +38,7 @@
 | 12 | [转向 #1139，先查现状](STAGE12_1139_STATUS.md)：官方状态仍是开放，但 2026 年 6 月已有用 GPT Pro 得到的完整证明声明（超图覆盖加 Green–Tao 素数线性方程），网站贡献者初筛未发现问题，尚无独立审稿。证明全文在需要登录的 Overleaf 上，未读。独立给出新证明价值有限，真正缺的是审稿 | ◇ 文献定位 |
 | 13 | [攻单步增量](STAGE13_ONESTEP.md)：单步增量 $J(k)-J(k-1)$ 证不出非平凡上界，而且对第二问不需要。定理 13.2：只要翻倍条件 $J(2k)\le D\,J(k)$（$D<4$）对大 $k$ 成立，第二问对所有大 $k$ 成立，它同时给出 (R1′) 和 $J\le p_k^{2-\varepsilon}$；但它推出 Iwaniec 指数的改进，所以至少一样难。已知数据中 $J(k)/J(\lceil k/2\rceil)\le3.09$（$k\ge40$）。结构引理：删掉 $p_k$ 后极值覆盖裂成 $e_k+1$ 段，$J(k)\le(e_k+1)J(k-1)$；$k\le22$ 时 $e_k\le2$，被尺寸强制 | △ 地图简化，无无条件进展 |
 | 14 | [审稿包](submission/REVIEW_GUIDE.md)：给审稿人的英文指南，列出结论、所用外部定理的确切形式、16 个按重要性排列的是非题和已知薄弱处；另附[请人审稿的邮件模板](submission/review_request_template.md)。英文成果说明更新到第十三阶段；推论 7.5 的英文版省略了 $J(k_n)\le\rho^{2n}$ 的理由（需要 $J\le p^{1+\delta_0}$ 且 $\delta_0<\frac12$），已补上，不是数学错误。数据核验程序复跑通过。待你本人找人审稿 | ✓ 已备齐 |
+| 15 | [转向 #681（及 #680）](STAGE15_681.md)：B 档里 #520 已被解决、#1144 已有通过 Lean 审计的证明声明，其余挡在已知难点后面，于是选 #681。定理 15.2：对固定 $K$，使 $p-1$ 在 $[2,K]$ 内无见证的素数的相对密度等于一个剩余类比例 $\delta(K)$，且 $\delta(K)\to0$，所以例外在素数移位里密度为零（Dirichlet、Brun 筛、二阶矩）。定理 15.3：有无穷多个 $p$ 使最小见证 $>(\frac15-\varepsilon)\log p$（Linnik），单靠剩余类信息不够。#680：第一问由长 $\sqrt x$ 的区间里有素数推出，第二问需要 Cramér 量级的素数间隙。逐点问题在短区间墙后面。数值：$10^9$ 以内有 2 134 626 个例外，$[10^8,10^9)$ 仍占 3.3%；启发式模型外推最后一个例外约在 $10^{14}$ | △ 部分结果 |
 
 ## 候选题
 
@@ -49,4 +50,4 @@
 | B | JSP-000804 | [#970](https://www.erdosproblems.com/970) | Jacobsthal 函数 $h(k)\ll k^2$ |
 | B | JSP-000200 | [#218](https://www.erdosproblems.com/218) | 相邻素数间隙的增减模式 |
 | B | JSP-000949、JSP-000416 | [#1144](https://www.erdosproblems.com/1144)、[#520](https://www.erdosproblems.com/520) | 随机乘性函数部分和的涨落 |
-| B | JSP-000552、JSP-000553 | [#680](https://www.erdosproblems.com/680)、[#681](https://www.erdosproblems.com/681) | 大 $n$ 附近最小素因子较大的整数 |
+| B | JSP-000552、JSP-000553 | [#680](https://www.erdosproblems.com/680)、[#681](https://www.erdosproblems.com/681) | 大 $n$ 附近最小素因子较大的整数（第十五阶段） |

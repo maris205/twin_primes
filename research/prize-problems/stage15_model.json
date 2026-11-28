@@ -1,0 +1,208 @@
+{
+ "monte_carlo": [
+  {
+   "x": "1e4.0",
+   "K=x^(1/4)": 10,
+   "model_P_exception": 0.659822672862412,
+   "poisson_P": 0.6765040577115896,
+   "observed_fraction_in_decade": 0.557216
+  },
+  {
+   "x": "1e4.5",
+   "K=x^(1/4)": 13,
+   "model_P_exception": 0.5703723355782878,
+   "poisson_P": 0.5930950070190476,
+   "observed_fraction_in_decade": 0.557216
+  },
+  {
+   "x": "1e5.0",
+   "K=x^(1/4)": 17,
+   "model_P_exception": 0.47479486596639836,
+   "poisson_P": 0.5026139116383861,
+   "observed_fraction_in_decade": 0.372696
+  },
+  {
+   "x": "1e5.5",
+   "K=x^(1/4)": 23,
+   "model_P_exception": 0.3845749324166987,
+   "poisson_P": 0.41665265840328736,
+   "observed_fraction_in_decade": 0.372696
+  },
+  {
+   "x": "1e6.0",
+   "K=x^(1/4)": 31,
+   "model_P_exception": 0.30060593502584054,
+   "poisson_P": 0.33415148049236665,
+   "observed_fraction_in_decade": 0.21509
+  },
+  {
+   "x": "1e6.5",
+   "K=x^(1/4)": 42,
+   "model_P_exception": 0.22556556314796988,
+   "poisson_P": 0.25645504772268246,
+   "observed_fraction_in_decade": 0.21509
+  },
+  {
+   "x": "1e7.0",
+   "K=x^(1/4)": 56,
+   "model_P_exception": 0.1599010729651191,
+   "poisson_P": 0.1876262559331445,
+   "observed_fraction_in_decade": 0.098593
+  },
+  {
+   "x": "1e7.5",
+   "K=x^(1/4)": 74,
+   "model_P_exception": 0.10377009123760661,
+   "poisson_P": 0.12948905431674226,
+   "observed_fraction_in_decade": 0.098593
+  },
+  {
+   "x": "1e8.0",
+   "K=x^(1/4)": 100,
+   "model_P_exception": 0.06407074527836093,
+   "poisson_P": 0.08307922333113356,
+   "observed_fraction_in_decade": 0.03271
+  },
+  {
+   "x": "1e8.5",
+   "K=x^(1/4)": 133,
+   "model_P_exception": 0.03585485377823316,
+   "poisson_P": 0.04880569757486761,
+   "observed_fraction_in_decade": 0.03271
+  },
+  {
+   "x": "1e9.0",
+   "K=x^(1/4)": 177,
+   "model_P_exception": 0.01790306235071341,
+   "poisson_P": 0.025671622124450903,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e9.5",
+   "K=x^(1/4)": 237,
+   "model_P_exception": 0.007637328685003817,
+   "poisson_P": 0.01179143295826552,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e10.0",
+   "K=x^(1/4)": 316,
+   "model_P_exception": 0.0026741758847803913,
+   "poisson_P": 0.004575307040646343,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e10.5",
+   "K=x^(1/4)": 421,
+   "model_P_exception": 0.0008127805447892742,
+   "poisson_P": 0.0014405098016577631,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e11.0",
+   "K=x^(1/4)": 562,
+   "model_P_exception": 0.00017846626022696238,
+   "poisson_P": 0.0003492250482212836,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e11.5",
+   "K=x^(1/4)": 749,
+   "model_P_exception": 2.5475641377632248e-05,
+   "poisson_P": 6.11349417200674e-05,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e12.0",
+   "K=x^(1/4)": 1000,
+   "model_P_exception": 2.6777445587036822e-06,
+   "poisson_P": 7.119505627590263e-06,
+   "observed_fraction_in_decade": null
+  },
+  {
+   "x": "1e12.5",
+   "K=x^(1/4)": 1333,
+   "model_P_exception": 1.7752586528525972e-07,
+   "poisson_P": 4.974090286096844e-07,
+   "observed_fraction_in_decade": null
+  }
+ ],
+ "poisson_extrapolation": [
+  {
+   "decade": "[1e9,1e10)",
+   "expected_exceptions_poisson": 3869339.283881017
+  },
+  {
+   "decade": "[1e10,1e11)",
+   "expected_exceptions_poisson": 4196228.046899598
+  },
+  {
+   "decade": "[1e11,1e12)",
+   "expected_exceptions_poisson": 1757438.7551825598
+  },
+  {
+   "decade": "[1e12,1e13)",
+   "expected_exceptions_poisson": 184408.31919600355
+  },
+  {
+   "decade": "[1e13,1e14)",
+   "expected_exceptions_poisson": 2436.8776496421992
+  },
+  {
+   "decade": "[1e14,1e15)",
+   "expected_exceptions_poisson": 1.2372133797133786
+  },
+  {
+   "decade": "[1e15,1e16)",
+   "expected_exceptions_poisson": 3.323421527075869e-06
+  },
+  {
+   "decade": "[1e16,1e17)",
+   "expected_exceptions_poisson": 1.868998016708801e-15
+  },
+  {
+   "decade": "[1e17,1e18)",
+   "expected_exceptions_poisson": 1.1406948462116574e-30
+  },
+  {
+   "decade": "[1e18,1e19)",
+   "expected_exceptions_poisson": 1.4452868432249417e-55
+  },
+  {
+   "decade": "[1e19,1e20)",
+   "expected_exceptions_poisson": 3.330635618632047e-96
+  },
+  {
+   "decade": "[1e20,1e21)",
+   "expected_exceptions_poisson": 1.660408202815775e-162
+  },
+  {
+   "decade": "[1e21,1e22)",
+   "expected_exceptions_poisson": 8.339323295948738e-271
+  },
+  {
+   "decade": "[1e22,1e23)",
+   "expected_exceptions_poisson": 0.0
+  },
+  {
+   "decade": "[1e23,1e24)",
+   "expected_exceptions_poisson": 0.0
+  },
+  {
+   "decade": "[1e24,1e25)",
+   "expected_exceptions_poisson": 0.0
+  },
+  {
+   "decade": "[1e25,1e26)",
+   "expected_exceptions_poisson": 0.0
+  },
+  {
+   "decade": "[1e26,1e27)",
+   "expected_exceptions_poisson": 0.0
+  },
+  {
+   "decade": "[1e27,1e28)",
+   "expected_exceptions_poisson": 0.0
+  }
+ ]
+}

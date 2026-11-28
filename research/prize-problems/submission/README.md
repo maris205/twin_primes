@@ -1,4 +1,4 @@
-# #854 可提交材料（2026-10-31）
+# #854 可提交材料（2026-10-31；审稿包 2026-11-28）
 
 这里是 Erdős #854 的全部可提交材料。**都需要你本人提交**，我没有在任何网站上发布或提交过内容。
 
@@ -10,6 +10,8 @@
 | [`oeis_A389839_edit.md`](oeis_A389839_edit.md) | OEIS A389839 的修改草稿：新项、注释、链接、扩展署名、给编辑的说明 | https://oeis.org/A389839 → edit |
 | [`b389839.txt`](b389839.txt) | A389839 的 b-file，$n=2..26$ | 随上面的修改一起上传 |
 | [`erdos854_forum_post.md`](erdos854_forum_post.md) | erdosproblems.com 论坛帖草稿（英文） | https://www.erdosproblems.com/forum/thread/854 |
+| [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) | 给审稿人的英文指南：结论清单、所用外部定理的确切形式、按重要性排列的 16 个是非题、已知的薄弱处、数据的核验方法 | 随成果说明一起发给审稿人 |
+| [`review_request_template.md`](review_request_template.md) | 请人审稿的英文邮件模板，附找谁、怎么发的说明 | 你本人发送 |
 
 数据核验文件在上一级目录：
 - `a389839_witnesses.json`：每个间隙的见证数 $n$，以及每个非间隙的两个求解器结果；
@@ -18,6 +20,7 @@
 
 ## 建议顺序
 
+0. **先请懂筛法的人审定理 D–F（2026-11-28 新增）。** 把 `note854.md` 和 `REVIEW_GUIDE.md` 的固定提交永久链接发给对方，邮件用 `review_request_template.md`。至少定理 D 有人看过之后，再发论坛帖、提交 OEIS。OEIS 的数据部分不依赖这些定理，可以不等。
 1. **先发论坛帖。** 论坛门槛低，也能先听到别人对定理 C 的意见。帖子要求注明 AI 辅助，草稿里已经写了。
 2. **再提交 OEIS。** 需要 OEIS 账号（注册后要等管理员批准）。
    - 打开 A389839，点 edit，按草稿逐项填写。

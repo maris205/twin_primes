@@ -1,6 +1,6 @@
 # Gaps between totatives of primorials: the smallest missing even gap (Erdős Problem #854)
 
-Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-11-22.
+Liang Wang, with AI assistance (Claude, Anthropic). Draft of 2026-11-28.
 
 ## Summary
 
@@ -36,7 +36,7 @@ $$s(k)\ge(1-\varepsilon)\min\bigl(J(k),p_k^{1+\delta_0}\bigr),\qquad\#\{\text{ev
 - (R1) $J(k)\ll J\bigl(k-\lceil k^{1-\kappa}\rceil\bigr)$, i.e. $J$ does not grow by a large factor across a window of length $k^{1-\kappa}$, and
 - (R2) $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$.
 
-(R1) fails for at most $O(K^{1-\kappa}\log K)$ values $k\le K$ (§6.3), but it is not proved for every $k$. The best known upper bound is $J(k)\ll(k\log k)^2\asymp p_k^2$ (Iwaniec), so (R2) asks for any power saving over it. So the second question is reduced to the regularity of the Jacobsthal function, and is not settled for every $k$.
+(R1) fails for at most $O(K^{1-\kappa}\log K)$ values $k\le K$ (§6.3), but it is not proved for every $k$. The best known upper bound is $J(k)\ll(k\log k)^2\asymp p_k^2$ (Iwaniec), so (R2) asks for any power saving over it. Both (R1) and (R2) would follow from a doubling bound $J(2k)\le D\,J(k)$ with $D<4$, but that bound would itself improve the exponent in Iwaniec's estimate (§6.3, last remark). So the second question is reduced to the regularity of the Jacobsthal function, and is not settled for every $k$.
 
 **Numerical data.** We computed $s(k)$ exactly for $k\le26$; the terms for $k=13,\dots,26$ are new. For $k\le26$, every even integer missing below $J(k)$ lies in $[J(k)-8,\,J(k)-2]$.
 
@@ -48,6 +48,7 @@ Notation: $\log_2=\log\log$, $\log_3=\log\log\log$, and $\gamma$ is Euler's cons
 - Theorem D uses only the fundamental lemma of sieve theory. It gives a second proof of Theorem C that needs only the statement of the [FGKMT] lower bound for $J$.
 - Theorem E uses two standard sieve theorems: the Jurkat–Richert lower bound for the linear sieve and a Selberg-type upper bound.
 - Theorem F uses the same sieve theorems as Theorems D and E, and Iwaniec's upper bound for $J$.
+- A guide for referees, listing the steps that most need checking, is in `REVIEW_GUIDE.md`.
 - The table in §5 is computational. How each entry was certified is described there.
 
 ---
@@ -212,7 +213,7 @@ A *covered interval at level $j$* is a choice of classes $c_p \bmod p$, $p\le p_
 - $(1-\varepsilon)\min\bigl(J(\lceil(1-\eta)k\rceil),p_k^{1+\delta_0}\bigr)\le s(k)\le J(k)+2$. The upper bound holds because $J(k)+2$ exceeds the largest gap.
 - Theorem C: insert the lower bound of [FGKMT] for $J(j)$ and use $p_j\asymp p_k$.
 - **Second question, conditionally.** If $J(k)\le C\,J(\lceil(1-\eta)k\rceil)$ and $J(k)\le p_k^{1+\delta_0}$, then the number of even gaps is at least $\frac{1-\varepsilon}{2C}J(k)-1$.
-- **Second question, at most scales.** Suppose $J(k)\le p_k^{1+\delta_0}$ for all large $k$. Let $\rho=1/(1-\eta)$ and $k_i=\lceil\rho^i\rceil$. Since $J(k_n)\le\rho^{2n}$ for large $n$ and $J$ is non-decreasing, at least half of the $i\le n$ satisfy $J(k_{i+1})\le\rho^4J(k_i)$, and for those $k=k_{i+1}$ the previous item applies.
+- **Second question, at most scales.** Suppose $J(k)\le p_k^{1+\delta_0}$ for all large $k$. Let $\rho=1/(1-\eta)$ and $k_i=\lceil\rho^i\rceil$. Since $J(k_n)\le p_{k_n}^{1+\delta_0}\le k_n^{1+2\delta_0}\le\rho^{2n}$ for large $n$ (recall $\delta_0<\frac12$) and $J$ is non-decreasing, at least half of the $i\le n$ satisfy $J(k_{i+1})\le\rho^4J(k_i)$, and for those $k=k_{i+1}$ the previous item applies.
 
 **Remarks.**
 - The lag can be shortened: with $F=\lceil k/\log^Ak\rceil$ free primes and $B$ larger by a factor $\log^Ak$, the same proof works with $j=k-F$. Numerically $s(k)>J(k-1)$ for $6\le k\le26$, which this proof does not reach.
@@ -350,7 +351,7 @@ A second, independent reduction: if $s(k)>J(k-1)$ for all large $k$ and $J(k)\ll
 
 This work was produced with substantial assistance from an AI system (Claude, Anthropic), working under the direction of the author. The AI system drafted the proofs, wrote and ran the computations, and searched the literature. The author chose the problem and the direction, and is responsible for the content.
 
-The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.3, is welcome. A line-by-line recheck of §6.1–6.3 by the same AI system (`STAGE10_CHECK.md`) found no mathematical error; it is not a substitute for an independent referee.
+The proofs have not yet been refereed. Independent checking, especially of §4 and §6.1–6.3, is welcome; `REVIEW_GUIDE.md` lists the steps to check as yes/no questions. A line-by-line recheck of §6.1–6.3 by the same AI system (`STAGE10_CHECK.md`) found no mathematical error; it is not a substitute for an independent referee.
 
 ## 8. References and files
 
@@ -364,6 +365,7 @@ The proofs have not yet been refereed. Independent checking, especially of §4 a
 - H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. 11 (1978).
 - R. A. Rankin, *The difference between consecutive prime numbers*, J. London Math. Soc. 13 (1938).
 - Repository: https://github.com/maris205/twin_primes/tree/main/research/prize-problems
-  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`, `STAGE9_JUMP.md`, `STAGE10_CHECK.md`.
+  - Chinese stage reports: `STAGE1_GAPS.md`, `STAGE3_LOGLOSS.md`, `STAGE4_FGKMT.md`, `STAGE6_MAP.md`, `STAGE7_TRANSFER.md`, `STAGE8_COUNT.md`, `STAGE9_JUMP.md`, `STAGE10_CHECK.md`, `STAGE11_JUMPDATA.md`, `STAGE13_ONESTEP.md`.
+  - Referee guide: `submission/REVIEW_GUIDE.md`.
   - Witnesses: `a389839_witnesses.json`.
   - Checker: `verify_a389839.py`.

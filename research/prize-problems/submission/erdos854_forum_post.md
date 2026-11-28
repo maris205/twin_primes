@@ -25,7 +25,7 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 
 6. **Short lag; almost all $k$.** In items 4 and 5 the level $\lceil(1-\eta)k\rceil$ can be replaced by $k-\lceil k^{1-\kappa}\rceil$ for a small $\kappa>0$, by taking the sieve level as large as the lower-bound sieve allows. Since $J$ grows at most polynomially, it can grow by a constant factor across such short windows for only $O(K^{1-\kappa}\log K)$ values $k\le K$. Hence, outside a set of $k$ of density zero, $s(k)\ge(1-\varepsilon)\min(J(k),p_k^{1+\delta_0})$ and the number of even gaps is at least $c(\varepsilon)\min(J(k),p_k^{2-\varepsilon})$.
 
-**The second question is not settled for every $k$.** By item 6 it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from $J(k)\ll J(k-\lceil k^{1-\kappa}\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2$.
+**The second question is not settled for every $k$.** By item 6 it holds at every $k$ outside a set of density zero at which $J(k)\le p_k^{2-\varepsilon}$. For every large $k$ it would follow from $J(k)\ll J(k-\lceil k^{1-\kappa}\rceil)$ and $J(k)\le p_k^{2-\varepsilon}$ for some fixed $\varepsilon>0$. Both are expected, neither is proved; the second asks for a power saving over Iwaniec's bound $J(k)\ll p_k^2$. Both would follow from $J(2k)\le D\,J(k)$ with $D<4$ (the known values give $D\le3.09$ for $40\le k\le71$), but that would itself improve the exponent in Iwaniec's bound.
 
 **Data.** We computed $s(k)$ exactly for $k\le26$:
 
@@ -38,4 +38,5 @@ Write $s(k)$ for the smallest even number that is not a gap between consecutive 
 **Disclosure.** This work was done with substantial AI assistance (Claude, Anthropic). The AI system drafted the proofs and ran the computations; I chose the direction and checked the write-up. The proofs have not been refereed, and I would be grateful for corrections, especially on parts 4–6 and on the black-box transfer in part 3.
 
 - Write-up: https://github.com/maris205/twin_primes/blob/main/research/prize-problems/submission/note854.md
+- Guide for checking the proofs: `REVIEW_GUIDE.md` in the same directory.
 - Witnesses and checker: `a389839_witnesses.json` and `verify_a389839.py` in the same directory's parent folder.
